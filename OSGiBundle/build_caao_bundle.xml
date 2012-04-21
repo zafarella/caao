@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+made as a copy from the Knopflerfish framework build system.
+See the documentation of the framework for details
+Powered by Zafar Khaydarov. 
+-->
+<!-- Name of generated jar files will be:  -->
+<!--  ${ant.project.name}-${version}.jar     (refered to as impl-bundle) -->
+<!--  ${ant.project.name}_api-${version}.jar  (refered to as api-bundle) -->
+<!--  ${ant.project.name}_all-${version}.jar  (refered to as all-bundle) -->
+
+<project name="caao_bundle" default="all">
+
+	<!-- Where this project lives in the file system. -->
+	<dirname property="proj.dir" file="${ant.file.build_example}" />
+
+	<!-- Set to top directory, this is the root of the temporary out    -->
+	<!-- directory for compilation output named "out" and also the root -->
+	<!-- for the bundle repository directory, named "jars".             -->
+
+	<property name="topdir" location="${proj.dir}/../.." />
+
+
+	<!-- Pattern that must match all private code to be included in     -->
+	<!-- the bundle. The value may contain several comma separated      -->
+	<!-- patterns. Used when compiling, and when packing the impl-,     -->
+	<!-- all- variant of the bundle.                                    -->
+	<property name="impl.pattern" value="${proj.dir}/src, ${proj.dir}/lib" />
+
+	<!-- Pattern that must match all exported (API) code to be included -->
+	<!-- in the bundle. The value may contain several comma separated   -->
+	<!-- patterns. Used when compiling, and when packing the api-,      -->
+	<!-- lib-, and all- variant of the bundle. Also used to derive the  -->
+	<!-- Export-Package manifest header if not explicitly given.        -->
+
+	<property name="api.pattern"
+	          value="${proj.dir}/lib, ${proj.dir}/out, ${proj.dir}/src" />
+
+
+	<!-- Pattern that must match all internal but exported code         -->
+	<!-- (internal APIs) to be included in the bundle. Used when        -->
+	<!-- compiling, and when packing the impl- and all- variant         -->
+	<!-- of the bundle, but not for the api-variant of the bundle.      -->
+	<!-- Also used to derive the Export-Package manifest header if not  -->
+	<!-- explicitly given.                                -->
+
+	<property name="impl-api.pattern"
+	          value="${proj.dir}/lib, ${proj.dir}/out" />
+
+
+	<!-- Compile-time dependencies, either an explicit path or a     -->
+	<!-- symbolic bundle name that ends with "N.N.N.jar".            -->
+	<!-- Path elements defined like location="console_api-N.N.N.jar" -->
+	<!-- will be expanded to the bundle with the highest version     -->
+	<!-- number available in the directory given by ${jars.dir}.     -->
+	<path id="bundle.compile.path">
+		<pathelement location="console_api-N.N.N.jar" />
+		<pathelement location="log_api-N.N.N.jar" />
+		<pathelement location="jsdk_api-2.N.N.jar" />
+	</path>
+
+
+	<!-- Activator, imports, exports etc are automatically found but    -->
+	<!-- can be specified explicitly with properties or by providing a  -->
+	<!-- template bundle manifest file, named "bundle.manifest".        -->
+	<!-- See bundlebuild_include.xml for details                        -->
+
+	<!-- The default bundle name (property "bmfa.Bundle-Name") will be: -->
+	<!--   ${ant.project.name}                                          -->
+	<!-- The default bundle symbolic name (property                     -->
+	<!-- "bmfa.Bundle-SymbolicName") will be:                           -->
+	<!--   ${domain.reverse}.bundle.${ant.project.name}                 -->
+
+	<property name="domain.reverse" value="cs.joensuu" />
+
+	<property name="bmfa.Bundle-Description"
+	          value="[Context aware orginizer] The service implements XML-RPC service for the android application and connectivity with the mysql database" />
+	<property name="bmfa.Bundle-Vendor" value="Zafar Khaydarov" />
+
+	<!-- Import the master build file that defines everything else. -->
+	<import file="/home/z1/knopflerfish_osgi_3.2.0/ant/bundlebuild.xml" />
+
+
+
+	<!-- Java  doc definition for the project							-->
+	<target name="javadoc">
+		<javadoc access="private"
+		         author="true"
+		         classpath="C:\DropBox\Dropbox\IT_Project\materials\OSGi\Knopflerfish\knopflerfish_osgi_3.1.0\osgi\framework.jar;lib/xmlrpc-common-3.1.3.jar;lib/ws-commons-util-1.0.2.jar;C:\DropBox\Dropbox\IT Project\materials\MySQL Connector\mysql-connector-java-5.1.15\mysql-connector-java-5.1.15-bin.jar;lib/xmlrpc-server-3.1.3.jar;C:\DropBox\Dropbox\IT Project\materials\XML-RPC\apache-xmlrpc-3.1.3\lib\xmlrpc-client-3.1.3.jar;C:\DropBox\Dropbox\IT Project\materials\XML-RPC\httpcomponents-client-4.1.1\lib\commons-codec-1.4.jar;C:\DropBox\Dropbox\IT Project\materials\XML-RPC\commons-httpclient-3.0\commons-httpclient-3.0.jar;C:\DropBox\Dropbox\IT Project\materials\XML-RPC\apache-xmlrpc-3.1.3\lib\commons-logging-1.1.jar"
+		         destdir="doc"
+		         doctitle="Context aware orginizer [server side OSGi bundle] java docs"
+		         nodeprecated="true"
+		         nodeprecatedlist="true"
+		         noindex="false"
+		         nonavbar="false"
+		         notree="false"
+		         packagenames="fi.uef.caao"
+		         source="1.6"
+		         sourcepath="src"
+		         splitindex="true"
+		         stylesheetfile="C:\eclipse-SDK-3.5-win32\android-sdk-windows\docs\assets\android-developer-docs.css"
+		         use="true"
+		         version="true">
+			<link href="file:/C:/Users/zafar.khaydarov/workspace/caao_bundle/doc/" />
+		</javadoc>
+	</target>
+</project>

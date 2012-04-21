@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+<link rel="stylesheet" type="text/css" href="readme.css" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Readme file caao bundle</title>
+
+
+
+</head>
+<body>
+<h3>University of Eastern Finland</h3>
+<h3>Zafar Khaydarov</h3>
+<h1>Background</h1>
+
+If you are reading this readme file, assumed that you already read the
+"component description" document. Before proceeding with the work please
+get familiar with at list with a most core specification of OSGi.
+<br />
+You can find the specification at the following web page of OSGi
+alliance: http://www.osgi.org/Specifications/HomePage
+<br />
+
+It's very advisable to read the following specifications:
+<br />
+<ul>
+	<li><a href="">http://www.osgi.org/Download/Release4V42</a></li>
+	<li><a href="">http://www.osgi.org/Download/File?url=/download/r4v42/r4.core.pdf</a></li>
+</ul>
+<h1>Design notes</h1>
+The bundle was designed in the way to be independ, but compatible to be
+extended and reused. Special notes is using the Apache XML-RPC libraries
+and the embedded lightweight web server provided by it. The
+documentation in "code_pro_reports" will reveal of the rest of
+implementation. In the future, the embedded web server could/should be
+replaced by some more powerfull web server or servlet container, which
+can support clustering and/or load balancing.
+<h1>The directory structure</h1>
+
+The project contains the following important directories:
+<ul>
+	<li>code_pro_reports - reports of the code pro. The code coverage,
+	dependencies etc.</li>
+	<li>diagrams - contains the class diagrams of the bundle</li>
+
+	<li>doc - the javadoc</li>
+
+	<li>lib - the external libraries which is used by the bundle.</li>
+	<li>out - the binary files</li>
+	<li>src - the source code</li>
+	<li>external bundles - the bundles which from the caao bundle
+	depends on. There is an one bundle that is the mySQL driver of OSGi
+	bundle format</li>
+	<li>README.html - the file that you are reading</li>
+</ul>
+
+<h1>Execution environment</h1>
+As an execution environment the project uses one of the open source
+implementation of the OSGi framework - the
+Knopflerfish(http://www.knopflerfish.org) therewith the standard
+execution environment relies on the Java Standard Edition. In theis
+implementation the Java 1.6 from Oracle was used.
+
+<h1>Build instruction</h1>
+
+In order to build the bundle you have to properly configure the class
+path.
+
+<h2>Specific libraries used by the bundle</h2>
+
+In order to achieve the functionality of the database connectivity with
+the mySQL, bundle uses mysql Connector J - the jdbc driver provided by
+the mySQL. The bundle uses the classes from the driver dynamically,
+therefore they are mentioned in manifest file of the bundle. The list of
+packages dynamically imported by bundle:
+
+<ul>
+	<li>com.mysql.jdbc.Driver</li>
+	<li>com.mysql.jdbc</li>
+	<li>com.mysql.jdbc.exceptions</li>
+	<li>com.mysql.jdbc.exceptions.jdbc4</li>
+	<li>com.mysql.jdbc.integration.c3p0</li>
+	<li>com.mysql.jdbc.integration.jboss</li>
+	<li>com.mysql.jdbc.interceptors</li>
+	<li>com.mysql.jdbc.jdbc2.optional</li>
+	<li>com.mysql.jdbc.jmx, com.mysql.jdbc.log</li>
+	<li>com.mysql.jdbc.profiler</li>
+	<li>com.mysql.jdbc.util</li>
+	<li>org.gjt.mm.mysql</li>
+</ul>
+The procedure of converting the jar library into the osgi style bundle
+is described in "Component description" document. Also following
+packages is imported from the Apache libraries:
+<br />
+<ul>
+	<li>org.apache.commons.codec</li>
+	<li>org.apache.commons.codec.binary</li>
+	<li>org.apache.commons.codec.digest</li>
+	<li>org.apache.commons.codec.language</li>
+	<li>org.apache.commons.codec.net</li>
+	<li>org.apache.commons.httpclient</li>
+	<li>org.apache.commons.httpclient.auth</li>
+	<li>org.apache.commons.httpclient.cookie</li>
+	<li>org.apache.commons.httpclient.methods</li>
+	<li>org.apache.commons.httpclient.methods.multipart</li>
+	<li>org.apache.commons.httpclient.params</li>
+	<li>org.apache.commons.httpclient.protocol</li>
+	<li>org.apache.commons.httpclient.util</li>
+	<li>org.apache.commons.logging</li>
+	<li>org.apache.commons.logging.impl</li>
+	<li>org.apache.ws.commons.serialize</li>
+	<li>org.apache.ws.commons.util</li>
+	<li>org.apache.xmlrpc</li>
+	<li>org.apache.xmlrpc.client</li>
+	<li>org.apache.xmlrpc.client.util</li>
+	<li>org.apache.xmlrpc.common</li>
+	<li>org.apache.xmlrpc.jaxb</li>
+	<li>org.apache.xmlrpc.metadata</li>
+	<li>org.apache.xmlrpc.parser</li>
+	<li>org.apache.xmlrpc.serializer</li>
+	<li>org.apache.xmlrpc.server</li>
+	<li>org.apache.xmlrpc.util</li>
+</ul>
+
+You can find all of the imported packages from the manifest file of the
+bundle(bundle.manifest). Pay attention to the imported packages. They
+are mentioned explicitly as they are loading in runtime.
+
+<h2>Classpath configuration</h2>
+The ".classpath" file will give you the classpath which should be
+corrected in other machine in order to build the bundle. When you will
+open it, it will contain the absolute that to the libraries, which you
+should correct to the one you have downloaded or used from the lib
+directory. The "lib" directory contains all of the necessary 'external'
+libraries used by the bundle. Please note that there is an special
+version of them, doe to a wrong reference in the newer libraries. Apache
+common libraries could be obtained from the
+<a href="">http://commons.apache.org/ </a>
+and the xml-rpc libraries from the following web page
+
+
+
+<br><h1>Building bundle with Apache Ant</h1>
+With ant you can get very flexible build system, and even update and
+install the bundle. In order to build the bundle via ant you will need
+the ant itself, the Knopflerfish installation directory.
+<ul>
+	<li>Go to the ant file and edit the line below comments " Import
+	the master build file that defines everything else." point it to the
+	directory where you have installed the Knopflerfish framework.</li>
+	<li>Make sure also that the directories in "impl.pattern" and
+	"impl-api.pattern" are pointing to the correct directory</li>
+	<li>Go to directory of the project in command line and type "ant".
+	It will build the bundle</li>
+</ul>
+For more detailed explanation, please read the ant directory content in
+the framework installation folder.
+<a href="">http://www.knopflerfish.org/releases/current/docs/programming.html#activator
+</a>
+<h1>Running the bundle in Knopflerfish OSGi</h1>
+Before running the bundle, make sure the following bundles are installed and running:
+	<li>axis2-osgi</li>
+	<li>mySql bundle located in external_bundles directory</li>
+<br>
+ 
+ </body>
+</html>
