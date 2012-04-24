@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string
+    name="notification_prefs_title"
+  >Хоҳишҳои огоҳиҳо</string>
+  <string
+    name="notification_prefs_summary"
+  >Хоҳишҳои огоҳиҳо</string>
+  <string
+    name="notification_prefs_enable_status_bar_notifs_categoru_title"
+  >Огоҳиҳои статус бар</string>
+  <string
+    name="notification_prefs_enable_status_bar_notifs_title"
+  >Enable status bar notifications</string>
+  <string
+    name="notification_prefs_enable_status_bar_notifs_summary"
+  >Notify about event in action bar</string>
+  <string
+    name="notification_prefs_rington_category_title"
+  >Notification rington</string>
+  <string
+    name="notification_prefs_rington_category_summary"
+  >Sets the rington for notofications</string>
+  <string
+    name="notification_prefs_rington_title"
+  >Select a rington for notification</string>
+</resources>

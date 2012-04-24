@@ -1,0 +1,152 @@
+<class-diagram version="1.0.1" icons="true" automaticImage="PNG" always-add-relationships="true" generalizations="true" 
+  realizations="true" associations="true" dependencies="true" nesting-relationships="true">  
+  <class id="1" corner="BOTTOM_RIGHT" language="java" name="caao.com.xmlrpc.MethodCall" project="CAAO" 
+    file="/CAAO/src/caao/com/xmlrpc/MethodCall.java" binary="false">    
+    <position x="364" y="699" width="286" height="179"/>    
+    <display autosize="true" package="true" initial-value="true" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="2" corner="BOTTOM_RIGHT" language="java" name="caao.com.xmlrpc.XMLRPCSerializer" project="CAAO" 
+    file="/CAAO/src/caao/com/xmlrpc/XMLRPCSerializer.java" binary="false">    
+    <position x="690" y="699" width="398" height="99"/>    
+    <display autosize="true" package="true" initial-value="true" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="3" corner="BOTTOM_RIGHT" language="java" name="caao.com.xmlrpc.XMLRPCCommon" project="CAAO" 
+    file="/CAAO/src/caao/com/xmlrpc/XMLRPCCommon.java" binary="false">    
+    <position x="1088" y="37" width="205" height="115"/>    
+    <display autosize="true" package="true" initial-value="true" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <interface id="4" corner="BOTTOM_RIGHT" language="java" name="caao.com.xmlrpc.IXMLRPCSerializer" project="CAAO" 
+    file="/CAAO/src/caao/com/xmlrpc/IXMLRPCSerializer.java" binary="false">    
+    <position x="998" y="918" width="295" height="323"/>    
+    <display autosize="true" package="true" initial-value="true" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </interface>  
+  <class id="5" corner="BOTTOM_RIGHT" language="java" name="caao.com.xmlrpc.XMLRPCClient" project="CAAO" 
+    file="/CAAO/src/caao/com/xmlrpc/XMLRPCClient.java" binary="false">    
+    <position x="169" y="272" width="384" height="387"/>    
+    <display autosize="true" package="true" initial-value="true" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <interface id="6" corner="BOTTOM_RIGHT" language="java" name="caao.com.xmlrpc.XMLRPCSerializable" project="CAAO" 
+    file="/CAAO/src/caao/com/xmlrpc/XMLRPCSerializable.java" binary="false">    
+    <position x="690" y="918" width="138" height="67"/>    
+    <display autosize="true" package="true" initial-value="true" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </interface>  
+  <class id="7" corner="BOTTOM_RIGHT" language="java" name="caao.com.xmlrpc.XMLRPCServer" project="CAAO" 
+    file="/CAAO/src/caao/com/xmlrpc/XMLRPCServer.java" binary="false">    
+    <position x="593" y="272" width="474" height="175"/>    
+    <display autosize="true" package="true" initial-value="true" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="8" corner="BOTTOM_RIGHT" language="java" name="caao.com.xmlrpc.XMLRPCException" project="CAAO" 
+    file="/CAAO/src/caao/com/xmlrpc/XMLRPCException.java" binary="false">    
+    <position x="42" y="699" width="261" height="99"/>    
+    <display autosize="true" package="true" initial-value="true" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="9" corner="BOTTOM_RIGHT" language="java" name="caao.com.xmlrpc.Base64Coder" project="CAAO" 
+    file="/CAAO/src/caao/com/xmlrpc/Base64Coder.java" binary="false">    
+    <position x="221" y="37" width="164" height="195"/>    
+    <display autosize="true" package="true" initial-value="true" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="10" corner="BOTTOM_RIGHT" language="java" name="caao.com.xmlrpc.XMLRPCFault" project="CAAO" 
+    file="/CAAO/src/caao/com/xmlrpc/XMLRPCFault.java" binary="false">    
+    <position x="324" y="918" width="261" height="147"/>    
+    <display autosize="true" package="true" initial-value="true" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="11" corner="BOTTOM_RIGHT" language="java" name="caao.com.xmlrpc.Tag" project="CAAO" 
+    file="/CAAO/src/caao/com/xmlrpc/Tag.java" binary="false">    
+    <position x="605" y="37" width="263" height="195"/>    
+    <display autosize="true" package="true" initial-value="true" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <generalization>    
+    <end type="SOURCE" nodeId="10"/>    
+    <end type="TARGET" nodeId="8"/>  
+  </generalization>  
+  <association>    
+    <end type="SOURCE" nodeId="7" navigable="false">      
+      <attribute name="iXMLRPCSerializer"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" nodeId="2" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency>    
+    <bendpoint x="1097" y="272"/>    
+    <end type="SOURCE" nodeId="3"/>    
+    <end type="TARGET" nodeId="2"/>  
+  </dependency>  
+  <dependency>    
+    <end type="SOURCE" nodeId="2"/>    
+    <end type="TARGET" nodeId="6"/>  
+  </dependency>  
+  <dependency>    
+    <end type="SOURCE" nodeId="5"/>    
+    <end type="TARGET" nodeId="8"/>  
+  </dependency>  
+  <generalization>    
+    <end type="SOURCE" nodeId="7"/>    
+    <end type="TARGET" nodeId="3"/>  
+  </generalization>  
+  <association>    
+    <bendpoint x="1118" y="272"/>    
+    <bendpoint x="1118" y="699"/>    
+    <end type="SOURCE" nodeId="3" navigable="false">      
+      <attribute name="iXMLRPCSerializer"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" nodeId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization>    
+    <end type="SOURCE" nodeId="5"/>    
+    <end type="TARGET" nodeId="3"/>  
+  </generalization>  
+  <dependency>    
+    <bendpoint x="333" y="699"/>    
+    <end type="SOURCE" nodeId="5"/>    
+    <end type="TARGET" nodeId="10"/>  
+  </dependency>  
+  <dependency>    
+    <end type="SOURCE" nodeId="7"/>    
+    <end type="TARGET" nodeId="1"/>  
+  </dependency>  
+  <realization>    
+    <end type="SOURCE" nodeId="2"/>    
+    <end type="TARGET" nodeId="4"/>  
+  </realization>  
+  <classifier-display autosize="true" package="true" initial-value="true" signature="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true"/>    
+    <operations public="true" package="true" protected="true" private="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>

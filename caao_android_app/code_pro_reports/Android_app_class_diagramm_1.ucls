@@ -1,0 +1,157 @@
+<class-diagram version="1.0.1" icons="true" automaticImage="PNG" always-add-relationships="true" generalizations="true" 
+  realizations="true" associations="true" dependencies="true" nesting-relationships="true">  
+  <class id="1" corner="BOTTOM_RIGHT" language="java" name="caao.com.settings_activities.Advanced_settings" 
+    project="CAAO" file="/CAAO/src/caao/com/settings_activities/Advanced_settings.java" binary="false">    
+    <position x="433" y="667" width="134" height="67"/>    
+    <display autosize="true" package="true" initial-value="true" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="2" corner="BOTTOM_RIGHT" language="java" name="caao.com.settings_activities.Lang_and_loc_Settings" 
+    project="CAAO" file="/CAAO/src/caao/com/settings_activities/Lang_and_loc_Settings.java" binary="false">    
+    <position x="252" y="37" width="157" height="67"/>    
+    <display autosize="true" package="true" initial-value="true" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="3" corner="BOTTOM_RIGHT" language="java" name="caao.com.settings_activities.Account_settings_Activity" 
+    project="CAAO" file="/CAAO/src/caao/com/settings_activities/Account_settings_Activity.java" binary="false">    
+    <position x="41" y="37" width="171" height="67"/>    
+    <display autosize="true" package="true" initial-value="true" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="5" corner="BOTTOM_RIGHT" language="java" name="caao.com.tabs.Wiki_Activity" project="CAAO" 
+    file="/CAAO/src/caao/com/tabs/Wiki_Activity.java" binary="false">    
+    <position x="1778" y="368" width="195" height="115"/>    
+    <display autosize="true" package="true" initial-value="true" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="6" corner="BOTTOM_RIGHT" language="java" name="caao.com.tabs.Calendar_Activity" project="CAAO" 
+    file="/CAAO/src/caao/com/tabs/Calendar_Activity.java" binary="false">    
+    <position x="1340" y="368" width="398" height="243"/>    
+    <display autosize="true" package="true" initial-value="true" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="7" corner="BOTTOM_RIGHT" language="java" name="caao.com.tabs.Event_Notification_Activity" project="CAAO" 
+    file="/CAAO/src/caao/com/tabs/Event_Notification_Activity.java" binary="false">    
+    <position x="571" y="368" width="237" height="163"/>    
+    <display autosize="true" package="true" initial-value="true" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="8" corner="BOTTOM_RIGHT" language="java" name="caao.com.tabs.Plant_list_Activity" project="CAAO" 
+    file="/CAAO/src/caao/com/tabs/Plant_list_Activity.java" binary="false">    
+    <position x="296" y="368" width="235" height="163"/>    
+    <display autosize="true" package="true" initial-value="true" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="10" corner="BOTTOM_RIGHT" language="java" 
+    name="caao.com.settings_activities.Notification_settings_activity" project="CAAO" 
+    file="/CAAO/src/caao/com/settings_activities/Notification_settings_activity.java" binary="false">    
+    <position x="449" y="37" width="187" height="67"/>    
+    <display autosize="true" package="true" initial-value="true" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="12" corner="BOTTOM_RIGHT" language="java" name="caao.com.service.caao_service" project="CAAO" 
+    file="/CAAO/src/caao/com/service/caao_service.java" binary="false">    
+    <position x="41" y="368" width="215" height="259"/>    
+    <display autosize="true" package="true" initial-value="true" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="13" corner="BOTTOM_RIGHT" language="java" name="caao.com.Main_activity" project="CAAO" 
+    file="/CAAO/src/caao/com/Main_activity.java" binary="false">    
+    <position x="676" y="37" width="464" height="291"/>    
+    <display autosize="true" package="true" initial-value="true" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="14" corner="BOTTOM_RIGHT" language="java" name="caao.com.Settings_activity" project="CAAO" 
+    file="/CAAO/src/caao/com/Settings_activity.java" binary="false">    
+    <position x="848" y="368" width="452" height="179"/>    
+    <display autosize="true" package="true" initial-value="true" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="15" corner="BOTTOM_RIGHT" language="java" name="caao.com.CaaoConstants" project="CAAO" 
+    file="/CAAO/src/caao/com/CaaoConstants.java" binary="false">    
+    <position x="261" y="201" width="-1" height="-1"/>    
+    <display autosize="true" package="true" initial-value="true" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="16" corner="BOTTOM_RIGHT" language="java" name="caao.com.MyToast" project="CAAO" 
+    file="/CAAO/src/caao/com/MyToast.java" binary="false">    
+    <position x="725" y="659" width="-1" height="-1"/>    
+    <display autosize="true" package="true" initial-value="true" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <dependency>    
+    <end type="SOURCE" nodeId="13"/>    
+    <end type="TARGET" nodeId="12"/>  
+  </dependency>  
+  <dependency>    
+    <end type="SOURCE" nodeId="7"/>    
+    <end type="TARGET" nodeId="16"/>  
+  </dependency>  
+  <dependency>    
+    <end type="SOURCE" nodeId="12"/>    
+    <end type="TARGET" nodeId="13"/>  
+  </dependency>  
+  <dependency>    
+    <end type="SOURCE" nodeId="13"/>    
+    <end type="TARGET" nodeId="8"/>  
+  </dependency>  
+  <dependency>    
+    <end type="SOURCE" nodeId="7"/>    
+    <end type="TARGET" nodeId="1"/>  
+  </dependency>  
+  <dependency>    
+    <end type="SOURCE" nodeId="8"/>    
+    <end type="TARGET" nodeId="16"/>  
+  </dependency>  
+  <dependency>    
+    <end type="SOURCE" nodeId="13"/>    
+    <end type="TARGET" nodeId="14"/>  
+  </dependency>  
+  <dependency>    
+    <end type="SOURCE" nodeId="13"/>    
+    <end type="TARGET" nodeId="7"/>  
+  </dependency>  
+  <dependency>    
+    <end type="SOURCE" nodeId="13"/>    
+    <end type="TARGET" nodeId="5"/>  
+  </dependency>  
+  <dependency>    
+    <end type="SOURCE" nodeId="8"/>    
+    <end type="TARGET" nodeId="1"/>  
+  </dependency>  
+  <dependency>    
+    <end type="SOURCE" nodeId="13"/>    
+    <end type="TARGET" nodeId="6"/>  
+  </dependency>  
+  <classifier-display autosize="true" package="true" initial-value="true" signature="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true"/>    
+    <operations public="true" package="true" protected="true" private="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>

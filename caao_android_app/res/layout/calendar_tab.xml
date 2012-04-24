@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical"
+>
+  <TableRow
+    android:id="@+id/tableRow1"
+    android:layout_width="match_parent"
+    android:gravity="top|fill_horizontal"
+    android:layout_height="wrap_content"
+    android:baselineAligned="true"
+    android:layout_gravity="top"
+  >
+    <Button
+      android:layout_height="match_parent"
+      android:layout_weight="1"
+      android:layout_width="match_parent"
+      android:id="@+id/calendar_button_prev"
+      android:text="Prev."
+      android:layout_gravity="left"
+    ></Button>
+    <Button
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:id="@+id/calendar_button_today"
+      android:text="Today"
+    ></Button>
+    <Button
+      android:layout_height="match_parent"
+      android:layout_weight="1"
+      android:layout_width="match_parent"
+      android:id="@+id/calendar_button_next"
+      android:text="Next"
+    ></Button>
+  </TableRow>
+  <TextView
+    android:id="@+id/calendar_lable"
+    android:layout_gravity="fill_horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical|center"
+    android:textStyle="bold"
+  ></TextView>
+  <caao.com.tabs.calendar.CalendarView
+    android:id="@+id/calendar"
+    android:layout_gravity="fill"
+    android:clickable="true"
+    android:layout_width="fill_parent"
+    android:baselineAlignBottom="true"
+    android:layout_height="fill_parent"
+    android:focusable="true"
+    android:adjustViewBounds="true"
+  ></caao.com.tabs.calendar.CalendarView>
+</LinearLayout>
