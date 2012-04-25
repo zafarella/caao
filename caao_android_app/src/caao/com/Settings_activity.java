@@ -1,5 +1,5 @@
 /**
- * University of Eastern Finland
+ * 
  * Computer science department
  * Project: Context-Aware Agriculture Organizer
  * Author: Zafar Khaydarov

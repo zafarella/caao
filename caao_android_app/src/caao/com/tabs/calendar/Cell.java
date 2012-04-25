@@ -26,122 +26,122 @@ import android.graphics.Rect;
  * @version $Revision: 1.5 $
  */
 public class Cell {
-    /**
-     * Field TAG. (value is ""Cell"")
-     */
-    @SuppressWarnings("unused")
-    private static final String TAG = "Cell";
-    /**
-     * Field mBound.
-     */
-    protected Rect mBound = null;
-    /**
-     * Field mDayOfMonth.
-     */
-    protected int mDayOfMonth = 1; // from 1 to 31
-    /**
-     * Field mPaint.
-     */
-    protected Paint mPaint = new Paint(Paint.SUBPIXEL_TEXT_FLAG
-	    | Paint.ANTI_ALIAS_FLAG);
-    /**
-     * Field dy.
-     */
-    /**
-     * Field dx.
-     */
-    int dx, dy;
+	/**
+	 * Field TAG. (value is ""Cell"")
+	 */
+	@SuppressWarnings("unused")
+	private static final String TAG = "Cell";
+	/**
+	 * Field mBound.
+	 */
+	protected Rect mBound = null;
+	/**
+	 * Field mDayOfMonth.
+	 */
+	protected int mDayOfMonth = 1; // from 1 to 31
+	/**
+	 * Field mPaint.
+	 */
+	protected Paint mPaint = new Paint(Paint.SUBPIXEL_TEXT_FLAG
+			| Paint.ANTI_ALIAS_FLAG);
+	/**
+	 * Field dy.
+	 */
+	/**
+	 * Field dx.
+	 */
+	int dx, dy;
 
-    /**
-     * Constructor for Cell.
-     * 
-     * @param dayOfMon
-     *            int
-     * @param rect
-     *            Rect
-     * @param textSize
-     *            float
-     * @param bold
-     *            boolean
-     */
-    public Cell(int dayOfMon, Rect rect, float textSize, boolean bold) {
-	this.mDayOfMonth = dayOfMon;
-	this.mBound = rect;
-	this.mPaint.setTextSize(textSize/* 26f */);
-	this.mPaint.setColor(Color.BLACK);
-	if (bold)
-	    this.mPaint.setFakeBoldText(true);
+	/**
+	 * Constructor for Cell.
+	 * 
+	 * @param dayOfMon
+	 *            int
+	 * @param rect
+	 *            Rect
+	 * @param textSize
+	 *            float
+	 * @param bold
+	 *            boolean
+	 */
+	public Cell(int dayOfMon, Rect rect, float textSize, boolean bold) {
+		this.mDayOfMonth = dayOfMon;
+		this.mBound = rect;
+		this.mPaint.setTextSize(textSize/* 26f */);
+		this.mPaint.setColor(Color.BLACK);
+		if (bold)
+			this.mPaint.setFakeBoldText(true);
 
-	this.dx = (int) this.mPaint.measureText(String
-		.valueOf(this.mDayOfMonth)) / 2;
-	this.dy = (int) (-this.mPaint.ascent() + this.mPaint.descent()) / 2;
-    }
+		this.dx = (int) this.mPaint.measureText(String
+				.valueOf(this.mDayOfMonth)) / 2;
+		this.dy = (int) (-this.mPaint.ascent() + this.mPaint.descent()) / 2;
+	}
 
-    /**
-     * Constructor for Cell.
-     * 
-     * @param dayOfMon
-     *            int
-     * @param rect
-     *            Rect
-     * @param textSize
-     *            float
-     */
-    public Cell(int dayOfMon, Rect rect, float textSize) {
-	this(dayOfMon, rect, textSize, false);
-    }
+	/**
+	 * Constructor for Cell.
+	 * 
+	 * @param dayOfMon
+	 *            int
+	 * @param rect
+	 *            Rect
+	 * @param textSize
+	 *            float
+	 */
+	public Cell(int dayOfMon, Rect rect, float textSize) {
+		this(dayOfMon, rect, textSize, false);
+	}
 
-    /**
-     * Method draw.
-     * 
-     * @param canvas
-     *            Canvas
-     */
-    protected void draw(Canvas canvas) {
-	canvas.drawText(String.valueOf(this.mDayOfMonth), this.mBound.centerX()
-		- this.dx, this.mBound.centerY() + this.dy, this.mPaint);
-    }
+	/**
+	 * Method draw.
+	 * 
+	 * @param canvas
+	 *            Canvas
+	 */
+	protected void draw(Canvas canvas) {
+		canvas.drawText(String.valueOf(this.mDayOfMonth), this.mBound.centerX()
+				- this.dx, this.mBound.centerY() + this.dy, this.mPaint);
+	}
 
-    /**
-     * Method getDayOfMonth.
-     * 
-     * @return int
-     */
-    public int getDayOfMonth() {
-	return this.mDayOfMonth;
-    }
+	/**
+	 * Method getDayOfMonth.
+	 * 
+	 * @return int
+	 */
+	public int getDayOfMonth() {
+		return this.mDayOfMonth;
+	}
 
-    /**
-     * Method hitTest.
-     * 
-     * @param x
-     *            int
-     * @param y
-     *            int
-     * 
-     * @return boolean
-     */
-    public boolean hitTest(int x, int y) {
-	return this.mBound.contains(x, y);
-    }
+	/**
+	 * Method hitTest.
+	 * 
+	 * @param x
+	 *            int
+	 * @param y
+	 *            int
+	 * 
+	 * @return boolean
+	 */
+	public boolean hitTest(int x, int y) {
+		return this.mBound.contains(x, y);
+	}
 
-    /**
-     * Method getBound.
-     * 
-     * @return Rect
-     */
-    public Rect getBound() {
-	return this.mBound;
-    }
+	/**
+	 * Method getBound.
+	 * 
+	 * @return Rect
+	 */
+	public Rect getBound() {
+		return this.mBound;
+	}
 
-    /**
-     * Method toString.
-     * 
-     * @return String
-     */
-    public String toString() {
-	return String.valueOf(this.mDayOfMonth) + "(" + this.mBound.toString()
-		+ ")";
-    }
+	/**
+	 * Method toString.
+	 * 
+	 * @return String
+	 */
+	public String toString() {
+		return String.valueOf(this.mDayOfMonth) + "(" + this.mBound.toString()
+				+ ")";
+	}
 
 }
