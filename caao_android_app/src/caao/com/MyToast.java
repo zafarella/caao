@@ -22,35 +22,34 @@ import android.widget.Toast;
  */
 public class MyToast {
 
-    /**
-     * 
-     * Context the context
-     * 
-     * @param pTheContext
-     * 
-     *            the message to be displayed
-     * @param pTheMesage
-     *            String 
-     *            how long the message should be displayed. true for long
-     *            and false for short
-     * @param pHowLong
-     *            boolean
-     */
-    public MyToast(Context pTheContext, String pTheMesage, boolean pHowLong) {
-	Toast.makeText(pTheContext, pTheMesage,
-		pHowLong ? Toast.LENGTH_LONG : Toast.LENGTH_SHORT).show();
-    }
+	/**
+	 * 
+	 * Context the context
+	 * 
+	 * @param pTheContext
+	 * 
+	 *            the message to be displayed
+	 * @param pTheMesage
+	 *            String how long the message should be displayed. true for long
+	 *            and false for short
+	 * @param pHowLong
+	 *            boolean
+	 */
+	public MyToast(Context pTheContext, String pTheMesage, boolean pHowLong) {
+		Toast.makeText(pTheContext, pTheMesage,
+				pHowLong ? Toast.LENGTH_LONG : Toast.LENGTH_SHORT).show();
+	}
 
-    /**
-     * Context the context
-     * 
-     * @param pTheContext
-     *            Context
-     * 
-     * @param pTheMesage
-     *            String
-     */
-    public MyToast(Context pTheContext, String pTheMesage) {
-	Toast.makeText(pTheContext, pTheMesage, Toast.LENGTH_LONG).show();
-    }
+	/**
+	 * Context the context
+	 * 
+	 * @param pTheContext
+	 *            Context
+	 * 
+	 * @param pTheMesage
+	 *            String
+	 */
+	public MyToast(Context pTheContext, String pTheMesage) {
+		Toast.makeText(pTheContext, pTheMesage, Toast.LENGTH_LONG).show();
+	}
 }

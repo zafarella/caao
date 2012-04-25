@@ -17,20 +17,20 @@ package caao.com;
  * 
  */
 public class CaaoConstants {
-    /**
-     * xml file with the advanced preferences
-     */
-    public static final String ADVANCED_PREFERENCES_FILE = "advanced_preferences";
-    /**
-     * android service location
-     * 
-     * Field ACTION_FOREGROUND. (value is ""caao.com.service.caao_service"")
-     */
-    static final String ACTION_FOREGROUND = "caao.com.service.caao_service";
-    /**
-     * the application tag for recognizing the app in the log
-     * 
-     * @see android.util.Log
-     * */
-    public static final String TAG = "caao_app";
+	/**
+	 * xml file with the advanced preferences
+	 */
+	public static final String ADVANCED_PREFERENCES_FILE = "advanced_preferences";
+	/**
+	 * android service location
+	 * 
+	 * Field ACTION_FOREGROUND. (value is ""caao.com.service.caao_service"")
+	 */
+	static final String ACTION_FOREGROUND = "caao.com.service.caao_service";
+	/**
+	 * the application tag for recognizing the app in the log
+	 * 
+	 * @see android.util.Log
+	 * */
+	public static final String TAG = "caao_app";
 }
