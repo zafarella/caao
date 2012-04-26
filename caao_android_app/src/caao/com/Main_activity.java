@@ -20,6 +20,7 @@ import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -98,6 +99,7 @@ public class Main_activity extends TabActivity {
 	 * @see SharedPreferences
 	 * @see
 	 */
+	@SuppressWarnings("deprecation")
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -348,16 +350,11 @@ public class Main_activity extends TabActivity {
 	 * @see getSystemService
 	 */
 	@SuppressWarnings("unused")
-	private boolean areThePhoneOnline() {
-		ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-		// test for connection
-		if (cm.getActiveNetworkInfo() != null
-				&& cm.getActiveNetworkInfo().isAvailable()
-				&& cm.getActiveNetworkInfo().isConnected()) {
-			return true;
-		} else {
-			return false;
-		}
+	public boolean areThePhoneOnline() {
+		ConnectivityManager cm =
+		        (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+
+		    return cm.getActiveNetworkInfo().isConnectedOrConnecting();
 	}
 }
 /* Just for fun (C) Torvalds Linus */
