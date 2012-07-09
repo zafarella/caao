@@ -78,7 +78,7 @@ Powered by Zafar Khaydarov.
 	<property name="bmfa.Bundle-Vendor" value="Zafar Khaydarov" />
 
 	<!-- Import the master build file that defines everything else. -->
-	<import file="/home/z1/knopflerfish_osgi_3.2.0/ant/bundlebuild.xml" />
+	<import file="C:\knopflerfish_osgi_3.3.0\ant\bundlebuild.xml" />
 
 
 

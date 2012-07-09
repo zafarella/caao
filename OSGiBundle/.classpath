@@ -31,6 +31,6 @@
 			<attribute name="javadoc_location" value="http://ws.apache.org/xmlrpc/xmlrpc2/apidocs/"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="/home/z1/knopflerfish_osgi_3.2.0/osgi/framework.jar"/>
+	<classpathentry kind="lib" path="C:/knopflerfish_osgi_3.3.0/osgi/framework.jar"/>
 	<classpathentry kind="output" path="out"/>
 </classpath>
