@@ -6,7 +6,7 @@
  */
 package fi.uef.caao;
 
-// the following import is prom apache library.
+// the following import is from apache library.
 // please make sure in case you are recompiling the project the the correct version of
 // libraries are used.
 import java.io.IOException;
