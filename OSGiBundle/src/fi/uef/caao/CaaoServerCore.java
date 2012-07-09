@@ -89,7 +89,7 @@ public class CaaoServerCore {
 	 * @throws Exception
 	 */
 	public Vector<String> country_list() throws Exception {
-		Vector<String> return_list = new Vector<String>();
+		Vector<String> returnList = new Vector<String>();
 		System.out.println("Gonna connect to db..");
 		try {
 			conection = getMySqlConnection();
@@ -103,7 +103,7 @@ public class CaaoServerCore {
 					.executeQuery("SELECT country_title from core_countries ORDER BY country_title") != null) {
 				result_set = statement.getResultSet();
 				while (result_set.next()) {
-					return_list.add(result_set.getString("country_title"));
+					returnList.add(result_set.getString("country_title"));
 					System.out.println("Got result from query -> "
 							+ result_set.getString("country_title"));
 				}
@@ -114,7 +114,7 @@ public class CaaoServerCore {
 			statement.close();
 			conection.close();
 		}
-		return return_list;
+		return returnList;
 	}
 
 	/**
@@ -129,7 +129,7 @@ public class CaaoServerCore {
 	 * @see Vector<E>
 	 */
 	public Vector<String> locationList(String pCountryName) throws Exception {
-		Vector<String> return_list = new Vector<String>();
+		Vector<String> returnList = new Vector<String>();
 		System.out.println("Executing method -> locationList(" + pCountryName
 				+ ")");
 		System.out.println("Gonna connect to db..");
@@ -147,7 +147,7 @@ public class CaaoServerCore {
 			if (null != prepared_statement.executeQuery()) {
 				result_set = statement.getResultSet();
 				while (result_set.next()) {
-					return_list.add(result_set.getString("location_title"));
+					returnList.add(result_set.getString("location_title"));
 					System.out.println("Got result from query -> "
 							+ result_set.getString("location_title"));
 				}
@@ -158,7 +158,7 @@ public class CaaoServerCore {
 			statement.close();
 			conection.close();
 		}
-		return return_list;
+		return returnList;
 	}
 
 	// ---------------------------------------------------------------------------------------

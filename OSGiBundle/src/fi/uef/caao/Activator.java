@@ -131,8 +131,8 @@ public class Activator implements BundleActivator {
 		// for debug purpose, listing the methods that server could handle.
 		// Could be commented out.
 		try {
-			int methods_count = phm.getListMethods().length;
-			for (int i = 0; i < methods_count; i++) {
+			int methodsCount = phm.getListMethods().length;
+			for (int i = 0; i < methodsCount; i++) {
 				log(phm.getListMethods()[i]);
 			}
 		} catch (XmlRpcException e) {
