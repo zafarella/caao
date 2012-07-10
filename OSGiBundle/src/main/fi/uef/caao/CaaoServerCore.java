@@ -47,7 +47,7 @@ public class CaaoServerCore {
 	/**
 	 * The class name of the driver. Depends on the driver class implementation.
 	 */
-	private static final String mysqlDriverName = "com.mysql.jdbc.Driver";
+	private static final String mySQLDriverName = "com.mysql.jdbc.Driver";
 	/**
 	 * Database user name.
 	 */
@@ -76,7 +76,7 @@ public class CaaoServerCore {
 	 */
 	protected static ResultSet resultSet = null;
 
-	private Log log;
+	private static Log log;
 
 	public CaaoServerCore() {
 		log = LogFactory.getLog(this.getClass());
@@ -133,11 +133,10 @@ public class CaaoServerCore {
 	 * @param pCountryName
 	 *            the name of the country which for the locations is necessary
 	 *            String
-	 * 
-	 * 
-	 * 
-	 * @return Vector<String> The list of location * @throws Exception The
-	 *         exception could be SQL exception or some another * @see Vector<E>
+	 * @return Vector<String> The list of location
+	 * @throws Exception
+	 *             The exception could be SQL exception or some another
+	 * @see Vector<E>
 	 */
 	public List<String> locationList(String pCountryName) throws Exception {
 		List<String> returnList = new Vector<String>();
@@ -176,9 +175,8 @@ public class CaaoServerCore {
 	 * @param pUserName
 	 *            String the user name (email in database) - the unique user
 	 *            identifier.
-	 * 
-	 * 
-	 * @return Vector<String> * @throws SQLException
+	 * @return Vector<String>
+	 * @throws SQLException
 	 */
 	public List<String> eventList(String pUserName) throws SQLException {
 		List<String> returnList = new Vector<String>();
@@ -218,8 +216,8 @@ public class CaaoServerCore {
 	 *            The user name for which the procedure returns the list of
 	 *            plants.
 	 * 
-	 * 
-	 * @return Vector<String> The list of plants * @throws SQLException
+	 * @return Vector<String> The list of plants
+	 * @throws SQLException
 	 */
 	public List<String> plantList(String pUserName) throws SQLException {
 		List<String> returnList = new Vector<String>();
@@ -256,9 +254,8 @@ public class CaaoServerCore {
 	 * class name of the driver. Method uses the jdbc wrapper for connecting to
 	 * the database.
 	 * 
-	 * 
-	 * 
-	 * @return Connection * @throws Exception
+	 * @return Connection
+	 * @throws Exception
 	 */
 	@SuppressWarnings("unused")
 	private static Connection getHSQLConnection() throws Exception {
@@ -271,12 +268,11 @@ public class CaaoServerCore {
 	/**
 	 * Returns mySQL connection.
 	 * 
-	 * 
-	 * 
-	 * @return Connection * @throws Exception
+	 * @return Connection
+	 * @throws Exception
 	 */
 	public static Connection getMySqlConnection() throws Exception {
-		Class.forName(mysqlDriverName); // mysql driver
+		Class.forName(mySQLDriverName); // mysql driver
 		Connection conn = DriverManager.getConnection(getMySQLUrl()
 				+ getDatabaseName(), getUserName(), getPass());
 		System.out.println("mySQL driver Loaded successfully.");
@@ -287,23 +283,23 @@ public class CaaoServerCore {
 	 * Returns the connection to the Oracle database. Please edit the driver and
 	 * the database connection URL for specific version of the driver.
 	 * 
-	 * 
-	 * 
-	 * @return Connection * @throws Exception
+	 * @return Connection
+	 * @throws Exception
 	 */
-	public static Connection getOracleConnection() throws Exception {
+	public static Connection getOracleConnection() {
 		final String driver = "oracle.jdbc.driver.OracleDriver";
 		String url = "jdbc:oracle:thin:@cs.joensuu.fi:1521:"
 				+ getDatabaseName();
-		Class.forName(driver); // load Oracle driver
-		Connection conn = DriverManager.getConnection(url, getUserName(),
-				getPass());
-		System.out.println("Oracle driver Loaded successfully.");
-		return conn;
+		Connection con = null;
+		try {
+			Class.forName(driver);
+			con = DriverManager.getConnection(url, getUserName(), getPass());
+		} catch (Exception e) {
+			log.error(e.getMessage());
+		}
+		return con;
 	}
-
 	// ----------------------------------------------------------------------------------------------------
-
 	// --------------- the getter and setters of the rest class members
 	/**
 	 * @param userName
