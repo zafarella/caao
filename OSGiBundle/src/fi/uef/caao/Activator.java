@@ -36,11 +36,13 @@ import org.apache.commons.logging.LogFactory;
 /**
  * The bundle that implements necessary services for registering and
  * unregistering in the framework. On details of the implementation please get
- * familiar with the OSGi specification R4. TODO: more accurate logging and
- * TODO: integration. usage of another more powerful web server TODO:
- * utilization of version mechanism of OSGi TODO: update location of the bundle
- * TODO: database connectivity check after starting the bundle TODO: Service
- * registration in the OSGi environment
+ * familiar with the OSGi specification R4. 
+ * TODO: more accurate logging and
+ * TODO: integration. usage of another more powerful web server 
+ * TODO: utilization of version mechanism of OSGi 
+ * TODO: update location of the bundle
+ * TODO: database connectivity check after starting the bundle 
+ * TODO: Service registration in the OSGi environment
  * 
  * @author zafar.khaydarov
  * @version $Revision: 1.13 $
@@ -77,9 +79,6 @@ public class Activator implements BundleActivator {
 	 * 
 	 * @param context
 	 *            BundleContext
-	 * 
-	 * 
-	 * 
 	 *           
 	 * @throws BundleException
 	 * @see org.osgi.framework.BundleActivator#start(BundleContext)

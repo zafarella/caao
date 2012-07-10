@@ -292,9 +292,7 @@ public class CaaoServerCore {
 	/**
 	 * Returns the connection to the Oracle database. Please edit the driver and
 	 * the database connection URL for specific version of the driver.
-	 * 
-	
-	
+	 *
 	 * @return Connection * @throws Exception */
 	public static Connection getOracleConnection() {
 		final String driver = "oracle.jdbc.driver.OracleDriver";
@@ -323,7 +321,6 @@ public class CaaoServerCore {
 
 	/**
 	 * 
-	
 	 * @return the user_name */
 	private static String getUserName() {
 		return userName;

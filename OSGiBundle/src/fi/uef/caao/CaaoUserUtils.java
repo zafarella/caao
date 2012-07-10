@@ -44,12 +44,10 @@ public class CaaoUserUtils {
 	/**
 	 * Returns short capabilities of the server side
 	 * 
-	 * 
 	 * @return String
 	 */
 	public String getServerInfo() {
-		// TODO: the
-		return "";
+		return "1.0";
 	}
 
 	public String toString() {
