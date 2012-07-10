@@ -28,7 +28,7 @@ Bundle-Vendor: Zafar Khaydarov
 Bundle-ContactAddress: zkhayda@cs.joensuu.fi
 Bundle-Version: 1.1.1
 Bundle-ManifestVersion: 2
-Bundle-Activator: main.fi.uef.caao.Activator
+Bundle-Activator: fi.uef.caao.Activator
 Bundle-Description: [Context aware organizer] The service implements X
  ML-RPC service for the android application and connectivity with the 
  mysql database

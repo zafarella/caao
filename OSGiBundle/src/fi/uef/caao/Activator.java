@@ -4,7 +4,7 @@
  * Container for the server side of caao. Activates bundle in OSGi environment
  * and unregisters it when the bundle is stopped.
  */
-package main.fi.uef.caao;
+package fi.uef.caao;
 
 // the following import is from apache library.
 // please make sure in case you are recompiling the project the the correct version of
@@ -66,6 +66,9 @@ public class Activator implements BundleActivator {
 	 * @see PropertyHandlerMapping
 	 */
 	private PropertyHandlerMapping phm;
+	/**
+	 * Field log.
+	 */
 	public Log log;
 
 	/**
@@ -77,8 +80,9 @@ public class Activator implements BundleActivator {
 	 * 
 	 * 
 	 * 
-	 *            * @throws BundleException * @see
-	 *            org.osgi.framework.BundleActivator
+	 *           
+	 * @throws BundleException
+	 * @see org.osgi.framework.BundleActivator#start(BundleContext)
 	 */
 	public void start(BundleContext context) throws BundleException {
 
@@ -88,7 +92,7 @@ public class Activator implements BundleActivator {
 		final int port = 6392; // the port number on which the server will
 		// listen for connection
 
-		this.webServer = new WebServer(port); // the instance of the embedded
+		webServer = new WebServer(port); // the instance of the embedded
 		// web
 		// server from the apache
 		// xml-rpc library.
@@ -97,23 +101,23 @@ public class Activator implements BundleActivator {
 		 * xml-rpc server which will be binded to web server the handlers class
 		 * for the xml-rpc service
 		 */
-		this.xmlRpcServer = this.webServer.getXmlRpcServer();
-		this.phm = new PropertyHandlerMapping();
+		xmlRpcServer = webServer.getXmlRpcServer();
+		phm = new PropertyHandlerMapping();
 		// adding the handlers to the xml-rpc service. The class is used from
 		// the same package.
 		// pKey parameter also could be specified by
 		// your_packages.class_name.class.getName()
 		try {
-			this.phm.addHandler("CaaoServerCore", CaaoServerCore.class);
+			phm.addHandler("CaaoServerCore", CaaoServerCore.class);
 			// this.phm.addHandler("CaaoUserUtils", CaaoUserUtils.class);
 		} catch (XmlRpcException e) {
 			// in case we couldn't register the service
 			log.error(e.getMessage());
 		}
 		// assigning the handler(s)
-		this.xmlRpcServer.setHandlerMapping(this.phm);
+		xmlRpcServer.setHandlerMapping(phm);
 		// creating the configuration for the server
-		final XmlRpcServerConfigImpl serverConfig = (XmlRpcServerConfigImpl) this.xmlRpcServer
+		final XmlRpcServerConfigImpl serverConfig = (XmlRpcServerConfigImpl) xmlRpcServer
 				.getConfig();
 		// enabling the Apache extensions of the server
 		serverConfig.setEnabledForExtensions(true);
@@ -127,7 +131,7 @@ public class Activator implements BundleActivator {
 		log.info("Starting server at port " + port);
 		// starting the web server
 		try {
-			this.webServer.start();
+			webServer.start();
 		} catch (IOException e) {
 			log.error(e.getMessage());
 		}
@@ -137,9 +141,9 @@ public class Activator implements BundleActivator {
 		// for debug purpose, listing the methods that server could handle.
 		// Could be commented out.
 		try {
-			int methodsCount = this.phm.getListMethods().length;
+			int methodsCount = phm.getListMethods().length;
 			for (int i = 0; i < methodsCount; i++) {
-				log.info(this.phm.getListMethods()[i]);
+				log.info(phm.getListMethods()[i]);
 			}
 		} catch (XmlRpcException e) {
 			log.error(e.getMessage());
@@ -157,18 +161,16 @@ public class Activator implements BundleActivator {
 	 * 
 	 * @param context
 	 *            BundleContext
-	 * 
-	 * @throws Exception
-	 * @see org.osgi.framework.BundleActivator#stop(BundleContext)
-	 */
-	public void stop(BundleContext context) throws Exception {
+	 * @throws Exception 
+	 * @see org.osgi.framework.BundleActivator#stop(BundleContext) */
+	public void stop(BundleContext context) {
 
 		// helping garbage collector to free the resources
 		log.info("stopping the server");
-		if (null != this.webServer) {
-			this.webServer.shutdown();
+		if (null != webServer) {
+			webServer.shutdown();
 		}
-		this.webServer = null;
+		webServer = null;
 		log.info("Server stopped");
 		// xmlRpcServer = null;
 		// phm = null;
