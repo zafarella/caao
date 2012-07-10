@@ -34,7 +34,7 @@ public class CaaoServerCore {
 	 * Connection string URL. For more details please look at JDBC URL
 	 * specification. (http://www.connectionstrings.com)
 	 */
-	private static String mySQL_url = "jdbc:mysql://localhost/";
+	private static String mySQLUrl = "jdbc:mysql://localhost/";
 	/**
 	 * The database (schema) name in database catalog.
 	 */
@@ -42,11 +42,11 @@ public class CaaoServerCore {
 	/**
 	 * The class name of the driver. Depends on the driver class implementation.
 	 */
-	private static final String mySQL_driver_name = "com.mysql.jdbc.Driver";
+	private static final String mySQLDriverName = "com.mysql.jdbc.Driver";
 	/**
 	 * Database user name.
 	 */
-	private static String user_name = "root";
+	private static String userName = "root";
 	/**
 	 * Password of the db user
 	 */
@@ -58,7 +58,7 @@ public class CaaoServerCore {
 	/**
 	 * Field for the parameterized queries.
 	 */
-	private static java.sql.PreparedStatement prepared_statement;
+	private static java.sql.PreparedStatement preparedStatement;
 	/**
 	 * The result set returned by queries
 	 * 
@@ -96,7 +96,7 @@ public class CaaoServerCore {
 			statement = conection.createStatement();
 			System.out
 					.println("----------------------------------------------------------");
-			System.out.println(prepared_statement.toString());
+			System.out.println(preparedStatement.toString());
 			System.out
 					.println("----------------------------------------------------------");
 			if (statement
@@ -135,16 +135,16 @@ public class CaaoServerCore {
 		System.out.println("Gonna connect to db..");
 		try {
 			conection = getMySqlConnection();
-			prepared_statement = conection
+			preparedStatement = conection
 					.prepareStatement("SELECT location_title from core_locations_list where fk_country_id ="
 							+ " (SELECT country_id from core_countries where country_title = ?)");
-			prepared_statement.setString(1, pCountryName);
+			preparedStatement.setString(1, pCountryName);
 			System.out
 					.println("----------------------------------------------------------");
-			System.out.println(prepared_statement.toString());
+			System.out.println(preparedStatement.toString());
 			System.out
 					.println("----------------------------------------------------------");
-			if (null != prepared_statement.executeQuery()) {
+			if (null != preparedStatement.executeQuery()) {
 				result_set = statement.getResultSet();
 				while (result_set.next()) {
 					returnList.add(result_set.getString("location_title"));
@@ -177,18 +177,18 @@ public class CaaoServerCore {
 		System.out.println("Gonna connect to db..");
 		try {
 			conection = getMySqlConnection();
-			prepared_statement = conection
+			preparedStatement = conection
 					.prepareStatement("SELECT event_text from pg_events_list  where fk_user_id ="
 							+ "(select user_id from core_users where e_mail = ?) order by 1 desc");
-			prepared_statement.setString(1, pUserName);
+			preparedStatement.setString(1, pUserName);
 			System.out
 					.println("----------------------------------------------------------");
-			System.out.println(prepared_statement.toString());
+			System.out.println(preparedStatement.toString());
 			System.out
 					.println("----------------------------------------------------------");
 
-			if (null != prepared_statement.executeQuery()) {
-				result_set = prepared_statement.getResultSet();
+			if (null != preparedStatement.executeQuery()) {
+				result_set = preparedStatement.getResultSet();
 				while (result_set.next()) {
 					return_list.add(result_set.getString("event_text"));
 					System.out.println("Got result from query -> "
@@ -198,7 +198,7 @@ public class CaaoServerCore {
 		} catch (Exception s) {
 			s.printStackTrace();
 		} finally {
-			prepared_statement.close();
+			preparedStatement.close();
 		}
 		return return_list;
 	}
@@ -213,24 +213,24 @@ public class CaaoServerCore {
 	 * @throws SQLException
 	 */
 	public Vector<String> plantList(String pUserName) throws SQLException {
-		Vector<String> return_list = new Vector<String>();
+		Vector<String> returnList = new Vector<String>();
 		System.out.println("Executing method -> plantList(" + pUserName + ")");
 		System.out.println("Gonna connect to db..");
 		try {
 			conection = getMySqlConnection();
-			prepared_statement = conection
+			preparedStatement = conection
 					.prepareStatement("SELECT pgp_title from pg_plant_growing_plan WHERE user_id = "
 							+ "(SELECT user_id from core_users where e_mail = ?)");
-			prepared_statement.setString(1, pUserName);
+			preparedStatement.setString(1, pUserName);
 			System.out
 					.println("-----------------------------------------------------");
-			System.out.println(prepared_statement.toString());
+			System.out.println(preparedStatement.toString());
 			System.out
 					.println("-----------------------------------------------------");
-			if (null != prepared_statement.executeQuery()) {
-				result_set = prepared_statement.getResultSet();
+			if (null != preparedStatement.executeQuery()) {
+				result_set = preparedStatement.getResultSet();
 				while (result_set.next()) {
-					return_list.add(result_set.getString("pgp_title"));
+					returnList.add(result_set.getString("pgp_title"));
 					System.out.println("Got result from query -> "
 							+ result_set.getString("pgp_title"));
 				}
@@ -238,9 +238,9 @@ public class CaaoServerCore {
 		} catch (Exception s) {
 			s.printStackTrace();
 		} finally {
-			prepared_statement.close();
+			preparedStatement.close();
 		}
-		return return_list;
+		return returnList;
 	}
 
 	// ----------------------------------------------------------------------------------------------------
@@ -257,7 +257,7 @@ public class CaaoServerCore {
 		Class.forName("org.hsqldb.jdbcDriver");
 		System.out.println("ProgreSQL driver Loaded successfully.");
 		final String url = "jdbc:hsqldb:data/" + getDatabaseName();
-		return DriverManager.getConnection(url, getUser_name(), getPass());
+		return DriverManager.getConnection(url, getUserName(), getPass());
 	}
 
 	/**
@@ -267,9 +267,9 @@ public class CaaoServerCore {
 	 * @throws Exception
 	 */
 	public static Connection getMySqlConnection() throws Exception {
-		Class.forName(mySQL_driver_name); // mysql driver
-		Connection conn = DriverManager.getConnection(getMySQL_url()
-				+ getDatabaseName(), getUser_name(), getPass());
+		Class.forName(mySQLDriverName); // mysql driver
+		Connection conn = DriverManager.getConnection(getMySQLUrl()
+				+ getDatabaseName(), getUserName(), getPass());
 		System.out.println("mySQL driver Loaded successfully.");
 		return conn;
 	}
@@ -286,7 +286,7 @@ public class CaaoServerCore {
 		String url = "jdbc:oracle:thin:@cs.joensuu.fi:1521:"
 				+ getDatabaseName();
 		Class.forName(driver); // load Oracle driver
-		Connection conn = DriverManager.getConnection(url, getUser_name(),
+		Connection conn = DriverManager.getConnection(url, getUserName(),
 				getPass());
 		System.out.println("Oracle driver Loaded successfully.");
 		return conn;
@@ -296,19 +296,19 @@ public class CaaoServerCore {
 
 	// --------------- the getter and setters of the rest class members
 	/**
-	 * @param user_name
+	 * @param userName
 	 *            the user_name to set
 	 */
 	@SuppressWarnings("unused")
-	private static void setUser_name(String user_name) {
-		CaaoServerCore.user_name = user_name;
+	private static void setUserName(String userName) {
+		CaaoServerCore.userName = userName;
 	}
 
 	/**
 	 * @return the user_name
 	 */
-	private static String getUser_name() {
-		return user_name;
+	private static String getUserName() {
+		return userName;
 	}
 
 	/**
@@ -328,19 +328,19 @@ public class CaaoServerCore {
 	}
 
 	/**
-	 * @param mySQL_url
+	 * @param mySQLUrl
 	 *            the mySQL_url to set
 	 */
 	@SuppressWarnings("unused")
-	private static void setMySQL_url(String mySQL_url) {
-		CaaoServerCore.mySQL_url = mySQL_url;
+	private static void setMySQLUrl(String mySQLUrl) {
+		CaaoServerCore.mySQLUrl = mySQLUrl;
 	}
 
 	/**
 	 * @return the mySQL_url
 	 */
-	private static String getMySQL_url() {
-		return mySQL_url;
+	private static String getMySQLUrl() {
+		return mySQLUrl;
 	}
 
 	/**

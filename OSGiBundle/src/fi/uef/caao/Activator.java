@@ -33,13 +33,11 @@ import org.osgi.framework.BundleException;
 /**
  * The bundle that implements necessary services for registering and
  * unregistering in the framework. On details of the implementation please get
- * familiar with the OSGi specification R4. 
- * TODO: more accurate logging and
- * TODO: integration. usage of another more powerful web server 
- * TODO: utilization of version mechanism of OSGi 
- * TODO: update location of the bundle
- * TODO: database connectivity check after starting the bundle 
- * TODO: Service registration in the OSGi environment
+ * familiar with the OSGi specification R4. TODO: more accurate logging and
+ * TODO: integration. usage of another more powerful web server TODO:
+ * utilization of version mechanism of OSGi TODO: update location of the bundle
+ * TODO: database connectivity check after starting the bundle TODO: Service
+ * registration in the OSGi environment
  * 
  * @author zafar.khaydarov
  * @version $Revision: 1.13 $
@@ -65,8 +63,6 @@ public class Activator implements BundleActivator {
 	 * @see PropertyHandlerMapping
 	 */
 	private PropertyHandlerMapping phm;
-
-	// Log log;
 
 	/**
 	 * The entry point of the bundle. For more details please refer to OSGi
@@ -101,7 +97,6 @@ public class Activator implements BundleActivator {
 		} catch (XmlRpcException e) {
 			// in case we couldn't register the service
 			log(e.getMessage());
-			e.printStackTrace();
 		}
 		// assigning the handler(s)
 		xmlRpcServer.setHandlerMapping(phm);
@@ -123,7 +118,6 @@ public class Activator implements BundleActivator {
 			webServer.start();
 		} catch (IOException e) {
 			log(e.getMessage());
-			e.printStackTrace();
 		}
 		log("Server started. The supported methods are:");
 		log("---------------------------------------");
@@ -137,7 +131,6 @@ public class Activator implements BundleActivator {
 			}
 		} catch (XmlRpcException e) {
 			log(e.getMessage());
-			e.printStackTrace();
 		}
 		log("--------------------------------------");
 		log("Make sure the database is up and running!");
@@ -157,23 +150,19 @@ public class Activator implements BundleActivator {
 	 * @see org.osgi.framework.BundleActivator#stop(BundleContext)
 	 */
 	public void stop(BundleContext context) throws Exception {
-		try {
-			// helping garbage collector to free the resources
-			System.out.println("stopping the server");
-			if (null != this.webServer)
-				webServer.shutdown();
-			webServer = null;
-			System.out.println("Server stopped");
-			// xmlRpcServer = null;
-			// phm = null;
-		} catch (Exception e) {
-			;
-		}
+
+		// helping garbage collector to free the resources
+		System.out.println("stopping the server");
+		if (null != this.webServer)
+			webServer.shutdown();
+		webServer = null;
+		System.out.println("Server stopped");
+		// xmlRpcServer = null;
+		// phm = null;
 	}
 
 	/**
-	 * Method log. 
-	 * TODO: in the future the framework logging should be used.
+	 * Method log. TODO: in the future the framework logging should be used.
 	 * Right now it logs directly to stdout
 	 * 
 	 * @param what
