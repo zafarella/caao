@@ -36,13 +36,11 @@ import org.apache.commons.logging.LogFactory;
 /**
  * The bundle that implements necessary services for registering and
  * unregistering in the framework. On details of the implementation please get
- * familiar with the OSGi specification R4. 
- * TODO: more accurate logging and
- * TODO: integration. usage of another more powerful web server 
- * TODO: utilization of version mechanism of OSGi 
- * TODO: update location of the bundle
- * TODO: database connectivity check after starting the bundle 
- * TODO: Service registration in the OSGi environment
+ * familiar with the OSGi specification R4. TODO: more accurate logging and
+ * TODO: integration. usage of another more powerful web server TODO:
+ * utilization of version mechanism of OSGi TODO: update location of the bundle
+ * TODO: database connectivity check after starting the bundle TODO: Service
+ * registration in the OSGi environment
  * 
  * @author zafar.khaydarov
  * @version $Revision: 1.13 $
@@ -71,7 +69,7 @@ public class Activator implements BundleActivator {
 	/**
 	 * Field log.
 	 */
-	public Log log;
+	private Log log;
 
 	/**
 	 * The entry point of the bundle. For more details please refer to OSGi
@@ -79,7 +77,7 @@ public class Activator implements BundleActivator {
 	 * 
 	 * @param context
 	 *            BundleContext
-	 *           
+	 * 
 	 * @throws BundleException
 	 * @see org.osgi.framework.BundleActivator#start(BundleContext)
 	 */
@@ -108,7 +106,7 @@ public class Activator implements BundleActivator {
 		// your_packages.class_name.class.getName()
 		try {
 			phm.addHandler("CaaoServerCore", CaaoServerCore.class);
-			// this.phm.addHandler("CaaoUserUtils", CaaoUserUtils.class);
+			phm.addHandler("CaaoUserUtils", CaaoUserUtils.class);
 		} catch (XmlRpcException e) {
 			// in case we couldn't register the service
 			log.error(e.getMessage());
@@ -131,6 +129,9 @@ public class Activator implements BundleActivator {
 		// starting the web server
 		try {
 			webServer.start();
+			if (CaaoServerCore.canUseDB()) {
+				log.info("Great, the db is available");
+			}
 		} catch (IOException e) {
 			log.error(e.getMessage());
 		}
@@ -160,8 +161,9 @@ public class Activator implements BundleActivator {
 	 * 
 	 * @param context
 	 *            BundleContext
-	 * @throws Exception 
-	 * @see org.osgi.framework.BundleActivator#stop(BundleContext) */
+	 * @throws Exception
+	 * @see org.osgi.framework.BundleActivator#stop(BundleContext)
+	 */
 	public void stop(BundleContext context) {
 
 		// helping garbage collector to free the resources

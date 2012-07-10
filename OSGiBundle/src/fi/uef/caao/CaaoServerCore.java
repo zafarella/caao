@@ -95,17 +95,12 @@ public class CaaoServerCore {
 	 * is executed by the client (in this implementation Android application).
 	 * 
 	 * 
+	 * @return Vector<String> * @throws Exception * @throws Exception * @see
+	 *         <a>DbConnector<a>
 	 * 
-	
-	
-	
-	 * 
-	
-	
-	 * @return Vector<String> * @throws Exception * @throws Exception * @see <a>DbConnector<a>
-	 * 
-	 *      Returns the list of countries from database. Returns Vector as it's
-	 *      thread safe. */
+	 *         Returns the list of countries from database. Returns Vector as
+	 *         it's thread safe.
+	 */
 	public List<String> countryList() throws Exception {
 		List<String> returnList = new Vector<String>();
 		log.debug("Gonna connect to db..");
@@ -139,12 +134,14 @@ public class CaaoServerCore {
 	 * @param pCountryName
 	 *            the name of the country which for the locations is necessary
 	 *            String
-	
-	
-	
-	 * @return Vector<String> The list of location * @throws Exception
-	 *             The exception could be SQL exception or some another * @see Vector<E> */
-	public List<String> locationList(String pCountryName) throws Exception {
+	 * 
+	 * @return Vector<String> The list of location
+	 * @throws Exception
+	 *             The exception could be SQL exception or some another
+	 * @see Vector<E>
+	 * @throws SQLException
+	 */
+	public List<String> locationList(String pCountryName) throws SQLException {
 		List<String> returnList = new Vector<String>();
 		log.info("Executing method -> locationList(" + pCountryName + ")");
 		log.info("Gonna connect to db..");
@@ -161,7 +158,7 @@ public class CaaoServerCore {
 				resultSet = statement.getResultSet();
 				while (resultSet.next()) {
 					returnList.add(resultSet.getString("location_title"));
-					log.info("Got result from query -> "
+					log.debug("Got result from query -> "
 							+ resultSet.getString("location_title"));
 				}
 			}
@@ -181,9 +178,10 @@ public class CaaoServerCore {
 	 * @param pUserName
 	 *            String the user name (email in database) - the unique user
 	 *            identifier.
-	
-	
-	 * @return Vector<String> * @throws SQLException */
+	 * 
+	 * 
+	 * @return Vector<String> * @throws SQLException
+	 */
 	public List<String> eventList(String pUserName) throws SQLException {
 		List<String> returnList = new Vector<String>();
 		log.debug("Executing method -> eventList(" + pUserName + ")");
@@ -222,9 +220,10 @@ public class CaaoServerCore {
 	 *            The user name for which the procedure returns the list of
 	 *            plants.
 	 * 
-	
-	
-	 * @return Vector<String> The list of plants * @throws SQLException */
+	 * 
+	 * 
+	 * @return Vector<String> The list of plants * @throws SQLException
+	 */
 	public List<String> plantList(String pUserName) throws SQLException {
 		List<String> returnList = new Vector<String>();
 		log.info("Executing method -> plantList(" + pUserName + ")");
@@ -260,9 +259,10 @@ public class CaaoServerCore {
 	 * class name of the driver. Method uses the jdbc wrapper for connecting to
 	 * the database.
 	 * 
-	
-	
-	 * @return Connection * @throws Exception */
+	 * 
+	 * 
+	 * @return Connection * @throws Exception
+	 */
 	@SuppressWarnings("unused")
 	private static Connection getHSQLConnection() throws Exception {
 		Class.forName("org.hsqldb.jdbcDriver");
@@ -274,9 +274,8 @@ public class CaaoServerCore {
 	/**
 	 * Returns mySQL connection.
 	 * 
-	
-	
-	 * @return Connection * @throws Exception */
+	 * @return Connection
+	 */
 	public static Connection getMySqlConnection() {
 		Connection conn = null;
 		try {
@@ -292,8 +291,9 @@ public class CaaoServerCore {
 	/**
 	 * Returns the connection to the Oracle database. Please edit the driver and
 	 * the database connection URL for specific version of the driver.
-	 *
-	 * @return Connection * @throws Exception */
+	 * 
+	 * @return Connection * @throws Exception
+	 */
 	public static Connection getOracleConnection() {
 		final String driver = "oracle.jdbc.driver.OracleDriver";
 		String url = "jdbc:oracle:thin:@cs.joensuu.fi:1521:"
@@ -306,6 +306,26 @@ public class CaaoServerCore {
 			log.error(e.getMessage());
 		}
 		return con;
+	}
+
+	/**
+	 * Checks does the DB is accessible or not
+	 * 
+	 * @return
+	 */
+	public static boolean canUseDB() {
+		try {
+			conection = getMySqlConnection();
+			preparedStatement = conection
+					.prepareStatement("SELECT 1 + 1 FROM DUAL");
+			if (null != preparedStatement.executeQuery()) {
+				resultSet = preparedStatement.getResultSet();
+			}
+			preparedStatement.close();
+		} catch (Exception e) {
+			return false;
+		}
+		return true;
 	}
 
 	// ----------------------------------------------------------------------------------------------------
@@ -321,7 +341,8 @@ public class CaaoServerCore {
 
 	/**
 	 * 
-	 * @return the user_name */
+	 * @return the user_name
+	 */
 	private static String getUserName() {
 		return userName;
 	}
@@ -337,8 +358,9 @@ public class CaaoServerCore {
 
 	/**
 	 * 
-	
-	 * @return the pass */
+	 * 
+	 * @return the pass
+	 */
 	private static String getPass() {
 		return pass;
 	}
@@ -354,8 +376,9 @@ public class CaaoServerCore {
 
 	/**
 	 * 
-	
-	 * @return the mySQL_url */
+	 * 
+	 * @return the mySQL_url
+	 */
 	private static String getMySQLUrl() {
 		return mySQLUrl;
 	}
@@ -371,15 +394,17 @@ public class CaaoServerCore {
 
 	/**
 	 * 
-	
-	 * @return the database */
+	 * 
+	 * @return the database
+	 */
 	private static String getDatabaseName() {
 		return getDatabase();
 	}
 
 	/**
-	
-	 * @return the database */
+	 * 
+	 * @return the database
+	 */
 	protected static String getDatabase() {
 		return database;
 	}
@@ -391,8 +416,10 @@ public class CaaoServerCore {
 	protected static void setDatabase(String database) {
 		CaaoServerCore.database = database;
 	}
+
 	/**
 	 * Method toString.
+	 * 
 	 * @return String
 	 */
 	public String toString() {
