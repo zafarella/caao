@@ -71,37 +71,41 @@ public class Activator implements BundleActivator {
 	 * @param context
 	 *            BundleContext
 	 * 
-	 * @throws BundleException
-	 * @see org.osgi.framework.BundleActivator
-	 * */
+	 * 
+	 * 
+	 *            * @throws BundleException * @see
+	 *            org.osgi.framework.BundleActivator
+	 */
 	public void start(BundleContext context) throws BundleException {
 		// log = LogFactory.getLog("caao bundle service");
 		final int port = 6392; // the port number on which the server will
 		// listen for connection
 
-		webServer = new WebServer(port); // the instance of the embedded web
+		this.webServer = new WebServer(port); // the instance of the embedded
+												// web
 		// server from the apache
 		// xml-rpc library.
 
-		xmlRpcServer = webServer.getXmlRpcServer(); // xml-rpc server wich will
+		this.xmlRpcServer = this.webServer.getXmlRpcServer(); // xml-rpc server
+																// wich will
 		// be binded to web server
 		// the handlers class for the xml-rpc service
-		phm = new PropertyHandlerMapping();
+		this.phm = new PropertyHandlerMapping();
 		// adding the handlers to the xml-rpc service. The class is used from
 		// the same package.
 		// pKey parameter also could be specified by
 		// your_packages.class_name.class.getName()
 		try {
-			phm.addHandler("CaaoServerCore", CaaoServerCore.class);
+			this.phm.addHandler("CaaoServerCore", CaaoServerCore.class);
 			// this.phm.addHandler("CaaoUserUtils", CaaoUserUtils.class);
 		} catch (XmlRpcException e) {
 			// in case we couldn't register the service
 			log(e.getMessage());
 		}
 		// assigning the handler(s)
-		xmlRpcServer.setHandlerMapping(phm);
+		this.xmlRpcServer.setHandlerMapping(this.phm);
 		// creating the configuration for the server
-		final XmlRpcServerConfigImpl serverConfig = (XmlRpcServerConfigImpl) xmlRpcServer
+		final XmlRpcServerConfigImpl serverConfig = (XmlRpcServerConfigImpl) this.xmlRpcServer
 				.getConfig();
 		// enabling the Apache extensions of the server
 		serverConfig.setEnabledForExtensions(true);
@@ -115,7 +119,7 @@ public class Activator implements BundleActivator {
 		log("Starting server at port " + port);
 		// starting the web server
 		try {
-			webServer.start();
+			this.webServer.start();
 		} catch (IOException e) {
 			log(e.getMessage());
 		}
@@ -125,9 +129,9 @@ public class Activator implements BundleActivator {
 		// for debug purpose, listing the methods that server could handle.
 		// Could be commented out.
 		try {
-			int methodsCount = phm.getListMethods().length;
+			int methodsCount = this.phm.getListMethods().length;
 			for (int i = 0; i < methodsCount; i++) {
-				log(phm.getListMethods()[i]);
+				log(this.phm.getListMethods()[i]);
 			}
 		} catch (XmlRpcException e) {
 			log(e.getMessage());
@@ -153,9 +157,10 @@ public class Activator implements BundleActivator {
 
 		// helping garbage collector to free the resources
 		System.out.println("stopping the server");
-		if (null != this.webServer)
-			webServer.shutdown();
-		webServer = null;
+		if (null != this.webServer) {
+			this.webServer.shutdown();
+		}
+		this.webServer = null;
 		System.out.println("Server stopped");
 		// xmlRpcServer = null;
 		// phm = null;

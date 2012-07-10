@@ -9,6 +9,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.List;
 import java.util.Vector;
 
 /**
@@ -26,8 +27,9 @@ public class CaaoServerCore {
 	/**
 	 * The connection.
 	 * 
-	 * @see http://download.oracle.com/javase/1.4.2/docs/api/java/sql/Connection.html 
-	 * Field conection.
+	 * @see http
+	 *      ://download.oracle.com/javase/1.4.2/docs/api/java/sql/Connection.
+	 *      html Field conection.
 	 */
 	private static Connection conection = null;
 	/**
@@ -42,7 +44,7 @@ public class CaaoServerCore {
 	/**
 	 * The class name of the driver. Depends on the driver class implementation.
 	 */
-	private static final String mySQLDriverName = "com.mysql.jdbc.Driver";
+	private static final String mysqlDriverName = "com.mysql.jdbc.Driver";
 	/**
 	 * Database user name.
 	 */
@@ -54,11 +56,11 @@ public class CaaoServerCore {
 	/**
 	 * The statement for SQL queries.
 	 */
-	public static Statement statement;
+	protected static Statement statement;
 	/**
 	 * Field for the parameterized queries.
 	 */
-	private static java.sql.PreparedStatement preparedStatement;
+	protected static java.sql.PreparedStatement preparedStatement;
 	/**
 	 * The result set returned by queries
 	 * 
@@ -69,7 +71,7 @@ public class CaaoServerCore {
 	 *      http://download.oracle.com/javase/tutorial/java/javaOO/accesscontrol
 	 *      .html
 	 */
-	public static ResultSet result_set = null;
+	protected static ResultSet resultSet = null;
 
 	/**
 	 * The main intend of the class is the data exchange between client
@@ -78,6 +80,9 @@ public class CaaoServerCore {
 	 * is executed by the client (in this implementation Android application).
 	 * 
 	 * 
+	 * 
+	 * @return Vector<String>
+	 * @throws Exception
 	 * @see <a>DbConnector<a>
 	 */
 	// ---------------------------------------------------------------------------------------
@@ -88,8 +93,8 @@ public class CaaoServerCore {
 	 * @return Vector<String>
 	 * @throws Exception
 	 */
-	public Vector<String> country_list() throws Exception {
-		Vector<String> returnList = new Vector<String>();
+	public List<String> countryList() throws Exception {
+		List<String> returnList = new Vector<String>();
 		System.out.println("Gonna connect to db..");
 		try {
 			conection = getMySqlConnection();
@@ -101,11 +106,11 @@ public class CaaoServerCore {
 					.println("----------------------------------------------------------");
 			if (statement
 					.executeQuery("SELECT country_title from core_countries ORDER BY country_title") != null) {
-				result_set = statement.getResultSet();
-				while (result_set.next()) {
-					returnList.add(result_set.getString("country_title"));
+				resultSet = statement.getResultSet();
+				while (resultSet.next()) {
+					returnList.add(resultSet.getString("country_title"));
 					System.out.println("Got result from query -> "
-							+ result_set.getString("country_title"));
+							+ resultSet.getString("country_title"));
 				}
 			}
 		} catch (Exception s) {
@@ -123,13 +128,14 @@ public class CaaoServerCore {
 	 * @param pCountryName
 	 *            the name of the country which for the locations is necessary
 	 *            String
-	 * @return Vector<String> The list of location
-	 * @throws Exception
-	 *             The exception could be SQL exception or some another
-	 * @see Vector<E>
+	 * 
+	 * 
+	 * 
+	 * @return Vector<String> The list of location * @throws Exception The
+	 *         exception could be SQL exception or some another * @see Vector<E>
 	 */
-	public Vector<String> locationList(String pCountryName) throws Exception {
-		Vector<String> returnList = new Vector<String>();
+	public List<String> locationList(String pCountryName) throws Exception {
+		List<String> returnList = new Vector<String>();
 		System.out.println("Executing method -> locationList(" + pCountryName
 				+ ")");
 		System.out.println("Gonna connect to db..");
@@ -145,11 +151,11 @@ public class CaaoServerCore {
 			System.out
 					.println("----------------------------------------------------------");
 			if (null != preparedStatement.executeQuery()) {
-				result_set = statement.getResultSet();
-				while (result_set.next()) {
-					returnList.add(result_set.getString("location_title"));
+				resultSet = statement.getResultSet();
+				while (resultSet.next()) {
+					returnList.add(resultSet.getString("location_title"));
 					System.out.println("Got result from query -> "
-							+ result_set.getString("location_title"));
+							+ resultSet.getString("location_title"));
 				}
 			}
 		} catch (Exception s) {
@@ -168,11 +174,12 @@ public class CaaoServerCore {
 	 * @param pUserName
 	 *            String the user name (email in database) - the unique user
 	 *            identifier.
-	 * @return Vector<String>
-	 * @throws SQLException
+	 * 
+	 * 
+	 * @return Vector<String> * @throws SQLException
 	 */
-	public Vector<String> eventList(String pUserName) throws SQLException {
-		Vector<String> return_list = new Vector<String>();
+	public List<String> eventList(String pUserName) throws SQLException {
+		List<String> returnList = new Vector<String>();
 		System.out.println("Executing method -> eventList(" + pUserName + ")");
 		System.out.println("Gonna connect to db..");
 		try {
@@ -188,11 +195,11 @@ public class CaaoServerCore {
 					.println("----------------------------------------------------------");
 
 			if (null != preparedStatement.executeQuery()) {
-				result_set = preparedStatement.getResultSet();
-				while (result_set.next()) {
-					return_list.add(result_set.getString("event_text"));
+				resultSet = preparedStatement.getResultSet();
+				while (resultSet.next()) {
+					returnList.add(resultSet.getString("event_text"));
 					System.out.println("Got result from query -> "
-							+ result_set.getString("event_text"));
+							+ resultSet.getString("event_text"));
 				}
 			}
 		} catch (Exception s) {
@@ -200,7 +207,7 @@ public class CaaoServerCore {
 		} finally {
 			preparedStatement.close();
 		}
-		return return_list;
+		return returnList;
 	}
 
 	/**
@@ -209,11 +216,12 @@ public class CaaoServerCore {
 	 * @param pUserName
 	 *            The user name for which the procedure returns the list of
 	 *            plants.
-	 * @return Vector<String> The list of plants
-	 * @throws SQLException
+	 * 
+	 * 
+	 * @return Vector<String> The list of plants * @throws SQLException
 	 */
-	public Vector<String> plantList(String pUserName) throws SQLException {
-		Vector<String> returnList = new Vector<String>();
+	public List<String> plantList(String pUserName) throws SQLException {
+		List<String> returnList = new Vector<String>();
 		System.out.println("Executing method -> plantList(" + pUserName + ")");
 		System.out.println("Gonna connect to db..");
 		try {
@@ -228,11 +236,11 @@ public class CaaoServerCore {
 			System.out
 					.println("-----------------------------------------------------");
 			if (null != preparedStatement.executeQuery()) {
-				result_set = preparedStatement.getResultSet();
-				while (result_set.next()) {
-					returnList.add(result_set.getString("pgp_title"));
+				resultSet = preparedStatement.getResultSet();
+				while (resultSet.next()) {
+					returnList.add(resultSet.getString("pgp_title"));
 					System.out.println("Got result from query -> "
-							+ result_set.getString("pgp_title"));
+							+ resultSet.getString("pgp_title"));
 				}
 			}
 		} catch (Exception s) {
@@ -249,8 +257,9 @@ public class CaaoServerCore {
 	 * class name of the driver. Method uses the jdbc wrapper for connecting to
 	 * the database.
 	 * 
-	 * @return Connection
-	 * @throws Exception
+	 * 
+	 * 
+	 * @return Connection * @throws Exception
 	 */
 	@SuppressWarnings("unused")
 	private static Connection getHSQLConnection() throws Exception {
@@ -263,11 +272,12 @@ public class CaaoServerCore {
 	/**
 	 * Returns mySQL connection.
 	 * 
-	 * @return Connection
-	 * @throws Exception
+	 * 
+	 * 
+	 * @return Connection * @throws Exception
 	 */
 	public static Connection getMySqlConnection() throws Exception {
-		Class.forName(mySQLDriverName); // mysql driver
+		Class.forName(mysqlDriverName); // mysql driver
 		Connection conn = DriverManager.getConnection(getMySQLUrl()
 				+ getDatabaseName(), getUserName(), getPass());
 		System.out.println("mySQL driver Loaded successfully.");
@@ -278,8 +288,9 @@ public class CaaoServerCore {
 	 * Returns the connection to the Oracle database. Please edit the driver and
 	 * the database connection URL for specific version of the driver.
 	 * 
-	 * @return Connection
-	 * @throws Exception
+	 * 
+	 * 
+	 * @return Connection * @throws Exception
 	 */
 	public static Connection getOracleConnection() throws Exception {
 		final String driver = "oracle.jdbc.driver.OracleDriver";
@@ -305,6 +316,7 @@ public class CaaoServerCore {
 	}
 
 	/**
+	 * 
 	 * @return the user_name
 	 */
 	private static String getUserName() {
@@ -321,6 +333,7 @@ public class CaaoServerCore {
 	}
 
 	/**
+	 * 
 	 * @return the pass
 	 */
 	private static String getPass() {
@@ -337,6 +350,7 @@ public class CaaoServerCore {
 	}
 
 	/**
+	 * 
 	 * @return the mySQL_url
 	 */
 	private static String getMySQLUrl() {
@@ -349,14 +363,30 @@ public class CaaoServerCore {
 	 */
 	@SuppressWarnings("unused")
 	private static void setDatabaseName(String database) {
-		CaaoServerCore.database = database;
+		CaaoServerCore.setDatabase(database);
+	}
+
+	/**
+	 * 
+	 * @return the database
+	 */
+	private static String getDatabaseName() {
+		return getDatabase();
 	}
 
 	/**
 	 * @return the database
 	 */
-	private static String getDatabaseName() {
+	protected static String getDatabase() {
 		return database;
+	}
+
+	/**
+	 * @param database
+	 *            the database to set
+	 */
+	protected static void setDatabase(String database) {
+		CaaoServerCore.database = database;
 	}
 
 }
