@@ -30,6 +30,9 @@ import org.osgi.framework.BundleActivator;// the imports from osgi framework.
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.BundleException;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
 /**
  * The bundle that implements necessary services for registering and
  * unregistering in the framework. On details of the implementation please get
@@ -63,6 +66,7 @@ public class Activator implements BundleActivator {
 	 * @see PropertyHandlerMapping
 	 */
 	private PropertyHandlerMapping phm;
+	public Log log;
 
 	/**
 	 * The entry point of the bundle. For more details please refer to OSGi
@@ -77,19 +81,23 @@ public class Activator implements BundleActivator {
 	 *            org.osgi.framework.BundleActivator
 	 */
 	public void start(BundleContext context) throws BundleException {
-		// log = LogFactory.getLog("caao bundle service");
+
+		// logging
+		log = LogFactory.getLog(this.getClass());
+
 		final int port = 6392; // the port number on which the server will
 		// listen for connection
 
 		this.webServer = new WebServer(port); // the instance of the embedded
-												// web
+		// web
 		// server from the apache
 		// xml-rpc library.
 
-		this.xmlRpcServer = this.webServer.getXmlRpcServer(); // xml-rpc server
-																// wich will
-		// be binded to web server
-		// the handlers class for the xml-rpc service
+		/*
+		 * xml-rpc server which will be binded to web server the handlers class
+		 * for the xml-rpc service
+		 */
+		this.xmlRpcServer = this.webServer.getXmlRpcServer();
 		this.phm = new PropertyHandlerMapping();
 		// adding the handlers to the xml-rpc service. The class is used from
 		// the same package.
@@ -100,7 +108,7 @@ public class Activator implements BundleActivator {
 			// this.phm.addHandler("CaaoUserUtils", CaaoUserUtils.class);
 		} catch (XmlRpcException e) {
 			// in case we couldn't register the service
-			log(e.getMessage());
+			log.error(e.getMessage());
 		}
 		// assigning the handler(s)
 		this.xmlRpcServer.setHandlerMapping(this.phm);
@@ -114,31 +122,31 @@ public class Activator implements BundleActivator {
 		// restricting the content length usage. Refer to the web page of the
 		// library for more details
 		serverConfig.setContentLengthOptional(false);
-		log("Powered by z1 | Please note that behind of it is the idea, not the perfect code..yet:)");
-		log("--------------------------------------");
-		log("Starting server at port " + port);
+		log.info("Powered by z1 | Please note that behind of it is the idea, not the perfect code..yet:)");
+		log.info("--------------------------------------");
+		log.info("Starting server at port " + port);
 		// starting the web server
 		try {
 			this.webServer.start();
 		} catch (IOException e) {
-			log(e.getMessage());
+			log.error(e.getMessage());
 		}
-		log("Server started. The supported methods are:");
-		log("---------------------------------------");
+		log.info("Server started. The supported methods are:");
+		log.info("---------------------------------------");
 		// If we are here, the server successfully started.
 		// for debug purpose, listing the methods that server could handle.
 		// Could be commented out.
 		try {
 			int methodsCount = this.phm.getListMethods().length;
 			for (int i = 0; i < methodsCount; i++) {
-				log(this.phm.getListMethods()[i]);
+				log.info(this.phm.getListMethods()[i]);
 			}
 		} catch (XmlRpcException e) {
-			log(e.getMessage());
+			log.error(e.getMessage());
 		}
-		log("--------------------------------------");
-		log("Make sure the database is up and running!");
-		log("Waiting for connections..");
+		log.info("--------------------------------------");
+		log.info("Make sure the database is up and running!");
+		log.info("Waiting for connections..");
 	}
 
 	// ---------------------------------------------------------------------------------
@@ -156,24 +164,24 @@ public class Activator implements BundleActivator {
 	public void stop(BundleContext context) throws Exception {
 
 		// helping garbage collector to free the resources
-		log("stopping the server");
+		log.info("stopping the server");
 		if (null != this.webServer) {
 			this.webServer.shutdown();
 		}
 		this.webServer = null;
-		log("Server stopped");
+		log.info("Server stopped");
 		// xmlRpcServer = null;
 		// phm = null;
 	}
 
-	/**
-	 * Method log. TODO: in the future the framework logging should be used.
-	 * Right now it logs directly to stdout
-	 * 
-	 * @param what
-	 *            String
-	 */
-	private static void log(String what) {
-		System.out.println("[caao_bundle->]" + what);
-	}
+	// /**
+	// * Method log. TODO: in the future the framework logging should be used.
+	// * Right now it logs directly to stdout
+	// *
+	// * @param what
+	// * String
+	// */
+	// private static void log(String what) {
+	// System.out.println("[caao_bundle->]" + what);
+	// }
 }

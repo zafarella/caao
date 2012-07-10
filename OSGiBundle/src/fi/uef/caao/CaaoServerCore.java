@@ -12,6 +12,9 @@ import java.sql.Statement;
 import java.util.List;
 import java.util.Vector;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
 /**
  * The class implements basic methods for the client application. Used as
  * handler class for the xml-rpc service. See the comments on each method for
@@ -73,6 +76,12 @@ public class CaaoServerCore {
 	 */
 	protected static ResultSet resultSet = null;
 
+	private Log log;
+
+	public CaaoServerCore() {
+		log = LogFactory.getLog(this.getClass());
+	}
+
 	/**
 	 * The main intend of the class is the data exchange between client
 	 * application and the server. Class uses the {@link DbConnector} class to
@@ -84,37 +93,33 @@ public class CaaoServerCore {
 	 * @return Vector<String>
 	 * @throws Exception
 	 * @see <a>DbConnector<a>
-	 */
-	// ---------------------------------------------------------------------------------------
-	/**
-	 * Returns the list of countries from database. Returns Vector as it's
-	 * thread safe.
+	 * 
+	 *      Returns the list of countries from database. Returns Vector as it's
+	 *      thread safe.
 	 * 
 	 * @return Vector<String>
 	 * @throws Exception
 	 */
 	public List<String> countryList() throws Exception {
 		List<String> returnList = new Vector<String>();
-		System.out.println("Gonna connect to db..");
+		log.debug("Gonna connect to db..");
 		try {
 			conection = getMySqlConnection();
 			statement = conection.createStatement();
-			System.out
-					.println("----------------------------------------------------------");
-			System.out.println(preparedStatement.toString());
-			System.out
-					.println("----------------------------------------------------------");
+			log.debug("----------------------------------------------------------");
+			log.debug(preparedStatement.toString());
+			log.debug("----------------------------------------------------------");
 			if (statement
 					.executeQuery("SELECT country_title from core_countries ORDER BY country_title") != null) {
 				resultSet = statement.getResultSet();
 				while (resultSet.next()) {
 					returnList.add(resultSet.getString("country_title"));
-					System.out.println("Got result from query -> "
+					log.debug("Got result from query -> "
 							+ resultSet.getString("country_title"));
 				}
 			}
-		} catch (Exception s) {
-			s.printStackTrace();
+		} catch (Exception e) {
+			log.error(e.getMessage());
 		} finally {
 			statement.close();
 			conection.close();
@@ -136,30 +141,27 @@ public class CaaoServerCore {
 	 */
 	public List<String> locationList(String pCountryName) throws Exception {
 		List<String> returnList = new Vector<String>();
-		System.out.println("Executing method -> locationList(" + pCountryName
-				+ ")");
-		System.out.println("Gonna connect to db..");
+		log.info("Executing method -> locationList(" + pCountryName + ")");
+		log.info("Gonna connect to db..");
 		try {
 			conection = getMySqlConnection();
 			preparedStatement = conection
 					.prepareStatement("SELECT location_title from core_locations_list where fk_country_id ="
 							+ " (SELECT country_id from core_countries where country_title = ?)");
 			preparedStatement.setString(1, pCountryName);
-			System.out
-					.println("----------------------------------------------------------");
-			System.out.println(preparedStatement.toString());
-			System.out
-					.println("----------------------------------------------------------");
+			log.debug("----------------------------------------------------------");
+			log.debug(preparedStatement.toString());
+			log.debug("----------------------------------------------------------");
 			if (null != preparedStatement.executeQuery()) {
 				resultSet = statement.getResultSet();
 				while (resultSet.next()) {
 					returnList.add(resultSet.getString("location_title"));
-					System.out.println("Got result from query -> "
+					log.info("Got result from query -> "
 							+ resultSet.getString("location_title"));
 				}
 			}
-		} catch (Exception s) {
-			s.printStackTrace();
+		} catch (Exception e) {
+			log.error(e.getMessage());
 		} finally {
 			statement.close();
 			conection.close();
@@ -180,30 +182,29 @@ public class CaaoServerCore {
 	 */
 	public List<String> eventList(String pUserName) throws SQLException {
 		List<String> returnList = new Vector<String>();
-		System.out.println("Executing method -> eventList(" + pUserName + ")");
-		System.out.println("Gonna connect to db..");
+		log.debug("Executing method -> eventList(" + pUserName + ")");
+		log.debug("Gonna connect to db..");
 		try {
 			conection = getMySqlConnection();
 			preparedStatement = conection
 					.prepareStatement("SELECT event_text from pg_events_list  where fk_user_id ="
 							+ "(select user_id from core_users where e_mail = ?) order by 1 desc");
 			preparedStatement.setString(1, pUserName);
-			System.out
-					.println("----------------------------------------------------------");
-			System.out.println(preparedStatement.toString());
-			System.out
-					.println("----------------------------------------------------------");
-
+			if (log.isDebugEnabled()) {
+				log.debug("----------------------------------------------------------");
+				log.debug(preparedStatement.toString());
+				log.debug("----------------------------------------------------------");
+			}
 			if (null != preparedStatement.executeQuery()) {
 				resultSet = preparedStatement.getResultSet();
 				while (resultSet.next()) {
 					returnList.add(resultSet.getString("event_text"));
-					System.out.println("Got result from query -> "
+					log.debug("Got result from query -> "
 							+ resultSet.getString("event_text"));
 				}
 			}
-		} catch (Exception s) {
-			s.printStackTrace();
+		} catch (Exception e) {
+			log.error(e.getMessage());
 		} finally {
 			preparedStatement.close();
 		}
@@ -222,29 +223,27 @@ public class CaaoServerCore {
 	 */
 	public List<String> plantList(String pUserName) throws SQLException {
 		List<String> returnList = new Vector<String>();
-		System.out.println("Executing method -> plantList(" + pUserName + ")");
-		System.out.println("Gonna connect to db..");
+		log.info("Executing method -> plantList(" + pUserName + ")");
+		log.info("Gonna connect to db..");
 		try {
 			conection = getMySqlConnection();
 			preparedStatement = conection
 					.prepareStatement("SELECT pgp_title from pg_plant_growing_plan WHERE user_id = "
 							+ "(SELECT user_id from core_users where e_mail = ?)");
 			preparedStatement.setString(1, pUserName);
-			System.out
-					.println("-----------------------------------------------------");
-			System.out.println(preparedStatement.toString());
-			System.out
-					.println("-----------------------------------------------------");
+			log.debug("-----------------------------------------------------");
+			log.debug(preparedStatement.toString());
+			log.debug("-----------------------------------------------------");
 			if (null != preparedStatement.executeQuery()) {
 				resultSet = preparedStatement.getResultSet();
 				while (resultSet.next()) {
 					returnList.add(resultSet.getString("pgp_title"));
-					System.out.println("Got result from query -> "
+					log.debug("Got result from query -> "
 							+ resultSet.getString("pgp_title"));
 				}
 			}
-		} catch (Exception s) {
-			s.printStackTrace();
+		} catch (Exception e) {
+			log.error(e.getMessage());
 		} finally {
 			preparedStatement.close();
 		}
