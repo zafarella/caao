@@ -11,34 +11,31 @@ Or in Netbeans under Documenting add
 
 Define colors, fonts and other style attributes here to override the defaults
 Page background color*/
-BODY
-{
+BODY {
 	font-family: Calibri;
 	background-color: #D8CAA8;
 	padding: 11px 30px 7px;
 	font-size: 94%;
 }
 /*Headings*/
-H1
-{
+H1 {
+	
 }
 /*Table colors*/
-.TableHeadingColor
-{
+.TableHeadingColor {
 	background-color: #BCC4DA;
 	border-collapse: collapse;
 }
-.TableSubHeadingColor
-{
+
+.TableSubHeadingColor {
 	background-color: #B1C3F7;
 }
-.TableRowColor
-{
+
+.TableRowColor {
 	background: #E6EBE9;
 }
 /*White*/
-TR[class=TableRowColor] TD
-{
+TR[class=TableRowColor] TD {
 	border-right: 1px solid #B6BCAC;
 	border-left: 0px solid #000000;
 	border-bottom: 0px solid #000000;
@@ -46,45 +43,43 @@ TR[class=TableRowColor] TD
 	font-size: 120%;
 }
 /*Font used in left-hand frame lists*/
-.FrameTitleFont
-{
+.FrameTitleFont {
 	font-size: 100%;
 }
-.FrameHeadingFont
-{
+
+.FrameHeadingFont {
 	font-size: 90%;
 }
-.FrameItemFont
-{
+
+.FrameItemFont {
 	font-size: 90%;
 }
 /*Navigation bar fonts and colors*/
-.NavBarCell1
-{
+.NavBarCell1 {
 	background-color: #F0D8A6;
 }
-.NavBarCell1Rev
-{
+
+.NavBarCell1Rev {
 	background-color: #FFE8BA;
 }
-.NavBarFont1
-{
+
+.NavBarFont1 {
 	color: #222222;
 }
-.NavBarFont1Rev
-{
+
+.NavBarFont1Rev {
 	color: #000000;
 }
-.NavBarCell2
-{
+
+.NavBarCell2 {
 	background-color: #E3E9F0;
 }
-.NavBarCell3
-{
+
+.NavBarCell3 {
 	background-color: #C1C2DB;
 }
-HR
-{
+
+HR {
 	color: #261E1E;
 	background-color: #2F2020;
 	width: 100%;
@@ -92,8 +87,8 @@ HR
 	border-width: 0px;
 	padding: 0px;
 }
-PRE
-{
+
+PRE {
 	padding: 2px 5px 0px 11px;
 	border-style: dotted;
 	border-width: 1px;

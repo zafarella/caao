@@ -156,12 +156,12 @@ public class Activator implements BundleActivator {
 	public void stop(BundleContext context) throws Exception {
 
 		// helping garbage collector to free the resources
-		System.out.println("stopping the server");
+		log("stopping the server");
 		if (null != this.webServer) {
 			this.webServer.shutdown();
 		}
 		this.webServer = null;
-		System.out.println("Server stopped");
+		log("Server stopped");
 		// xmlRpcServer = null;
 		// phm = null;
 	}
