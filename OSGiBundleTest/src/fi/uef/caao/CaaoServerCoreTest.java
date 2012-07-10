@@ -4,7 +4,7 @@ import static org.junit.Assert.assertNotNull;
 
 import java.sql.Connection;
 import java.util.List;
-import java.util.Vector;
+import main.fi.uef.caao.CaaoServerCore;
 
 import org.junit.After;
 import org.junit.Before;

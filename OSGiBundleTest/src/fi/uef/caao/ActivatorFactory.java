@@ -1,5 +1,7 @@
 package fi.uef.caao;
 
+import main.fi.uef.caao.Activator;
+
 /**
  * The class <code>ActivatorFactory</code> implements static methods that return
  * instances of the class <code>{@link Activator}</code>.

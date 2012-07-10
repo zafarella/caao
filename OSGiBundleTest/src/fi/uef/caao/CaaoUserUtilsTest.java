@@ -1,5 +1,7 @@
 package fi.uef.caao;
 
+import main.fi.uef.caao.CaaoUserUtils;
+
 import org.junit.*;
 import static org.junit.Assert.*;
 
