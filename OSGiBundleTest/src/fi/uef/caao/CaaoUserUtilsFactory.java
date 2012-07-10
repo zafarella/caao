@@ -1,6 +1,5 @@
 package fi.uef.caao;
 
-import main.fi.uef.caao.CaaoUserUtils;
 
 /**
  * The class <code>CaaoUserUtilsFactory</code> implements static methods that

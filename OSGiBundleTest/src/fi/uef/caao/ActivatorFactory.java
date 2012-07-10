@@ -1,6 +1,6 @@
 package fi.uef.caao;
 
-import main.fi.uef.caao.Activator;
+import fi.uef.caao.Activator;
 
 /**
  * The class <code>ActivatorFactory</code> implements static methods that return

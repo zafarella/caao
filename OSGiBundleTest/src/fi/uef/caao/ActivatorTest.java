@@ -1,6 +1,6 @@
 package fi.uef.caao;
 
-import main.fi.uef.caao.Activator;
+import fi.uef.caao.Activator;
 
 import org.easymock.classextension.EasyMock;
 import org.junit.After;
