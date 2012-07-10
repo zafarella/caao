@@ -47,7 +47,7 @@ public class CaaoServerCore {
 	/**
 	 * The class name of the driver. Depends on the driver class implementation.
 	 */
-	private static final String mySQLDriverName = "com.mysql.jdbc.Driver";
+	private static final String MY_SQL_DRIVER_NAME = "com.mysql.jdbc.Driver";
 	/**
 	 * Database user name.
 	 */
@@ -271,11 +271,15 @@ public class CaaoServerCore {
 	 * @return Connection
 	 * @throws Exception
 	 */
-	public static Connection getMySqlConnection() throws Exception {
-		Class.forName(mySQLDriverName); // mysql driver
-		Connection conn = DriverManager.getConnection(getMySQLUrl()
-				+ getDatabaseName(), getUserName(), getPass());
-		System.out.println("mySQL driver Loaded successfully.");
+	public static Connection getMySqlConnection() {
+		Connection conn = null;
+		try {
+			Class.forName(MY_SQL_DRIVER_NAME);
+			conn = DriverManager.getConnection(getMySQLUrl()
+					+ getDatabaseName(), getUserName(), getPass());
+		} catch (Exception e) {
+			log.error(e.getMessage());
+		}
 		return conn;
 	}
 
@@ -299,6 +303,7 @@ public class CaaoServerCore {
 		}
 		return con;
 	}
+
 	// ----------------------------------------------------------------------------------------------------
 	// --------------- the getter and setters of the rest class members
 	/**
