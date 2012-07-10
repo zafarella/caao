@@ -43,7 +43,7 @@ public class CaaoServerCoreTest {
 		throws Exception {
 		CaaoServerCore fixture = CaaoServerCoreFactory.createCaaoServerCore2();
 
-		Vector<String> result = fixture.country_list();
+		Vector<String> result = fixture.countryList();
 
 		// add additional test code here
 		assertNotNull(result);
@@ -61,7 +61,7 @@ public class CaaoServerCoreTest {
 		throws Exception {
 		CaaoServerCore fixture = CaaoServerCoreFactory.createCaaoServerCore2();
 
-		Vector<String> result = fixture.country_list();
+		Vector<String> result = fixture.countryList();
 
 		// add additional test code here
 		assertNotNull(result);
@@ -79,7 +79,7 @@ public class CaaoServerCoreTest {
 		throws Exception {
 		CaaoServerCore fixture = CaaoServerCoreFactory.createCaaoServerCore2();
 
-		Vector<String> result = fixture.country_list();
+		Vector<String> result = fixture.countryList();
 
 		// add additional test code here
 		assertNotNull(result);
@@ -97,7 +97,7 @@ public class CaaoServerCoreTest {
 		throws Exception {
 		CaaoServerCore fixture = CaaoServerCoreFactory.createCaaoServerCore2();
 
-		Vector<String> result = fixture.country_list();
+		Vector<String> result = fixture.countryList();
 
 		// add additional test code here
 		assertNotNull(result);
@@ -115,7 +115,7 @@ public class CaaoServerCoreTest {
 		throws Exception {
 		CaaoServerCore fixture = CaaoServerCoreFactory.createCaaoServerCore2();
 
-		Vector<String> result = fixture.country_list();
+		Vector<String> result = fixture.countryList();
 
 		// add additional test code here
 		assertNotNull(result);
@@ -133,7 +133,7 @@ public class CaaoServerCoreTest {
 		throws Exception {
 		CaaoServerCore fixture = CaaoServerCoreFactory.createCaaoServerCore();
 
-		Vector<String> result = fixture.country_list();
+		Vector<String> result = fixture.countryList();
 
 		// add additional test code here
 		assertNotNull(result);
@@ -151,7 +151,7 @@ public class CaaoServerCoreTest {
 		throws Exception {
 		CaaoServerCore fixture = CaaoServerCoreFactory.createCaaoServerCore();
 
-		Vector<String> result = fixture.country_list();
+		Vector<String> result = fixture.countryList();
 
 		// add additional test code here
 		assertNotNull(result);
@@ -169,7 +169,7 @@ public class CaaoServerCoreTest {
 		throws Exception {
 		CaaoServerCore fixture = CaaoServerCoreFactory.createCaaoServerCore();
 
-		Vector<String> result = fixture.country_list();
+		Vector<String> result = fixture.countryList();
 
 		// add additional test code here
 		assertNotNull(result);
@@ -187,7 +187,7 @@ public class CaaoServerCoreTest {
 		throws Exception {
 		CaaoServerCore fixture = CaaoServerCoreFactory.createCaaoServerCore();
 
-		Vector<String> result = fixture.country_list();
+		Vector<String> result = fixture.countryList();
 
 		// add additional test code here
 		assertNotNull(result);
@@ -205,7 +205,7 @@ public class CaaoServerCoreTest {
 		throws Exception {
 		CaaoServerCore fixture = CaaoServerCoreFactory.createCaaoServerCore();
 
-		Vector<String> result = fixture.country_list();
+		Vector<String> result = fixture.countryList();
 
 		// add additional test code here
 		assertNotNull(result);
@@ -223,7 +223,7 @@ public class CaaoServerCoreTest {
 		throws Exception {
 		CaaoServerCore fixture = CaaoServerCoreFactory.createCaaoServerCore();
 
-		Vector<String> result = fixture.country_list();
+		Vector<String> result = fixture.countryList();
 
 		// add additional test code here
 		assertNotNull(result);
