@@ -3,6 +3,7 @@ package fi.uef.caao;
 import static org.junit.Assert.assertNotNull;
 
 import java.sql.Connection;
+import java.util.List;
 import java.util.Vector;
 
 import org.junit.After;
@@ -43,7 +44,7 @@ public class CaaoServerCoreTest {
 		throws Exception {
 		CaaoServerCore fixture = CaaoServerCoreFactory.createCaaoServerCore2();
 
-		Vector<String> result = fixture.countryList();
+		List<String> result = fixture.countryList();
 
 		// add additional test code here
 		assertNotNull(result);
@@ -61,7 +62,7 @@ public class CaaoServerCoreTest {
 		throws Exception {
 		CaaoServerCore fixture = CaaoServerCoreFactory.createCaaoServerCore2();
 
-		Vector<String> result = fixture.countryList();
+		List<String> result = fixture.countryList();
 
 		// add additional test code here
 		assertNotNull(result);
@@ -79,7 +80,7 @@ public class CaaoServerCoreTest {
 		throws Exception {
 		CaaoServerCore fixture = CaaoServerCoreFactory.createCaaoServerCore2();
 
-		Vector<String> result = fixture.countryList();
+		List<String> result = fixture.countryList();
 
 		// add additional test code here
 		assertNotNull(result);
@@ -97,7 +98,7 @@ public class CaaoServerCoreTest {
 		throws Exception {
 		CaaoServerCore fixture = CaaoServerCoreFactory.createCaaoServerCore2();
 
-		Vector<String> result = fixture.countryList();
+		List<String> result = fixture.countryList();
 
 		// add additional test code here
 		assertNotNull(result);
@@ -115,7 +116,7 @@ public class CaaoServerCoreTest {
 		throws Exception {
 		CaaoServerCore fixture = CaaoServerCoreFactory.createCaaoServerCore2();
 
-		Vector<String> result = fixture.countryList();
+		List<String> result = fixture.countryList();
 
 		// add additional test code here
 		assertNotNull(result);
@@ -133,7 +134,7 @@ public class CaaoServerCoreTest {
 		throws Exception {
 		CaaoServerCore fixture = CaaoServerCoreFactory.createCaaoServerCore();
 
-		Vector<String> result = fixture.countryList();
+		List<String> result = fixture.countryList();
 
 		// add additional test code here
 		assertNotNull(result);
@@ -151,7 +152,7 @@ public class CaaoServerCoreTest {
 		throws Exception {
 		CaaoServerCore fixture = CaaoServerCoreFactory.createCaaoServerCore();
 
-		Vector<String> result = fixture.countryList();
+		List<String> result = fixture.countryList();
 
 		// add additional test code here
 		assertNotNull(result);
@@ -169,7 +170,7 @@ public class CaaoServerCoreTest {
 		throws Exception {
 		CaaoServerCore fixture = CaaoServerCoreFactory.createCaaoServerCore();
 
-		Vector<String> result = fixture.countryList();
+		List<String> result = fixture.countryList();
 
 		// add additional test code here
 		assertNotNull(result);
@@ -187,7 +188,7 @@ public class CaaoServerCoreTest {
 		throws Exception {
 		CaaoServerCore fixture = CaaoServerCoreFactory.createCaaoServerCore();
 
-		Vector<String> result = fixture.countryList();
+		List<String> result = fixture.countryList();
 
 		// add additional test code here
 		assertNotNull(result);
@@ -205,7 +206,7 @@ public class CaaoServerCoreTest {
 		throws Exception {
 		CaaoServerCore fixture = CaaoServerCoreFactory.createCaaoServerCore();
 
-		Vector<String> result = fixture.countryList();
+		List<String> result = fixture.countryList();
 
 		// add additional test code here
 		assertNotNull(result);
@@ -223,7 +224,7 @@ public class CaaoServerCoreTest {
 		throws Exception {
 		CaaoServerCore fixture = CaaoServerCoreFactory.createCaaoServerCore();
 
-		Vector<String> result = fixture.countryList();
+		List<String> result = fixture.countryList();
 
 		// add additional test code here
 		assertNotNull(result);
@@ -242,7 +243,7 @@ public class CaaoServerCoreTest {
 		CaaoServerCore fixture = CaaoServerCoreFactory.createCaaoServerCore2();
 		String pUserName = "";
 
-		Vector<String> result = fixture.eventList(pUserName);
+		List<String> result = fixture.eventList(pUserName);
 
 		// add additional test code here
 		// An unexpected exception was thrown in user code while executing this test:
@@ -269,7 +270,7 @@ public class CaaoServerCoreTest {
 		CaaoServerCore fixture = CaaoServerCoreFactory.createCaaoServerCore();
 		String pUserName = "";
 
-		Vector<String> result = fixture.eventList(pUserName);
+		List<String> result = fixture.eventList(pUserName);
 
 		// add additional test code here
 		// An unexpected exception was thrown in user code while executing this test:
@@ -291,7 +292,7 @@ public class CaaoServerCoreTest {
 		CaaoServerCore fixture = CaaoServerCoreFactory.createCaaoServerCore2();
 		String pUserName = "";
 
-		Vector<String> result = fixture.eventList(pUserName);
+		List<String> result = fixture.eventList(pUserName);
 
 		// add additional test code here
 		// An unexpected exception was thrown in user code while executing this test:
@@ -318,7 +319,7 @@ public class CaaoServerCoreTest {
 		CaaoServerCore fixture = CaaoServerCoreFactory.createCaaoServerCore();
 		String pUserName = "";
 
-		Vector<String> result = fixture.eventList(pUserName);
+		List<String> result = fixture.eventList(pUserName);
 
 		// add additional test code here
 		// An unexpected exception was thrown in user code while executing this test:
@@ -340,7 +341,7 @@ public class CaaoServerCoreTest {
 		CaaoServerCore fixture = CaaoServerCoreFactory.createCaaoServerCore2();
 		String pUserName = "";
 
-		Vector<String> result = fixture.eventList(pUserName);
+		List<String> result = fixture.eventList(pUserName);
 
 		// add additional test code here
 		// An unexpected exception was thrown in user code while executing this test:
@@ -367,7 +368,7 @@ public class CaaoServerCoreTest {
 		CaaoServerCore fixture = CaaoServerCoreFactory.createCaaoServerCore();
 		String pUserName = "";
 
-		Vector<String> result = fixture.eventList(pUserName);
+		List<String> result = fixture.eventList(pUserName);
 
 		// add additional test code here
 		// An unexpected exception was thrown in user code while executing this test:
@@ -389,7 +390,7 @@ public class CaaoServerCoreTest {
 		CaaoServerCore fixture = CaaoServerCoreFactory.createCaaoServerCore2();
 		String pUserName = "";
 
-		Vector<String> result = fixture.eventList(pUserName);
+		List<String> result = fixture.eventList(pUserName);
 
 		// add additional test code here
 		// An unexpected exception was thrown in user code while executing this test:
@@ -416,7 +417,7 @@ public class CaaoServerCoreTest {
 		CaaoServerCore fixture = CaaoServerCoreFactory.createCaaoServerCore();
 		String pUserName = "";
 
-		Vector<String> result = fixture.eventList(pUserName);
+		List<String> result = fixture.eventList(pUserName);
 
 		// add additional test code here
 		// An unexpected exception was thrown in user code while executing this test:
@@ -438,7 +439,7 @@ public class CaaoServerCoreTest {
 		CaaoServerCore fixture = CaaoServerCoreFactory.createCaaoServerCore2();
 		String pUserName = "";
 
-		Vector<String> result = fixture.eventList(pUserName);
+		List<String> result = fixture.eventList(pUserName);
 
 		// add additional test code here
 		// An unexpected exception was thrown in user code while executing this test:
@@ -465,7 +466,7 @@ public class CaaoServerCoreTest {
 		CaaoServerCore fixture = CaaoServerCoreFactory.createCaaoServerCore();
 		String pUserName = "";
 
-		Vector<String> result = fixture.eventList(pUserName);
+		List<String> result = fixture.eventList(pUserName);
 
 		// add additional test code here
 		// An unexpected exception was thrown in user code while executing this test:
@@ -487,7 +488,7 @@ public class CaaoServerCoreTest {
 		CaaoServerCore fixture = CaaoServerCoreFactory.createCaaoServerCore2();
 		String pUserName = "";
 
-		Vector<String> result = fixture.eventList(pUserName);
+		List<String> result = fixture.eventList(pUserName);
 
 		// add additional test code here
 		// An unexpected exception was thrown in user code while executing this test:
@@ -514,7 +515,7 @@ public class CaaoServerCoreTest {
 		CaaoServerCore fixture = CaaoServerCoreFactory.createCaaoServerCore();
 		String pUserName = "";
 
-		Vector<String> result = fixture.eventList(pUserName);
+		List<String> result = fixture.eventList(pUserName);
 
 		// add additional test code here
 		// An unexpected exception was thrown in user code while executing this test:
@@ -638,7 +639,7 @@ public class CaaoServerCoreTest {
 		CaaoServerCore fixture = CaaoServerCoreFactory.createCaaoServerCore2();
 		String pCountryName = "";
 
-		Vector<String> result = fixture.locationList(pCountryName);
+		List<String> result = fixture.locationList(pCountryName);
 
 		// add additional test code here
 		assertNotNull(result);
@@ -657,7 +658,7 @@ public class CaaoServerCoreTest {
 		CaaoServerCore fixture = CaaoServerCoreFactory.createCaaoServerCore2();
 		String pCountryName = "";
 
-		Vector<String> result = fixture.locationList(pCountryName);
+		List<String> result = fixture.locationList(pCountryName);
 
 		// add additional test code here
 		assertNotNull(result);
@@ -676,7 +677,7 @@ public class CaaoServerCoreTest {
 		CaaoServerCore fixture = CaaoServerCoreFactory.createCaaoServerCore2();
 		String pCountryName = "";
 
-		Vector<String> result = fixture.locationList(pCountryName);
+		List<String> result = fixture.locationList(pCountryName);
 
 		// add additional test code here
 		assertNotNull(result);
@@ -695,7 +696,7 @@ public class CaaoServerCoreTest {
 		CaaoServerCore fixture = CaaoServerCoreFactory.createCaaoServerCore2();
 		String pCountryName = "";
 
-		Vector<String> result = fixture.locationList(pCountryName);
+		List<String> result = fixture.locationList(pCountryName);
 
 		// add additional test code here
 		assertNotNull(result);
@@ -714,7 +715,7 @@ public class CaaoServerCoreTest {
 		CaaoServerCore fixture = CaaoServerCoreFactory.createCaaoServerCore2();
 		String pCountryName = "";
 
-		Vector<String> result = fixture.locationList(pCountryName);
+		List<String> result = fixture.locationList(pCountryName);
 
 		// add additional test code here
 		assertNotNull(result);
@@ -733,7 +734,7 @@ public class CaaoServerCoreTest {
 		CaaoServerCore fixture = CaaoServerCoreFactory.createCaaoServerCore2();
 		String pCountryName = "";
 
-		Vector<String> result = fixture.locationList(pCountryName);
+		List<String> result = fixture.locationList(pCountryName);
 
 		// add additional test code here
 		assertNotNull(result);
@@ -752,7 +753,7 @@ public class CaaoServerCoreTest {
 		CaaoServerCore fixture = CaaoServerCoreFactory.createCaaoServerCore();
 		String pCountryName = "";
 
-		Vector<String> result = fixture.locationList(pCountryName);
+		List<String> result = fixture.locationList(pCountryName);
 
 		// add additional test code here
 		assertNotNull(result);
@@ -771,7 +772,7 @@ public class CaaoServerCoreTest {
 		CaaoServerCore fixture = CaaoServerCoreFactory.createCaaoServerCore();
 		String pCountryName = "";
 
-		Vector<String> result = fixture.locationList(pCountryName);
+		List<String> result = fixture.locationList(pCountryName);
 
 		// add additional test code here
 		assertNotNull(result);
@@ -790,7 +791,7 @@ public class CaaoServerCoreTest {
 		CaaoServerCore fixture = CaaoServerCoreFactory.createCaaoServerCore();
 		String pCountryName = "";
 
-		Vector<String> result = fixture.locationList(pCountryName);
+		List<String> result = fixture.locationList(pCountryName);
 
 		// add additional test code here
 		assertNotNull(result);
@@ -809,7 +810,7 @@ public class CaaoServerCoreTest {
 		CaaoServerCore fixture = CaaoServerCoreFactory.createCaaoServerCore();
 		String pCountryName = "";
 
-		Vector<String> result = fixture.locationList(pCountryName);
+		List<String> result = fixture.locationList(pCountryName);
 
 		// add additional test code here
 		assertNotNull(result);
@@ -828,7 +829,7 @@ public class CaaoServerCoreTest {
 		CaaoServerCore fixture = CaaoServerCoreFactory.createCaaoServerCore();
 		String pCountryName = "";
 
-		Vector<String> result = fixture.locationList(pCountryName);
+		List<String> result = fixture.locationList(pCountryName);
 
 		// add additional test code here
 		assertNotNull(result);
@@ -847,7 +848,7 @@ public class CaaoServerCoreTest {
 		CaaoServerCore fixture = CaaoServerCoreFactory.createCaaoServerCore();
 		String pCountryName = "";
 
-		Vector<String> result = fixture.locationList(pCountryName);
+		List<String> result = fixture.locationList(pCountryName);
 
 		// add additional test code here
 		assertNotNull(result);
@@ -866,7 +867,7 @@ public class CaaoServerCoreTest {
 		CaaoServerCore fixture = CaaoServerCoreFactory.createCaaoServerCore2();
 		String pUserName = "";
 
-		Vector<String> result = fixture.plantList(pUserName);
+		List<String> result = fixture.plantList(pUserName);
 
 		// add additional test code here
 		// An unexpected exception was thrown in user code while executing this test:
@@ -893,7 +894,7 @@ public class CaaoServerCoreTest {
 		CaaoServerCore fixture = CaaoServerCoreFactory.createCaaoServerCore();
 		String pUserName = "";
 
-		Vector<String> result = fixture.plantList(pUserName);
+		List<String> result = fixture.plantList(pUserName);
 
 		// add additional test code here
 		// An unexpected exception was thrown in user code while executing this test:
@@ -915,7 +916,7 @@ public class CaaoServerCoreTest {
 		CaaoServerCore fixture = CaaoServerCoreFactory.createCaaoServerCore2();
 		String pUserName = "";
 
-		Vector<String> result = fixture.plantList(pUserName);
+		List<String> result = fixture.plantList(pUserName);
 
 		// add additional test code here
 		// An unexpected exception was thrown in user code while executing this test:
@@ -942,7 +943,7 @@ public class CaaoServerCoreTest {
 		CaaoServerCore fixture = CaaoServerCoreFactory.createCaaoServerCore();
 		String pUserName = "";
 
-		Vector<String> result = fixture.plantList(pUserName);
+		List<String> result = fixture.plantList(pUserName);
 
 		// add additional test code here
 		// An unexpected exception was thrown in user code while executing this test:
@@ -964,7 +965,7 @@ public class CaaoServerCoreTest {
 		CaaoServerCore fixture = CaaoServerCoreFactory.createCaaoServerCore2();
 		String pUserName = "";
 
-		Vector<String> result = fixture.plantList(pUserName);
+		List<String> result = fixture.plantList(pUserName);
 
 		// add additional test code here
 		// An unexpected exception was thrown in user code while executing this test:
@@ -991,7 +992,7 @@ public class CaaoServerCoreTest {
 		CaaoServerCore fixture = CaaoServerCoreFactory.createCaaoServerCore();
 		String pUserName = "";
 
-		Vector<String> result = fixture.plantList(pUserName);
+		List<String> result = fixture.plantList(pUserName);
 
 		// add additional test code here
 		// An unexpected exception was thrown in user code while executing this test:
@@ -1013,7 +1014,7 @@ public class CaaoServerCoreTest {
 		CaaoServerCore fixture = CaaoServerCoreFactory.createCaaoServerCore2();
 		String pUserName = "";
 
-		Vector<String> result = fixture.plantList(pUserName);
+		List<String> result = fixture.plantList(pUserName);
 
 		// add additional test code here
 		// An unexpected exception was thrown in user code while executing this test:
@@ -1040,7 +1041,7 @@ public class CaaoServerCoreTest {
 		CaaoServerCore fixture = CaaoServerCoreFactory.createCaaoServerCore();
 		String pUserName = "";
 
-		Vector<String> result = fixture.plantList(pUserName);
+		List<String> result = fixture.plantList(pUserName);
 
 		// add additional test code here
 		// An unexpected exception was thrown in user code while executing this test:
@@ -1062,7 +1063,7 @@ public class CaaoServerCoreTest {
 		CaaoServerCore fixture = CaaoServerCoreFactory.createCaaoServerCore2();
 		String pUserName = "";
 
-		Vector<String> result = fixture.plantList(pUserName);
+		List<String> result = fixture.plantList(pUserName);
 
 		// add additional test code here
 		// An unexpected exception was thrown in user code while executing this test:
@@ -1089,7 +1090,7 @@ public class CaaoServerCoreTest {
 		CaaoServerCore fixture = CaaoServerCoreFactory.createCaaoServerCore();
 		String pUserName = "";
 
-		Vector<String> result = fixture.plantList(pUserName);
+		List<String> result = fixture.plantList(pUserName);
 
 		// add additional test code here
 		// An unexpected exception was thrown in user code while executing this test:
@@ -1111,7 +1112,7 @@ public class CaaoServerCoreTest {
 		CaaoServerCore fixture = CaaoServerCoreFactory.createCaaoServerCore2();
 		String pUserName = "";
 
-		Vector<String> result = fixture.plantList(pUserName);
+		List<String> result = fixture.plantList(pUserName);
 
 		// add additional test code here
 		// An unexpected exception was thrown in user code while executing this test:
@@ -1138,7 +1139,7 @@ public class CaaoServerCoreTest {
 		CaaoServerCore fixture = CaaoServerCoreFactory.createCaaoServerCore();
 		String pUserName = "";
 
-		Vector<String> result = fixture.plantList(pUserName);
+		List<String> result = fixture.plantList(pUserName);
 
 		// add additional test code here
 		// An unexpected exception was thrown in user code while executing this test:

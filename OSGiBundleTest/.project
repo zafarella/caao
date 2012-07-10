@@ -3,6 +3,7 @@
 	<name>caao_bundleTest</name>
 	<comment></comment>
 	<projects>
+		<project>ccao_OSGiBundle</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
