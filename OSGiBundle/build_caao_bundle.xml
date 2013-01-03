@@ -74,14 +74,14 @@
 	<property name="bmfa.Bundle-Vendor" value="Zafar Khaydarov" />
 
 	<!-- Import the master build file that defines everything else. -->
-	<import file="C:\knopflerfish_osgi_3.3.0\ant\bundlebuild.xml" />
+	<import file="C:\javadev\knopflerfish_osgi_3.3.0\ant\bundlebuild.xml" />
 
 
 
 	<!-- Java doc definition for the project -->
 	<target name="javadoc">
 		<javadoc access="private" author="true"
-			classpath="C:\DropBox\Dropbox\IT_Project\materials\OSGi\Knopflerfish\knopflerfish_osgi_3.1.0\osgi\framework.jar;lib/xmlrpc-common-3.1.3.jar;lib/ws-commons-util-1.0.2.jar;C:\DropBox\Dropbox\IT Project\materials\MySQL Connector\mysql-connector-java-5.1.15\mysql-connector-java-5.1.15-bin.jar;lib/xmlrpc-server-3.1.3.jar;C:\DropBox\Dropbox\IT Project\materials\XML-RPC\apache-xmlrpc-3.1.3\lib\xmlrpc-client-3.1.3.jar;C:\DropBox\Dropbox\IT Project\materials\XML-RPC\httpcomponents-client-4.1.1\lib\commons-codec-1.4.jar;C:\DropBox\Dropbox\IT Project\materials\XML-RPC\commons-httpclient-3.0\commons-httpclient-3.0.jar;C:\DropBox\Dropbox\IT Project\materials\XML-RPC\apache-xmlrpc-3.1.3\lib\commons-logging-1.1.jar"
+			classpath="C:\javadev\knopflerfish_osgi_3.3.0\osgi\framework.jar;lib/xmlrpc-common-3.1.3.jar;lib/ws-commons-util-1.0.2.jar;C:\DropBox\Dropbox\IT Project\materials\MySQL Connector\mysql-connector-java-5.1.15\mysql-connector-java-5.1.15-bin.jar;lib/xmlrpc-server-3.1.3.jar;C:\DropBox\Dropbox\IT Project\materials\XML-RPC\apache-xmlrpc-3.1.3\lib\xmlrpc-client-3.1.3.jar;C:\DropBox\Dropbox\IT Project\materials\XML-RPC\httpcomponents-client-4.1.1\lib\commons-codec-1.4.jar;C:\DropBox\Dropbox\IT Project\materials\XML-RPC\commons-httpclient-3.0\commons-httpclient-3.0.jar;C:\DropBox\Dropbox\IT Project\materials\XML-RPC\apache-xmlrpc-3.1.3\lib\commons-logging-1.1.jar"
 			destdir="doc" doctitle="Context aware orginizer [server side OSGi bundle] java docs"
 			nodeprecated="true" nodeprecatedlist="true" noindex="false" nonavbar="false"
 			notree="false" packagenames="fi.uef.caao" source="1.6" sourcepath="src"
