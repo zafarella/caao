@@ -19,3 +19,4 @@ I have tried to utilize OSGi as a server side and android as mobile part.
 #Contact
 ===
 Feel free to contact me in case u have any suggestion or any ideas - zafarella at gmail dot com.
+[![githalytics.com alpha](https://cruel-carlota.pagodabox.com/b87d5d7f89aeae352718a81cda6546a0 "githalytics.com")](http://githalytics.com/github.com/zafarella)
