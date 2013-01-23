@@ -1,0 +1,11 @@
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>fi.uef.cs</groupId>
+    <artifactId>caao</artifactId>
+    <packaging>bundle</packaging>
+    <name>Context-aware organizer</name>
+    <description>
+        The context aware agricultural organizer
+    </description>
+    <version>1</version>
+</project>
