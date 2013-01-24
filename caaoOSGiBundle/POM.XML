@@ -1,0 +1,13 @@
+<project>
+    <name>caao OSGi bundle</name>
+    <parent>
+        <groupId>fi.uef.cs</groupId>
+        <artifactId>caao</artifactId>
+        <packaging>bundle</packaging>
+        <version>0.0.0</version>
+        <description>
+            The OSGi bundle for the caao
+        </description>
+    </parent>
+    <artifactid>caaoOSGiBundle</artifactid>
+</project>
