@@ -3,12 +3,8 @@
     <parent>
         <groupId>fi.uef.cs</groupId>
         <artifactId>caao</artifactId>
-        <packaging>bundle</packaging>
-        <version>0.0.0</version>
-        <description>
-            The OSGi bundle for the caao
-        </description>
     </parent>
+
     <name>caao OSGi bundle</name>
     <artifactid>caaoOSGiBundle</artifactid>
     <packaging>bundle</packaging>
@@ -34,5 +30,7 @@
         </plugins>
     </build>
 
-
+    <developers>
+        <developer>Zafar Khaydarov</developer>
+    </developers>
 </project>

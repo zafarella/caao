@@ -15,19 +15,6 @@
       <src_folder value="file://$MODULE_DIR$/../OSGiBundle/src" expected_position="0" />
     </src_description>
   </component>
-  <component name="FacetManager">
-    <facet type="Osmorc" name="OSGi">
-      <configuration manifestGenerationMode="OsmorcControlled" manifestLocation="" jarfileLocation="org.apache.felix.log-0.8.0-SNAPSHOT.jar" outputPathType="CompilerOutputPath" bndFileLocation="" bundlorFileLocation="" bundleActivator="org.apache.felix.log.impl.Activator" bundleSymbolicName="org.apache.felix.log" bundleVersion="0.8.0.SNAPSHOT" ignoreFilePattern="" useProjectDefaultManifestFileLocation="true" alwaysRebuildBundleJAR="false" doNotSynchronizeWithMaven="false">
-        <additionalProperties>
-          <property key="Bundle-Description" value="This bundle provides an implementation of the OSGi R4 Log service." />
-          <property key="Export-Package" value="org.osgi.service.log" />
-          <property key="Private-Package" value="org.apache.felix.log.impl" />
-          <property key="Bundle-Name" value="Apache Felix Log Service" />
-        </additionalProperties>
-        <additionalJARContents />
-      </configuration>
-    </facet>
-  </component>
   <component name="NewModuleRootManager" inherit-compiler-output="false">
     <output url="file://$MODULE_DIR$/target/classes" />
     <output-test url="file://$MODULE_DIR$/../OSGiBundle/target/test-classes" />
@@ -129,8 +116,6 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" name="Maven: org.apache.felix:org.osgi.core:0.8.0-incubator" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.felix:org.osgi.compendium:0.9.0-incubator-SNAPSHOT" level="project" />
   </component>
 </module>
 
