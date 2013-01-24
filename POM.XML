@@ -8,4 +8,34 @@
         The context aware agricultural organizer
     </description>
     <version>0.0.0</version>
+
+    <repositories>
+        <repository>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+                <checksumPolicy>fail</checksumPolicy>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+                <updatePolicy>never</updatePolicy>
+                <checksumPolicy>fail</checksumPolicy>
+            </snapshots>
+            <id>Knopflerfish</id>
+            <name>Knopflerfish Releases Repository</name>
+            <url>http://www.knopflerfish.org/maven2</url>
+            <layout>default</layout>
+        </repository>
+    </repositories>
+    <dependencyManagement>
+        <dependencies>
+            <!-- KF 3.1.0 -->
+            <!--framework.jar-->
+            <dependency>
+                <groupId>org.knopflerfish</groupId>
+                <artifactId>framework</artifactId>
+                <version>5.1.6</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>

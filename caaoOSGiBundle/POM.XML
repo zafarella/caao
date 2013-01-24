@@ -1,5 +1,5 @@
 <project>
-    <name>caao OSGi bundle</name>
+
     <parent>
         <groupId>fi.uef.cs</groupId>
         <artifactId>caao</artifactId>
@@ -9,5 +9,30 @@
             The OSGi bundle for the caao
         </description>
     </parent>
+    <name>caao OSGi bundle</name>
     <artifactid>caaoOSGiBundle</artifactid>
+    <packaging>bundle</packaging>
+
+    <properties>
+        <bundle.namespace>${pom.groupId}.${pom.artifactId}</bundle.namespace>
+    </properties>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Export-Package>${bundle.namespace}</Export-Package>
+                        <Private-Package>!${bundle.namespace}</Private-Package>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+
 </project>
