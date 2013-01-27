@@ -6,7 +6,7 @@
  * Web: cs.joensuu.fi/~zkhayda 
  * Date: Mar 17, 2011
  */
-package main.java.caao.com.tabs;
+package caao.com.tabs;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -22,9 +22,9 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import caao.com.R;
 import caao.com.xmlrpc.XMLRPCClient;
-import main.java.caao.com.CaaoConstants;
-import main.java.caao.com.MyToast;
-import main.java.caao.com.settings_activities.Advanced_settings;
+import caao.com.CaaoConstants;
+import caao.com.MyToast;
+import caao.com.settings_activities.Advanced_settings;
 
 import java.net.URI;
 import java.util.ArrayList;

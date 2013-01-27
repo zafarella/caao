@@ -6,7 +6,7 @@
     <modelVersion>4.0.0</modelVersion>
     <name>caao-osgi-bundle</name>
     <groupId>fi.uef.cs.caao</groupId>
-    <artifactId>caao-osgi-bundle</artifactId>
+    <artifactId>caao-osgi-bundle-parent</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
@@ -25,36 +25,33 @@
     <properties>
         <bundle.namespace>${project.groupId}.${project.artifactId}</bundle.namespace>
     </properties>
-
-    <repositories>
-        <repository>
-            <releases>
-                <enabled>true</enabled>
-                <updatePolicy>never</updatePolicy>
-                <checksumPolicy>fail</checksumPolicy>
-            </releases>
-            <snapshots>
-                <enabled>false</enabled>
-                <updatePolicy>never</updatePolicy>
-                <checksumPolicy>fail</checksumPolicy>
-            </snapshots>
-            <id>Knopflerfish</id>
-            <name>Knopflerfish Releases Repository</name>
-            <url>http://www.knopflerfish.org./maven2/org/knopflerfish/</url>
-            <layout>default</layout>
-        </repository>
-    </repositories>
-
-    <dependencyManagement>
-        <dependencies>
-            <!--framework.jar-->
-            <dependency>
-                <groupId>org.knopflerfish</groupId>
-                <artifactId>framework</artifactId>
-                <version>5.3.3</version>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
     <!-- =========================================================  -->
-
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.ops4j</groupId>
+                <artifactId>maven-pax-plugin</artifactId>
+                <version>1.5</version>
+                <configuration>
+                    <!--
+                     | some example Pax-Runner settings
+                    -->
+                    <provision>
+                        <param>--platform=felix</param>
+                    </provision>
+                </configuration>
+                <executions>
+                    <!--
+                     | uncomment to auto-generate IDE files
+                    <execution>
+                      <id>ide-support</id>
+                      <goals>
+                        <goal>eclipse</goal>
+                      </goals>
+                    </execution>
+                    -->
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>

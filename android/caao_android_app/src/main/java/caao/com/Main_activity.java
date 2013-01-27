@@ -6,7 +6,7 @@
  * Web: cs.joensuu.fi/~zkhayda 
  * Date: Mar 17, 2011
  */
-package main.java.caao.com;
+package caao.com;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
@@ -25,11 +25,12 @@ import android.view.Window;
 import android.widget.DatePicker;
 import android.widget.TabHost;
 import android.widget.TabHost.OnTabChangeListener;
+import caao.com.service.caao_service;
 import caao.com.tabs.Calendar_Activity;
 import caao.com.tabs.Event_Notification_Activity;
 import caao.com.tabs.Plant_list_Activity;
 import caao.com.tabs.Wiki_Activity;
-import main.java.caao.com.service.caao_service;
+import caao.com.service.caao_service;
 
 import java.util.Calendar;
 import java.util.Locale;

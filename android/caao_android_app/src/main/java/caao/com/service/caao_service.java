@@ -7,7 +7,7 @@
  * Web: cs.joensuu.fi/~zkhayda 
  * Date: Mar 31, 2011
  */
-package main.java.caao.com.service;
+package caao.com.service;
 
 import android.app.Notification;
 import android.app.NotificationManager;

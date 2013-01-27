@@ -1,7 +1,9 @@
 package caao.com.tabs.calendar;
 
+import android.widget.*;
+import android.widget.CalendarView;
 import org.junit.*;
-import static org.junit.Assert.*;
+import static junit.framework.Assert.*;
 
 /**
  * The class <code>CalendarViewFactoryTest</code> contains tests for the class <code>{@link CalendarViewFactory}</code>.
@@ -18,11 +20,11 @@ public class CalendarViewFactoryTest {
 	 *
 	 * @generatedBy CodePro at 5/1/11 6:24 PM
 	 */
-	@Test
+
 	public void testCreateCalendarView_1()
 		throws Exception {
 
-		CalendarView result = CalendarViewFactory.createCalendarView();
+		android.widget.CalendarView result = CalendarViewFactory.createCalendarView();
 
 		// add additional test code here
 		// An unexpected exception was thrown in user code while executing this test:
@@ -46,11 +48,11 @@ public class CalendarViewFactoryTest {
 	 *
 	 * @generatedBy CodePro at 5/1/11 6:24 PM
 	 */
-	@Test
+
 	public void testCreateCalendarView2_1()
 		throws Exception {
 
-		CalendarView result = CalendarViewFactory.createCalendarView2();
+		android.widget.CalendarView result = CalendarViewFactory.createCalendarView2();
 
 		// add additional test code here
 		// An unexpected exception was thrown in user code while executing this test:
@@ -74,11 +76,10 @@ public class CalendarViewFactoryTest {
 	 *
 	 * @generatedBy CodePro at 5/1/11 6:24 PM
 	 */
-	@Test
 	public void testCreateCalendarView3_1()
 		throws Exception {
 
-		CalendarView result = CalendarViewFactory.createCalendarView3();
+		android.widget.CalendarView result = CalendarViewFactory.createCalendarView3();
 
 		// add additional test code here
 		// An unexpected exception was thrown in user code while executing this test:
@@ -102,11 +103,10 @@ public class CalendarViewFactoryTest {
 	 *
 	 * @generatedBy CodePro at 5/1/11 6:24 PM
 	 */
-	@Test
 	public void testCreateCalendarView4_1()
 		throws Exception {
 
-		CalendarView result = CalendarViewFactory.createCalendarView4();
+		android.widget.CalendarView result = CalendarViewFactory.createCalendarView4();
 
 		// add additional test code here
 		// An unexpected exception was thrown in user code while executing this test:
@@ -129,11 +129,10 @@ public class CalendarViewFactoryTest {
 	 *
 	 * @generatedBy CodePro at 5/1/11 6:24 PM
 	 */
-	@Test
 	public void testCreateCalendarView5_1()
 		throws Exception {
 
-		CalendarView result = CalendarViewFactory.createCalendarView5();
+		android.widget.CalendarView result = CalendarViewFactory.createCalendarView5();
 
 		// add additional test code here
 		// An unexpected exception was thrown in user code while executing this test:
@@ -154,7 +153,6 @@ public class CalendarViewFactoryTest {
 	 *
 	 * @generatedBy CodePro at 5/1/11 6:24 PM
 	 */
-	@Test
 	public void testCreateCalendarView6_1()
 		throws Exception {
 
@@ -183,7 +181,6 @@ public class CalendarViewFactoryTest {
 	 *
 	 * @generatedBy CodePro at 5/1/11 6:24 PM
 	 */
-	@Before
 	public void setUp()
 		throws Exception {
 		// add additional set up code here
@@ -197,7 +194,6 @@ public class CalendarViewFactoryTest {
 	 *
 	 * @generatedBy CodePro at 5/1/11 6:24 PM
 	 */
-	@After
 	public void tearDown()
 		throws Exception {
 		// Add additional tear down code here

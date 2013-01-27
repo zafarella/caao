@@ -2,10 +2,13 @@ package caao.com.tabs.calendar;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.widget.CalendarView;
 import caao.com.Main_activityFactory;
 import caao.com.Settings_activityFactory;
 import caao.com.service.caao_serviceFactory;
 import caao.com.settings_activities.Advanced_settingsFactory;
+
+import static caao.com.Main_activityFactory.*;
 
 
 /**
@@ -32,7 +35,7 @@ public class CalendarViewFactory
 	 * @generatedBy CodePro at 5/1/11 6:15 PM
 	 */
 	public static CalendarView createCalendarView() {
-		return new CalendarView(Main_activityFactory.createMain_activity());
+		return new CalendarView(createMain_activity());
 	}
 
 
@@ -42,7 +45,7 @@ public class CalendarViewFactory
 	 * @generatedBy CodePro at 5/1/11 6:15 PM
 	 */
 	public static CalendarView createCalendarView2() {
-		return new CalendarView(Main_activityFactory.createMain_activity(), (AttributeSet) null);
+		return new CalendarView(createMain_activity(), (AttributeSet) null);
 	}
 
 
@@ -52,7 +55,7 @@ public class CalendarViewFactory
 	 * @generatedBy CodePro at 5/1/11 6:15 PM
 	 */
 	public static CalendarView createCalendarView3() {
-		return new CalendarView(Main_activityFactory.createMain_activity(), (AttributeSet) null, 0);
+		return new CalendarView(createMain_activity(), (AttributeSet) null, 0);
 	}
 
 

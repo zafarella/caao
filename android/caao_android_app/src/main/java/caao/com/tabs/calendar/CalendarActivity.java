@@ -73,7 +73,6 @@ public class CalendarActivity extends Activity implements
      * Method onTouch.
      *
      * @param cell Cell
-     * @see caao.com.tabs.calendar.CalendarView$OnCellTouchListener#onTouch(Cell)
      */
     public void onTouch(Cell cell) {
         Intent intent = getIntent();

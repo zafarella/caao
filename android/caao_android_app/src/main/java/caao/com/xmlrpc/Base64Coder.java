@@ -1,4 +1,4 @@
-package main.java.caao.com.xmlrpc;
+package caao.com.xmlrpc;
 
 /**
  * A Base64 Encoder/Decoder.

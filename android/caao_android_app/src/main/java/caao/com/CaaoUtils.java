@@ -7,7 +7,7 @@
  * Web: cs.joensuu.fi/~zkhayda
  * Date: Apr 26, 2012
  */
-package main.java.caao.com;
+package caao.com;
 
 import android.app.Activity;
 import android.content.Context;

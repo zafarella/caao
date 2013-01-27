@@ -6,7 +6,7 @@
  * Web: cs.joensuu.fi/~zkhayda 
  * Date: Mar 24, 2011
  */
-package main.java.caao.com.settings_activities;
+package caao.com.settings_activities;
 
 import android.os.Bundle;
 import android.preference.PreferenceActivity;

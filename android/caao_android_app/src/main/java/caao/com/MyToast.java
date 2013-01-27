@@ -7,7 +7,7 @@
  * Web: cs.joensuu.fi/~zkhayda
  * Date: Apr 28, 2011
  */
-package main.java.caao.com;
+package caao.com;
 
 import android.content.Context;
 import android.widget.Toast;

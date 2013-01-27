@@ -7,7 +7,7 @@
  * Web: cs.joensuu.fi/~zkhayda
  * Date: Mar 17, 2011
  */
-package main.java.caao.com;
+package caao.com;
 
 import android.app.AlertDialog;
 import android.app.Dialog;

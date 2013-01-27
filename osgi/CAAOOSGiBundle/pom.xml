@@ -13,7 +13,7 @@
 
     <parent>
         <groupId>fi.uef.cs.caao</groupId>
-        <artifactId>caao-parent</artifactId>
+        <artifactId>caao-osgi-bundle-parent</artifactId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
 
@@ -36,5 +36,22 @@
     <properties>
         <bundle.namespace>${pom.groupId}.${pom.artifactId}</bundle.namespace>
     </properties>
+
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.ops4j</groupId>
+                <artifactId>maven-pax-plugin</artifactId>
+                <version>1.5</version>
+            </dependency>
+            <!--framework.jar-->
+            <dependency>
+                <groupId>org.knopflerfish</groupId>
+                <artifactId>framework</artifactId>
+                <version>5.3.3</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
 </project>
