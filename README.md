@@ -11,7 +11,7 @@ I have tried to utilize OSGi as a server side and android as mobile part.
   * [Knopflerfish eclipse plug-in](http://www.knopflerfish.org/eclipse_plugin.html)
   * Apache Ant - optional
   * JUnit 3
-
+  * maven
 ### For mobile part
 * Android SDK
   * 
