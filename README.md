@@ -12,9 +12,12 @@ I have tried to utilize OSGi as a server side and android as mobile part.
   * Apache Ant - optional
   * JUnit 3
   * maven
+
+====
 ##For mobile part
 * Android SDK
  * 
+====
 ## Using maven
 ## IDE
 ## IDEA
