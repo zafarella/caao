@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:key="notifications"
+        android:summary="@string/notification_prefs_summary"
+        android:title="@string/notification_prefs_title"
+        >
+    <PreferenceCategory
+            android:key="status_bar_notifications"
+            android:title="@string/notification_prefs_enable_status_bar_notifs_categoru_title"
+            >
+        <CheckBoxPreference
+                android:key="status_bar_notification_enabled"
+                android:summary="@string/notification_prefs_enable_status_bar_notifs_summary"
+                android:title="@string/notification_prefs_enable_status_bar_notifs_title"
+                ></CheckBoxPreference>
+    </PreferenceCategory>
+    <PreferenceCategory
+            android:key="rington"
+            android:title="@string/notification_prefs_rington_category_title"
+            android:summary="@string/notification_prefs_rington_category_summary"
+            >
+        <RingtonePreference
+                android:key="ringtone"
+                android:title="@string/notification_prefs_rington_title"
+                ></RingtonePreference>
+    </PreferenceCategory>
+</PreferenceScreen>

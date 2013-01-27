@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <name>caao-osgi-bundle</name>
+    <groupId>fi.uef.cs.caao</groupId>
+    <artifactId>caao-osgi-bundle</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+
+    <parent>
+        <groupId>fi.uef.cs.caao</groupId>
+        <artifactId>caao-parent</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+
+    <modules>
+        <module>CAAOOSGiBundle</module>
+        <module>OSGiBundleTest</module>
+    </modules>
+
+    <properties>
+        <bundle.namespace>${project.groupId}.${project.artifactId}</bundle.namespace>
+    </properties>
+
+    <repositories>
+        <repository>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+                <checksumPolicy>fail</checksumPolicy>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+                <updatePolicy>never</updatePolicy>
+                <checksumPolicy>fail</checksumPolicy>
+            </snapshots>
+            <id>Knopflerfish</id>
+            <name>Knopflerfish Releases Repository</name>
+            <url>http://www.knopflerfish.org./maven2/org/knopflerfish/</url>
+            <layout>default</layout>
+        </repository>
+    </repositories>
+
+    <dependencyManagement>
+        <dependencies>
+            <!--framework.jar-->
+            <dependency>
+                <groupId>org.knopflerfish</groupId>
+                <artifactId>framework</artifactId>
+                <version>5.3.3</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+    <!-- =========================================================  -->
+
+</project>

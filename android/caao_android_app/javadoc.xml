@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project
+        default="javadoc"
+        >
+    <target
+            name="javadoc"
+            >
+        <javadoc
+                access="public"
+                author="true"
+                classpath=".;C:\eclipse-SDK-3.5-win32\android-sdk-windows\platforms\android-8\android.jar"
+                destdir="doc"
+                doctitle="Context aware orginizer java docs"
+                nodeprecated="false"
+                nodeprecatedlist="false"
+                noindex="false"
+                nonavbar="false"
+                notree="false"
+                packagenames="caao.com,caao.com.xmlrpc,caao.com.tabs.calendar,caao.com.tabs,caao.com.service,caao.com.settings_activities"
+                source="1.6"
+                sourcepath="gen;src"
+                linkoffline="http://d.android.com/reference C:\eclipse-SDK-3.5-win32\android-sdk-windows\docs\reference"
+                splitindex="true"
+                use="true"
+                version="true"/>
+    </target>
+</project>
