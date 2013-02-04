@@ -5,7 +5,7 @@ I have tried to utilize OSGi as a server side and android as mobile part.
 
 # Requires
 ====
-### For server side
+## Back-end
 * JDK 1.6 or greater
 * Eclipse
   * [Knopflerfish eclipse plug-in](http://www.knopflerfish.org/eclipse_plugin.html)
@@ -14,14 +14,14 @@ I have tried to utilize OSGi as a server side and android as mobile part.
   * maven
 
 ====
-### For mobile part
+## Front-end
   * Android SDK
 
 ====
 ### Using maven
-TODO:
+* see the release.sh
 
-### IDE
+## IDE
 #### IDEA
 * Just import maven project, the rest should work. Idea has a bug on Linux - it does not reads the env variables -- workaround: 
 ```bash
@@ -29,7 +29,11 @@ bash -l /opt/idea/bin/idea.sh
 ```
 
 #### Eclipse
-TODO:
+You will need:
+* Maven plugin
+* git client (if wanna commit for eclipse)
+
+
 
 #Contact
 ===
