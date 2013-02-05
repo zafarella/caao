@@ -1,3 +1,5 @@
+trying port it to maven when have time.
+
 #The CAAO
 ====
 Stands for Context-aware orginizer. The main idea of the project is creation of orginizer wich is context-aware [(Mark Weiser)](http://en.wikipedia.org/wiki/Mark_Weiser).
