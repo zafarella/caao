@@ -34,9 +34,10 @@
 	</build>
 
 	<properties>
-		<bundle.namespace>${pom.groupId}.${pom.artifactId}</bundle.namespace>
+		<bundle.namespace>${project.groupId}.${project.artifactId}</bundle.namespace>
 	</properties>
 
+	
 	<dependencies>
 		<dependency>
 			<groupId>fi.uef.cs.caao</groupId>
