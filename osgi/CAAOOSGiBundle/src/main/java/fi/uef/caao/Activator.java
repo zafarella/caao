@@ -4,7 +4,7 @@
  * Container for the server side of caao. Activates bundle in OSGi environment
  * and unregisters it when the bundle is stopped.
  */
-package fi.uef.caao;
+package main.java.fi.uef.caao;
 
 // the following import is from apache library.
 // please make sure in case you are recompiling the project the the correct version of

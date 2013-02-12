@@ -3,7 +3,7 @@
  * Project: rpc_server_test
  * Zafar.Khaydarov @cs.joensuu.fi
  * */
-package fi.uef.caao;
+package main.java.fi.uef.caao;
 
 /**
  * The main purpose of the class is provide methods for registering new users

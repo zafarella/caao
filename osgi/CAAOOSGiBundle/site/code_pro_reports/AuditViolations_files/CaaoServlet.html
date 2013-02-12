@@ -1,0 +1,3002 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>CaaoServlet.java</title>
+
+<meta name="GENERATOR" content="CodePro Server" />
+
+<style type="text/css">
+span.highSeverity {
+	background-color: #FFAAAA;
+	font: bold
+}
+
+span.mediumSeverity {
+	background-color: #FFFF77;
+	font: bold
+}
+
+span.lowSeverity {
+	background-color: #AAAAFF;
+	font: bold
+}
+
+table.code {
+	border-spacing: 0;
+	border-collapse: collapse;
+	border-width: 1px 0 1px 1px;
+}
+
+table.code td {
+	padding-left: 0.25em;
+	padding-right: 0.25em;
+	font-family: courier, monospace;
+	font-size: 10pt;
+	border-style: solid;
+	border-color: black;
+}
+
+tr.first td.flags {
+	border-width: 1px 1px 0 1px;
+	text-align: right;
+}
+
+tr.first td.lineNumber {
+	border-width: 1px 1px 0 1px;
+	text-align: right;
+}
+
+tr.first td.sourceLine {
+	border-width: 1px 1px 0 1px;
+	background-color: #F0F0FF;
+}
+
+tr.middle td.flags {
+	border-width: 0 1px 0 1px;
+	text-align: right;
+}
+
+tr.middle td.lineNumber {
+	border-width: 0 1px 0 1px;
+	text-align: right;
+}
+
+tr.middle td.sourceLine {
+	border-width: 0 1px 0 1px;
+	background-color: #F0F0FF;
+}
+
+tr.last td.flags {
+	border-width: 0 1px 1px 1px;
+	text-align: right;
+}
+
+tr.last td.lineNumber {
+	border-width: 0 1px 1px 1px;
+	text-align: right;
+}
+
+tr.last td.sourceLine {
+	border-width: 0 1px 1px 1px;
+	background-color: #F0F0FF;
+}
+</style>
+
+<style type="text/css">
+body {
+	font: 70% verdana, arial, helvetica;
+	color: #000000
+}
+
+p {
+	margin-top: 3px;
+	line-height: 1.5em
+}
+
+h1 {
+	margin-top: 0px;
+	margin-bottom: 6px;
+	font: bold 150% verdana, arial, helvetica
+}
+
+h2 {
+	margin-top: 12px;
+	margin-bottom: 6px;
+	font: bold 125% verdana, arial, helvetica
+}
+
+h3 {
+	margin-top: 12px;
+	margin-bottom: 6px;
+	font: bold 100% verdana, arial, helvetica
+}
+
+h4 {
+	margin-top: 12px;
+	margin-bottom: 6px;
+	font: bold 100% verdana, arial, helvetica
+}
+
+.rounded_page {
+	display: block
+}
+
+.rounded_page * {
+	display: block;
+	height: 1px;
+	overflow: hidden;
+	font-size: .01em;
+	background: #7799DD
+}
+
+.rounded_page1 {
+	margin-left: 3px;
+	margin-right: 3px;
+	padding-left: 1px;
+	padding-right: 1px;
+	border-left: 1px solid #c4d3ef;
+	border-right: 1px solid #c4d3ef;
+	background: #99b2e5
+}
+
+.rounded_page2 {
+	margin-left: 1px;
+	margin-right: 1px;
+	padding-right: 1px;
+	padding-left: 1px;
+	border-left: 1px solid #f1f4fa;
+	border-right: 1px solid #f1f4fa;
+	background: #90ace3
+}
+
+.rounded_page3 {
+	margin-left: 1px;
+	margin-right: 1px;
+	border-left: 1px solid #90ace3;
+	border-right: 1px solid #90ace3;
+}
+
+.rounded_page4 {
+	border-left: 1px solid #c4d3ef;
+	border-right: 1px solid #c4d3ef
+}
+
+.rounded_page5 {
+	border-left: 1px solid #99b2e5;
+	border-right: 1px solid #99b2e5
+}
+
+.rounded_pagefg {
+	background: #7799DD
+}
+
+.rounded_section {
+	display: block
+}
+
+.rounded_section * {
+	display: block;
+	height: 1px;
+	overflow: hidden;
+	font-size: .01em;
+	background: #C3D9FF
+}
+
+.rounded_section1 {
+	margin-left: 3px;
+	margin-right: 3px;
+	padding-left: 1px;
+	padding-right: 1px;
+	border-left: 1px solid #e5eefe;
+	border-right: 1px solid #e5eefe;
+	background: #d2e2fe
+}
+
+.rounded_section2 {
+	margin-left: 1px;
+	margin-right: 1px;
+	padding-right: 1px;
+	padding-left: 1px;
+	border-left: 1px solid #f9fbfe;
+	border-right: 1px solid #f9fbfe;
+	background: #cee0fe
+}
+
+.rounded_section3 {
+	margin-left: 1px;
+	margin-right: 1px;
+	border-left: 1px solid #cee0fe;
+	border-right: 1px solid #cee0fe;
+}
+
+.rounded_section4 {
+	border-left: 1px solid #e5eefe;
+	border-right: 1px solid #e5eefe
+}
+
+.rounded_section5 {
+	border-left: 1px solid #d2e2fe;
+	border-right: 1px solid #d2e2fe
+}
+
+.rounded_sectionfg {
+	background: #C3D9FF
+}
+
+.page-title {
+	color: #FFFFFE;
+	font-weight: bold;
+	font-size: large;
+	margin: 0px 0px 0px 8px;
+}
+
+.page-title-details {
+	color: #FFFFFE;
+	font-weight: bold;
+	margin-right: 8px;
+	margin-left: 8px;
+}
+
+.page-footer {
+	color: #FFFFFE;
+	font-weight: bold;
+	margin-left: 8px
+}
+
+.page-footer-details {
+	color: #FFFFFE;
+	font-weight: bold;
+	margin-right: 8px;
+	margin-left: 8px;
+}
+
+.majorsection-title {
+	color: #FFFFFE;
+	font-weight: bold;
+	margin: 0px 0px 0px 8px;
+}
+
+.majorsection-title-details {
+	color: #FFFFFE;
+	font-weight: bold;
+	margin-right: 8px;
+	margin-left: 8px;
+}
+
+.majorsection-contents {
+	margin: 0px 0px 15px 16px;
+}
+
+.section-title {
+	color: #1F4F8F;
+	font-weight: bold;
+	margin: 0px 0px 0px 6px;
+}
+
+.section-title-details {
+	font-weight: bold;
+	margin-left: 6px;
+	margin-right: 6px;
+}
+
+.section-contents {
+	margin: 6px 0px 15px 14px;
+}
+
+.bodyTable {
+	border: 0px solid #777777;
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.bodyTable th {
+	border: 1px solid #777777;
+	white-space: nowrap;
+	background-color: #EEEEEE;
+	padding-left: 3px;
+	padding-right: 3px;
+}
+
+.bodyTable td {
+	border: 1px solid #777777;
+	vertical-align: top;
+	padding-left: 3px;
+	padding-right: 3px;
+}
+
+td[class=emptyborder] {
+	border: 0px solid #777777;
+	padding: 3px 0px 3px 0px;
+}
+</style>
+
+</head>
+
+<body>
+
+	<div>
+		<b class="rounded_page"><b class="rounded_page1"><b></b></b><b
+			class="rounded_page2"><b></b></b><b class="rounded_page3"></b><b
+			class="rounded_page4"></b><b class="rounded_page5"></b></b>
+		<div class="rounded_pagefg">
+			<h3 class="majorsection-title">\caao_bundle\src\fi\uef\caao\CaaoServlet.java</h3>
+		</div>
+		<b class="rounded_page"><b class="rounded_page5"></b><b
+			class="rounded_page4"></b><b class="rounded_page3"></b><b
+			class="rounded_page2"><b></b></b><b class="rounded_page1"><b></b></b></b>
+	</div>
+	<div class="section-contents">
+		<b>Violations: 1 high, 18 medium, 36 low</b>
+	</div>
+	&nbsp;
+	<div>
+		<b class="rounded_section"><b class="rounded_section1"><b></b></b><b
+			class="rounded_section2"><b></b></b><b class="rounded_section3"></b><b
+			class="rounded_section4"></b><b class="rounded_section5"></b></b>
+		<div class="rounded_sectionfg">
+			<h4 class="section-title">Violations</h4>
+		</div>
+		<b class="rounded_section"><b class="rounded_section5"></b><b
+			class="rounded_section4"></b><b class="rounded_section3"></b><b
+			class="rounded_section2"><b></b></b><b class="rounded_section1"><b></b></b></b>
+	</div>
+	<table>
+		<tr>
+			<td valign="top"><img src="high_severity.gif" alt="high" /></td>
+			<td valign="top"><a href="#line1">Maximum violation count of
+					20 exceeded for the rule &quot;Line Length&quot; in
+					&quot;/caao_bundle/src/fi/uef/caao/CaaoServlet.java&quot;</a></td>
+			<td width="10" />
+			<td valign="top"><img src="low_severity.gif" alt="low" /></td>
+			<td valign="top"><a href="#line118">Line 118 is longer than
+					80 characters</a></td>
+			<td width="10" />
+			<td valign="top"><img src="low_severity.gif" alt="low" /></td>
+			<td valign="top"><a href="#line251">Opening brace for a
+					method should not appear on a new line</a></td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="low_severity.gif" alt="low" /></td>
+			<td valign="top"><a href="#line16">Line 16 is longer than 80
+					characters</a></td>
+			<td width="10" />
+			<td valign="top"><img src="low_severity.gif" alt="low" /></td>
+			<td valign="top"><a href="#line119">Line 119 is longer than
+					80 characters</a></td>
+			<td width="10" />
+			<td valign="top"><img src="medium_severity.gif" alt="medium" />
+			</td>
+			<td valign="top"><a href="#line265">Missing @throws tag for
+					Exception in getOracleConnection</a></td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="low_severity.gif" alt="low" /></td>
+			<td valign="top"><a href="#line24">Opening brace for a type
+					should not appear on a new line</a></td>
+			<td width="10" />
+			<td valign="top"><img src="medium_severity.gif" alt="medium" />
+			</td>
+			<td valign="top"><a href="#line121">Missing @throws tag for
+					Exception in locationList</a></td>
+			<td width="10" />
+			<td valign="top"><img src="low_severity.gif" alt="low" /></td>
+			<td valign="top"><a href="#line266">Opening brace for a
+					method should not appear on a new line</a></td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="low_severity.gif" alt="low" /></td>
+			<td valign="top"><a href="#line32">Line 32 is longer than 80
+					characters</a></td>
+			<td width="10" />
+			<td valign="top"><img src="low_severity.gif" alt="low" /></td>
+			<td valign="top"><a href="#line122">Opening brace for a
+					method should not appear on a new line</a></td>
+			<td width="10" />
+			<td valign="top"><img src="medium_severity.gif" alt="medium" />
+			</td>
+			<td valign="top"><a href="#line280">Invalid method name:
+					&quot;setUser_name&quot; contains an underscore</a></td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="low_severity.gif" alt="low" /></td>
+			<td valign="top"><a href="#line35">Line 35 is longer than 80
+					characters</a></td>
+			<td width="10" />
+			<td valign="top"><img src="medium_severity.gif" alt="medium" />
+			</td>
+			<td valign="top"><a href="#line123">Invalid local variable
+					name: &quot;return_list&quot; contains an underscore</a></td>
+			<td width="10" />
+			<td valign="top"><img src="medium_severity.gif" alt="medium" />
+			</td>
+			<td valign="top"><a href="#line280">Invalid local variable
+					name: &quot;user_name&quot; contains an underscore</a></td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="low_severity.gif" alt="low" /></td>
+			<td valign="top"><a href="#line39">Line 39 is longer than 80
+					characters</a></td>
+			<td width="10" />
+			<td valign="top"><img src="low_severity.gif" alt="low" /></td>
+			<td valign="top"><a href="#line124">Line 124 is longer than
+					80 characters</a></td>
+			<td width="10" />
+			<td valign="top"><img src="low_severity.gif" alt="low" /></td>
+			<td valign="top"><a href="#line281">Opening brace for a
+					method should not appear on a new line</a></td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="low_severity.gif" alt="low" /></td>
+			<td valign="top"><a href="#line41">Line 41 is longer than 80
+					characters</a></td>
+			<td width="10" />
+			<td valign="top"><img src="low_severity.gif" alt="low" /></td>
+			<td valign="top"><a href="#line129">Line 129 is longer than
+					80 characters</a></td>
+			<td width="10" />
+			<td valign="top"><img src="medium_severity.gif" alt="medium" />
+			</td>
+			<td valign="top"><a href="#line288">Invalid method name:
+					&quot;getUser_name&quot; contains an underscore</a></td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="low_severity.gif" alt="low" /></td>
+			<td valign="top"><a href="#line43">Line 43 is longer than 80
+					characters</a></td>
+			<td width="10" />
+			<td valign="top"><img src="low_severity.gif" alt="low" /></td>
+			<td valign="top"><a href="#line130">Line 130 is longer than
+					80 characters</a></td>
+			<td width="10" />
+			<td valign="top"><img src="low_severity.gif" alt="low" /></td>
+			<td valign="top"><a href="#line289">Opening brace for a
+					method should not appear on a new line</a></td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="low_severity.gif" alt="low" /></td>
+			<td valign="top"><a href="#line69">Line 69 is longer than 80
+					characters</a></td>
+			<td width="10" />
+			<td valign="top"><img src="low_severity.gif" alt="low" /></td>
+			<td valign="top"><a href="#line136">Line 136 is longer than
+					80 characters</a></td>
+			<td width="10" />
+			<td valign="top"><img src="low_severity.gif" alt="low" /></td>
+			<td valign="top"><a href="#line299">Opening brace for a
+					method should not appear on a new line</a></td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="low_severity.gif" alt="low" /></td>
+			<td valign="top"><a href="#line70">Line 70 is longer than 80
+					characters</a></td>
+			<td width="10" />
+			<td valign="top"><img src="low_severity.gif" alt="low" /></td>
+			<td valign="top"><a href="#line155">Line 155 is longer than
+					80 characters</a></td>
+			<td width="10" />
+			<td valign="top"><img src="low_severity.gif" alt="low" /></td>
+			<td valign="top"><a href="#line307">Opening brace for a
+					method should not appear on a new line</a></td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="low_severity.gif" alt="low" /></td>
+			<td valign="top"><a href="#line80">Line 80 is longer than 80
+					characters</a></td>
+			<td width="10" />
+			<td valign="top"><img src="medium_severity.gif" alt="medium" />
+			</td>
+			<td valign="top"><a href="#line160">Missing @throws tag for
+					SQLException in eventList</a></td>
+			<td width="10" />
+			<td valign="top"><img src="medium_severity.gif" alt="medium" />
+			</td>
+			<td valign="top"><a href="#line315">Invalid method name:
+					&quot;setMySQL_url&quot; contains an underscore</a></td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="low_severity.gif" alt="low" /></td>
+			<td valign="top"><a href="#line84">Line 84 is longer than 80
+					characters</a></td>
+			<td width="10" />
+			<td valign="top"><img src="low_severity.gif" alt="low" /></td>
+			<td valign="top"><a href="#line161">Opening brace for a
+					method should not appear on a new line</a></td>
+			<td width="10" />
+			<td valign="top"><img src="medium_severity.gif" alt="medium" />
+			</td>
+			<td valign="top"><a href="#line315">Invalid local variable
+					name: &quot;mySQL_url&quot; contains an underscore</a></td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="medium_severity.gif" alt="medium" />
+			</td>
+			<td valign="top"><a href="#line86">Invalid method name:
+					&quot;country_list&quot; contains an underscore</a></td>
+			<td width="10" />
+			<td valign="top"><img src="medium_severity.gif" alt="medium" />
+			</td>
+			<td valign="top"><a href="#line162">Invalid local variable
+					name: &quot;return_list&quot; contains an underscore</a></td>
+			<td width="10" />
+			<td valign="top"><img src="low_severity.gif" alt="low" /></td>
+			<td valign="top"><a href="#line316">Opening brace for a
+					method should not appear on a new line</a></td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="medium_severity.gif" alt="medium" />
+			</td>
+			<td valign="top"><a href="#line86">Missing @throws tag for
+					Exception in country_list</a></td>
+			<td width="10" />
+			<td valign="top"><img src="medium_severity.gif" alt="medium" />
+			</td>
+			<td valign="top"><a href="#line197">Missing @throws tag for
+					SQLException in plantList</a></td>
+			<td width="10" />
+			<td valign="top"><img src="medium_severity.gif" alt="medium" />
+			</td>
+			<td valign="top"><a href="#line323">Invalid method name:
+					&quot;getMySQL_url&quot; contains an underscore</a></td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="low_severity.gif" alt="low" /></td>
+			<td valign="top"><a href="#line87">Opening brace for a
+					method should not appear on a new line</a></td>
+			<td width="10" />
+			<td valign="top"><img src="low_severity.gif" alt="low" /></td>
+			<td valign="top"><a href="#line198">Opening brace for a
+					method should not appear on a new line</a></td>
+			<td width="10" />
+			<td valign="top"><img src="low_severity.gif" alt="low" /></td>
+			<td valign="top"><a href="#line324">Opening brace for a
+					method should not appear on a new line</a></td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="medium_severity.gif" alt="medium" />
+			</td>
+			<td valign="top"><a href="#line88">Invalid local variable
+					name: &quot;return_list&quot; contains an underscore</a></td>
+			<td width="10" />
+			<td valign="top"><img src="medium_severity.gif" alt="medium" />
+			</td>
+			<td valign="top"><a href="#line199">Invalid local variable
+					name: &quot;return_list&quot; contains an underscore</a></td>
+			<td width="10" />
+			<td valign="top"><img src="low_severity.gif" alt="low" /></td>
+			<td valign="top"><a href="#line333">Opening brace for a
+					method should not appear on a new line</a></td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="low_severity.gif" alt="low" /></td>
+			<td valign="top"><a href="#line93">Line 93 is longer than 80
+					characters</a></td>
+			<td width="10" />
+			<td valign="top"><img src="medium_severity.gif" alt="medium" />
+			</td>
+			<td valign="top"><a href="#line235">Missing @throws tag for
+					Exception in getHSQLConnection</a></td>
+			<td width="10" />
+			<td valign="top"><img src="low_severity.gif" alt="low" /></td>
+			<td valign="top"><a href="#line341">Opening brace for a
+					method should not appear on a new line</a></td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="low_severity.gif" alt="low" /></td>
+			<td valign="top"><a href="#line97">Line 97 is longer than 80
+					characters</a></td>
+			<td width="10" />
+			<td valign="top"><img src="low_severity.gif" alt="low" /></td>
+			<td valign="top"><a href="#line236">Opening brace for a
+					method should not appear on a new line</a></td>
+			<td width="10" />
+			<td valign="top">&nbsp;</td>
+			<td valign="top">&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="low_severity.gif" alt="low" /></td>
+			<td valign="top"><a href="#line115">Line 115 is longer than
+					80 characters</a></td>
+			<td width="10" />
+			<td valign="top"><img src="medium_severity.gif" alt="medium" />
+			</td>
+			<td valign="top"><a href="#line250">Missing @throws tag for
+					Exception in getMySqlConnection</a></td>
+			<td width="10" />
+			<td valign="top">&nbsp;</td>
+			<td valign="top">&nbsp;</td>
+		</tr>
+	</table>
+	&nbsp;
+	<div>
+		<b class="rounded_section"><b class="rounded_section1"><b></b></b><b
+			class="rounded_section2"><b></b></b><b class="rounded_section3"></b><b
+			class="rounded_section4"></b><b class="rounded_section5"></b></b>
+		<div class="rounded_sectionfg">
+			<h4 class="section-title">Source</h4>
+		</div>
+		<b class="rounded_section"><b class="rounded_section5"></b><b
+			class="rounded_section4"></b><b class="rounded_section3"></b><b
+			class="rounded_section2"><b></b></b><b class="rounded_section1"><b></b></b></b>
+	</div>
+	<div class="section-contents">
+		<table width="100%" class="code">
+			<tr class="first">
+				<td class="lineNumber"><a name="line1"><b>1</b></a></td>
+				<td class="flags" nowrap="nowrap"><img src="high_severity.gif"
+					alt="high"
+					title="Maximum violation count of 20 exceeded for the rule &quot;Line Length&quot; in &quot;/caao_bundle/src/fi/uef/caao/CaaoServlet.java&quot;" /></td>
+				<td class="sourceLine" width="100%">/**/</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line2">2</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">package&nbsp;fi.uef.caao;</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line3">3</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%"></td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line4">4</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					import&nbsp;java.sql.Connection;</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line5">5</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					import&nbsp;java.sql.DriverManager;</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line6">6</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					import&nbsp;java.sql.ResultSet;</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line7">7</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					import&nbsp;java.sql.SQLException;</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line8">8</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					import&nbsp;java.sql.Statement;</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line9">9</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					import&nbsp;java.util.Vector;</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line10">10</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%"></td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line11">11</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">/**</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line12">12</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;*&nbsp;The&nbsp;class&nbsp;implements&nbsp;basic&nbsp;methods&nbsp;for&nbsp;the&nbsp;client&nbsp;application.
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line13">13</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;*&nbsp;Used&nbsp;as&nbsp;handler&nbsp;class&nbsp;for&nbsp;the&nbsp;xml-rpc&nbsp;service.&nbsp;See&nbsp;the
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line14">14</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;*&nbsp;comments&nbsp;on&nbsp;each&nbsp;method&nbsp;for&nbsp;details.&nbsp;Design&nbsp;notes:&nbsp;
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line15">15</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;*&nbsp;--&nbsp;the&nbsp;thread&nbsp;safety&nbsp;was&nbsp;taken&nbsp;into&nbsp;consideration&nbsp;
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line16"><b>16</b></a></td>
+				<td class="flags" nowrap="nowrap"><img src="low_severity.gif"
+					alt="low" title="Line 16 is longer than 80 characters" /></td>
+				<td class="sourceLine" width="100%"><span class="lowSeverity">&nbsp;*&nbsp;--&nbsp;wrapper&nbsp;classes&nbsp;of&nbsp;the&nbsp;jdk&nbsp;was&nbsp;taken&nbsp;into&nbsp;account,&nbsp;so&nbsp;with&nbsp;small&nbsp;modification&nbsp;you&nbsp;can&nbsp;use</span>
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line17">17</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;different&nbsp;databases.&nbsp;This&nbsp;implementation&nbsp;uses&nbsp;mySQL
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line18">18</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">&nbsp;*&nbsp;</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line19">19</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;*&nbsp;@author&nbsp;zafar.khaydarov</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line20">20</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;*&nbsp;@version&nbsp;$Revision: 1.1 $</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line21">21</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">&nbsp;*/</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line22">22</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%"></td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line23">23</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					public&nbsp;class&nbsp;CaaoServlet</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line24"><b>24</b></a></td>
+				<td class="flags" nowrap="nowrap"><img src="low_severity.gif"
+					alt="low"
+					title="Opening brace for a type should not appear on a new line" /></td>
+				<td class="sourceLine" width="100%">&nbsp;&nbsp;&nbsp;<span
+					class="lowSeverity">&nbsp;</span>{
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line25">25</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line26">26</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;The&nbsp;connection.
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line27">27</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line28">28</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@see&nbsp;http://download.oracle.com/javase/1.4.2/docs/api/java/sql/Connection.html&nbsp;Field&nbsp;conection.
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line29">29</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line30">30</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;static&nbsp;Connection&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;conection&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;null;
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line31">31</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line32"><b>32</b></a></td>
+				<td class="flags" nowrap="nowrap"><img src="low_severity.gif"
+					alt="low" title="Line 32 is longer than 80 characters" /></td>
+				<td class="sourceLine" width="100%"><span class="lowSeverity">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Connection&nbsp;string&nbsp;URL.&nbsp;For&nbsp;more&nbsp;details&nbsp;please&nbsp;look&nbsp;at&nbsp;JDBC&nbsp;URL&nbsp;specification.</span>
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line33">33</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;(http://www.connectionstrings.com)
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line34">34</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line35"><b>35</b></a></td>
+				<td class="flags" nowrap="nowrap"><img src="low_severity.gif"
+					alt="low" title="Line 35 is longer than 80 characters" /></td>
+				<td class="sourceLine" width="100%"><span class="lowSeverity">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;static&nbsp;String&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mySQL_url&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;&quot;jdbc:mysql://localhost/&quot;;</span>
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line36">36</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line37">37</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;The&nbsp;database&nbsp;(schema)&nbsp;name&nbsp;in&nbsp;database&nbsp;catalog.
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line38">38</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line39"><b>39</b></a></td>
+				<td class="flags" nowrap="nowrap"><img src="low_severity.gif"
+					alt="low" title="Line 39 is longer than 80 characters" /></td>
+				<td class="sourceLine" width="100%"><span class="lowSeverity">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;static&nbsp;String&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;database&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;&quot;caorganizer&quot;;</span>
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line40">40</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line41"><b>41</b></a></td>
+				<td class="flags" nowrap="nowrap"><img src="low_severity.gif"
+					alt="low" title="Line 41 is longer than 80 characters" /></td>
+				<td class="sourceLine" width="100%"><span class="lowSeverity">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;The&nbsp;class&nbsp;name&nbsp;of&nbsp;the&nbsp;driver.&nbsp;Depends&nbsp;on&nbsp;the&nbsp;driver&nbsp;class&nbsp;implementation.</span>
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line42">42</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line43"><b>43</b></a></td>
+				<td class="flags" nowrap="nowrap"><img src="low_severity.gif"
+					alt="low" title="Line 43 is longer than 80 characters" /></td>
+				<td class="sourceLine" width="100%"><span class="lowSeverity">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;static&nbsp;String&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mySQL_driver_name&nbsp;=&nbsp;&quot;com.mysql.jdbc.Driver&quot;;</span>
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line44">44</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line45">45</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Database&nbsp;user&nbsp;name.
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line46">46</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line47">47</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;static&nbsp;String&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;user_name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;&quot;root&quot;;
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line48">48</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line49">49</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Password&nbsp;of&nbsp;the&nbsp;db&nbsp;user
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line50">50</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line51">51</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;static&nbsp;String&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pass&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;&quot;root&quot;;
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line52">52</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line53">53</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;The&nbsp;statement&nbsp;for&nbsp;SQL&nbsp;queries.
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line54">54</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line55">55</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;static&nbsp;Statement&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;statement;
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line56">56</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line57">57</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Field&nbsp;for&nbsp;the&nbsp;parameterized&nbsp;queries.
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line58">58</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line59">59</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;static&nbsp;java.sql.PreparedStatement&nbsp;prepared_statement;
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line60">60</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line61">61</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;The&nbsp;result&nbsp;set&nbsp;returned&nbsp;by&nbsp;queries
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line62">62</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line63">63</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@see&nbsp;http://download.oracle.com/javase/1.4.2/docs/api/java/sql/ResultSet.html&nbsp;Field&nbsp;result_set.
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line64">64</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@see&nbsp;link&nbsp;http://download.oracle.com/javase/tutorial/java/javaOO/accesscontrol.html
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line65">65</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line66">66</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;static&nbsp;ResultSet&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result_set&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;null;
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line67">67</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%"></td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line68">68</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line69"><b>69</b></a></td>
+				<td class="flags" nowrap="nowrap"><img src="low_severity.gif"
+					alt="low" title="Line 69 is longer than 80 characters" /></td>
+				<td class="sourceLine" width="100%"><span class="lowSeverity">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;The&nbsp;main&nbsp;intend&nbsp;of&nbsp;the&nbsp;class&nbsp;is&nbsp;the&nbsp;data&nbsp;exchange&nbsp;between&nbsp;client&nbsp;application&nbsp;and&nbsp;the&nbsp;server.&nbsp;Class&nbsp;uses&nbsp;the</span>
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line70"><b>70</b></a></td>
+				<td class="flags" nowrap="nowrap"><img src="low_severity.gif"
+					alt="low" title="Line 70 is longer than 80 characters" /></td>
+				<td class="sourceLine" width="100%"><span class="lowSeverity">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;{@link&nbsp;DbConnector}&nbsp;class&nbsp;to&nbsp;connect&nbsp;to&nbsp;the&nbsp;database&nbsp;and&nbsp;execute&nbsp;the&nbsp;SQL&nbsp;queries.&nbsp;The&nbsp;public&nbsp;methods&nbsp;is</span>
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line71">71</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;executed&nbsp;by&nbsp;the&nbsp;client&nbsp;(in&nbsp;this&nbsp;implementation&nbsp;Android&nbsp;application).
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line72">72</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line73">73</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@since
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line74">74</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@see&nbsp;&lt;a&gt;DbConnector&lt;a&gt;
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line75">75</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line76">76</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;static&nbsp;final&nbsp;long&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serialVersionUID&nbsp;&nbsp;=&nbsp;1L;
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line77">77</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%"></td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line78">78</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;---------------------------------------------------------------------------------------
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line79">79</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line80"><b>80</b></a></td>
+				<td class="flags" nowrap="nowrap"><img src="low_severity.gif"
+					alt="low" title="Line 80 is longer than 80 characters" /></td>
+				<td class="sourceLine" width="100%"><span class="lowSeverity">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Returns&nbsp;the&nbsp;list&nbsp;of&nbsp;countries&nbsp;from&nbsp;database.&nbsp;Returns&nbsp;Vector&nbsp;as&nbsp;it&apos;s&nbsp;thread&nbsp;safe.</span>
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line81">81</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line82">82</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line83">83</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line84"><b>84</b></a></td>
+				<td class="flags" nowrap="nowrap"><img src="low_severity.gif"
+					alt="low" title="Line 84 is longer than 80 characters" /></td>
+				<td class="sourceLine" width="100%"><span class="lowSeverity">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@return&nbsp;Vector&lt;String&gt;&nbsp;*&nbsp;@throws&nbsp;Exception&nbsp;*&nbsp;@throws&nbsp;Exception&nbsp;*&nbsp;@throws&nbsp;Exception</span>
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line85">85</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line86"><b>86</b></a></td>
+				<td class="flags" nowrap="nowrap"><img
+					src="medium_severity.gif" alt="medium"
+					title="Invalid method name: &quot;country_list&quot; contains an underscore" /><img
+					src="medium_severity.gif" alt="medium"
+					title="Missing @throws tag for Exception in country_list" /></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;Vector&lt;String&gt;&nbsp;<span
+					class="mediumSeverity">country_list</span>()&nbsp;throws&nbsp;<span
+					class="mediumSeverity">Exception</span>
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line87"><b>87</b></a></td>
+				<td class="flags" nowrap="nowrap"><img src="low_severity.gif"
+					alt="low"
+					title="Opening brace for a method should not appear on a new line" /></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="lowSeverity">&nbsp;</span>{
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line88"><b>88</b></a></td>
+				<td class="flags" nowrap="nowrap"><img
+					src="medium_severity.gif" alt="medium"
+					title="Invalid local variable name: &quot;return_list&quot; contains an underscore" /></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vector&lt;String&gt;&nbsp;<span
+					class="mediumSeverity">return_list</span>&nbsp;=&nbsp;new&nbsp;Vector&lt;String&gt;();
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line89">89</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(&quot;Gonna&nbsp;connect&nbsp;to&nbsp;db..&quot;);
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line90">90</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try&nbsp;{
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line91">91</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;conection&nbsp;=&nbsp;getMySqlConnection();
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line92">92</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;statement&nbsp;=&nbsp;conection.createStatement();
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line93"><b>93</b></a></td>
+				<td class="flags" nowrap="nowrap"><img src="low_severity.gif"
+					alt="low" title="Line 93 is longer than 80 characters" /></td>
+				<td class="sourceLine" width="100%"><span class="lowSeverity">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(statement.executeQuery(&quot;SELECT&nbsp;country_title&nbsp;from&nbsp;core_countries&nbsp;ORDER&nbsp;BY&nbsp;country_title&quot;)&nbsp;!=&nbsp;null)&nbsp;{</span>
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line94">94</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result_set&nbsp;=&nbsp;statement.getResultSet();
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line95">95</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while&nbsp;(result_set.next())&nbsp;{
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line96">96</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return_list.add(result_set.getString(&quot;country_title&quot;));
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line97"><b>97</b></a></td>
+				<td class="flags" nowrap="nowrap"><img src="low_severity.gif"
+					alt="low" title="Line 97 is longer than 80 characters" /></td>
+				<td class="sourceLine" width="100%"><span class="lowSeverity">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(&quot;Got&nbsp;result&nbsp;from&nbsp;query&nbsp;-&gt;&nbsp;&quot;&nbsp;+&nbsp;result_set.getString(&quot;country_title&quot;));</span>
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line98">98</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line99">99</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line100">100</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line101">101</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;catch&nbsp;(Exception&nbsp;s)&nbsp;{
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line102">102</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s.printStackTrace();
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line103">103</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line104">104</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;finally&nbsp;{
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line105">105</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;statement.close();
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line106">106</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;conection.close();
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line107">107</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line108">108</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;return_list;
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line109">109</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line110">110</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%"></td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line111">111</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line112">112</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;For&nbsp;a&nbsp;given&nbsp;country,&nbsp;returns&nbsp;the&nbsp;list&nbsp;of&nbsp;location.
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line113">113</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line114">114</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;pCountryName
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line115"><b>115</b></a></td>
+				<td class="flags" nowrap="nowrap"><img src="low_severity.gif"
+					alt="low" title="Line 115 is longer than 80 characters" /></td>
+				<td class="sourceLine" width="100%"><span class="lowSeverity">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;country&nbsp;which&nbsp;for&nbsp;the&nbsp;locations&nbsp;is&nbsp;necessary&nbsp;String</span>
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line116">116</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line117">117</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line118"><b>118</b></a></td>
+				<td class="flags" nowrap="nowrap"><img src="low_severity.gif"
+					alt="low" title="Line 118 is longer than 80 characters" /></td>
+				<td class="sourceLine" width="100%"><span class="lowSeverity">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@return&nbsp;Vector&lt;String&gt;&nbsp;The&nbsp;list&nbsp;of&nbsp;location&nbsp;*&nbsp;@throws&nbsp;Exception&nbsp;The&nbsp;exception&nbsp;could&nbsp;be&nbsp;SQL&nbsp;exception&nbsp;or&nbsp;some</span>
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line119"><b>119</b></a></td>
+				<td class="flags" nowrap="nowrap"><img src="low_severity.gif"
+					alt="low" title="Line 119 is longer than 80 characters" /></td>
+				<td class="sourceLine" width="100%"><span class="lowSeverity">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;another&nbsp;*&nbsp;@see&nbsp;Vector&lt;E&gt;&nbsp;*&nbsp;@throws&nbsp;Exception&nbsp;*&nbsp;@throws&nbsp;Exception</span>
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line120">120</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line121"><b>121</b></a></td>
+				<td class="flags" nowrap="nowrap"><img
+					src="medium_severity.gif" alt="medium"
+					title="Missing @throws tag for Exception in locationList" /></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;Vector&lt;String&gt;&nbsp;locationList(String&nbsp;pCountryName)&nbsp;throws&nbsp;<span
+					class="mediumSeverity">Exception</span>
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line122"><b>122</b></a></td>
+				<td class="flags" nowrap="nowrap"><img src="low_severity.gif"
+					alt="low"
+					title="Opening brace for a method should not appear on a new line" /></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="lowSeverity">&nbsp;</span>{
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line123"><b>123</b></a></td>
+				<td class="flags" nowrap="nowrap"><img
+					src="medium_severity.gif" alt="medium"
+					title="Invalid local variable name: &quot;return_list&quot; contains an underscore" /></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vector&lt;String&gt;&nbsp;<span
+					class="mediumSeverity">return_list</span>&nbsp;=&nbsp;new&nbsp;Vector&lt;String&gt;();
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line124"><b>124</b></a></td>
+				<td class="flags" nowrap="nowrap"><img src="low_severity.gif"
+					alt="low" title="Line 124 is longer than 80 characters" /></td>
+				<td class="sourceLine" width="100%"><span class="lowSeverity">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(&quot;Executing&nbsp;method&nbsp;-&gt;&nbsp;locationList(&quot;&nbsp;+&nbsp;pCountryName&nbsp;+&nbsp;&quot;)&quot;);</span>
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line125">125</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(&quot;Gonna&nbsp;connect&nbsp;to&nbsp;db..&quot;);
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line126">126</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try&nbsp;{
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line127">127</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;conection&nbsp;=&nbsp;getMySqlConnection();
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line128">128</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;prepared_statement&nbsp;=&nbsp;conection
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line129"><b>129</b></a></td>
+				<td class="flags" nowrap="nowrap"><img src="low_severity.gif"
+					alt="low" title="Line 129 is longer than 80 characters" /></td>
+				<td class="sourceLine" width="100%"><span class="lowSeverity">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.prepareStatement(&quot;SELECT&nbsp;location_title&nbsp;from&nbsp;CORE_locations_list&nbsp;where&nbsp;fk_country_id&nbsp;=&quot;</span>
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line130"><b>130</b></a></td>
+				<td class="flags" nowrap="nowrap"><img src="low_severity.gif"
+					alt="low" title="Line 130 is longer than 80 characters" /></td>
+				<td class="sourceLine" width="100%"><span class="lowSeverity">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+&nbsp;&quot;&nbsp;(SELECT&nbsp;country_id&nbsp;from&nbsp;CORE_countries&nbsp;where&nbsp;country_title&nbsp;=&nbsp;?)&quot;);</span>
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line131">131</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;prepared_statement.setString(1,&nbsp;pCountryName);
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line132">132</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(prepared_statement.executeQuery()&nbsp;!=&nbsp;null)&nbsp;{
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line133">133</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result_set&nbsp;=&nbsp;statement.getResultSet();
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line134">134</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while&nbsp;(result_set.next())&nbsp;{
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line135">135</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return_list.add(result_set.getString(&quot;location_title&quot;));
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line136"><b>136</b></a></td>
+				<td class="flags" nowrap="nowrap"><img src="low_severity.gif"
+					alt="low" title="Line 136 is longer than 80 characters" /></td>
+				<td class="sourceLine" width="100%"><span class="lowSeverity">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(&quot;Got&nbsp;result&nbsp;from&nbsp;query&nbsp;-&gt;&nbsp;&quot;&nbsp;+&nbsp;result_set.getString(&quot;location_title&quot;));</span>
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line137">137</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line138">138</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line139">139</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line140">140</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;catch&nbsp;(Exception&nbsp;s)&nbsp;{
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line141">141</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s.printStackTrace();
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line142">142</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line143">143</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;finally&nbsp;{
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line144">144</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;statement.close();
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line145">145</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;conection.close();
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line146">146</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line147">147</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;return_list;
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line148">148</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line149">149</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%"></td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line150">150</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;---------------------------------------------------------------------------------------
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line151">151</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line152">152</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Returns&nbsp;the&nbsp;list&nbsp;of&nbsp;events&nbsp;for&nbsp;specified&nbsp;in&nbsp;pUsareName
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line153">153</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line154">154</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;pUserName
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line155"><b>155</b></a></td>
+				<td class="flags" nowrap="nowrap"><img src="low_severity.gif"
+					alt="low" title="Line 155 is longer than 80 characters" /></td>
+				<td class="sourceLine" width="100%"><span class="lowSeverity">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String&nbsp;the&nbsp;user&nbsp;name&nbsp;(email&nbsp;in&nbsp;database)&nbsp;-&nbsp;the&nbsp;unique&nbsp;user&nbsp;identifier.</span>
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line156">156</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line157">157</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line158">158</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@return&nbsp;Vector&lt;String&gt;&nbsp;*&nbsp;@throws&nbsp;SQLException&nbsp;*&nbsp;@throws&nbsp;SQLException&nbsp;*&nbsp;@throws&nbsp;SQLException
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line159">159</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line160"><b>160</b></a></td>
+				<td class="flags" nowrap="nowrap"><img
+					src="medium_severity.gif" alt="medium"
+					title="Missing @throws tag for SQLException in eventList" /></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;Vector&lt;String&gt;&nbsp;eventList(String&nbsp;pUserName)&nbsp;throws&nbsp;<span
+					class="mediumSeverity">SQLException</span>
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line161"><b>161</b></a></td>
+				<td class="flags" nowrap="nowrap"><img src="low_severity.gif"
+					alt="low"
+					title="Opening brace for a method should not appear on a new line" /></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="lowSeverity">&nbsp;</span>{
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line162"><b>162</b></a></td>
+				<td class="flags" nowrap="nowrap"><img
+					src="medium_severity.gif" alt="medium"
+					title="Invalid local variable name: &quot;return_list&quot; contains an underscore" /></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vector&lt;String&gt;&nbsp;<span
+					class="mediumSeverity">return_list</span>&nbsp;=&nbsp;new&nbsp;Vector&lt;String&gt;();
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line163">163</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(&quot;Executing&nbsp;method&nbsp;-&gt;&nbsp;eventList(&quot;&nbsp;+&nbsp;pUserName&nbsp;+&nbsp;&quot;)&quot;);
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line164">164</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(&quot;Gonna&nbsp;connect&nbsp;to&nbsp;db..&quot;);
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line165">165</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try&nbsp;{
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line166">166</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;conection&nbsp;=&nbsp;getMySqlConnection();
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line167">167</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;prepared_statement&nbsp;=&nbsp;conection.prepareStatement(&quot;SELECT&nbsp;event_text&nbsp;from&nbsp;PG_events_list&quot;
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line168">168</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+&nbsp;&quot;where&nbsp;fk_user_id&nbsp;=&nbsp;(select&nbsp;user_id&nbsp;from&nbsp;CORE_users&nbsp;where&nbsp;e_mail&nbsp;=&nbsp;?)&nbsp;order&nbsp;by&nbsp;1&nbsp;desc&quot;);
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line169">169</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;prepared_statement.setString(1,&nbsp;pUserName);
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line170">170</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(prepared_statement.executeQuery()&nbsp;!=&nbsp;null)&nbsp;{
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line171">171</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result_set&nbsp;=&nbsp;prepared_statement.getResultSet();
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line172">172</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while&nbsp;(result_set.next())&nbsp;{
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line173">173</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return_list.add(result_set.getString(&quot;event_text&quot;));
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line174">174</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(&quot;Got&nbsp;result&nbsp;from&nbsp;query&nbsp;-&gt;&nbsp;&quot;&nbsp;+&nbsp;result_set.getString(&quot;event_text&quot;));
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line175">175</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line176">176</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line177">177</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line178">178</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;catch&nbsp;(Exception&nbsp;s)&nbsp;{
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line179">179</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s.printStackTrace();
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line180">180</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line181">181</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;finally&nbsp;{
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line182">182</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;prepared_statement.close();
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line183">183</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;prepared_statement.close();
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line184">184</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line185">185</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;return_list;
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line186">186</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line187">187</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%"></td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line188">188</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line189">189</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Returns&nbsp;the&nbsp;list&nbsp;of&nbsp;plants&nbsp;(which&nbsp;user&nbsp;is&nbsp;growing)&nbsp;for&nbsp;a&nbsp;specified&nbsp;user.
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line190">190</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line191">191</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;pUserName
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line192">192</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;user&nbsp;name&nbsp;for&nbsp;which&nbsp;the&nbsp;procedure&nbsp;returns&nbsp;the&nbsp;list&nbsp;of&nbsp;plants.
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line193">193</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line194">194</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line195">195</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@return&nbsp;Vector&lt;String&gt;&nbsp;The&nbsp;list&nbsp;of&nbsp;plants&nbsp;*&nbsp;@throws&nbsp;SQLException&nbsp;*&nbsp;@throws&nbsp;SQLException
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line196">196</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line197"><b>197</b></a></td>
+				<td class="flags" nowrap="nowrap"><img
+					src="medium_severity.gif" alt="medium"
+					title="Missing @throws tag for SQLException in plantList" /></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;Vector&lt;String&gt;&nbsp;plantList(String&nbsp;pUserName)&nbsp;throws&nbsp;<span
+					class="mediumSeverity">SQLException</span>
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line198"><b>198</b></a></td>
+				<td class="flags" nowrap="nowrap"><img src="low_severity.gif"
+					alt="low"
+					title="Opening brace for a method should not appear on a new line" /></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="lowSeverity">&nbsp;</span>{
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line199"><b>199</b></a></td>
+				<td class="flags" nowrap="nowrap"><img
+					src="medium_severity.gif" alt="medium"
+					title="Invalid local variable name: &quot;return_list&quot; contains an underscore" /></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vector&lt;String&gt;&nbsp;<span
+					class="mediumSeverity">return_list</span>&nbsp;=&nbsp;new&nbsp;Vector&lt;String&gt;();
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line200">200</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(&quot;Executing&nbsp;method&nbsp;-&gt;&nbsp;eventList(&quot;&nbsp;+&nbsp;pUserName&nbsp;+&nbsp;&quot;)&quot;);
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line201">201</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(&quot;Gonna&nbsp;connect&nbsp;to&nbsp;db..&quot;);
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line202">202</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try&nbsp;{
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line203">203</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;conection&nbsp;=&nbsp;getMySqlConnection();
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line204">204</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;prepared_statement&nbsp;=&nbsp;conection.prepareStatement(&quot;SELECT&nbsp;pgp_title&nbsp;from&nbsp;PG_plant_growing_plan&quot;
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line205">205</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+&nbsp;&quot;WHERE&nbsp;user_id&nbsp;=&nbsp;(SELECT&nbsp;user_id&nbsp;from&nbsp;CORE_users&nbsp;where&nbsp;e_mail&nbsp;=&nbsp;?)&quot;);
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line206">206</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;prepared_statement.setString(1,&nbsp;pUserName);
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line207">207</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(prepared_statement.executeQuery()&nbsp;!=&nbsp;null)&nbsp;{
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line208">208</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result_set&nbsp;=&nbsp;prepared_statement.getResultSet();
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line209">209</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while&nbsp;(result_set.next())&nbsp;{
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line210">210</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return_list.add(result_set.getString(&quot;event_text&quot;));
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line211">211</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(&quot;Got&nbsp;result&nbsp;from&nbsp;query&nbsp;-&gt;&nbsp;&quot;&nbsp;+&nbsp;result_set.getString(&quot;event_text&quot;));
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line212">212</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line213">213</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line214">214</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line215">215</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;catch&nbsp;(Exception&nbsp;s)&nbsp;{
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line216">216</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s.printStackTrace();
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line217">217</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line218">218</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;finally&nbsp;{
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line219">219</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;prepared_statement.close();
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line220">220</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;prepared_statement.close();
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line221">221</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line222">222</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;return_list;
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line223">223</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line224">224</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%"></td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line225">225</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;----------------------------------------------------------------------------------------------------
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line226">226</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line227">227</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Returns&nbsp;the&nbsp;PostgreSQL&nbsp;connection.&nbsp;Depend&nbsp;on&nbsp;the&nbsp;driver&nbsp;version,&nbsp;edit&nbsp;the&nbsp;class&nbsp;name&nbsp;of&nbsp;the&nbsp;driver.&nbsp;Method
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line228">228</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;uses&nbsp;the&nbsp;jdbc&nbsp;wrapper&nbsp;for&nbsp;connecting&nbsp;to&nbsp;the&nbsp;database.
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line229">229</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line230">230</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line231">231</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line232">232</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@return&nbsp;Connection&nbsp;*&nbsp;@throws&nbsp;Exception&nbsp;*&nbsp;@throws&nbsp;Exception
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line233">233</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line234">234</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@SuppressWarnings(&quot;unused&quot;)
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line235"><b>235</b></a></td>
+				<td class="flags" nowrap="nowrap"><img
+					src="medium_severity.gif" alt="medium"
+					title="Missing @throws tag for Exception in getHSQLConnection" /></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;static&nbsp;Connection&nbsp;getHSQLConnection()&nbsp;throws&nbsp;<span
+					class="mediumSeverity">Exception</span>
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line236"><b>236</b></a></td>
+				<td class="flags" nowrap="nowrap"><img src="low_severity.gif"
+					alt="low"
+					title="Opening brace for a method should not appear on a new line" /></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="lowSeverity">&nbsp;</span>{
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line237">237</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Class.forName(&quot;org.hsqldb.jdbcDriver&quot;);
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line238">238</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(&quot;Driver&nbsp;Loaded.&quot;);
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line239">239</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String&nbsp;url&nbsp;=&nbsp;&quot;jdbc:hsqldb:data/&quot;&nbsp;+&nbsp;getDatabaseName();
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line240">240</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;DriverManager.getConnection(url,&nbsp;getUser_name(),&nbsp;getPass());
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line241">241</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line242">242</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%"></td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line243">243</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line244">244</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Returns&nbsp;mySQL&nbsp;connection.
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line245">245</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line246">246</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line247">247</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line248">248</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@return&nbsp;Connection&nbsp;*&nbsp;@throws&nbsp;Exception&nbsp;*&nbsp;@throws&nbsp;Exception
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line249">249</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line250"><b>250</b></a></td>
+				<td class="flags" nowrap="nowrap"><img
+					src="medium_severity.gif" alt="medium"
+					title="Missing @throws tag for Exception in getMySqlConnection" /></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;static&nbsp;Connection&nbsp;getMySqlConnection()&nbsp;throws&nbsp;<span
+					class="mediumSeverity">Exception</span>
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line251"><b>251</b></a></td>
+				<td class="flags" nowrap="nowrap"><img src="low_severity.gif"
+					alt="low"
+					title="Opening brace for a method should not appear on a new line" /></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="lowSeverity">&nbsp;</span>{
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line252">252</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Class.forName(mySQL_driver_name);&nbsp;//&nbsp;mysql&nbsp;driver
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line253">253</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Connection&nbsp;conn&nbsp;=&nbsp;DriverManager.getConnection(getMySQL_url()&nbsp;+&nbsp;getDatabaseName(),&nbsp;getUser_name(),&nbsp;getPass());
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line254">254</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;conn;
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line255">255</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line256">256</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%"></td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line257">257</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line258">258</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Returns&nbsp;the&nbsp;connection&nbsp;to&nbsp;the&nbsp;Oracle&nbsp;database.&nbsp;Please&nbsp;edit&nbsp;the&nbsp;driver&nbsp;and&nbsp;the&nbsp;database&nbsp;connection&nbsp;URL&nbsp;for
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line259">259</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;specific&nbsp;version&nbsp;of&nbsp;the&nbsp;driver.
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line260">260</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line261">261</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line262">262</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line263">263</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@return&nbsp;Connection&nbsp;*&nbsp;@throws&nbsp;Exception&nbsp;*&nbsp;@throws&nbsp;Exception
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line264">264</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line265"><b>265</b></a></td>
+				<td class="flags" nowrap="nowrap"><img
+					src="medium_severity.gif" alt="medium"
+					title="Missing @throws tag for Exception in getOracleConnection" /></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;static&nbsp;Connection&nbsp;getOracleConnection()&nbsp;throws&nbsp;<span
+					class="mediumSeverity">Exception</span>
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line266"><b>266</b></a></td>
+				<td class="flags" nowrap="nowrap"><img src="low_severity.gif"
+					alt="low"
+					title="Opening brace for a method should not appear on a new line" /></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="lowSeverity">&nbsp;</span>{
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line267">267</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String&nbsp;driver&nbsp;=&nbsp;&quot;oracle.jdbc.driver.OracleDriver&quot;;
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line268">268</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String&nbsp;url&nbsp;=&nbsp;&quot;jdbc:oracle:thin:@cs.joensuu.fi:1521:&quot;&nbsp;+&nbsp;getDatabaseName();
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line269">269</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Class.forName(driver);&nbsp;//&nbsp;load&nbsp;Oracle&nbsp;driver
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line270">270</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Connection&nbsp;conn&nbsp;=&nbsp;DriverManager.getConnection(url,&nbsp;getUser_name(),&nbsp;getPass());
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line271">271</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;conn;
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line272">272</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line273">273</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%"></td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line274">274</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;---------------&nbsp;the&nbsp;getter&nbsp;and&nbsp;setters&nbsp;of&nbsp;the&nbsp;rest&nbsp;class&nbsp;members
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line275">275</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line276">276</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;user_name
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line277">277</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;user_name&nbsp;to&nbsp;set
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line278">278</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line279">279</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@SuppressWarnings(&quot;unused&quot;)
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line280"><b>280</b></a></td>
+				<td class="flags" nowrap="nowrap"><img
+					src="medium_severity.gif" alt="medium"
+					title="Invalid method name: &quot;setUser_name&quot; contains an underscore" /><img
+					src="medium_severity.gif" alt="medium"
+					title="Invalid local variable name: &quot;user_name&quot; contains an underscore" /></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;static&nbsp;void&nbsp;<span
+					class="mediumSeverity">setUser_name</span>(String&nbsp;<span
+					class="mediumSeverity">user_name</span>)
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line281"><b>281</b></a></td>
+				<td class="flags" nowrap="nowrap"><img src="low_severity.gif"
+					alt="low"
+					title="Opening brace for a method should not appear on a new line" /></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="lowSeverity">&nbsp;</span>{
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line282">282</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CaaoServlet.user_name&nbsp;=&nbsp;user_name;
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line283">283</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line284">284</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%"></td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line285">285</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line286">286</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line287">287</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@return&nbsp;the&nbsp;user_name&nbsp;*/
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line288"><b>288</b></a></td>
+				<td class="flags" nowrap="nowrap"><img
+					src="medium_severity.gif" alt="medium"
+					title="Invalid method name: &quot;getUser_name&quot; contains an underscore" /></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;static&nbsp;String&nbsp;<span
+					class="mediumSeverity">getUser_name</span>()
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line289"><b>289</b></a></td>
+				<td class="flags" nowrap="nowrap"><img src="low_severity.gif"
+					alt="low"
+					title="Opening brace for a method should not appear on a new line" /></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="lowSeverity">&nbsp;</span>{
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line290">290</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;user_name;
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line291">291</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line292">292</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%"></td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line293">293</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line294">294</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;pass
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line295">295</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;pass&nbsp;to&nbsp;set
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line296">296</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line297">297</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@SuppressWarnings(&quot;unused&quot;)
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line298">298</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;static&nbsp;void&nbsp;setPass(String&nbsp;pass)
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line299"><b>299</b></a></td>
+				<td class="flags" nowrap="nowrap"><img src="low_severity.gif"
+					alt="low"
+					title="Opening brace for a method should not appear on a new line" /></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="lowSeverity">&nbsp;</span>{
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line300">300</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CaaoServlet.pass&nbsp;=&nbsp;pass;
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line301">301</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line302">302</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%"></td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line303">303</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line304">304</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line305">305</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@return&nbsp;the&nbsp;pass&nbsp;*/
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line306">306</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;static&nbsp;String&nbsp;getPass()
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line307"><b>307</b></a></td>
+				<td class="flags" nowrap="nowrap"><img src="low_severity.gif"
+					alt="low"
+					title="Opening brace for a method should not appear on a new line" /></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="lowSeverity">&nbsp;</span>{
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line308">308</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;pass;
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line309">309</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line310">310</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%"></td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line311">311</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line312">312</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;mySQL_url&nbsp;the&nbsp;mySQL_url&nbsp;to&nbsp;set
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line313">313</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line314">314</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@SuppressWarnings(&quot;unused&quot;)
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line315"><b>315</b></a></td>
+				<td class="flags" nowrap="nowrap"><img
+					src="medium_severity.gif" alt="medium"
+					title="Invalid method name: &quot;setMySQL_url&quot; contains an underscore" /><img
+					src="medium_severity.gif" alt="medium"
+					title="Invalid local variable name: &quot;mySQL_url&quot; contains an underscore" /></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;static&nbsp;void&nbsp;<span
+					class="mediumSeverity">setMySQL_url</span>(String&nbsp;<span
+					class="mediumSeverity">mySQL_url</span>)
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line316"><b>316</b></a></td>
+				<td class="flags" nowrap="nowrap"><img src="low_severity.gif"
+					alt="low"
+					title="Opening brace for a method should not appear on a new line" /></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="lowSeverity">&nbsp;</span>{
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line317">317</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CaaoServlet.mySQL_url&nbsp;=&nbsp;mySQL_url;
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line318">318</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line319">319</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%"></td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line320">320</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line321">321</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line322">322</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@return&nbsp;the&nbsp;mySQL_url&nbsp;*/
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line323"><b>323</b></a></td>
+				<td class="flags" nowrap="nowrap"><img
+					src="medium_severity.gif" alt="medium"
+					title="Invalid method name: &quot;getMySQL_url&quot; contains an underscore" /></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;static&nbsp;String&nbsp;<span
+					class="mediumSeverity">getMySQL_url</span>()
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line324"><b>324</b></a></td>
+				<td class="flags" nowrap="nowrap"><img src="low_severity.gif"
+					alt="low"
+					title="Opening brace for a method should not appear on a new line" /></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="lowSeverity">&nbsp;</span>{
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line325">325</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;mySQL_url;
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line326">326</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line327">327</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%"></td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line328">328</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line329">329</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;database&nbsp;the&nbsp;database&nbsp;to&nbsp;set
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line330">330</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line331">331</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@SuppressWarnings(&quot;unused&quot;)
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line332">332</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;static&nbsp;void&nbsp;setDatabaseName(String&nbsp;database)
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line333"><b>333</b></a></td>
+				<td class="flags" nowrap="nowrap"><img src="low_severity.gif"
+					alt="low"
+					title="Opening brace for a method should not appear on a new line" /></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="lowSeverity">&nbsp;</span>{
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line334">334</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CaaoServlet.database&nbsp;=&nbsp;database;
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line335">335</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line336">336</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%"></td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line337">337</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line338">338</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line339">339</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@return&nbsp;the&nbsp;database&nbsp;*/
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line340">340</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;static&nbsp;String&nbsp;getDatabaseName()
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line341"><b>341</b></a></td>
+				<td class="flags" nowrap="nowrap"><img src="low_severity.gif"
+					alt="low"
+					title="Opening brace for a method should not appear on a new line" /></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="lowSeverity">&nbsp;</span>{
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line342">342</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;database;
+				</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line343">343</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+			</tr>
+			<tr class="middle">
+				<td class="lineNumber"><a name="line344">344</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%"></td>
+			</tr>
+			<tr class="last">
+				<td class="lineNumber"><a name="line345">345</a></td>
+				<td class="flags"></td>
+				<td class="sourceLine" width="100%">&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+			</tr>
+		</table>
+	</div>
+	<div>
+		<b class="rounded_page"><b class="rounded_page1"><b></b></b><b
+			class="rounded_page2"><b></b></b><b class="rounded_page3"></b><b
+			class="rounded_page4"></b><b class="rounded_page5"></b></b>
+		<div class="rounded_pagefg">
+			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<td valign="middle"><span class="page-footer"></span></td>
+					<td align="right" valign="middle"><span
+						class="page-footer-details">Powered by <span
+							title="0.0.0, UNKNOWN">CodePro Server</span></span></td>
+				</tr>
+			</table>
+		</div>
+		<b class="rounded_page"><b class="rounded_page5"></b><b
+			class="rounded_page4"></b><b class="rounded_page3"></b><b
+			class="rounded_page2"><b></b></b><b class="rounded_page1"><b></b></b></b>
+	</div>
+
+</body>
+
+</html>
