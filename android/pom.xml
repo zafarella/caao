@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
     <name>caao-android-app-parent</name>
@@ -13,10 +14,23 @@
         <version>1.0.0</version>
     </parent>
 
-  <modules>
-      <module>caao_android_app</module>
-      <module>caao_android_appTest</module>
-  </modules>
+
+    <developers>
+        <developer>
+            <name>Zafar Khaydarov</name>
+            <email>zafarella@gmail.com</email>
+            <roles>
+                <role>Architect</role>
+                <role>Developer</role>
+            </roles>
+            <timezone>+1</timezone>
+        </developer>
+    </developers>
+
+    <modules>
+        <module>caao_android_app</module>
+        <module>caao_android_appTest</module>
+    </modules>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
