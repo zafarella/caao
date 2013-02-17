@@ -35,22 +35,5 @@
                 android:text="Next"
                 ></Button>
     </TableRow>
-    <TextView
-            android:id="@+id/calendar_lable"
-            android:layout_gravity="fill_horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical|center"
-            android:textStyle="bold"
-            ></TextView>
-    <caao.com.tabs.calendar.CalendarView
-            android:id="@+id/calendar"
-            android:layout_gravity="fill"
-            android:clickable="true"
-            android:layout_width="fill_parent"
-            android:baselineAlignBottom="true"
-            android:layout_height="fill_parent"
-            android:focusable="true"
-            android:adjustViewBounds="true"
-            ></caao.com.tabs.calendar.CalendarView>
+
 </LinearLayout>

@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>fi.uef.cs.caao</groupId>
@@ -16,7 +14,7 @@
     <parent>
         <groupId>fi.uef.cs.caao</groupId>
         <artifactId>android</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
+        <version>1.0.0</version>
     </parent>
 
     <dependencies>
@@ -40,20 +38,8 @@
         </dependency>
 
         <!--reference to the android app-->
-        <dependency>
-            <groupId>fi.uef.cs.caao</groupId>
-            <artifactId>caao-osgi-bundle</artifactId>
-            <version>${project.version}</version>
-            <scope>provided</scope>
-            <type>apk</type>
-        </dependency>
-        <dependency>
-            <groupId>fi.uef.cs.caao</groupId>
-            <artifactId>caao-osgi-bundle</artifactId>
-            <version>${project.version}</version>
-            <scope>provided</scope>
-            <type>jar</type>
-        </dependency>
+       
+       
         <dependency>
             <groupId>com.jayway.maven.plugins.android.generation2</groupId>
             <artifactId>android-maven-plugin</artifactId>
@@ -88,6 +74,7 @@
         <plugins>
             <plugin>
                 <artifactId>maven-resources-plugin</artifactId>
+                <version>2.6</version>
                 <executions>
                     <execution>
                         <phase>initialize</phase>
