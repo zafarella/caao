@@ -45,16 +45,6 @@ public class Calendar_Activity extends Activity implements
     TextView mHit;
 
     /**
-     * Field button_next.
-     */
-    /**
-     * Field button_today.
-     */
-    /**
-     * Field button_prev.
-     */
-    private Button button_prev, button_today, button_next;
-    /**
      * Field mHandler.
      */
     Handler mHandler = new Handler();
@@ -62,6 +52,10 @@ public class Calendar_Activity extends Activity implements
      * Field tv.
      */
     TextView tv = null;
+    /**
+     * Field button_prev.
+     */
+    private Button button_prev, button_today, button_next;
 
     // -------------------------------------------------------------------------------------------------
 
