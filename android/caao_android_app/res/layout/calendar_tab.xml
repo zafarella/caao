@@ -5,6 +5,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         >
+
     <TableRow
             android:id="@+id/tableRow1"
             android:layout_width="match_parent"
@@ -13,6 +14,7 @@
             android:baselineAligned="true"
             android:layout_gravity="top"
             >
+
         <Button
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -21,12 +23,14 @@
                 android:text="Prev."
                 android:layout_gravity="left"
                 ></Button>
+
         <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/calendar_button_today"
                 android:text="Today"
                 ></Button>
+
         <Button
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -35,5 +39,11 @@
                 android:text="Next"
                 ></Button>
     </TableRow>
+
+    <CalendarView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/calendarView"
+            android:layout_gravity="bottom|left|right|top"/>
 
 </LinearLayout>

@@ -35,40 +35,28 @@ public class Calendar_Activity extends Activity implements
      * ""vnd.android.cursor.dir/vnd.exina.android.calendar.date"")
      */
     public static final String MIME_TYPE = "vnd.android.cursor.dir/vnd.exina.android.calendar.date";
-    /**
-     * Field mView.
-     */
+    /** Field mView. */
     CalendarView mView = null;
-    /**
-     * Field mHit.
-     */
+    /** Field mHit. */
     TextView mHit;
 
-    /**
-     * Field mHandler.
-     */
+    /** Field mHandler. */
     Handler mHandler = new Handler();
-    /**
-     * Field tv.
-     */
+    /** Field tv. */
     TextView tv = null;
-    /**
-     * Field button_prev.
-     */
+    /** Field button_prev. */
     private Button button_prev, button_today, button_next;
 
     // -------------------------------------------------------------------------------------------------
 
-    /**
-     * @param savedInstanceState Bundle
-     */
+    /** @param savedInstanceState Bundle */
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // setting the layout from xml
         setContentView(R.layout.calendar_tab);
-        this.mView = (CalendarView) findViewById(R.id.calendar);
+
         // mView.setOnCellTouchListener(this.onTouch(cell));
-        tv = (TextView) findViewById(R.id.calendar_lable);
+        tv = (TextView) findViewById(R.id.calendarView);
         tv.setText(mView.getMonthName() + " " + mView.getYear());
         // ------------------------------------------------------------------
         // adding the listeners for the buttons which will scroll to the next
@@ -128,17 +116,13 @@ public class Calendar_Activity extends Activity implements
             return;
     }
 
-    /**
-     * Scrolls the calendar to specified month and year
-     */
+    /** Scrolls the calendar to specified month and year */
     public void scrollToDate(int pMonth, int pYear) {
         // TODO: add code for scrolling the calendar
         mView.nextMonth();
     }
 
-    /**
-     * returns current date in calendar view
-     */
+    /** returns current date in calendar view */
     @SuppressWarnings("unused")
     private void getCurrentDate() {
         Calendar CurCalDate = mView.getDate();
