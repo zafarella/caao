@@ -30,7 +30,6 @@ import caao.com.tabs.Calendar_Activity;
 import caao.com.tabs.Event_Notification_Activity;
 import caao.com.tabs.Plant_list_Activity;
 import caao.com.tabs.Wiki_Activity;
-import caao.com.service.caao_service;
 
 import java.util.Calendar;
 import java.util.Locale;
@@ -63,9 +62,7 @@ public class Main_activity extends TabActivity {
      */
     @SuppressWarnings("unused")
     private static final String TAG = "CAAO";
-    /**
-     * Field DATE_PICKER_DIALOG_ID. (value is 0)
-     */
+    /** Field DATE_PICKER_DIALOG_ID. (value is 0) */
     private static final int DATE_PICKER_DIALOG_ID = 0;
     /**
      * Field TheTabs.
@@ -73,14 +70,9 @@ public class Main_activity extends TabActivity {
      * @see TabHost
      */
     static TabHost TheTabs;
-    /**
-     * Field activeTabIndex.
-     */
+    /** Field activeTabIndex. */
     private short activeTabIndex = 0;
-
-    /**
-     * Variables for the date picker dialog.
-     */
+    /** Variables for the date picker dialog. */
     private int lCalendarYear, lCalendarMonth, lCalendarDay;
 
     /**
@@ -89,11 +81,24 @@ public class Main_activity extends TabActivity {
      * Initializes on create of activity.
      */
     // ------------------------------------------------------------------------------------
+    /** Listener for the dialog button selector */
+    private DatePickerDialog.OnDateSetListener memuDateSetListener = new DatePickerDialog.OnDateSetListener() {
+        public void onDateSet(DatePicker view, int year, int monthOfYear,
+                              int dayOfMonth) {
+            lCalendarYear = year;
+            lCalendarMonth = monthOfYear;
+            lCalendarDay = dayOfMonth;
+            // TODO: add the scroll method
+        }
+    };
+
+    // ------------------------------------------------------------------------------------
 
     /**
      * Called when the activity is first created. We will create here the tabs *
      *
      * @param savedInstanceState Bundle
+     *
      * @see Resources
      * @see SharedPreferences
      * @see
@@ -189,6 +194,7 @@ public class Main_activity extends TabActivity {
      * Adds menu into the main activity from xml.
      *
      * @param menu Menu
+     *
      * @return boolean
      * @see onCreateOptionsMenu
      */
@@ -200,13 +206,14 @@ public class Main_activity extends TabActivity {
         return true;
     }
 
-    // ------------------------------------------------------------------------------------
+    // -----------------------------------------------------------------------------------
 
     /**
      * Overriding the method of super class as we will display the menu in
      * accordance of selected tab
      *
      * @param menu Menu
+     *
      * @return boolean
      * @see http://developer.android.com/reference/android/app/Activity.html#
      *      onPrepareOptionsMenu(android .view.Menu) Method
@@ -243,13 +250,12 @@ public class Main_activity extends TabActivity {
         return true;
     }
 
-    // -----------------------------------------------------------------------------------
-
     /**
      * The menu handler method. The menu items id's can reveal the meaning of
      * the items
      *
      * @param item MenuItem
+     *
      * @return boolean
      * @see onOptionsItemSelected
      */
@@ -307,6 +313,7 @@ public class Main_activity extends TabActivity {
      * Overridden method called for showing the dialogs
      *
      * @param id int the id of the dialog
+     *
      * @return Dialog the dialog that will be shown.
      */
     @Override
@@ -323,19 +330,6 @@ public class Main_activity extends TabActivity {
         }
         return null;
     }
-
-    /**
-     * Listener for the dialog button selector
-     */
-    private DatePickerDialog.OnDateSetListener memuDateSetListener = new DatePickerDialog.OnDateSetListener() {
-        public void onDateSet(DatePicker view, int year, int monthOfYear,
-                              int dayOfMonth) {
-            lCalendarYear = year;
-            lCalendarMonth = monthOfYear;
-            lCalendarDay = dayOfMonth;
-            // TODO: add the scroll method
-        }
-    };
 
     // ------------------------------------------------------------------------------------
 

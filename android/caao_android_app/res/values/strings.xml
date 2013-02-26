@@ -7,7 +7,7 @@
     <!-- The strings that should be in different supported languages -->
     <string
             name="app_name"
-            >caao
+            >The context aware organizer
     </string>
     <string
             name="menu_item_exit_app"
@@ -25,10 +25,7 @@
     </string>
     <string
             name="about_dialog_content_text"
-            >The context aware orginizer. \n------------------------------\n This
-        application is part of IT project of Zafar Khaydarov at the University of
-        Eastern Finland, Computer Science Department. Under supervision of Teemu H
-        Laine.
+            >The context aware organizer.
     </string>
     <!--   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
     <!-- License dialog strings -->
