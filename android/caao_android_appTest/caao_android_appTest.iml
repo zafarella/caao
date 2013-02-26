@@ -98,5 +98,6 @@
     <orderEntry type="library" name="Maven: org.hamcrest:hamcrest-core:1.1" level="project" />
     <orderEntry type="jdk" jdkName="Android 4.1.2 Platform" jdkType="Android SDK" />
   </component>
+  <component name="POM File Configuration" pomFile="" />
 </module>
 
