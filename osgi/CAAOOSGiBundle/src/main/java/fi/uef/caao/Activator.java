@@ -4,34 +4,26 @@
  * Container for the server side of caao. Activates bundle in OSGi environment
  * and unregisters it when the bundle is stopped.
  */
-package main.java.fi.uef.caao;
+package fi.uef.caao;
 
 // the following import is from apache library.
 // please make sure in case you are recompiling the project the the correct version of
 // libraries are used.
-import java.io.IOException;
-
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.apache.xmlrpc.XmlRpcException;
 import org.apache.xmlrpc.server.PropertyHandlerMapping;
 import org.apache.xmlrpc.server.XmlRpcServer;
 import org.apache.xmlrpc.server.XmlRpcServerConfigImpl;
 import org.apache.xmlrpc.webserver.WebServer;
-
-// the explicitly imports for the letting know the osgi environment
-// don't remove them as they will be added into the manifest
-import org.xml.sax.*;
-import org.xml.sax.helpers.*;
-import org.w3c.dom.*;
-import org.apache.ws.commons.util.NamespaceContextImpl;
-import javax.xml.namespace.NamespaceContext;
-import javax.xml.parsers.ParserConfigurationException;
-
-import org.osgi.framework.BundleActivator;// imports from osgi framework.
+import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.BundleException;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import java.io.IOException;
+
+// the explicitly imports for the letting know the osgi environment
+// don't remove them as they will be added into the manifest
 
 /**
  * The bundle that implements necessary services for registering and
