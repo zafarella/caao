@@ -2,7 +2,7 @@
 /*
  * Zafar.Khaydarov @cs.joensuu.fi
  * */
-package main.java.fi.uef.caao;
+package fi.uef.caao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
