@@ -5,7 +5,6 @@
     <name>caao-mysql-db</name>
     <groupId>fi.uef.cs.caao</groupId>
     <artifactId>caao-hadoop-db</artifactId>
-    <version>1.0.0</version>
 
     <parent>
         <groupId>fi.uef.cs.caao</groupId>
