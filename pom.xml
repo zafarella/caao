@@ -41,23 +41,4 @@
         <developerConnection>scm:git:ssh://git@github.com:zafarella/caao.git</developerConnection>
     </scm>
     <!-- ========================================================= -->
-    <repositories>
-        <repository>
-            <releases>
-                <enabled>true</enabled>
-                <updatePolicy>never</updatePolicy>
-                <checksumPolicy>fail</checksumPolicy>
-            </releases>
-            <snapshots>
-                <enabled>false</enabled>
-                <updatePolicy>never</updatePolicy>
-                <checksumPolicy>fail</checksumPolicy>
-            </snapshots>
-            <id>Knopflerfish</id>
-            <name>Knopflerfish Releases Repository</name>
-            <url>http://www.knopflerfish.org/maven2/</url>
-            <layout>default</layout>
-        </repository>
-    </repositories>
-
 </project>
