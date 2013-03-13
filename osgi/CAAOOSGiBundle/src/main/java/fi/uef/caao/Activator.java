@@ -20,6 +20,8 @@ import org.apache.xmlrpc.webserver.WebServer;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.BundleException;
+import org.osgi.service.log.LogService;
+import org.osgi.util.tracker.ServiceTracker;
 
 import java.io.IOException;
 
@@ -41,8 +43,9 @@ import java.io.IOException;
  * @version $Revision: 1.13 $
  */
 
-@SuppressWarnings("unused")
 public class Activator implements BundleActivator {
+
+
     /**
      * Embedded web server from the libraries of Apache
      *
@@ -76,6 +79,13 @@ public class Activator implements BundleActivator {
      */
     public void start(BundleContext context) throws BundleException {
 
+        ServiceTracker logServiceTracker = new ServiceTracker(context, org.osgi.service.log.LogService.class.getName(), null);
+        logServiceTracker.open();
+        LogService logservice = (LogService) logServiceTracker.getService();
+
+        if (logservice != null){
+            logservice.log(LogService.LOG_INFO, "Got logging working.");
+        }
         // logging
         log = LogFactory.getLog(this.getClass());
 
@@ -123,7 +133,7 @@ public class Activator implements BundleActivator {
         try {
             webServer.start();
             if (CaaoServerCore.canUseDB()) {
-                log.info("Great, the db is available");
+                log.info("Great, the DB is available");
             }
         } catch (IOException e) {
             log.error(e.getMessage());
