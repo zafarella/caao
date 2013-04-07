@@ -1,4 +1,3 @@
-trying port it to maven when have time.
 
 #The CAAO
 ====
