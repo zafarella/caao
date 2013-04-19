@@ -18,10 +18,10 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import caao.com.settings_activities.Account_settings_Activity;
-import caao.com.settings_activities.Advanced_settings;
-import caao.com.settings_activities.Lang_and_loc_Settings;
-import caao.com.settings_activities.Notification_settings_activity;
+import caao.com.settings_activities.AccountSettingsActivity;
+import caao.com.settings_activities.AdvancedSettings;
+import caao.com.settings_activities.LangLocSettings;
+import caao.com.settings_activities.NotificationSettingsActivity;
 
 /**
  * The activity implements main settings view of the application.
@@ -30,25 +30,15 @@ import caao.com.settings_activities.Notification_settings_activity;
  * @version $Revision: 1.15 $
  */
 public class Settings_activity extends ListActivity {
-    /**
-     * Field lv.
-     */
+    /** Field lv. */
     private ListView lv;
-    /**
-     * Field ABOUT_DIALOG. (value is 0)
-     */
+    /** Field ABOUT_DIALOG. (value is 0) */
     private static final int ABOUT_DIALOG = 0;
-    /**
-     * Field LICENSE_DIALOG. (value is 1)
-     */
+    /** Field LICENSE_DIALOG. (value is 1) */
     private static final int LICENSE_DIALOG = 1;
-    /**
-     * Field FEEDBACK_DIALOG. (value is 2)
-     */
+    /** Field FEEDBACK_DIALOG. (value is 2) */
     private static final int FEEDBACK_DIALOG = 2;
-    /**
-     * Field THIRD_PARTY_LICENCES_DIALOG. (value is 3)
-     */
+    /** Field THIRD_PARTY_LICENCES_DIALOG. (value is 3) */
     private static final int THIRD_PARTY_LICENCES_DIALOG = 3;
 
     /**
@@ -74,7 +64,7 @@ public class Settings_activity extends ListActivity {
      * Listener for the on list item click. Handles the clicked item in the list
      * view.
      *
-     * @see OnItemClickListener
+     * @see android.widget.AdapterView.OnItemClickListener
      */
     private AdapterView.OnItemClickListener onSettings_List_Click = new AdapterView.OnItemClickListener() {
         public void onItemClick(AdapterView<?> parent, View view, int position,
@@ -91,22 +81,22 @@ public class Settings_activity extends ListActivity {
                 // --------------------------------------------------------------------------------------------
                 case 0:
                     startActivity(new Intent().setClass(getApplicationContext(),
-                            Account_settings_Activity.class));
+                            AccountSettingsActivity.class));
                     break;
                 // --------------------------------------------------------------------------------------------
                 case 1:
                     startActivity(new Intent().setClass(getApplicationContext(),
-                            Lang_and_loc_Settings.class));
+                            LangLocSettings.class));
                     break;
                 // --------------------------------------------------------------------------------------------
                 case 2:
                     startActivity(new Intent().setClass(getApplicationContext(),
-                            Notification_settings_activity.class));
+                            NotificationSettingsActivity.class));
                     break;
                 // --------------------------------------------------------------------------------------------
                 case 3:
                     startActivity(new Intent().setClass(getApplicationContext(),
-                            Advanced_settings.class));
+                            AdvancedSettings.class));
                     break;
                 // --------------------------------------------------------------------------------------------
                 case 4:
@@ -136,6 +126,7 @@ public class Settings_activity extends ListActivity {
      * Displays the dialogs for the settings activity
      *
      * @param id int
+     *
      * @return Dialog
      * @see onCreateDialog
      */

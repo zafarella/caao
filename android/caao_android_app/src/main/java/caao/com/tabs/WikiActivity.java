@@ -25,7 +25,7 @@ import caao.com.R;
  * @author zafar.khaydarov
  * @version $Revision: 1.15 $
  */
-public class Wiki_Activity extends Activity {
+public class WikiActivity extends Activity {
     /**
      * The web view for displaying the pages from wiki
      *
@@ -106,7 +106,7 @@ public class Wiki_Activity extends Activity {
         /** Method onCreate. */
 
         public void onCreate() {
-            Wiki_Activity.this.webview.setWebViewClient(new TabWebViewClient());
+            WikiActivity.this.webview.setWebViewClient(new TabWebViewClient());
         }
 
     }

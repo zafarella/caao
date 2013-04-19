@@ -21,9 +21,9 @@ public final class CaaoConstants {
     /**
      * android service location
      * <p/>
-     * Field ACTION_FOREGROUND. (value is ""caao.com.service.caao_service"")
+     * Field ACTION_FOREGROUND. (value is ""caao.com.service.CaaoService"")
      */
-    static final String ACTION_FOREGROUND = "caao.com.service.caao_service";
+    static final String ACTION_FOREGROUND = "caao.com.service.CaaoService";
     /**
      * the application tag for recognizing the app in the log
      *

@@ -9,25 +9,22 @@
  */
 package caao.com.settings_activities;
 
+import android.app.Activity;
 import android.os.Bundle;
-import android.preference.PreferenceActivity;
 import caao.com.R;
 
 /**
- * Displays and handles the notification settings of the application
+ * Activity handles the account settings view.
  *
  * @author zafar.khaydarov
  * @version $Revision: 1.5 $
  */
-public class Notification_settings_activity extends PreferenceActivity {
-    /**
-     * @param Saved_Instance_State Bundle
-     */
+public class AccountSettingsActivity extends Activity {
+    /** @param Saved_Instance_State Bundle */
     @Override
     public void onCreate(Bundle Saved_Instance_State) {
         super.onCreate(Saved_Instance_State);
-        getPreferenceManager().setSharedPreferencesName(
-                "notification_preferences");
-        addPreferencesFromResource(R.xml.notification_preferences);
+        // loading the screen from the xml
+        setContentView(R.layout.account_settings);
     }
 }

@@ -20,11 +20,11 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import caao.com.R;
-import caao.com.xmlrpc.XMLRPCClient;
 import caao.com.CaaoConstants;
 import caao.com.MyToast;
-import caao.com.settings_activities.Advanced_settings;
+import caao.com.R;
+import caao.com.settings_activities.AdvancedSettings;
+import caao.com.xmlrpc.XMLRPCClient;
 
 import java.net.URI;
 import java.util.ArrayList;
@@ -34,27 +34,38 @@ import java.util.Vector;
  * @author zafar.khaydarov
  * @version $Revision: 1.9 $
  */
-public class Event_Notification_Activity extends Activity {
-    /**
-     * Field mEventsListAdapter.
-     */
+public class EventNotificationActivity extends Activity {
+    /** Field mEventsListAdapter. */
     private EventListAdapter mEventsListAdapter = null;
-    /**
-     * the list of plans as List
-     */
+    /** the list of plans as List */
     private ArrayList<String> mListOfEvents = null;
-    /**
-     * Field mProgressDialog.
-     */
+    /** Field mProgressDialog. */
     private ProgressDialog mProgressDialog = null;
-    /**
-     * Field mGetEventList.
-     */
+    /** Field mGetEventList. */
     private Runnable mGetEventList;
+    /** Field returnRes. */
+    private Runnable returnRes = new Runnable() {
+        @Override
+        public void run() {
+            if (mListOfEvents != null && mListOfEvents.size() > 0) {
+                mEventsListAdapter.notifyDataSetChanged();
+                for (int i = 0; i < mListOfEvents.size(); i++)
+                    mEventsListAdapter.add(mListOfEvents.get(i));
+            }
+            mProgressDialog.dismiss();
+            mEventsListAdapter.notifyDataSetChanged();
+            new MyToast(getApplicationContext(), +mListOfEvents.size()
+                    + " plants have been received", false);
+            if (null == mListOfEvents)
+                new MyToast(getApplicationContext(),
+                        "Some error has ocured, no data received"
+                                + ". Please contact administrator.", false);
+        }
+    };
 
-    /**
-     * @param savedInstanceState Bundle
-     */
+    // -------------------------------------------------------------------------------------
+
+    /** @param savedInstanceState Bundle */
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.event_list_tab);
@@ -90,29 +101,6 @@ public class Event_Notification_Activity extends Activity {
                     "Unable to perform action - no Internet connection");
         }
     }
-
-    // -------------------------------------------------------------------------------------
-    /**
-     * Field returnRes.
-     */
-    private Runnable returnRes = new Runnable() {
-        @Override
-        public void run() {
-            if (mListOfEvents != null && mListOfEvents.size() > 0) {
-                mEventsListAdapter.notifyDataSetChanged();
-                for (int i = 0; i < mListOfEvents.size(); i++)
-                    mEventsListAdapter.add(mListOfEvents.get(i));
-            }
-            mProgressDialog.dismiss();
-            mEventsListAdapter.notifyDataSetChanged();
-            new MyToast(getApplicationContext(), +mListOfEvents.size()
-                    + " plants have been received", false);
-            if (null == mListOfEvents)
-                new MyToast(getApplicationContext(),
-                        "Some error has ocured, no data received"
-                                + ". Please contact administrator.", false);
-        }
-    };
 
     // -------------------------------------------------------------------------
 
@@ -166,7 +154,7 @@ public class Event_Notification_Activity extends Activity {
                                                 int which) {
                                 startActivity(new Intent().setClass(
                                         getApplicationContext(),
-                                        Advanced_settings.class));
+                                        AdvancedSettings.class));
                             }
                         });
                 alertDialog.show();
@@ -197,11 +185,9 @@ public class Event_Notification_Activity extends Activity {
      * @see ArrayAdapter
      */
     class EventListAdapter extends ArrayAdapter<String> {
-        /**
-         * Constructor for EventListAdapter.
-         */
+        /** Constructor for EventListAdapter. */
         EventListAdapter() {
-            super(Event_Notification_Activity.this, R.layout.event_list_row,
+            super(EventNotificationActivity.this, R.layout.event_list_row,
                     mListOfEvents);
         }
     }

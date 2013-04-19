@@ -16,7 +16,7 @@ import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
 import android.widget.Toast;
-import caao.com.Main_activity;
+import caao.com.MainActivity;
 import caao.com.R;
 
 /**
@@ -32,105 +32,18 @@ import caao.com.R;
  *          TODO: implementation of the methods of syncing data with the server
  * @see Service
  */
-public class caao_service extends Service {
-    /**
-     * indicates how to behave if the service is killed Field mStartMode.
-     */
+public class CaaoService extends Service {
+    /** Field mNM. */
+    static NotificationManager mNM;
+    /** indicates how to behave if the service is killed Field mStartMode. */
     int mStartMode;
-    /**
-     * Field mBinder.
-     */
+    /** Field mBinder. */
     IBinder mBinder;
     /**
      * indicates whether onRebind should be used Field interface for clients
      * that bind.
      */
     boolean mAllowRebind;
-    /**
-     * Field mNM.
-     */
-    static NotificationManager mNM;
-
-    /**
-     * Method onCreate.
-     */
-    @Override
-    public void onCreate() {
-        caao_service.mNM = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-
-        // show the icon in the status bar
-        showNotification();
-
-        // Start up the thread running the service. Note that we create a
-        // separate thread because the service normally runs in the
-        // process's
-        // main thread, which we don't want to block.
-        Thread thr = new Thread(null, this.mTask, "caao_service");
-        thr.start();
-        Toast.makeText(this, "Service started, separate thread created",
-                Toast.LENGTH_SHORT).show();
-
-    }
-
-    /**
-     * Method onStartCommand.
-     *
-     * @param intent  Intent
-     * @param flags   int
-     * @param startId int
-     * @return int
-     */
-    @Override
-    public int onStartCommand(Intent intent, int flags, int startId) {
-        // The service is starting, due to a call to startService()
-        return this.mStartMode;
-    }
-
-    /**
-     * Method onBind.
-     *
-     * @param intent Intent
-     * @return IBinder
-     */
-    @Override
-    public IBinder onBind(Intent intent) {
-        // A client is binding to the service with bindService()
-        return this.mBinder;
-    }
-
-    /**
-     * Method onUnbind.
-     *
-     * @param intent Intent
-     * @return boolean
-     */
-    @Override
-    public boolean onUnbind(Intent intent) {
-        // All clients have unbound with unbindService()
-        return this.mAllowRebind;
-    }
-
-    /**
-     * Method onRebind.
-     *
-     * @param intent Intent
-     */
-    @Override
-    public void onRebind(Intent intent) {
-        // A client is binding to the service with bindService(),
-        // after onUnbind() has already been called
-    }
-
-    /**
-     * Method onDestroy.
-     */
-    @Override
-    public void onDestroy() {
-        // The service is no longer used and is being destroyed
-        Toast.makeText(this, "Service destroyed", Toast.LENGTH_SHORT).show();
-    }
-
-    // -------------------------------------------------------------------------------------------
     /**
      * The function that runs in our worker thread Here we will do what we need
      * to do in background
@@ -153,15 +66,102 @@ public class caao_service extends Service {
             // }
 
             // Done with our work... stop the service!
-            // caao_service.this.stopSelf();
+            // CaaoService.this.stopSelf();
         }
     };
+
+    /**
+     * Removes all notifications in status bar of the phone. Calling when the
+     * user decides to exit the application.
+     */
+    public static void removeNotifications() {
+        if (null != mNM)
+            mNM.cancelAll();
+    }
+
+    /** Method onCreate. */
+    @Override
+    public void onCreate() {
+        CaaoService.mNM = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+
+        // show the icon in the status bar
+        showNotification();
+
+        // Start up the thread running the service. Note that we create a
+        // separate thread because the service normally runs in the
+        // process's
+        // main thread, which we don't want to block.
+        Thread thr = new Thread(null, this.mTask, "CaaoService");
+        thr.start();
+        Toast.makeText(this, "Service started, separate thread created",
+                Toast.LENGTH_SHORT).show();
+
+    }
+
+    /**
+     * Method onStartCommand.
+     *
+     * @param intent  Intent
+     * @param flags   int
+     * @param startId int
+     *
+     * @return int
+     */
+    @Override
+    public int onStartCommand(Intent intent, int flags, int startId) {
+        // The service is starting, due to a call to startService()
+        return this.mStartMode;
+    }
+
+    /**
+     * Method onBind.
+     *
+     * @param intent Intent
+     *
+     * @return IBinder
+     */
+    @Override
+    public IBinder onBind(Intent intent) {
+        // A client is binding to the service with bindService()
+        return this.mBinder;
+    }
+
+    /**
+     * Method onUnbind.
+     *
+     * @param intent Intent
+     *
+     * @return boolean
+     */
+    @Override
+    public boolean onUnbind(Intent intent) {
+        // All clients have unbound with unbindService()
+        return this.mAllowRebind;
+    }
 
     // -------------------------------------------------------------------------------------------
 
     /**
-     * Sends the notification to the status bar of the phone
+     * Method onRebind.
+     *
+     * @param intent Intent
      */
+    @Override
+    public void onRebind(Intent intent) {
+        // A client is binding to the service with bindService(),
+        // after onUnbind() has already been called
+    }
+
+    // -------------------------------------------------------------------------------------------
+
+    /** Method onDestroy. */
+    @Override
+    public void onDestroy() {
+        // The service is no longer used and is being destroyed
+        Toast.makeText(this, "Service destroyed", Toast.LENGTH_SHORT).show();
+    }
+
+    /** Sends the notification to the status bar of the phone */
     private void showNotification() {
         // In this sample, we'll use the same text for the ticker and the
         // expanded notification
@@ -175,7 +175,7 @@ public class caao_service extends Service {
         // The PendingIntent to launch our activity if the user selects this
         // notification
         PendingIntent contentIntent = PendingIntent.getActivity(this, 0,
-                new Intent(this, Main_activity.class), 0);
+                new Intent(this, MainActivity.class), 0);
 
         // Set the info for the views that show in the notification panel.
         notification.setLatestEventInfo(this, getText(R.string.service_label),
@@ -184,15 +184,6 @@ public class caao_service extends Service {
         // Send the notification.
         // We use a layout id because it is a unique number. We use it later
         // to cancel.
-        caao_service.mNM.notify(R.string.service_label, notification);
-    }
-
-    /**
-     * Removes all notifications in status bar of the phone. Calling when the
-     * user decides to exit the application.
-     */
-    public static void removeNotifications() {
-        if (null != mNM)
-            mNM.cancelAll();
+        CaaoService.mNM.notify(R.string.service_label, notification);
     }
 }

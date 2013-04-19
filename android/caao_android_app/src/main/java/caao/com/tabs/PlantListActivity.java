@@ -21,7 +21,7 @@ import android.widget.ListView;
 import caao.com.CaaoConstants;
 import caao.com.MyToast;
 import caao.com.R;
-import caao.com.settings_activities.Advanced_settings;
+import caao.com.settings_activities.AdvancedSettings;
 import caao.com.xmlrpc.XMLRPCClient;
 
 import java.net.URI;
@@ -40,23 +40,15 @@ import java.util.Vector;
  * @author zafar.khaydarov
  * @version $Revision: 1.12 $
  */
-public class Plant_list_Activity extends Activity {
+public class PlantListActivity extends Activity {
     // ----------------------------------------------------------------------
-    /**
-     * Field mPlantsListAdapter.
-     */
+    /** Field mPlantsListAdapter. */
     private PlantsListAdapter mPlantsListAdapter = null;
-    /**
-     * the list of plans as List
-     */
+    /** the list of plans as List */
     private ArrayList<String> mListOfPlants = null;
-    /**
-     * Field mProgressDialog.
-     */
+    /** Field mProgressDialog. */
     private ProgressDialog mProgressDialog = null;
-    /**
-     * Field mGetPlantList.
-     */
+    /** Field mGetPlantList. */
     private Runnable mGetPlantList;
 
     // -------------------------------------------------------------------------
@@ -101,9 +93,7 @@ public class Plant_list_Activity extends Activity {
                 "Retrieving data from server ...", true);
     }
 
-    /**
-     * Field returnRes.
-     */
+    /** Field returnRes. */
     private Runnable returnRes = new Runnable() {
         @Override
         public void run() {
@@ -164,7 +154,7 @@ public class Plant_list_Activity extends Activity {
             // "You are offline, cannot retreive the data. Please try later.",
             // Toast.LENGTH_LONG);
             // }
-            // Plant_list_Activity.populate_plant_list();
+            // PlantListActivity.populate_plant_list();
             // ListAdapter(new ArrayAdapter<String>(this, R., COUNTRIES));
         } else {
             // the server url is empty, launching the preferences to ask
@@ -178,7 +168,7 @@ public class Plant_list_Activity extends Activity {
             alertDialog.setButton("OK", new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int which) {
                     startActivity(new Intent().setClass(
-                            getApplicationContext(), Advanced_settings.class));
+                            getApplicationContext(), AdvancedSettings.class));
                 }
             });
             alertDialog.show();
@@ -203,11 +193,9 @@ public class Plant_list_Activity extends Activity {
      * @see ArrayAdapter
      */
     class PlantsListAdapter extends ArrayAdapter<String> {
-        /**
-         * Constructor for PlantsListAdapter.
-         */
+        /** Constructor for PlantsListAdapter. */
         PlantsListAdapter() {
-            super(Plant_list_Activity.this, R.layout.plant_list_row,
+            super(PlantListActivity.this, R.layout.plant_list_row,
                     mListOfPlants);
         }
     }

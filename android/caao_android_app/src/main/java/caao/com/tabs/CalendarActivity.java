@@ -22,7 +22,7 @@ import caao.com.R;
  * @author zafar.khaydarov
  * @version $Revision: 1.16 $
  */
-public class Calendar_Activity extends Activity {
+public class CalendarActivity extends Activity {
     /**
      * Field MIME_TYPE. (value is
      * ""vnd.android.cursor.dir/vnd.exina.android.calendar.date"")

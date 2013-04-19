@@ -19,11 +19,9 @@ import caao.com.R;
  * @author zafar.khaydarov
  * @version $Revision: 1.7 $
  */
-public class Lang_and_loc_Settings extends PreferenceActivity {
+public class LangLocSettings extends PreferenceActivity {
 
-    /**
-     * @param Saved_Instance_State Bundle
-     */
+    /** @param Saved_Instance_State Bundle */
     @Override
     public void onCreate(Bundle Saved_Instance_State) {
 

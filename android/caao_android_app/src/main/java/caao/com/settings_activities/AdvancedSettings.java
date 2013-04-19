@@ -19,10 +19,8 @@ import caao.com.R;
  * @author zafar.khaydarov
  * @version $Revision: 1.8 $
  */
-public class Advanced_settings extends PreferenceActivity {
-    /**
-     * @param Saved_Instance_State Bundle
-     */
+public class AdvancedSettings extends PreferenceActivity {
+    /** @param Saved_Instance_State Bundle */
     @Override
     public void onCreate(Bundle Saved_Instance_State) {
         super.onCreate(Saved_Instance_State);
