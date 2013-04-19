@@ -3,13 +3,28 @@ ass
 # Package Files #
 *.jar
 *.war
+*.iml
 
 # gwt caches and compiled units #
 war/gwt_bree/
 gwt-unitCache/
+*.releaseBackup
+.project
+.classpath
+out/
+release.properties
+*.swp
 
 # boilerplate generated classes #
 .apt_generated/
+.settings/
+target/
+.idea/
+.project/
+.codepro/
+classes/
+.xml.*
+
 
 # more caches and things from deploy #
 war/WEB-INF/deploy/
