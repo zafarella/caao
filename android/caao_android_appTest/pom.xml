@@ -39,10 +39,7 @@
         </dependency>
 
         <!--reference to the android app-->
-<<<<<<< HEAD
 
-
-=======
         <!--<dependency>-->
         <!--<groupId>fi.uef.cs.caao</groupId>-->
         <!--<artifactId>caao-osgi-bundle</artifactId>-->
@@ -57,7 +54,6 @@
         <!--<scope>provided</scope>-->
         <!--<type>jar</type>-->
         <!--</dependency>-->
->>>>>>> master
         <dependency>
             <groupId>com.jayway.maven.plugins.android.generation2</groupId>
             <artifactId>android-maven-plugin</artifactId>

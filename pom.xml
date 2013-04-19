@@ -26,10 +26,9 @@
         <module>android</module>
         <module>osgi</module>
         <module>databases</module>
-<<<<<<< HEAD
-=======
+
         <module>front-end/caao-vaadin-front-end</module>
->>>>>>> master
+
     </modules>
     <!-- ========================================================= -->
     <properties>

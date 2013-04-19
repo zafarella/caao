@@ -5,21 +5,14 @@
 
     <groupId>fi.uef.cs.caao</groupId>
     <artifactId>caao_android_app</artifactId>
-<<<<<<< HEAD
-    <name>caaoApp</name>
-=======
     <name>caao-app</name>
->>>>>>> master
     <packaging>apk</packaging>
     <url>https://github.com/zafarella/caao/tree/master/android/caao_android_app</url>
 
     <properties>
         <environment>development</environment>
-<<<<<<< HEAD
         <abs.version>4.2.0</abs.version>
-=======
-        <abs.version>4.1.0</abs.version>
->>>>>>> master
+
     </properties>
 
     <parent>
@@ -45,8 +38,6 @@
             <artifactId>roboguice-sherlock</artifactId>
             <version>1.4</version>
         </dependency>
-
-<<<<<<< HEAD
         <dependency>
             <groupId>com.actionbarsherlock</groupId>
             <artifactId>actionbarsherlock</artifactId>
@@ -89,76 +80,8 @@
             <artifactId>mockito-core</artifactId>
             <version>1.9.0</version>
             <scope>test</scope>
-=======
-    <dependencies>
-        <dependency>
-            <groupId>com.google.android</groupId>
-            <artifactId>android</artifactId>
-            <scope>provided</scope>
-            <version>${android.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.google.code.gson</groupId>
-            <artifactId>gson</artifactId>
-            <version>2.2.2</version>
-        </dependency>
-        <dependency>
-            <groupId>com.github.rtyley</groupId>
-            <artifactId>roboguice-sherlock</artifactId>
-            <version>1.4</version>
         </dependency>
 
-        <dependency>
-            <groupId>com.actionbarsherlock</groupId>
-            <artifactId>library</artifactId>
-            <version>${abs.version}</version>
-            <type>apklib</type>
-        </dependency>
-        <dependency>
-            <groupId>com.actionbarsherlock</groupId>
-            <artifactId>library</artifactId>
-            <version>${abs.version}</version>
-            <type>jar</type>
-            <scope>provided</scope>
->>>>>>> master
-        </dependency>
-
-        <dependency>
-            <groupId>com.viewpagerindicator</groupId>
-            <artifactId>library</artifactId>
-<<<<<<< HEAD
-            <version>2.4.1</version>
-            <type>apklib</type>
-        </dependency>
-
-=======
-            <version>2.3.1</version>
-            <type>apklib</type>
-        </dependency>
-        <dependency>
-            <groupId>com.nineoldandroids</groupId>
-            <artifactId>library</artifactId>
-            <version>2.2.0</version>
-        </dependency>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.10</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.hamcrest</groupId>
-            <artifactId>hamcrest-library</artifactId>
-            <version>1.3.RC2</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.mockito</groupId>
-            <artifactId>mockito-core</artifactId>
-            <version>1.9.0</version>
-            <scope>test</scope>
-        </dependency>
->>>>>>> master
     </dependencies>
     <build>
         <plugins>
