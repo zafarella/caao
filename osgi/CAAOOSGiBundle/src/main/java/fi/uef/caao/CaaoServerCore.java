@@ -62,10 +62,9 @@ public class CaaoServerCore {
     /**
      * The result set returned by queries
      *
-     * @see http://download.oracle.com/javase/1.4.2/docs/api/java/sql/ResultSet.html
+     * @see {@link http://download.oracle.com/javase/1.4.2/docs/api/java/sql/ResultSet.html}
      *      Field result_set.
-     * @see link http://download.oracle.com/javase/tutorial/java/javaOO/accesscontrol
-     *      .html
+     * @see {@link http://download.oracle.com/javase/tutorial/java/javaOO/accesscontrol.html}
      */
     protected static ResultSet resultSet = null;
 
