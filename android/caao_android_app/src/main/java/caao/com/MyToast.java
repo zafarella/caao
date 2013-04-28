@@ -20,7 +20,7 @@ import android.widget.Toast;
  * @version $Revision: 1.1 $
  * @see Toast
  */
-public class MyToast {
+public final class MyToast {
 
     /**
      * Context the context
