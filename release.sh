@@ -2,7 +2,7 @@
 
 git status
 
-mvn release:prepare release:perform
+mvn release:prepare release:perform -T4C
 
 git gc 
 
