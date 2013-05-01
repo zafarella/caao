@@ -26,8 +26,7 @@
         <module>android</module>
         <module>osgi</module>
         <module>databases</module>
-	    <module>front-end/caao-vaadin-front-end</module>
-
+	    <module>front-end</module>
     </modules>
     <!-- ========================================================= -->
     <properties>
