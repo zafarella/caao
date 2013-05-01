@@ -2,6 +2,8 @@
 
 git status
 
+mvn versions:display-plugin-updates
+
 mvn release:prepare release:perform -T4C
 
 git gc 

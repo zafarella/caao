@@ -11,7 +11,7 @@
 
 
     <modelVersion>4.0.0</modelVersion>
-    <name>front-end-parent</name>
+    <name>caao-front-end-parent</name>
     <groupId>fi.uef.cs.caao</groupId>
     <artifactId>caao-front-end-parent</artifactId>
     <version>1.0.0</version>

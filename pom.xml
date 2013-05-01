@@ -42,4 +42,8 @@
         <developerConnection>scm:git:ssh://git@github.com:zafarella/caao.git</developerConnection>
     </scm>
     <!-- ========================================================= -->
+<prerequisites>
+	<maven>3.0.4</maven>
+</prerequisites>
+
 </project>
