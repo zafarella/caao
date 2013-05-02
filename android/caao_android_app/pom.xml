@@ -97,33 +97,57 @@
 					<target>1.6</target>
 				</configuration>
 			</plugin>
+
+			<plugin>
+				<groupId>com.jayway.maven.plugins.android.generation2</groupId>
+				<artifactId>android-maven-plugin</artifactId>
+				<extensions>true</extensions>
+				<configuration>
+					<manifest>
+						<debuggable>true</debuggable>
+					</manifest>
+				</configuration>
+				<executions>
+					<execution>
+						<id>manifestUpdate</id>
+						<phase>process-resources</phase>
+						<goals>
+							<goal>manifest-update</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>alignApk</id>
+						<phase>package</phase>
+						<goals>
+							<goal>zipalign</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
 		</plugins>
 	</build>
+
 	<profiles>
 		<profile>
-			<id>ci</id>
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>com.github.github</groupId>
-						<artifactId>downloads-maven-plugin</artifactId>
-						<version>0.5</version>
-						<configuration>
-							<description>${project.name} ${project.version}</description>
-							<override>true</override>
-							<includeAttached>false</includeAttached>
-						</configuration>
-						<executions>
-							<execution>
-								<goals>
-									<goal>upload</goal>
-								</goals>
-								<phase>install</phase>
-							</execution>
-						</executions>
-					</plugin>
-				</plugins>
-			</build>
+			<id>development</id>
+			<!-- using this since activeByDefault does not work well with multiple
+				profiles -->
+			<activation>
+				<property>
+					<name>environment</name>
+					<value>!production</value>
+				</property>
+			</activation>
+			<properties>
+				<deployment.stage>In Development</deployment.stage>
+			</properties>
+		</profile>
+		<profile>
+			<id>production</id>
+			<properties>
+				<deployment.stage>In Production</deployment.stage>
+			</properties>
 		</profile>
 		<profile>
 			<id>release</id>
@@ -152,16 +176,20 @@
 								<configuration>
 									<removeExistingSignatures>true</removeExistingSignatures>
 									<archiveDirectory/>
-									<keystore>${github.sign.keystore}</keystore>
-									<alias>${github.sign.alias}</alias>
-									<storepass>${github.sign.storepass}</storepass>
-									<keypass>${github.sign.keypass}</keypass>
+									<includes>
+										<include>${project.build.directory}/${project.artifactId}.apk</include>
+									</includes>
+									<keystore>${sign.keystore}</keystore>
+									<alias>${sign.alias}</alias>
+									<storepass>${sign.storepass}</storepass>
+									<keypass>${sign.keypass}</keypass>
 									<verbose>true</verbose>
 								</configuration>
 							</execution>
 						</executions>
 					</plugin>
-					<!-- the signed apk then needs to be zipaligned -->
+					<!-- the signed apk then needs to be zipaligned and we activate proguard
+						and we run the manifest update -->
 					<plugin>
 						<groupId>com.jayway.maven.plugins.android.generation2</groupId>
 						<artifactId>android-maven-plugin</artifactId>
@@ -171,16 +199,28 @@
 								<debug>false</debug>
 							</sign>
 							<zipalign>
+								<skip>false</skip>
 								<verbose>true</verbose>
-								<outputApk>
-									${project.build.directory}/${project.artifactId}-${project.version}-signed-aligned.apk
+								<inputApk>${project.build.directory}/${project.artifactId}.apk</inputApk>
+								<outputApk>${project.build.directory}/${project.artifactId}-signed-aligned.apk
 								</outputApk>
 							</zipalign>
 							<manifest>
 								<debuggable>false</debuggable>
+								<versionCodeAutoIncrement>true</versionCodeAutoIncrement>
 							</manifest>
+							<proguard>
+								<skip>false</skip>
+							</proguard>
 						</configuration>
 						<executions>
+							<execution>
+								<id>manifestUpdate</id>
+								<phase>process-resources</phase>
+								<goals>
+									<goal>manifest-update</goal>
+								</goals>
+							</execution>
 							<execution>
 								<id>alignApk</id>
 								<phase>package</phase>
@@ -190,8 +230,36 @@
 							</execution>
 						</executions>
 					</plugin>
+					<plugin>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>build-helper-maven-plugin</artifactId>
+						<configuration>
+							<artifacts>
+								<artifact>
+									<file>${project.build.directory}/${project.artifactId}-signed-aligned.apk</file>
+									<type>apk</type>
+									<classifier>signed-aligned</classifier>
+								</artifact>
+								<artifact>
+									<file>${project.build.directory}/proguard/mapping.txt</file>
+									<type>map</type>
+									<classifier>release</classifier>
+								</artifact>
+							</artifacts>
+						</configuration>
+						<executions>
+							<execution>
+								<id>attach-signed-aligned</id>
+								<phase>package</phase>
+								<goals>
+									<goal>attach-artifact</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
 				</plugins>
 			</build>
 		</profile>
+
 	</profiles>
 </project>

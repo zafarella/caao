@@ -25,8 +25,7 @@ I have tried to utilize OSGi as a server side and android as mobile part.
 ## IDE
 #### IDEA
 * Just import maven project, the rest should work. Idea has a bug on Linux - it does not reads the env variables -- workaround: 
-```bash
-bash -l /opt/idea/bin/idea.sh
+```bash -l /opt/idea/bin/idea.sh
 ```
 
 #### Eclipse
