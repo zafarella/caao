@@ -2,138 +2,139 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
-    <modelVersion>4.0.0</modelVersion>
-    <name>caao-osgi-bundles</name>
-    <groupId>fi.uef.cs.caao</groupId>
-    <artifactId>caao-osgi-bundles-parent</artifactId>
-    <version>1.0.0</version>
-    <packaging>pom</packaging>
+	<modelVersion>4.0.0</modelVersion>
+	<name>caao-osgi-bundles (parent)</name>
+	<groupId>fi.uef.cs.caao</groupId>
+	<artifactId>caao-osgi-bundles-parent</artifactId>
+	<version>1.0.0</version>
+	<packaging>pom</packaging>
 
 
-    <parent>
-        <groupId>fi.uef.cs.caao</groupId>
-        <artifactId>caao-parent</artifactId>
-        <version>1.0.0</version>
-    </parent>
+	<parent>
+		<groupId>fi.uef.cs.caao</groupId>
+		<artifactId>caao-parent</artifactId>
+		<version>1.0.0</version>
+	</parent>
 
-    <modules>
-        <module>CAAOOSGiBundle</module>
-        <module>OSGiBundleTest</module>
-    </modules>
+	<modules>
+		<module>CAAOOSGiBundle</module>
+		<module>OSGiBundleTest</module>
+	</modules>
 
-    <repositories>
-        <repository>
-            <id>maven-restlet</id>
-            <name>Public online Restlet repository</name>
-            <url>http://maven.restlet.org</url>
-        </repository>
-    </repositories>
+	<repositories>
+		<repository>
+			<id>maven-restlet</id>
+			<name>Public online Restlet repository</name>
+			<url>http://maven.restlet.org</url>
+		</repository>
+	</repositories>
 
-    <properties>
-        <bundle.namespace>${project.groupId}.${project.artifactId}</bundle.namespace>
-    </properties>
-    <!-- =========================================================  -->
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.ops4j</groupId>
-                <artifactId>maven-pax-plugin</artifactId>
-                <version>1.5</version>
-                <configuration>
-                    <!--
-                     | some example Pax-Runner settings
-                    -->
-                    <provision>
-                        <param>--platform=felix</param>
-                    </provision>
-                </configuration>
-                <executions>
-                    <!--
-                     | uncomment to auto-generate IDE files
-                    <execution>
-                      <id>ide-support</id>
-                      <goals>
-                        <goal>eclipse</goal>
-                      </goals>
-                    </execution>
-                    -->
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
+	<properties>
+		<bundle.namespace>${project.groupId}.${project.artifactId}</bundle.namespace>
+	</properties>
+	<!-- =========================================================  -->
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.ops4j</groupId>
+				<artifactId>maven-pax-plugin</artifactId>
+				<version>1.5</version>
+				<configuration>
+					<!--
+					 | some example Pax-Runner settings
+					-->
+					<provision>
+						<param>--platform=felix</param>
+					</provision>
+				</configuration>
+				<executions>
+					<!--
+					 | uncomment to auto-generate IDE files
+					<execution>
+					  <id>ide-support</id>
+					  <goals>
+						<goal>eclipse</goal>
+					  </goals>
+					</execution>
+					-->
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
 
 
-    <dependencies>
+	<dependencies>
 
-        <dependency>
-            <groupId>org.ops4j</groupId>
-            <artifactId>maven-pax-plugin</artifactId>
-            <version>1.5</version>
-        </dependency>
+		<dependency>
+			<groupId>org.ops4j</groupId>
+			<artifactId>maven-pax-plugin</artifactId>
+			<version>1.5</version>
+		</dependency>
 
-        <dependency>
-            <groupId>org.apache.felix</groupId>
-            <artifactId>org.osgi.core</artifactId>
-            <version>1.4.0</version>
-        </dependency>
+		<dependency>
+			<groupId>org.osgi</groupId>
+			<artifactId>org.osgi.core</artifactId>
+			<version>5.0.0</version>
+		</dependency>
 
-        <dependency>
-            <groupId>org.apache.felix</groupId>
-            <artifactId>org.osgi.compendium</artifactId>
-            <version>1.4.0</version>
-        </dependency>
 
-        <dependency>
-            <groupId>commons-logging</groupId>
-            <artifactId>commons-logging</artifactId>
-            <version>1.1.1</version>
-        </dependency>
+		<dependency>
+			<groupId>org.apache.felix</groupId>
+			<artifactId>org.osgi.compendium</artifactId>
+			<version>1.4.0</version>
+		</dependency>
 
-        <!--<dependency>-->
-        <!--<groupId>commons-httpclient</groupId>-->
-        <!--<artifactId>commons-httpclient</artifactId>-->
-        <!--<version>20020423</version>-->
-        <!--</dependency>-->
+		<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+			<version>1.1.1</version>
+		</dependency>
 
-        <dependency>
-            <groupId>org.apache.httpcomponents</groupId>
-            <artifactId>httpclient-osgi</artifactId>
-            <version>4.2-alpha1</version>
-        </dependency>
+		<!--<dependency>-->
+		<!--<groupId>commons-httpclient</groupId>-->
+		<!--<artifactId>commons-httpclient</artifactId>-->
+		<!--<version>20020423</version>-->
+		<!--</dependency>-->
 
-        <dependency>
-            <groupId>org.ops4j.pax.runner</groupId>
-            <artifactId>pax-runner-platform-knopflerfish</artifactId>
-            <version>1.8.5</version>
-            <type>bundle</type>
-        </dependency>
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient-osgi</artifactId>
+			<version>4.2-alpha1</version>
+		</dependency>
 
-        <dependency>
-            <groupId>org.apache.xmlrpc</groupId>
-            <artifactId>xmlrpc-client</artifactId>
-            <version>3.1.3</version>
-        </dependency>
+		<dependency>
+			<groupId>org.ops4j.pax.runner</groupId>
+			<artifactId>pax-runner-platform-knopflerfish</artifactId>
+			<version>1.8.5</version>
+			<type>bundle</type>
+		</dependency>
 
-        <dependency>
-            <groupId>org.apache.xmlrpc</groupId>
-            <artifactId>xmlrpc-server</artifactId>
-            <version>3.1.3</version>
-        </dependency>
+		<dependency>
+			<groupId>org.apache.xmlrpc</groupId>
+			<artifactId>xmlrpc-client</artifactId>
+			<version>3.1.3</version>
+		</dependency>
 
-        <dependency>
-            <groupId>org.apache.felix</groupId>
-            <artifactId>org.osgi.core</artifactId>
-            <version>1.4.0</version>
-            <type>bundle</type>
-        </dependency>
+		<dependency>
+			<groupId>org.apache.xmlrpc</groupId>
+			<artifactId>xmlrpc-server</artifactId>
+			<version>3.1.3</version>
+		</dependency>
 
-        <dependency>
-            <groupId>org.osgi</groupId>
-            <artifactId>org.osgi.core</artifactId>
-            <version>4.1.0</version>
-        </dependency>
+		<dependency>
+			<groupId>org.apache.felix</groupId>
+			<artifactId>org.osgi.core</artifactId>
+			<version>1.4.0</version>
+			<type>bundle</type>
+		</dependency>
 
-    </dependencies>
+		<dependency>
+			<groupId>org.osgi</groupId>
+			<artifactId>org.osgi.core</artifactId>
+			<version>4.1.0</version>
+		</dependency>
+
+	</dependencies>
 
 
 </project>

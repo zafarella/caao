@@ -12,7 +12,6 @@
 	<properties>
 		<environment>development</environment>
 		<abs.version>4.2.0</abs.version>
-
 	</properties>
 
 	<parent>
@@ -233,6 +232,7 @@
 					<plugin>
 						<groupId>org.codehaus.mojo</groupId>
 						<artifactId>build-helper-maven-plugin</artifactId>
+
 						<configuration>
 							<artifacts>
 								<artifact>

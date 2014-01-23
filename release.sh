@@ -1,10 +1,11 @@
 #!/bin/sh
+#!/bin/sh
 
 git status
 
 mvn versions:display-plugin-updates
 
-mvn release:prepare release:perform -T4C
+mvn -Dmaven.artifact.threads=20 release:prepare release:perform -T4C 
 
 git gc 
 

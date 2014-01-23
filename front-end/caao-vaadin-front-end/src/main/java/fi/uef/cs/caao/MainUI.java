@@ -1,12 +1,7 @@
 package fi.uef.cs.caao;
 
-import com.vaadin.addon.sqlcontainer.SQLContainer;
-import com.vaadin.addon.sqlcontainer.connection.SimpleJDBCConnectionPool;
-import com.vaadin.addon.sqlcontainer.query.TableQuery;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.ui.*;
-
-import java.sql.SQLException;
 
 /**
  * The Application's "main" class
@@ -25,9 +20,9 @@ public class MainUI extends UI {
         VerticalLayout settingsItems = new VerticalLayout();
         VerticalLayout selection = new VerticalLayout();
 
-         Tree tree = new Tree("Settings items");
+        Tree tree = new Tree("Settings items");
 
-            tree.addItem("User list");
+        tree.addItem("User list");
         tree.addItem("Location list");
         tree.addItem("Languages");
         tree.addItem("Sensors list");
