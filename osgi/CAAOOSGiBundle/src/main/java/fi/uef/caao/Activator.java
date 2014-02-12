@@ -83,7 +83,7 @@ public class Activator implements BundleActivator {
         logServiceTracker.open();
         LogService logservice = (LogService) logServiceTracker.getService();
 
-        if (logservice != null){
+        if (logservice != null) {
             logservice.log(LogService.LOG_INFO, "Got logging working.");
         }
         // logging

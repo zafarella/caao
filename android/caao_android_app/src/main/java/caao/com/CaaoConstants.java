@@ -16,7 +16,9 @@ package caao.com;
  * @author zafar.khaydarov
  */
 public final class CaaoConstants {
-    /** xml file with the advanced preferences */
+    /**
+     * xml file with the advanced preferences
+     */
     public static final String ADVANCED_PREFERENCES_FILE = "advanced_preferences";
     /**
      * android service location

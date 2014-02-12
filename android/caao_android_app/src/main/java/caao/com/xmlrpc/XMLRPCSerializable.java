@@ -15,7 +15,7 @@ public interface XMLRPCSerializable {
      * Gets XMLRPC serialization object
      *
      * @return object to serialize This object is most likely one of XMLRPC primitive types,
-     *         however you can return also another XMLRPCSerializable
+     * however you can return also another XMLRPCSerializable
      */
     Object getSerializable();
 }

@@ -20,74 +20,12 @@
 		<version>1.0.0-SNAPSHOT</version>
 	</parent>
 
-	<dependencies>
-		<dependency>
-			<groupId>com.google.android</groupId>
-			<artifactId>android</artifactId>
-			<scope>provided</scope>
-			<version>${android.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.google.code.gson</groupId>
-			<artifactId>gson</artifactId>
-			<version>2.2.2</version>
-		</dependency>
-		<dependency>
-			<groupId>com.github.rtyley</groupId>
-			<artifactId>roboguice-sherlock</artifactId>
-			<version>1.4</version>
-		</dependency>
-		<dependency>
-			<groupId>com.actionbarsherlock</groupId>
-			<artifactId>actionbarsherlock</artifactId>
-			<version>${abs.version}</version>
-			<type>apklib</type>
-		</dependency>
-		<dependency>
-			<groupId>com.actionbarsherlock</groupId>
-			<artifactId>library</artifactId>
-			<version>${abs.version}</version>
-			<type>jar</type>
-			<scope>provided</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>com.viewpagerindicator</groupId>
-			<artifactId>library</artifactId>
-			<version>2.3.1</version>
-			<type>apklib</type>
-		</dependency>
-		<dependency>
-			<groupId>com.nineoldandroids</groupId>
-			<artifactId>library</artifactId>
-			<version>2.2.0</version>
-		</dependency>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.10</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.hamcrest</groupId>
-			<artifactId>hamcrest-library</artifactId>
-			<version>1.3.RC2</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.mockito</groupId>
-			<artifactId>mockito-core</artifactId>
-			<version>1.9.0</version>
-			<scope>test</scope>
-		</dependency>
-
-	</dependencies>
 	<build>
 		<plugins>
-			<plugin>
-				<groupId>com.jayway.maven.plugins.android.generation2</groupId>
-				<artifactId>android-maven-plugin</artifactId>
-			</plugin>
+			<!--<plugin>-->
+			<!--<groupId>com.jayway.maven.plugins.android.generation2</groupId>-->
+			<!--<artifactId>android-maven-plugin</artifactId>-->
+			<!--</plugin>-->
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>2.3.2</version>
@@ -123,7 +61,6 @@
 					</execution>
 				</executions>
 			</plugin>
-
 		</plugins>
 	</build>
 
@@ -210,7 +147,14 @@
 							</manifest>
 							<proguard>
 								<skip>false</skip>
+								<config>proguard.cfg</config>
 							</proguard>
+
+							<emulator>
+								<wait>180000</wait>
+								<options>-no-skin</options>
+							</emulator>
+
 						</configuration>
 						<executions>
 							<execution>
@@ -260,6 +204,5 @@
 				</plugins>
 			</build>
 		</profile>
-
 	</profiles>
 </project>

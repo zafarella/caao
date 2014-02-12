@@ -26,12 +26,12 @@ public final class MyToast {
      * Context the context
      *
      * @param pTheContext the message to be displayed
-     * @param pTheMesage  String how long the message should be displayed. true for long
+     * @param pTheMessage String how long the message should be displayed. true for long
      *                    and false for short
      * @param pHowLong    boolean
      */
-    public MyToast(Context pTheContext, String pTheMesage, boolean pHowLong) {
-        Toast.makeText(pTheContext, pTheMesage,
+    public MyToast(Context pTheContext, String pTheMessage, boolean pHowLong) {
+        Toast.makeText(pTheContext, pTheMessage,
                 pHowLong ? Toast.LENGTH_LONG : Toast.LENGTH_SHORT).show();
     }
 
@@ -39,9 +39,9 @@ public final class MyToast {
      * Context the context
      *
      * @param pTheContext Context
-     * @param pTheMesage  String
+     * @param pTheMessage String
      */
-    public MyToast(Context pTheContext, String pTheMesage) {
-        Toast.makeText(pTheContext, pTheMesage, Toast.LENGTH_LONG).show();
+    public MyToast(Context pTheContext, String pTheMessage) {
+        Toast.makeText(pTheContext, pTheMessage, Toast.LENGTH_LONG).show();
     }
 }

@@ -12,88 +12,93 @@ Or in Netbeans under Documenting add
 Define colors, fonts and other style attributes here to override the defaults
 Page background color*/
 BODY {
-	font-family: Calibri;
-	background-color: #D8CAA8;
-	padding: 11px 30px 7px;
-	font-size: 94%;
+    font-family: Calibri;
+    background-color: #D8CAA8;
+    padding: 11px 30px 7px;
+    font-size: 94%;
 }
+
 /*Headings*/
 H1 {
-	
+
 }
+
 /*Table colors*/
 .TableHeadingColor {
-	background-color: #BCC4DA;
-	border-collapse: collapse;
+    background-color: #BCC4DA;
+    border-collapse: collapse;
 }
 
 .TableSubHeadingColor {
-	background-color: #B1C3F7;
+    background-color: #B1C3F7;
 }
 
 .TableRowColor {
-	background: #E6EBE9;
+    background: #E6EBE9;
 }
+
 /*White*/
 TR[class=TableRowColor] TD {
-	border-right: 1px solid #B6BCAC;
-	border-left: 0px solid #000000;
-	border-bottom: 0px solid #000000;
-	border-top: 1px solid #BDD4BA;
-	font-size: 120%;
+    border-right: 1px solid #B6BCAC;
+    border-left: 0px solid #000000;
+    border-bottom: 0px solid #000000;
+    border-top: 1px solid #BDD4BA;
+    font-size: 120%;
 }
+
 /*Font used in left-hand frame lists*/
 .FrameTitleFont {
-	font-size: 100%;
+    font-size: 100%;
 }
 
 .FrameHeadingFont {
-	font-size: 90%;
+    font-size: 90%;
 }
 
 .FrameItemFont {
-	font-size: 90%;
+    font-size: 90%;
 }
+
 /*Navigation bar fonts and colors*/
 .NavBarCell1 {
-	background-color: #F0D8A6;
+    background-color: #F0D8A6;
 }
 
 .NavBarCell1Rev {
-	background-color: #FFE8BA;
+    background-color: #FFE8BA;
 }
 
 .NavBarFont1 {
-	color: #222222;
+    color: #222222;
 }
 
 .NavBarFont1Rev {
-	color: #000000;
+    color: #000000;
 }
 
 .NavBarCell2 {
-	background-color: #E3E9F0;
+    background-color: #E3E9F0;
 }
 
 .NavBarCell3 {
-	background-color: #C1C2DB;
+    background-color: #C1C2DB;
 }
 
 HR {
-	color: #261E1E;
-	background-color: #2F2020;
-	width: 100%;
-	height: 2px;
-	border-width: 0px;
-	padding: 0px;
+    color: #261E1E;
+    background-color: #2F2020;
+    width: 100%;
+    height: 2px;
+    border-width: 0px;
+    padding: 0px;
 }
 
 PRE {
-	padding: 2px 5px 0px 11px;
-	border-style: dotted;
-	border-width: 1px;
-	font: normal 1.1em "Courier New";
-	color: #282222;
-	background-color: #E8DEC6;
-	border-color: #FFFFFF;
+    padding: 2px 5px 0px 11px;
+    border-style: dotted;
+    border-width: 1px;
+    font: normal 1.1em "Courier New";
+    color: #282222;
+    background-color: #E8DEC6;
+    border-color: #FFFFFF;
 }

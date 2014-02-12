@@ -42,13 +42,21 @@ import java.util.Vector;
  */
 public class PlantListActivity extends Activity {
     // ----------------------------------------------------------------------
-    /** Field mPlantsListAdapter. */
+    /**
+     * Field mPlantsListAdapter.
+     */
     private PlantsListAdapter mPlantsListAdapter = null;
-    /** the list of plans as List */
+    /**
+     * the list of plans as List
+     */
     private ArrayList<String> mListOfPlants = null;
-    /** Field mProgressDialog. */
+    /**
+     * Field mProgressDialog.
+     */
     private ProgressDialog mProgressDialog = null;
-    /** Field mGetPlantList. */
+    /**
+     * Field mGetPlantList.
+     */
     private Runnable mGetPlantList;
 
     // -------------------------------------------------------------------------
@@ -93,7 +101,9 @@ public class PlantListActivity extends Activity {
                 "Retrieving data from server ...", true);
     }
 
-    /** Field returnRes. */
+    /**
+     * Field returnRes.
+     */
     private Runnable returnRes = new Runnable() {
         @Override
         public void run() {
@@ -193,7 +203,9 @@ public class PlantListActivity extends Activity {
      * @see ArrayAdapter
      */
     class PlantsListAdapter extends ArrayAdapter<String> {
-        /** Constructor for PlantsListAdapter. */
+        /**
+         * Constructor for PlantsListAdapter.
+         */
         PlantsListAdapter() {
             super(PlantListActivity.this, R.layout.plant_list_row,
                     mListOfPlants);

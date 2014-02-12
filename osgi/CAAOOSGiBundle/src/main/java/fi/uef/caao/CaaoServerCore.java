@@ -27,7 +27,7 @@ public class CaaoServerCore {
      * The connection.
      *
      * @see http://download.oracle.com/javase/1.4.2/docs/api/java/sql/Connection.
-     *      html Field conection.
+     * html Field conection.
      */
     private static Connection conection = null;
     /**
@@ -63,7 +63,7 @@ public class CaaoServerCore {
      * The result set returned by queries
      *
      * @see {@link http://download.oracle.com/javase/1.4.2/docs/api/java/sql/ResultSet.html}
-     *      Field result_set.
+     * Field result_set.
      * @see {@link http://download.oracle.com/javase/tutorial/java/javaOO/accesscontrol.html}
      */
     protected static ResultSet resultSet = null;
@@ -87,10 +87,10 @@ public class CaaoServerCore {
      * is executed by the client (in this implementation Android application).
      *
      * @return Vector<String> * @throws Exception * @throws Exception * @see
-     *         <a>DbConnector<a>
-     *         <p/>
-     *         Returns the list of countries from database. Returns Vector as
-     *         it's thread safe.
+     * <a>DbConnector<a>
+     * <p/>
+     * Returns the list of countries from database. Returns Vector as
+     * it's thread safe.
      */
     public List<String> countryList() throws Exception {
         List<String> returnList = new Vector<String>();

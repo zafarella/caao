@@ -1,49 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        >
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:orientation="vertical"
+		>
 
-    <TableRow
-            android:id="@+id/tableRow1"
-            android:layout_width="match_parent"
-            android:gravity="top|fill_horizontal"
-            android:layout_height="wrap_content"
-            android:baselineAligned="true"
-            android:layout_gravity="top"
-            >
+	<TableRow
+			android:id="@+id/tableRow1"
+			android:layout_width="match_parent"
+			android:gravity="top|fill_horizontal"
+			android:layout_height="wrap_content"
+			android:baselineAligned="true"
+			android:layout_gravity="top"
+			>
 
-        <Button
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:layout_width="match_parent"
-                android:id="@+id/calendar_button_prev"
-                android:text="Prev."
-                android:layout_gravity="left"
-                ></Button>
+		<Button
+				android:layout_height="match_parent"
+				android:layout_weight="1"
+				android:layout_width="match_parent"
+				android:id="@+id/calendar_button_prev"
+				android:text="Prev."
+				android:layout_gravity="left"
+				></Button>
 
-        <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/calendar_button_today"
-                android:text="Today"
-                ></Button>
+		<Button
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:id="@+id/calendar_button_today"
+				android:text="Today"
+				></Button>
 
-        <Button
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:layout_width="match_parent"
-                android:id="@+id/calendar_button_next"
-                android:text="Next"
-                ></Button>
-    </TableRow>
+		<Button
+				android:layout_height="match_parent"
+				android:layout_weight="1"
+				android:layout_width="match_parent"
+				android:id="@+id/calendar_button_next"
+				android:text="Next"
+				></Button>
+	</TableRow>
 
-    <CalendarView
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:id="@+id/calendarView"
-            android:layout_gravity="bottom|left|right|top"/>
+	<CalendarView
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent"
+			android:id="@+id/calendarView"
+			android:layout_gravity="bottom|left|right|top"/>
 
 </LinearLayout>

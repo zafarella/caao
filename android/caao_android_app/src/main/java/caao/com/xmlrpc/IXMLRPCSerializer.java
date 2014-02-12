@@ -88,7 +88,7 @@ public interface IXMLRPCSerializer {
      *
      * @param parser XmlPullParser
      * @return Object * @throws XmlPullParserException * @throws IOException * @throws
-     *         XmlPullParserException
+     * XmlPullParserException
      * @throws IOException
      */
     Object deserialize(XmlPullParser parser) throws XmlPullParserException,

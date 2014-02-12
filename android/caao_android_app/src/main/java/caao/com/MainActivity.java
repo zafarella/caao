@@ -18,20 +18,12 @@ import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
-import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewPager;
+
 import android.view.*;
 import android.widget.DatePicker;
 import android.widget.TabHost;
-import android.widget.TabHost.OnTabChangeListener;
 import caao.com.service.CaaoService;
-import caao.com.tabs.CalendarActivity;
-import caao.com.tabs.EventNotificationActivity;
-import caao.com.tabs.PlantListActivity;
-import caao.com.tabs.WikiActivity;
-import com.viewpagerindicator.PageIndicator;
-import com.viewpagerindicator.TitlePageIndicator;
-import android.support.v4.view.ViewPager;
+
 
 import java.util.Calendar;
 import java.util.Locale;
@@ -64,7 +56,9 @@ public class MainActivity extends TabActivity {
      */
     @SuppressWarnings("unused")
     private static final String TAG = "CAAO";
-    /** Field DATE_PICKER_DIALOG_ID. (value is 0) */
+    /**
+     * Field DATE_PICKER_DIALOG_ID. (value is 0)
+     */
     private static final int DATE_PICKER_DIALOG_ID = 0;
     /**
      * Field TheTabs.
@@ -72,9 +66,13 @@ public class MainActivity extends TabActivity {
      * @see TabHost
      */
     static TabHost TheTabs;
-    /** Field activeTabIndex. */
+    /**
+     * Field activeTabIndex.
+     */
     private short activeTabIndex = 0;
-    /** Variables for the date picker dialog. */
+    /**
+     * Variables for the date picker dialog.
+     */
     private int lCalendarYear, lCalendarMonth, lCalendarDay;
 
     /**
@@ -83,7 +81,9 @@ public class MainActivity extends TabActivity {
      * Initializes on create of activity.
      */
     // ------------------------------------------------------------------------------------
-    /** Listener for the dialog button selector */
+    /**
+     * Listener for the dialog button selector
+     */
     private DatePickerDialog.OnDateSetListener memuDateSetListener = new DatePickerDialog.OnDateSetListener() {
         public void onDateSet(DatePicker view, int year, int monthOfYear,
                               int dayOfMonth) {
@@ -100,7 +100,6 @@ public class MainActivity extends TabActivity {
      * Called when the activity is first created. We will create here the tabs *
      *
      * @param savedInstanceState Bundle
-     *
      * @see Resources
      * @see SharedPreferences
      * @see
@@ -139,15 +138,14 @@ public class MainActivity extends TabActivity {
         getWindow().requestFeature(Window.PROGRESS_VISIBILITY_ON);
 
 
-
         setContentView(R.layout.main);
 
-        ViewPager pager = (ViewPager)findViewById(R.id.pager);
-        pager.setAdapter(new TestAdapter(getSupportFragmentManager()));
+      //  ViewPager pager = (ViewPager) findViewById(R.id.pager);
+        //  pager.setAdapter(new TestAdapter(getSupportFragmentManager()));
 
         //Bind the title indicator to the adapter
-        TitlePageIndicator titleIndicator = (TitlePageIndicator)findViewById(R.id.pager);
-        titleIndicator.setViewPager(pager);
+      //  TitlePageIndicator titleIndicator = (TitlePageIndicator) findViewById(R.id.pager);
+      //  titleIndicator.setViewPager(pager);
 //
 //        // creating the tabs
 //        Resources res_tab_titles = getResources();
@@ -205,9 +203,7 @@ public class MainActivity extends TabActivity {
      * Adds menu into the main activity from xml.
      *
      * @param menu Menu
-     *
      * @return boolean
-     * @see onCreateOptionsMenu
      */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -224,11 +220,10 @@ public class MainActivity extends TabActivity {
      * accordance of selected tab
      *
      * @param menu Menu
-     *
      * @return boolean
      * @see <code> http://developer.android.com/reference/android/app/Activity.html</code>
-     *      onPrepareOptionsMenu(android .view.Menu) Method
-     *      onPrepareOptionsMenu.
+     * onPrepareOptionsMenu(android .view.Menu) Method
+     * onPrepareOptionsMenu.
      */
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
@@ -266,9 +261,7 @@ public class MainActivity extends TabActivity {
      * the items
      *
      * @param item MenuItem
-     *
      * @return boolean
-     * @see onOptionsItemSelected
      */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -324,7 +317,6 @@ public class MainActivity extends TabActivity {
      * Overridden method called for showing the dialogs
      *
      * @param id int the id of the dialog
-     *
      * @return Dialog the dialog that will be shown.
      */
     @Override
@@ -350,7 +342,6 @@ public class MainActivity extends TabActivity {
      *
      * @return boolean
      * @see ConnectivityManager
-     * @see getSystemService
      */
     @SuppressWarnings("unused")
     public boolean areThePhoneOnline() {
@@ -360,23 +351,7 @@ public class MainActivity extends TabActivity {
         return cm.getActiveNetworkInfo().isConnectedOrConnecting();
     }
 
-    public Object getSupportFragmentManager() {
-        return supportFragmentManager;
-    }
 
-    private class TestAdapter extends PagerAdapter {
-        public TestAdapter(Object supportFragmentManager) {
-        }
 
-        @Override
-        public int getCount() {
-            return 0;  //To change body of implemented methods use File | Settings | File Templates.
-        }
-
-        @Override
-        public boolean isViewFromObject(View view, Object object) {
-            return false;  //To change body of implemented methods use File | Settings | File Templates.
-        }
-    }
 }
 /* Just for fun (C) Torvalds Linus */

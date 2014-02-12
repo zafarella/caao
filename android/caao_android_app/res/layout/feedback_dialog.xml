@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:baselineAligned="true"
-        android:orientation="vertical"
-        android:id="@+id/layout_root"
-        >
-    <EditText
-            android:scrollbars="vertical"
-            android:cursorVisible="true"
-            android:layout_width="match_parent"
-            android:id="@+id/editText1"
-            android:layout_height="wrap_content"
-            android:height="100sp"
-            ></EditText>
-    <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/submit_feedback_button"
-            android:id="@+id/submit_feedback_button_id"
-            ></Button>
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:baselineAligned="true"
+		android:orientation="vertical"
+		android:id="@+id/layout_root"
+		>
+	<EditText
+			android:scrollbars="vertical"
+			android:cursorVisible="true"
+			android:layout_width="match_parent"
+			android:id="@+id/editText1"
+			android:layout_height="wrap_content"
+			android:height="100sp"
+			></EditText>
+	<Button
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:text="@string/submit_feedback_button"
+			android:id="@+id/submit_feedback_button_id"
+			></Button>
 </LinearLayout>

@@ -7,17 +7,19 @@
 	<version>1.0-SNAPSHOT</version>
 	<name>caao-vaadin web front-End</name>
 
-    <parent>
-        <groupId>fi.uef.cs.caao</groupId>
-        <artifactId>caao-front-end-parent</artifactId>
-        <version>1.0.0</version>
-    </parent>
+	<parent>
+		<groupId>fi.uef.cs.caao</groupId>
+		<artifactId>caao-front-end-parent</artifactId>
+		<version>1.0.0</version>
+	</parent>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<vaadin.version>7.0.5</vaadin.version>
+		<vaadin.version>7.1.10</vaadin.version>
 		<vaadin.plugin.version>7.0.5</vaadin.plugin.version>
 	</properties>
+
+
 	<repositories>
 		<repository>
 			<id>vaadin-addons</id>
@@ -34,6 +36,7 @@
 			</snapshots>
 		</repository>
 	</repositories>
+
 	<pluginRepositories>
 		<pluginRepository>
 			<id>vaadin-snapshots</id>
@@ -46,6 +49,7 @@
 			</snapshots>
 		</pluginRepository>
 	</pluginRepositories>
+
 	<dependencies>
 		<dependency>
 			<groupId>com.vaadin</groupId>
@@ -150,6 +154,7 @@
 				<artifactId>jetty-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
+
 		<pluginManagement>
 			<plugins>
 				<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->

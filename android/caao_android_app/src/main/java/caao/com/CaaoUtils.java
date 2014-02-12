@@ -14,7 +14,9 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
-/** @author z1 */
+/**
+ * @author z1
+ */
 public class CaaoUtils extends Activity {
 
     public boolean isOnline() {

@@ -33,11 +33,17 @@ import caao.com.R;
  * @see Service
  */
 public class CaaoService extends Service {
-    /** Field mNM. */
+    /**
+     * Field mNM.
+     */
     static NotificationManager mNM;
-    /** indicates how to behave if the service is killed Field mStartMode. */
+    /**
+     * indicates how to behave if the service is killed Field mStartMode.
+     */
     int mStartMode;
-    /** Field mBinder. */
+    /**
+     * Field mBinder.
+     */
     IBinder mBinder;
     /**
      * indicates whether onRebind should be used Field interface for clients
@@ -79,7 +85,9 @@ public class CaaoService extends Service {
             mNM.cancelAll();
     }
 
-    /** Method onCreate. */
+    /**
+     * Method onCreate.
+     */
     @Override
     public void onCreate() {
         CaaoService.mNM = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
@@ -104,7 +112,6 @@ public class CaaoService extends Service {
      * @param intent  Intent
      * @param flags   int
      * @param startId int
-     *
      * @return int
      */
     @Override
@@ -117,7 +124,6 @@ public class CaaoService extends Service {
      * Method onBind.
      *
      * @param intent Intent
-     *
      * @return IBinder
      */
     @Override
@@ -130,7 +136,6 @@ public class CaaoService extends Service {
      * Method onUnbind.
      *
      * @param intent Intent
-     *
      * @return boolean
      */
     @Override
@@ -154,14 +159,18 @@ public class CaaoService extends Service {
 
     // -------------------------------------------------------------------------------------------
 
-    /** Method onDestroy. */
+    /**
+     * Method onDestroy.
+     */
     @Override
     public void onDestroy() {
         // The service is no longer used and is being destroyed
         Toast.makeText(this, "Service destroyed", Toast.LENGTH_SHORT).show();
     }
 
-    /** Sends the notification to the status bar of the phone */
+    /**
+     * Sends the notification to the status bar of the phone
+     */
     private void showNotification() {
         // In this sample, we'll use the same text for the ticker and the
         // expanded notification

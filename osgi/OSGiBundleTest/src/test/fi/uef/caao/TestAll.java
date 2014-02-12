@@ -9,15 +9,15 @@ import org.junit.runners.Suite;
  * of the tests within its package as well as within any subpackages of its
  * package.
  *
- * @generatedBy CodePro at 5/10/11 1:03 PM
  * @author zafar.khaydarov
  * @version $Revision: 1.3 $
+ * @generatedBy CodePro at 5/10/11 1:03 PM
  */
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-	CaaoServerCoreTest.class,
-	ActivatorTest.class,
-	CaaoUserUtilsTest.class,
+        CaaoServerCoreTest.class,
+        ActivatorTest.class,
+        CaaoUserUtilsTest.class,
 })
 public class TestAll {
 
@@ -25,10 +25,9 @@ public class TestAll {
      * Launch the test.
      *
      * @param args the command line arguments
-     *
      * @generatedBy CodePro at 5/10/11 1:03 PM
      */
     public static void main(String[] args) {
-    	JUnitCore.runClasses(new Class[] { TestAll.class });
+        JUnitCore.runClasses(new Class[]{TestAll.class});
     }
 }

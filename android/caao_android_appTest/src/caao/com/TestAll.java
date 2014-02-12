@@ -1,13 +1,10 @@
 package caao.com;
 
-import junit.framework.Test;
-import junit.framework.TestSuite;
-
 /**
  * The class <code>TestAll</code> builds a suite that can be used to run all of
  * the tests within its package as well as within any subpackages of its
  * package.
- * 
+ *
  * @generatedBy CodePro at 5/10/11 4:38 PM
  * @author zafar.khaydarov
  * @version $Revision: 1.2 $

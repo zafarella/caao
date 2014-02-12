@@ -1,13 +1,13 @@
 <component name="libraryTable">
-  <library name="Maven: org.apache.felix:org.osgi.compendium:0.9.0-incubator-SNAPSHOT">
-    <CLASSES>
-      <root url="jar://$MAVEN_REPOSITORY$/org/apache/felix/org.osgi.compendium/0.9.0-incubator-SNAPSHOT/org.osgi.compendium-0.9.0-incubator-SNAPSHOT.jar!/" />
-    </CLASSES>
-    <JAVADOC>
-      <root url="jar://$MAVEN_REPOSITORY$/org/apache/felix/org.osgi.compendium/0.9.0-incubator-SNAPSHOT/org.osgi.compendium-0.9.0-incubator-SNAPSHOT-javadoc.jar!/" />
-    </JAVADOC>
-    <SOURCES>
-      <root url="jar://$MAVEN_REPOSITORY$/org/apache/felix/org.osgi.compendium/0.9.0-incubator-SNAPSHOT/org.osgi.compendium-0.9.0-incubator-SNAPSHOT-sources.jar!/" />
-    </SOURCES>
-  </library>
+	<library name="Maven: org.apache.felix:org.osgi.compendium:0.9.0-incubator-SNAPSHOT">
+		<CLASSES>
+			<root url="jar://$MAVEN_REPOSITORY$/org/apache/felix/org.osgi.compendium/0.9.0-incubator-SNAPSHOT/org.osgi.compendium-0.9.0-incubator-SNAPSHOT.jar!/"/>
+		</CLASSES>
+		<JAVADOC>
+			<root url="jar://$MAVEN_REPOSITORY$/org/apache/felix/org.osgi.compendium/0.9.0-incubator-SNAPSHOT/org.osgi.compendium-0.9.0-incubator-SNAPSHOT-javadoc.jar!/"/>
+		</JAVADOC>
+		<SOURCES>
+			<root url="jar://$MAVEN_REPOSITORY$/org/apache/felix/org.osgi.compendium/0.9.0-incubator-SNAPSHOT/org.osgi.compendium-0.9.0-incubator-SNAPSHOT-sources.jar!/"/>
+		</SOURCES>
+	</library>
 </component>
