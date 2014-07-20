@@ -1,6 +1,7 @@
 // $codepro.audit.disable unusedMethod
 /*
  * Zafar.Khaydarov @cs.joensuu.fi
+ *
  * */
 package fi.uef.caao;
 
@@ -8,15 +9,17 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
-import java.util.Vector;
+
 
 /**
- * The class implements basic methods for the client application. Used as
+ * Implements basic methods for the client application. Used as
  * handler class for the xml-rpc service. See the comments on each method for
- * details. Design notes: -- the thread safety was taken into consideration --
- * wrapper classes of the jdk was taken into account, so with small modification
- * you can use different databases. This implementation uses mySQL
+ * details.
+ * <p/>
+ * TODO: Replace relational DB with some noSQL like redis or mongo or something similar with enough performance.
  *
  * @author zafar.khaydarov
  * @version $Revision: 1.8 $
@@ -26,10 +29,9 @@ public class CaaoServerCore {
     /**
      * The connection.
      *
-     * @see http://download.oracle.com/javase/1.4.2/docs/api/java/sql/Connection.
-     * html Field conection.
+     * @see java.sql.Connection.
      */
-    private static Connection conection = null;
+    private static Connection connection = null;
     /**
      * Connection string URL. For more details please look at JDBC URL
      * specification. (http://www.connectionstrings.com)
@@ -54,11 +56,11 @@ public class CaaoServerCore {
     /**
      * The statement for SQL queries.
      */
-    protected static Statement statement;
+    private static Statement statement;
     /**
      * Field for the parameterized queries.
      */
-    protected static java.sql.PreparedStatement preparedStatement;
+    private static java.sql.PreparedStatement preparedStatement;
     /**
      * The result set returned by queries
      *
@@ -66,7 +68,7 @@ public class CaaoServerCore {
      * Field result_set.
      * @see {@link http://download.oracle.com/javase/tutorial/java/javaOO/accesscontrol.html}
      */
-    protected static ResultSet resultSet = null;
+    private static ResultSet resultSet = null;
 
     /**
      * Field log.
@@ -93,11 +95,13 @@ public class CaaoServerCore {
      * it's thread safe.
      */
     public List<String> countryList() throws Exception {
-        List<String> returnList = new Vector<String>();
+        List<String> returnList = new ArrayList<String>();
+        returnList = Collections.synchronizedList(returnList);
+
         log.debug("Gonna connect to db..");
         try {
-            conection = getMySqlConnection();
-            statement = conection.createStatement();
+            connection = getMySqlConnection();
+            statement = connection.createStatement();
             log.debug("----------------------------------------------------------");
             log.debug(preparedStatement.toString());
             log.debug("----------------------------------------------------------");
@@ -114,7 +118,7 @@ public class CaaoServerCore {
             log.error(e.getMessage());
         } finally {
             statement.close();
-            conection.close();
+            connection.close();
         }
         return returnList;
     }
@@ -127,15 +131,19 @@ public class CaaoServerCore {
      * @return Vector<String> The list of location
      * @throws Exception    The exception could be SQL exception or some another
      * @throws SQLException
-     * @see Vector<E>
+     * @see java.util.ArrayList <E>
      */
     public List<String> locationList(String pCountryName) throws SQLException {
-        List<String> returnList = new Vector<String>();
-        log.info("Executing method -> locationList(" + pCountryName + ")");
-        log.info("Gonna connect to db..");
+        //List<String> returnList = new Vector<String>();
+
+        List<String> returnList = new ArrayList<String>();
+        returnList = Collections.synchronizedList(returnList);
+
+        log.debug("Executing method -> locationList(" + pCountryName + ")");
+        log.debug("Connecting to db..");
         try {
-            conection = getMySqlConnection();
-            preparedStatement = conection
+            connection = getMySqlConnection();
+            preparedStatement = connection
                     .prepareStatement("SELECT location_title from core_locations_list where fk_country_id ="
                             + " (SELECT country_id from core_countries where country_title = ?)");
             preparedStatement.setString(1, pCountryName);
@@ -154,7 +162,7 @@ public class CaaoServerCore {
             log.error(e.getMessage());
         } finally {
             statement.close();
-            conection.close();
+            connection.close();
         }
         return returnList;
     }
@@ -164,20 +172,24 @@ public class CaaoServerCore {
     /**
      * Returns the list of events for specified in pUsarName
      *
-     * @param pUserName String the user name (email in database) - the unique user
-     *                  identifier.
-     * @return Vector<String> * @throws SQLException
+     * @param userName String the user name (email in database) - the unique user
+     *                 identifier.
+     * @return ArrayList<String>
+     * @throws SQLException
      */
-    public List<String> eventList(String pUserName) throws SQLException {
-        List<String> returnList = new Vector<String>();
-        log.debug("Executing method -> eventList(" + pUserName + ")");
+    public List<String> eventList(String userName) throws SQLException {
+
+        List<String> returnList = new ArrayList<String>();
+        returnList = Collections.synchronizedList(returnList);
+
+        log.debug("Executing method -> eventList(" + userName + ")");
         log.debug("Gonna connect to db..");
         try {
-            conection = getMySqlConnection();
-            preparedStatement = conection
+            connection = getMySqlConnection();
+            preparedStatement = connection
                     .prepareStatement("SELECT event_text from pg_events_list  where fk_user_id ="
                             + "(select user_id from core_users where e_mail = ?) order by 1 desc");
-            preparedStatement.setString(1, pUserName);
+            preparedStatement.setString(1, userName);
             if (log.isDebugEnabled()) {
                 log.debug("----------------------------------------------------------");
                 log.debug(preparedStatement.toString());
@@ -202,20 +214,21 @@ public class CaaoServerCore {
     /**
      * Returns the list of plants (which user is growing) for a specified user.
      *
-     * @param pUserName The user name for which the procedure returns the list of
-     *                  plants.
+     * @param userName The user name for which the procedure returns the list of
+     *                 plants.
      * @return Vector<String> The list of plants * @throws SQLException
      */
-    public List<String> plantList(String pUserName) throws SQLException {
-        List<String> returnList = new Vector<String>();
-        log.info("Executing method -> plantList(" + pUserName + ")");
+    public List<String> plantList(String userName) throws SQLException {
+        List<String> returnList = new ArrayList<String>();
+        returnList = Collections.synchronizedList(returnList);
+        log.info("Executing method -> plantList(" + userName + ")");
         log.info("Gonna connect to db..");
         try {
-            conection = getMySqlConnection();
-            preparedStatement = conection
+            connection = getMySqlConnection();
+            preparedStatement = connection
                     .prepareStatement("SELECT pgp_title from pg_plant_growing_plan WHERE user_id = "
                             + "(SELECT user_id from core_users where e_mail = ?)");
-            preparedStatement.setString(1, pUserName);
+            preparedStatement.setString(1, userName);
             log.debug("-----------------------------------------------------");
             log.debug(preparedStatement.toString());
             log.debug("-----------------------------------------------------");
@@ -242,7 +255,8 @@ public class CaaoServerCore {
      * class name of the driver. Method uses the jdbc wrapper for connecting to
      * the database.
      *
-     * @return Connection * @throws Exception
+     * @return Connection
+     * @throws Exception
      */
     @SuppressWarnings("unused")
     private static Connection getHSQLConnection() throws Exception {
@@ -257,7 +271,7 @@ public class CaaoServerCore {
      *
      * @return Connection
      */
-    public static Connection getMySqlConnection() {
+    private static Connection getMySqlConnection() {
         Connection conn = null;
         try {
             Class.forName(MY_SQL_DRIVER_NAME);
@@ -292,12 +306,12 @@ public class CaaoServerCore {
     /**
      * Checks does the DB is accessible or not
      *
-     * @return
+     * @return true when can be used and false otherwise.
      */
     public static boolean canUseDB() {
         try {
-            conection = getMySqlConnection();
-            preparedStatement = conection
+            connection = getMySqlConnection();
+            preparedStatement = connection
                     .prepareStatement("SELECT 1 + 1 FROM DUAL");
             if (null != preparedStatement.executeQuery()) {
                 resultSet = preparedStatement.getResultSet();
@@ -375,14 +389,14 @@ public class CaaoServerCore {
     /**
      * @return the database
      */
-    protected static String getDatabase() {
+    private static String getDatabase() {
         return database;
     }
 
     /**
      * @param database the database to set
      */
-    protected static void setDatabase(String database) {
+    private static void setDatabase(String database) {
         CaaoServerCore.database = database;
     }
 

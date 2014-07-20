@@ -30,7 +30,7 @@ import java.io.IOException;
 
 /**
  * The bundle that implements necessary services for registering and
- * unregistering in the framework. On details of the implementation please get
+ * un-registering in the framework. On details of the implementation please get
  * familiar with the OSGi specification R4.
  * TODO: more accurate logging and
  * TODO: integration. usage of another more powerful web server
@@ -44,8 +44,10 @@ import java.io.IOException;
  */
 
 public class Activator implements BundleActivator {
-
-
+    /**
+     * The port on which communication will be done.
+     */
+    private static final int CAAO_SERVER_PORT = 6392;
     /**
      * Embedded web server from the libraries of Apache
      *
@@ -83,16 +85,15 @@ public class Activator implements BundleActivator {
         logServiceTracker.open();
         LogService logservice = (LogService) logServiceTracker.getService();
 
-        if (logservice != null) {
+        if (logservice != null)
             logservice.log(LogService.LOG_INFO, "Got logging working.");
-        }
+
         // logging
         log = LogFactory.getLog(this.getClass());
 
-        final int port = 6392; // the port number on which the server will
         // listen for connection
 
-        webServer = new WebServer(port); // the instance of the embedded
+        webServer = new WebServer(CAAO_SERVER_PORT); // the instance of the embedded
         // web
         // server from the apache
         // xml-rpc library.
@@ -128,7 +129,7 @@ public class Activator implements BundleActivator {
         serverConfig.setContentLengthOptional(false);
         log.info("Powered by z1 | Please note that behind of it is the idea, not the perfect code..yet:)");
         log.info("--------------------------------------");
-        log.info("Starting server at port " + port);
+        log.info("Starting server at port " + CAAO_SERVER_PORT);
         // starting the web server
         try {
             webServer.start();
@@ -138,6 +139,7 @@ public class Activator implements BundleActivator {
         } catch (IOException e) {
             log.error(e.getMessage());
         }
+
         log.info("Server started. The supported methods are:");
         log.info("---------------------------------------");
         // If we are here, the server successfully started.
@@ -168,7 +170,6 @@ public class Activator implements BundleActivator {
      * @see org.osgi.framework.BundleActivator#stop(BundleContext)
      */
     public void stop(BundleContext context) {
-
         // helping garbage collector to free the resources
         log.info("stopping the server");
         if (null != webServer) {
@@ -179,15 +180,4 @@ public class Activator implements BundleActivator {
         // xmlRpcServer = null;
         // phm = null;
     }
-
-    // /**
-    // * Method log. TODO: in the future the framework logging should be used.
-    // * Right now it logs directly to stdout
-    // *
-    // * @param what
-    // * String
-    // */
-    // private static void log(String what) {
-    // System.out.println("[caao_bundle->]" + what);
-    // }
 }

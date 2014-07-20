@@ -34,6 +34,12 @@ You will need:
 * git client (if wanna commit for eclipse)
 
 
+### Code convention
+* According to [Google Java Style](https://google-styleguide.googlecode.com/svn/trunk/javaguide.html)
+
+
+### Code analysis and review
+ Later will add [Sonar](http://www.sonarqube.org/)
 
 #Contact
 ===
