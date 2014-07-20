@@ -18,7 +18,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import caao.com.CaaoConstants;
+import caao.com.Constants;
 import caao.com.MyToast;
 import caao.com.R;
 import caao.com.settings_activities.AdvancedSettings;
@@ -137,7 +137,7 @@ public class PlantListActivity extends Activity {
         String user_name;
 
         SharedPreferences adv_settings = getSharedPreferences(
-                CaaoConstants.ADVANCED_PREFERENCES_FILE, 0);
+                Constants.ADVANCED_PREFERENCES_FILE, 0);
         // reading the server url from preferences
         String l_server_url = adv_settings.getString("server_url", "");
         if (!l_server_url.trim().equals("")) {
@@ -155,7 +155,7 @@ public class PlantListActivity extends Activity {
                     mListOfPlants.add(o.toString());
                 }
             } catch (Exception e) {
-                Log.e(CaaoConstants.TAG, "[Exception]->" + e.getMessage());
+                Log.e(Constants.TAG, "[Exception]->" + e.getMessage());
             }
             // } else {
             // Toast

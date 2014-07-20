@@ -17,7 +17,7 @@ import android.net.NetworkInfo;
 /**
  * @author z1
  */
-public class CaaoUtils extends Activity {
+public class Utils extends Activity {
 
     public boolean isOnline() {
         ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);

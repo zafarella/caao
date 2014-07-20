@@ -22,7 +22,7 @@ import android.os.Bundle;
 import android.view.*;
 import android.widget.DatePicker;
 import android.widget.TabHost;
-import caao.com.service.CaaoService;
+import caao.com.service.Service;
 
 
 import java.util.Calendar;
@@ -129,8 +129,8 @@ public class MainActivity extends TabActivity {
 
         // --------------------------------------------------------------------------------
         // the service which we gonna run on background
-        Intent service_intent = new Intent(CaaoConstants.ACTION_FOREGROUND);
-        service_intent.setClass(MainActivity.this, CaaoService.class);
+        Intent service_intent = new Intent(Constants.ACTION_FOREGROUND);
+        service_intent.setClass(MainActivity.this, Service.class);
         startService(service_intent);
         // --------------------------------------------------------------------------------
         // for displaying the progress of some operation (wiki page etc.)
@@ -270,11 +270,11 @@ public class MainActivity extends TabActivity {
             case R.id.menu_item_exit_app:
                 // stopping the service (the memory)
                 Intent service_intent = new Intent().setClass(MainActivity.this,
-                        CaaoService.class);
+                        Service.class);
                 stopService(service_intent);// and finish the activity (hide, the
                 // system itself will clean the
                 // memory)
-                CaaoService.removeNotifications();
+                Service.removeNotifications();
                 this.moveTaskToBack(true); // see
                 // http://developer.android.com/reference/android/app/Activity.html#moveTaskToBack%28boolean%29
                 // finish();

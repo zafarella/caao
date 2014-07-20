@@ -47,6 +47,6 @@
 		</activity>
 
 		<service android:icon="@drawable/icon_organic_cotton" android:label="@string/service_label"
-		         android:name=".service.CaaoService"/>
+		         android:name=".service.Service"/>
 	</application>
 </manifest>

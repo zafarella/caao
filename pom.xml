@@ -13,7 +13,7 @@
 	<groupId>fi.uef.cs.caao</groupId>
 	<artifactId>caao-parent</artifactId>
 	<packaging>pom</packaging>
-	<name>Context-aware organizer (parent)</name>
+	<name>Context-aware organizer - parent</name>
 	<description>The context aware agricultural organizer</description>
 	<version>1.0.0-SNAPSHOT</version>
 	<!-- ========================================================= -->
@@ -49,7 +49,6 @@
 		<developerConnection>scm:git:ssh://git@github.com:zafarella/caao.git</developerConnection>
 	</scm>
 	<!-- ========================================================= -->
-
 	<prerequisites>
 		<maven>3.1.1</maven>
 	</prerequisites>

@@ -12,7 +12,6 @@ package caao.com.service;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
-import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
 import android.widget.Toast;
@@ -30,9 +29,9 @@ import caao.com.R;
  * @version $Revision: 1.9 $
  *          <p/>
  *          TODO: implementation of the methods of syncing data with the server
- * @see Service
+ * @see android.app.Service
  */
-public class CaaoService extends Service {
+public class Service extends android.app.Service {
     /**
      * Field mNM.
      */
@@ -72,7 +71,7 @@ public class CaaoService extends Service {
             // }
 
             // Done with our work... stop the service!
-            // CaaoService.this.stopSelf();
+            // Service.this.stopSelf();
         }
     };
 
@@ -90,7 +89,7 @@ public class CaaoService extends Service {
      */
     @Override
     public void onCreate() {
-        CaaoService.mNM = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        Service.mNM = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
 
         // show the icon in the status bar
         showNotification();
@@ -99,7 +98,7 @@ public class CaaoService extends Service {
         // separate thread because the service normally runs in the
         // process's
         // main thread, which we don't want to block.
-        Thread thr = new Thread(null, this.mTask, "CaaoService");
+        Thread thr = new Thread(null, this.mTask, "Service");
         thr.start();
         Toast.makeText(this, "Service started, separate thread created",
                 Toast.LENGTH_SHORT).show();
@@ -193,6 +192,6 @@ public class CaaoService extends Service {
         // Send the notification.
         // We use a layout id because it is a unique number. We use it later
         // to cancel.
-        CaaoService.mNM.notify(R.string.service_label, notification);
+        Service.mNM.notify(R.string.service_label, notification);
     }
 }

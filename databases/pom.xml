@@ -18,7 +18,7 @@
 	<developers>
 		<developer>
 			<name>Zafar Khaydarov</name>
-			<email>zafarella@gmail.com</email>
+			<email>zafarella@gmal.com</email>
 			<roles>
 				<role>Architect</role>
 				<role>Developer</role>
@@ -28,7 +28,7 @@
 	</developers>
 
 	<modules>
-		<module>caao_mysql</module>
+		<module>mysql</module>
 		<module>hadoop</module>
 	</modules>
 
