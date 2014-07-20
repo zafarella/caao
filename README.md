@@ -1,10 +1,16 @@
 
 #The CAAO
 ====
-Stands for Context-aware orginizer. The main idea of the project is creation of orginizer wich is context-aware [(Mark Weiser)](http://en.wikipedia.org/wiki/Mark_Weiser).
-I have tried to utilize OSGi as a server side and android as mobile part.
+Stands for Context-aware organizer.
 
-# Requires
+The main idea of the project is creation of organizer which is context-aware [Mark Weiser](http://en.wikipedia.org/wiki/Mark_Weiser).
+
+Server side was build using OSGi framework to provide modularity and easy extendable functionality targeting integration of the server with other
+prospective frameworks.
+
+
+
+# Requirements
 ====
 ## Back-end
 * JDK 1.6 or greater
@@ -13,14 +19,14 @@ I have tried to utilize OSGi as a server side and android as mobile part.
   * Apache Ant - optional
   * JUnit 3
   * maven
-
 ====
 ## Front-end
-  * Android SDK
-
+  * [Android SDK](http://developer.android.com/sdk/installing/index.html?pkg=tools)
+  * [Robotium] (https://code.google.com/p/robotium)
 ====
-### Using maven
-* see the release.sh
+### Building
+  ## Maven
+  * see the release.sh or just run ```mvn install```.
 
 ## IDE
 #### IDEA
@@ -28,15 +34,11 @@ I have tried to utilize OSGi as a server side and android as mobile part.
 ```bash
 bash -l /opt/idea/bin/idea.sh
 ```
-
 #### Eclipse
 You will need:
 * Maven plugin
-* git client (if wanna commit for eclipse)
-
-
+* git client (if want to commit from eclipse)
 
 #Contact
 ===
 Feel free to contact me in case u have any suggestion or any ideas - zafarella at gmail dot com.
-[![githalytics.com alpha](https://cruel-carlota.pagodabox.com/b87d5d7f89aeae352718a81cda6546a0 "githalytics.com")](http://githalytics.com/github.com/zafarella)
