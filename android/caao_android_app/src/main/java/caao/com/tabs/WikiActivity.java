@@ -33,7 +33,9 @@ public class WikiActivity extends Activity {
      */
     WebView webview;
 
-    /** @param savedInstanceState Bundle */
+    /**
+     * @param savedInstanceState Bundle
+     */
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
@@ -62,7 +64,6 @@ public class WikiActivity extends Activity {
      *
      * @param keyCode int
      * @param event   KeyEvent
-     *
      * @return boolean android.view.KeyEvent$Callback#onKeyDown(int, KeyEvent)
      */
     @Override
@@ -86,7 +87,9 @@ public class WikiActivity extends Activity {
 
     // -------------------------------------------------------------------------------------------------------------
 
-    /** @author zafar.khaydarov */
+    /**
+     * @author zafar.khaydarov
+     */
     @SuppressWarnings("unused")
     private class TabWebViewClient extends WebViewClient {
         /**
@@ -94,7 +97,6 @@ public class WikiActivity extends Activity {
          *
          * @param view WebView
          * @param url  String
-         *
          * @return boolean
          */
         @Override
@@ -103,7 +105,9 @@ public class WikiActivity extends Activity {
             return true;
         }
 
-        /** Method onCreate. */
+        /**
+         * Method onCreate.
+         */
 
         public void onCreate() {
             WikiActivity.this.webview.setWebViewClient(new TabWebViewClient());

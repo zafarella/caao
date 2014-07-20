@@ -122,8 +122,8 @@ class Base64Coder {
      *
      * @param s a Base64 String to be decoded.
      * @return A String containing the decoded data. * @throws
-     *         IllegalArgumentException if the input is not valid Base64 encoded
-     *         data.
+     * IllegalArgumentException if the input is not valid Base64 encoded
+     * data.
      */
     static String decodeString(String s) {
         return new String(decode(s));
@@ -134,8 +134,8 @@ class Base64Coder {
      *
      * @param s a Base64 String to be decoded.
      * @return An array containing the decoded data bytes. * @throws
-     *         IllegalArgumentException if the input is not valid Base64 encoded
-     *         data.
+     * IllegalArgumentException if the input is not valid Base64 encoded
+     * data.
      */
     static byte[] decode(String s) {
         return decode(s.toCharArray());
@@ -147,8 +147,8 @@ class Base64Coder {
      *
      * @param in a character array containing the Base64 encoded data.
      * @return An array containing the decoded data bytes. * @throws
-     *         IllegalArgumentException if the input is not valid Base64 encoded
-     *         data.
+     * IllegalArgumentException if the input is not valid Base64 encoded
+     * data.
      */
     static byte[] decode(char[] in) {
         int iLen = in.length;

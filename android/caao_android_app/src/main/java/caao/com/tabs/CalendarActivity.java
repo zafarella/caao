@@ -28,18 +28,28 @@ public class CalendarActivity extends Activity {
      * ""vnd.android.cursor.dir/vnd.exina.android.calendar.date"")
      */
     public static final String MIME_TYPE = "vnd.android.cursor.dir/vnd.exina.android.calendar.date";
-    /** Field mHit. */
+    /**
+     * Field mHit.
+     */
     TextView mHit;
-    /** Field mHandler. */
+    /**
+     * Field mHandler.
+     */
     Handler mHandler = new Handler();
-    /** Field tv. */
+    /**
+     * Field tv.
+     */
     TextView tv = null;
-    /** Field button_prev. */
+    /**
+     * Field button_prev.
+     */
     private Button button_prev, button_today, button_next;
 
     // -------------------------------------------------------------------------------------------------
 
-    /** @param savedInstanceState Bundle */
+    /**
+     * @param savedInstanceState Bundle
+     */
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // setting the layout from xml

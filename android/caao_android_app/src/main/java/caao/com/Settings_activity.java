@@ -30,15 +30,25 @@ import caao.com.settings_activities.NotificationSettingsActivity;
  * @version $Revision: 1.15 $
  */
 public class Settings_activity extends ListActivity {
-    /** Field lv. */
+    /**
+     * Field lv.
+     */
     private ListView lv;
-    /** Field ABOUT_DIALOG. (value is 0) */
+    /**
+     * Field ABOUT_DIALOG. (value is 0)
+     */
     private static final int ABOUT_DIALOG = 0;
-    /** Field LICENSE_DIALOG. (value is 1) */
+    /**
+     * Field LICENSE_DIALOG. (value is 1)
+     */
     private static final int LICENSE_DIALOG = 1;
-    /** Field FEEDBACK_DIALOG. (value is 2) */
+    /**
+     * Field FEEDBACK_DIALOG. (value is 2)
+     */
     private static final int FEEDBACK_DIALOG = 2;
-    /** Field THIRD_PARTY_LICENCES_DIALOG. (value is 3) */
+    /**
+     * Field THIRD_PARTY_LICENCES_DIALOG. (value is 3)
+     */
     private static final int THIRD_PARTY_LICENCES_DIALOG = 3;
 
     /**
@@ -126,9 +136,7 @@ public class Settings_activity extends ListActivity {
      * Displays the dialogs for the settings activity
      *
      * @param id int
-     *
      * @return Dialog
-     * @see onCreateDialog
      */
     protected Dialog onCreateDialog(int id) {
         Dialog dialog = null;

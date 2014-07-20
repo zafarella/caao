@@ -20,7 +20,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import caao.com.CaaoConstants;
+import caao.com.Constants;
 import caao.com.MyToast;
 import caao.com.R;
 import caao.com.settings_activities.AdvancedSettings;
@@ -35,15 +35,25 @@ import java.util.Vector;
  * @version $Revision: 1.9 $
  */
 public class EventNotificationActivity extends Activity {
-    /** Field mEventsListAdapter. */
+    /**
+     * Field mEventsListAdapter.
+     */
     private EventListAdapter mEventsListAdapter = null;
-    /** the list of plans as List */
+    /**
+     * the list of plans as List
+     */
     private ArrayList<String> mListOfEvents = null;
-    /** Field mProgressDialog. */
+    /**
+     * Field mProgressDialog.
+     */
     private ProgressDialog mProgressDialog = null;
-    /** Field mGetEventList. */
+    /**
+     * Field mGetEventList.
+     */
     private Runnable mGetEventList;
-    /** Field returnRes. */
+    /**
+     * Field returnRes.
+     */
     private Runnable returnRes = new Runnable() {
         @Override
         public void run() {
@@ -65,7 +75,9 @@ public class EventNotificationActivity extends Activity {
 
     // -------------------------------------------------------------------------------------
 
-    /** @param savedInstanceState Bundle */
+    /**
+     * @param savedInstanceState Bundle
+     */
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.event_list_tab);
@@ -117,7 +129,7 @@ public class EventNotificationActivity extends Activity {
         String user_name;
 
         SharedPreferences adv_settings = getSharedPreferences(
-                CaaoConstants.ADVANCED_PREFERENCES_FILE, 0);
+                Constants.ADVANCED_PREFERENCES_FILE, 0);
         // reading the server url from preferences
         String l_server_url = adv_settings.getString("server_url", "");
         if (!l_server_url.trim().equals("")) {
@@ -136,7 +148,7 @@ public class EventNotificationActivity extends Activity {
                         mListOfEvents.add(o.toString());
                     }
                 } catch (Exception e) {
-                    Log.e(CaaoConstants.TAG, "[Exception]->" + e.getMessage());
+                    Log.e(Constants.TAG, "[Exception]->" + e.getMessage());
                 }
 
             } else {
@@ -185,7 +197,9 @@ public class EventNotificationActivity extends Activity {
      * @see ArrayAdapter
      */
     class EventListAdapter extends ArrayAdapter<String> {
-        /** Constructor for EventListAdapter. */
+        /**
+         * Constructor for EventListAdapter.
+         */
         EventListAdapter() {
             super(EventNotificationActivity.this, R.layout.event_list_row,
                     mListOfEvents);

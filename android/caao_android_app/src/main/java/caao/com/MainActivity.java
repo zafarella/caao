@@ -18,18 +18,12 @@ import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
-import android.view.Window;
+
+import android.view.*;
 import android.widget.DatePicker;
 import android.widget.TabHost;
-import android.widget.TabHost.OnTabChangeListener;
-import caao.com.service.CaaoService;
-import caao.com.tabs.CalendarActivity;
-import caao.com.tabs.EventNotificationActivity;
-import caao.com.tabs.PlantListActivity;
-import caao.com.tabs.WikiActivity;
+import caao.com.service.Service;
+
 
 import java.util.Calendar;
 import java.util.Locale;
@@ -62,7 +56,9 @@ public class MainActivity extends TabActivity {
      */
     @SuppressWarnings("unused")
     private static final String TAG = "CAAO";
-    /** Field DATE_PICKER_DIALOG_ID. (value is 0) */
+    /**
+     * Field DATE_PICKER_DIALOG_ID. (value is 0)
+     */
     private static final int DATE_PICKER_DIALOG_ID = 0;
     /**
      * Field TheTabs.
@@ -70,9 +66,13 @@ public class MainActivity extends TabActivity {
      * @see TabHost
      */
     static TabHost TheTabs;
-    /** Field activeTabIndex. */
+    /**
+     * Field activeTabIndex.
+     */
     private short activeTabIndex = 0;
-    /** Variables for the date picker dialog. */
+    /**
+     * Variables for the date picker dialog.
+     */
     private int lCalendarYear, lCalendarMonth, lCalendarDay;
 
     /**
@@ -81,7 +81,9 @@ public class MainActivity extends TabActivity {
      * Initializes on create of activity.
      */
     // ------------------------------------------------------------------------------------
-    /** Listener for the dialog button selector */
+    /**
+     * Listener for the dialog button selector
+     */
     private DatePickerDialog.OnDateSetListener memuDateSetListener = new DatePickerDialog.OnDateSetListener() {
         public void onDateSet(DatePicker view, int year, int monthOfYear,
                               int dayOfMonth) {
@@ -98,7 +100,6 @@ public class MainActivity extends TabActivity {
      * Called when the activity is first created. We will create here the tabs *
      *
      * @param savedInstanceState Bundle
-     *
      * @see Resources
      * @see SharedPreferences
      * @see
@@ -110,7 +111,7 @@ public class MainActivity extends TabActivity {
 
         // TODO: the code that should handle new user registration
 
-        /*
+           /*
            * the locate of the application
            * ----------------------------------------
            */
@@ -128,64 +129,72 @@ public class MainActivity extends TabActivity {
 
         // --------------------------------------------------------------------------------
         // the service which we gonna run on background
-        Intent service_intent = new Intent(CaaoConstants.ACTION_FOREGROUND);
-        service_intent.setClass(MainActivity.this, CaaoService.class);
+        Intent service_intent = new Intent(Constants.ACTION_FOREGROUND);
+        service_intent.setClass(MainActivity.this, Service.class);
         startService(service_intent);
         // --------------------------------------------------------------------------------
         // for displaying the progress of some operation (wiki page etc.)
         getWindow().requestFeature(Window.FEATURE_PROGRESS);
         getWindow().requestFeature(Window.PROGRESS_VISIBILITY_ON);
 
+
         setContentView(R.layout.main);
 
-        // creating the tabs
-        Resources res_tab_titles = getResources();
-        String[] tab_titles = res_tab_titles
-                .getStringArray(R.array.tabs_titles);
+      //  ViewPager pager = (ViewPager) findViewById(R.id.pager);
+        //  pager.setAdapter(new TestAdapter(getSupportFragmentManager()));
 
-        TheTabs = getTabHost(); // The activity TabHost
-        TabHost.TabSpec spec; // Reusable TabSpec for each tab
-        Intent intent; // Reusable Intent for each tab
-
-        // Create an Intent to launch an Activity for the tab
-        intent = new Intent().setClass(this, CalendarActivity.class);
-        // Calendar --------------------------------------------
-        // Initialize a TabSpec for each tab and add it to the TabHost
-        spec = TheTabs.newTabSpec("CalendarActivity")
-                .setIndicator(tab_titles[0]).setContent(intent);
-        TheTabs.addTab(spec);
-
-        // Event notifications --------------------------------------------
-        intent = new Intent().setClass(this, EventNotificationActivity.class);
-        spec = TheTabs.newTabSpec("EventNotificationActivity")
-                .setIndicator(tab_titles[1]).setContent(intent);
-        TheTabs.addTab(spec);
-
-        // List of plants --------------------------------------------
-        // Create an Intent to launch an Activity for the tab
-        intent = new Intent().setClass(this, PlantListActivity.class);
-        spec = TheTabs.newTabSpec("PlantListActivity")
-                .setIndicator(tab_titles[2]).setContent(intent);
-        TheTabs.addTab(spec);
-
-        // Wiki web view --------------------------------------------
-        intent = new Intent().setClass(this, WikiActivity.class);
-        spec = TheTabs.newTabSpec("WikiActivity").setIndicator(tab_titles[3])
-                .setContent(intent);
-        TheTabs.addTab(spec);
-        // switching to the first default calendar tab
-        TheTabs.setCurrentTab(0);
-        // ---------------------------------------------------------------
-        // In order to find out the current selected tab we will listen on the
-        // tabchange event and
-        // assign the active tab index to private variable
-        TheTabs.setOnTabChangedListener(new OnTabChangeListener() {
-            @Override
-            public void onTabChanged(String arg0) {
-                MainActivity.this.activeTabIndex = (short) TheTabs
-                        .getCurrentTab();
-            }
-        });
+        //Bind the title indicator to the adapter
+      //  TitlePageIndicator titleIndicator = (TitlePageIndicator) findViewById(R.id.pager);
+      //  titleIndicator.setViewPager(pager);
+//
+//        // creating the tabs
+//        Resources res_tab_titles = getResources();
+//        String[] tab_titles = res_tab_titles
+//                .getStringArray(R.array.tabs_titles);
+//
+//        TheTabs = getTabHost(); // The activity TabHost
+//        TabHost.TabSpec spec; // Reusable TabSpec for each tab
+//        Intent intent; // Reusable Intent for each tab
+//
+//        // Create an Intent to launch an Activity for the tab
+//        intent = new Intent().setClass(this, CalendarActivity.class);
+//        // Calendar --------------------------------------------
+//        // Initialize a TabSpec for each tab and add it to the TabHost
+//        spec = TheTabs.newTabSpec("CalendarActivity")
+//                .setIndicator(tab_titles[0]).setContent(intent);
+//        TheTabs.addTab(spec);
+//
+//        // Event notifications --------------------------------------------
+//        intent = new Intent().setClass(this, EventNotificationActivity.class);
+//        spec = TheTabs.newTabSpec("EventNotificationActivity")
+//                .setIndicator(tab_titles[1]).setContent(intent);
+//        TheTabs.addTab(spec);
+//
+//        // List of plants --------------------------------------------
+//        // Create an Intent to launch an Activity for the tab
+//        intent = new Intent().setClass(this, PlantListActivity.class);
+//        spec = TheTabs.newTabSpec("PlantListActivity")
+//                .setIndicator(tab_titles[2]).setContent(intent);
+//        TheTabs.addTab(spec);
+//
+//        // Wiki web view --------------------------------------------
+//        intent = new Intent().setClass(this, WikiActivity.class);
+//        spec = TheTabs.newTabSpec("WikiActivity").setIndicator(tab_titles[3])
+//                .setContent(intent);
+//        TheTabs.addTab(spec);
+//        // switching to the first default calendar tab
+//        TheTabs.setCurrentTab(0);
+//        // ---------------------------------------------------------------
+//        // In order to find out the current selected tab we will listen on the
+//        // tabchange event and
+//        // assign the active tab index to private variable
+//        TheTabs.setOnTabChangedListener(new OnTabChangeListener() {
+//            @Override
+//            public void onTabChanged(String arg0) {
+//                MainActivity.this.activeTabIndex = (short) TheTabs
+//                        .getCurrentTab();
+//            }
+//        });
     }
 
     // ------------------------------------------------------------------------------------
@@ -194,9 +203,7 @@ public class MainActivity extends TabActivity {
      * Adds menu into the main activity from xml.
      *
      * @param menu Menu
-     *
      * @return boolean
-     * @see onCreateOptionsMenu
      */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -213,11 +220,10 @@ public class MainActivity extends TabActivity {
      * accordance of selected tab
      *
      * @param menu Menu
-     *
      * @return boolean
      * @see <code> http://developer.android.com/reference/android/app/Activity.html</code>
-     *      onPrepareOptionsMenu(android .view.Menu) Method
-     *      onPrepareOptionsMenu.
+     * onPrepareOptionsMenu(android .view.Menu) Method
+     * onPrepareOptionsMenu.
      */
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
@@ -255,9 +261,7 @@ public class MainActivity extends TabActivity {
      * the items
      *
      * @param item MenuItem
-     *
      * @return boolean
-     * @see onOptionsItemSelected
      */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -266,11 +270,11 @@ public class MainActivity extends TabActivity {
             case R.id.menu_item_exit_app:
                 // stopping the service (the memory)
                 Intent service_intent = new Intent().setClass(MainActivity.this,
-                        CaaoService.class);
+                        Service.class);
                 stopService(service_intent);// and finish the activity (hide, the
                 // system itself will clean the
                 // memory)
-                CaaoService.removeNotifications();
+                Service.removeNotifications();
                 this.moveTaskToBack(true); // see
                 // http://developer.android.com/reference/android/app/Activity.html#moveTaskToBack%28boolean%29
                 // finish();
@@ -313,7 +317,6 @@ public class MainActivity extends TabActivity {
      * Overridden method called for showing the dialogs
      *
      * @param id int the id of the dialog
-     *
      * @return Dialog the dialog that will be shown.
      */
     @Override
@@ -339,7 +342,6 @@ public class MainActivity extends TabActivity {
      *
      * @return boolean
      * @see ConnectivityManager
-     * @see getSystemService
      */
     @SuppressWarnings("unused")
     public boolean areThePhoneOnline() {
@@ -348,5 +350,8 @@ public class MainActivity extends TabActivity {
 
         return cm.getActiveNetworkInfo().isConnectedOrConnecting();
     }
+
+
+
 }
 /* Just for fun (C) Torvalds Linus */

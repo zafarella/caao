@@ -21,7 +21,9 @@ import caao.com.R;
  */
 public class LangLocSettings extends PreferenceActivity {
 
-    /** @param Saved_Instance_State Bundle */
+    /**
+     * @param Saved_Instance_State Bundle
+     */
     @Override
     public void onCreate(Bundle Saved_Instance_State) {
 

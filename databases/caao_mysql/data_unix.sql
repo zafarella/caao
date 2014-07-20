@@ -39,12 +39,12 @@ INSERT INTO `caorganizer`.`pg_plants`(`plant_id`,`plant_tilte`,`fk_lang_id`,`fk_
 INSERT INTO `caorganizer`.`pg_wiki_refs`(`ref_id`,`fk_plant_id`,`URL`) VALUES (4,1,'http://ru.wikipedia.org/wiki/%D0%A5%D0%BB%D0%BE%D0%BF%D1%87%D0%B0%D1%82%D0%BD%D0%B8%D0%BA');
 INSERT INTO `caorganizer`.`pg_wiki_refs`(`ref_id`,`fk_plant_id`,`URL`) VALUES (5,2,'http://fi.wikipedia.org/wiki/Puuvillat');
 -- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-INSERT INTO `caorganizer`.`PG_events_list`(`fk_user_id`,`event_text`) VALUES (1,'test event from database  ');
-INSERT INTO `caorganizer`.`PG_events_list`(`fk_user_id`,`event_text`) VALUES (1,'test event from database 2');
-INSERT INTO `caorganizer`.`PG_events_list`(`fk_user_id`,`event_text`) VALUES (1,'test event from database 3');
-INSERT INTO `caorganizer`.`PG_events_list`(`fk_user_id`,`event_text`) VALUES (1,'test event from database 4');
-INSERT INTO `caorganizer`.`PG_events_list`(`fk_user_id`,`event_text`) VALUES (1,'test event from database 5');
-INSERT INTO `caorganizer`.`PG_events_list`(`fk_user_id`,`event_text`) VALUES (1,'test event from database 6');
+INSERT INTO `caorganizer`.`pg_events_list`(`fk_user_id`,`event_text`) VALUES (1,'test event from database  ');
+INSERT INTO `caorganizer`.`pg_events_list`(`fk_user_id`,`event_text`) VALUES (1,'test event from database 2');
+INSERT INTO `caorganizer`.`pg_events_list`(`fk_user_id`,`event_text`) VALUES (1,'test event from database 3');
+INSERT INTO `caorganizer`.`pg_events_list`(`fk_user_id`,`event_text`) VALUES (1,'test event from database 4');
+INSERT INTO `caorganizer`.`pg_events_list`(`fk_user_id`,`event_text`) VALUES (1,'test event from database 5');
+INSERT INTO `caorganizer`.`pg_events_list`(`fk_user_id`,`event_text`) VALUES (1,'test event from database 6');
 -- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 INSERT INTO `caorganizer`.`pg_plant_growing_plan`(`pgp_id`,`pgp_title`,`plan_xml`,`fk_lang_id`,`fk_user_id`,`fk_plant_id`,`user_id`) VALUES (0,'test plant growing plan',null,1,1,2,1);
 -- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -1,1 +1,0 @@
-The activities for handling the content of the tabs
