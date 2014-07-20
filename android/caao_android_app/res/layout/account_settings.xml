@@ -17,13 +17,14 @@
 				android:text="Please provide us some details about you"
 				android:id="@+id/textView_acc_settins_title"
 				android:layout_gravity="top"
-				></TextView>
+				android:paddingTop="20dp" android:paddingLeft="10dp" android:singleLine="false"
+				android:textIsSelectable="false"></TextView>
 		<LinearLayout
 				android:layout_height="match_parent"
 				android:id="@+id/linearLayout1"
 				android:layout_width="match_parent"
 				android:orientation="vertical"
-				>
+				android:focusable="false" android:padding="20dp">
 			<!-- first name -->
 			<TableRow
 					android:id="@+id/tableRow1"

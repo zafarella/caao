@@ -3,9 +3,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
-	<name>caao-mysql-db</name>
+	<name>mysql</name>
 	<groupId>fi.uef.cs.caao</groupId>
-	<artifactId>caao-mysql-db</artifactId>
+	<artifactId>mysql</artifactId>
 
 	<parent>
 		<groupId>fi.uef.cs.caao</groupId>

@@ -15,7 +15,7 @@ package caao.com;
  *
  * @author zafar.khaydarov
  */
-public final class Constants {
+public static final class Constants {
     /**
      * xml file with the advanced preferences
      */
@@ -25,7 +25,7 @@ public final class Constants {
      * <p/>
      * Field ACTION_FOREGROUND. (value is ""caao.com.service.Service"")
      */
-    static final String ACTION_FOREGROUND = "caao.com.service.Service";
+    public static final String ACTION_FOREGROUND = "caao.com.service.Service";
     /**
      * the application tag for recognizing the app in the log
      *
