@@ -96,6 +96,10 @@
 						android:id="@+id/editText_password"
 						></EditText>
 			</TableRow>
+			<Space
+					android:layout_width="fill_parent"
+					android:layout_height="29dp"
+					/>
 			<TableRow
 					android:id="@+id/tableRow5"
 					android:layout_height="wrap_content"
@@ -104,7 +108,7 @@
 				<Button
 						android:text="Cancel"
 						android:id="@+id/button1"
-						android:layout_width="wrap_content"
+						android:layout_width="187dp"
 						android:layout_height="wrap_content"
 						></Button>
 				<Button

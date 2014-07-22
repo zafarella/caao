@@ -25,7 +25,8 @@
 	</string>
 	<string
 			name="about_dialog_content_text"
-			>The context aware orginizer. \n------------------------------\n This
+			>
+		The context aware orginizer. \n------------------------------\n This
 		application is part of IT project of Zafar Khaydarov at the University of
 		Eastern Finland, Computer Science Department. Under supervision of Teemu H
 		Laine.
@@ -69,7 +70,7 @@
 		<item>English</item>
 		<item>Suomi</item>
 		<item>Русский</item>
-		<item>Deutch</item>
+		<item>Deutsch</item>
 		<item>Точики</item>
 	</string-array>
 	<string-array

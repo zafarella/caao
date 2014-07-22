@@ -159,7 +159,7 @@ public class EventNotificationActivity extends Activity {
                         getApplicationContext()).create();
                 alertDialog.setTitle("Missing server URL");
                 alertDialog
-                        .setMessage("It seams that your settings need to be updates. Please provide server URL in advanced settings. Gonna launch the preferences");
+                        .setMessage("It looks that your settings need to be updated. Please provide server URL in advanced settings. I will open up settings.");
                 alertDialog.setButton("OK",
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog,

@@ -26,6 +26,8 @@
             <version>1.2.0</version>
         </dependency>
     </dependencies>
+
+
     <artifactId>caao-osgi-bundle</artifactId>
 	<version>0.0.1</version>
 	<packaging>bundle</packaging>

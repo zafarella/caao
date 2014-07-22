@@ -15,7 +15,7 @@ package caao.com;
  *
  * @author zafar.khaydarov
  */
-public static final class Constants {
+public final class Constants {
     /**
      * xml file with the advanced preferences
      */

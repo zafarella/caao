@@ -65,6 +65,8 @@
 	</build>
 
 	<profiles>
+
+
 		<profile>
 			<id>development</id>
 			<!-- using this since activeByDefault does not work well with multiple
@@ -85,6 +87,8 @@
 				<deployment.stage>In Production</deployment.stage>
 			</properties>
 		</profile>
+
+
 		<profile>
 			<id>release</id>
 			<!-- via this activation the profile is automatically used when the release
@@ -95,6 +99,8 @@
 					<value>true</value>
 				</property>
 			</activation>
+
+
 			<build>
 				<plugins>
 					<plugin>
@@ -173,10 +179,10 @@
 							</execution>
 						</executions>
 					</plugin>
+
 					<plugin>
 						<groupId>org.codehaus.mojo</groupId>
 						<artifactId>build-helper-maven-plugin</artifactId>
-
 						<configuration>
 							<artifacts>
 								<artifact>
@@ -203,6 +209,8 @@
 					</plugin>
 				</plugins>
 			</build>
+
 		</profile>
 	</profiles>
+
 </project>

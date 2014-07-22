@@ -35,7 +35,9 @@ You will need:
 * git client (if wanna commit for eclipse)
 
 ##CI
-  *[Travis] (https://travis-ci.org/zafarella/caao)
+  * [Travis] (https://travis-ci.org/zafarella/caao)
+  * https://travis-ci.org/zafarella/caao.svg?branch=dev
+
 ### Code convention
 * According to [Google Java Style](https://google-styleguide.googlecode.com/svn/trunk/javaguide.html)
 

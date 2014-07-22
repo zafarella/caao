@@ -1,5 +1,4 @@
 /**
- *  Computer science department 
  * Project: Context-Aware Agriculture Organizer 
  * Author: Zafar Khaydarov
  * E-mail: zkhayda@uef.fi 
@@ -26,6 +25,7 @@ import caao.com.xmlrpc.XMLRPCClient;
 
 import java.net.URI;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Vector;
 
 /**
@@ -68,6 +68,7 @@ public class PlantListActivity extends Activity {
      * @param savedInstanceState Bundle
      */
     public void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.plant_list_tab);
 
@@ -131,6 +132,7 @@ public class PlantListActivity extends Activity {
      * @throws Exception
      */
     private void retreivePlants() throws Exception {
+
         mListOfPlants = new ArrayList<String>();
         XMLRPCClient rpc_client;
         URI uri;
@@ -138,20 +140,23 @@ public class PlantListActivity extends Activity {
 
         SharedPreferences adv_settings = getSharedPreferences(
                 Constants.ADVANCED_PREFERENCES_FILE, 0);
+
         // reading the server url from preferences
-        String l_server_url = adv_settings.getString("server_url", "");
-        if (!l_server_url.trim().equals("")) {
+        String serverUrl = adv_settings.getString("server_url", "");
+
+        if (!serverUrl.trim().equals("")) {
             // if (areThePhoneOnline()) {
-            uri = URI.create(l_server_url);
+            uri = URI.create(serverUrl);
             // creating the rpc client
             rpc_client = new XMLRPCClient(uri);
             user_name = "zkhayda@uef.fi";
             try {
                 Object[] result = (Object[]) rpc_client.call(
                         "CaaoServerCore.plantList", user_name);
-                Vector<Object> plant_list = new Vector<Object>();
+                Vector<Object> plantList = new Vector<Object>();
+               // plantList = new Collections.synchronizedList(plantList);
                 for (Object o : result) {
-                    plant_list.add(o.toString());
+                    plantList.add(o.toString());
                     mListOfPlants.add(o.toString());
                 }
             } catch (Exception e) {
@@ -199,13 +204,9 @@ public class PlantListActivity extends Activity {
      * fields) override the ancestors's class few methods For more details,
      * please read the documentation.
      *
-     * @author zafar.khaydarov
      * @see ArrayAdapter
      */
     class PlantsListAdapter extends ArrayAdapter<String> {
-        /**
-         * Constructor for PlantsListAdapter.
-         */
         PlantsListAdapter() {
             super(PlantListActivity.this, R.layout.plant_list_row,
                     mListOfPlants);
