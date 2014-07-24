@@ -2,10 +2,10 @@
 #The CAAO
 ====
 Stands for Context-aware organizer. The main idea of the project is creation of organizer which is context-aware [Mark Weiser](http://en.wikipedia.org/wiki/Mark_Weiser).
-I have tried to utilize OSGi as a server side and android as mobile part.
+I have tried to utilize OSGi as a server side and android as mobile client. Web front-end is planned to be impleneted using Vaadin as another plugable bundle for OSGi (in progress).
 
-# Requires
-====
+
+# Requirements
 ## Back-end
 * JDK 1.6 or greater
 * Eclipse
@@ -20,21 +20,20 @@ I have tried to utilize OSGi as a server side and android as mobile part.
   * Android SDK
 
 ====
-### Using maven
+## Using maven
 * see the release.sh
 
 ## IDE
-#### IDEA
+### IDEA
 * Just import maven project, the rest should work. Idea has a bug on Linux - it does not reads the env variables -- workaround: 
-```bash -l /opt/idea/bin/idea.sh
-```
+```bash -l /opt/idea/bin/idea.sh```
 
-#### Eclipse
+### Eclipse
 You will need:
 * Maven plugin
 * git client (if wanna commit for eclipse)
 
-##CI
+## CI
   * [Travis] (https://travis-ci.org/zafarella/caao)
   * https://travis-ci.org/zafarella/caao.svg?branch=dev
 
