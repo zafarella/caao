@@ -23,8 +23,8 @@ I have tried to utilize OSGi as a server side and android as mobile client. Web 
 ## Using maven
 * see the release.sh
 
-## IDE
-## IDEA
+===
+### IDEA
 * Just import maven project, the rest should work. Idea has a bug on Linux - it does not reads the env variables -- workaround: 
 ```bash -l /opt/idea/bin/idea.sh```
 
