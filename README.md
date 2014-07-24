@@ -24,11 +24,11 @@ I have tried to utilize OSGi as a server side and android as mobile client. Web 
 * see the release.sh
 
 ## IDE
-### IDEA
+## IDEA
 * Just import maven project, the rest should work. Idea has a bug on Linux - it does not reads the env variables -- workaround: 
 ```bash -l /opt/idea/bin/idea.sh```
 
-### Eclipse
+## Eclipse
 You will need:
 * Maven plugin
 * git client (if wanna commit for eclipse)
@@ -37,11 +37,11 @@ You will need:
   * [Travis] (https://travis-ci.org/zafarella/caao)
   * https://travis-ci.org/zafarella/caao.svg?branch=dev
 
-### Code convention
+## Code convention
 * According to [Google Java Style](https://google-styleguide.googlecode.com/svn/trunk/javaguide.html)
 
 
-### Code analysis and review
+## Code analysis and review
  Later will add [Sonar](http://www.sonarqube.org/)
 
 #Contact
