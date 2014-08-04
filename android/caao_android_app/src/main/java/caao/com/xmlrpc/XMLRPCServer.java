@@ -9,8 +9,7 @@ import java.io.*;
 import java.net.Socket;
 
 /**
- * @author zafar.khaydarov
- * @version $Revision: 1.3 $
+ *
  */
 public class XMLRPCServer extends XMLRPCCommon {
 

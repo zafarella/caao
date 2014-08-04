@@ -31,12 +31,7 @@
 			<groupId>com.jayway.android.robotium</groupId>
 			<artifactId>robotium-solo</artifactId>
 			<version>5.2.1</version>
-			<exclusions>
-				<exclusion>
-					<groupId>com.google.code.guice</groupId>
-					<artifactId>guice</artifactId>
-				</exclusion>
-			</exclusions>
+
 		</dependency>
 
 		<!--reference to the android app-->

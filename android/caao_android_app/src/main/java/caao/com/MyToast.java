@@ -1,8 +1,5 @@
 /**
  *
- * Computer science department
- * Project: Context Aware Orginizer
- * Author: Zafar Khaydarov
  * E-mail: zkhayda@uef.fi
  * Web: cs.joensuu.fi/~zkhayda
  * Date: Apr 28, 2011
@@ -23,20 +20,20 @@ import android.widget.Toast;
 public final class MyToast {
 
     /**
-     * Context the context
+     *
      *
      * @param pTheContext the message to be displayed
      * @param pTheMessage String how long the message should be displayed. true for long
      *                    and false for short
-     * @param pHowLong    boolean
+     * @param howLong    boolean
      */
-    public MyToast(Context pTheContext, String pTheMessage, boolean pHowLong) {
+    public MyToast(Context pTheContext, String pTheMessage, boolean howLong) {
         Toast.makeText(pTheContext, pTheMessage,
-                pHowLong ? Toast.LENGTH_LONG : Toast.LENGTH_SHORT).show();
+                howLong ? Toast.LENGTH_LONG : Toast.LENGTH_SHORT).show();
     }
 
     /**
-     * Context the context
+     *
      *
      * @param pTheContext Context
      * @param pTheMessage String

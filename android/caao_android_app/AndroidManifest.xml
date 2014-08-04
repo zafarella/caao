@@ -23,8 +23,6 @@
 			</intent-filter>
 		</activity>
 		<activity android:configChanges="locale" android:label="@string/app_name"
-		          android:name=".tabs.CalendarActivity"/>
-		<activity android:configChanges="locale" android:label="@string/app_name"
 		          android:name=".tabs.PlantListActivity"/>
 		<activity android:configChanges="locale" android:label="@string/app_name"
 		          android:name=".tabs.EventNotificationActivity"/>

@@ -1,9 +1,5 @@
 /**
  *
- * Computer science department
- * Project: Context Aware Organizer
- * Author: Zafar Khaydarov
- * E-mail: zkhayda@uef.fi
  * Web: cs.joensuu.fi/~zkhayda
  * Date: Apr 28, 2011
  */

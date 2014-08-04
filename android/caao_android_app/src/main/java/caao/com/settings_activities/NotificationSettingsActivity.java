@@ -1,8 +1,4 @@
 /**
- *
- * Computer science department 
- * Project: Context Aware Orginizer 
- * Author: Zafar Khaydarov
  * E-mail: zkhayda@uef.fi 
  * Web: cs.joensuu.fi/~zkhayda 
  * Date: Mar 23, 2011
