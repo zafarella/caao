@@ -5,8 +5,8 @@ Stands for Context-aware organizer. The main idea of the project is creation of 
 I have tried to utilize OSGi as a server side and android as mobile client. Web front-end is planned to be impleneted using Vaadin as another plugable bundle for OSGi (in progress).
 
 
-# Requirements
-## Back-end
+## Requirements
+### Back-end
   * JDK 1.6 or greater
   * Eclipse / Intellij Idea
   * [Knopflerfish eclipse plug-in](http://www.knopflerfish.org/eclipse_plugin.html) or
@@ -15,13 +15,10 @@ I have tried to utilize OSGi as a server side and android as mobile client. Web 
   * JUnit 3
   * maven
 
-## Front-end
+### Front-end
   * Android SDK
 
-## Using maven
-  * see the release.sh
-
-### IDEA
+### IDE
   * Just import maven project, the rest should work. Idea has a bug on Linux - it does not reads the env variables -- workaround:
 ```bash -l /opt/idea/bin/idea.sh```
 
