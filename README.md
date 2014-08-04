@@ -24,14 +24,17 @@ I have tried to utilize OSGi as a server side and android as mobile client. Web 
 
 ## Eclipse
   * Maven plugin
-  * git client (if wanna commit for eclipse)
+  * git client
 
-##CI
-  * [Travis] (https://travis-ci.org/zafarella/caao)
-  * https://travis-ci.org/zafarella/caao.svg?branch=dev
+## Build Status
+  * Master [![Build Status](https://travis-ci.org/zafarella/caao.svg?branch=master)](https://travis-ci.org/zafarella/caao)
+  * Dev [![Build Status](https://travis-ci.org/zafarella/caao.svg?branch=dev)](https://travis-ci.org/zafarella/caao)
 
 ## Code convention
   * According to [Google Java Style](https://google-styleguide.googlecode.com/svn/trunk/javaguide.html)
+
+## Branching model
+ * According to [](http://nvie.com/posts/a-successful-git-branching-model)
 
 ## Code analysis and review
   * CodePro
