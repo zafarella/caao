@@ -1,7 +1,4 @@
 /**
- *  Computer science department 
- * Project: Context-Aware Agriculture Organizer 
- * Author: Zafar Khaydarov
  * E-mail: zkhayda@uef.fi 
  * Web: cs.joensuu.fi/~zkhayda 
  * Date: Mar 17, 2011
@@ -23,7 +20,7 @@ import android.widget.ListView;
 import caao.com.Constants;
 import caao.com.MyToast;
 import caao.com.R;
-import caao.com.settings_activities.AdvancedSettings;
+import caao.com.settingsactivities.AdvancedSettings;
 import caao.com.xmlrpc.XMLRPCClient;
 
 import java.net.URI;

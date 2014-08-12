@@ -1,4 +1,4 @@
-package caao.com.settings_activities;
+package caao.com.settingsactivities;
 
 import org.junit.After;
 import org.junit.Before;

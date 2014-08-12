@@ -4,7 +4,7 @@ import android.util.AttributeSet;
 import android.widget.CalendarView;
 import caao.com.Settings_activityFactory;
 import caao.com.service.caao_serviceFactory;
-import caao.com.settings_activities.Advanced_settingsFactory;
+import caao.com.settingsactivities.Advanced_settingsFactory;
 
 import static caao.com.Main_activityFactory.*;
 

@@ -28,7 +28,7 @@
 	</developers>
 
 	<modules>
-		<module>mysql</module>
+
 		<module>hadoop</module>
 		<module>cassandra</module>
 
