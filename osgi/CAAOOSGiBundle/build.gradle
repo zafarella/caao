@@ -1,0 +1,7 @@
+
+description = 'caao-osgi-bundle'
+dependencies {
+    compile group: 'org.apache.felix', name: 'org.osgi.foundation', version:'1.2.0'
+}
+
+apply plugin: 'osgi'
