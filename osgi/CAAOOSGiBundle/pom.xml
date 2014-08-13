@@ -4,31 +4,12 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	<name>caao-osgi-bundle</name>
-    <dependencies>
-        <dependency>
-            <groupId>org.apache.felix</groupId>
-            <artifactId>org.osgi.foundation</artifactId>
-            <version>1.2.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.felix</groupId>
-            <artifactId>org.osgi.foundation</artifactId>
-            <version>1.2.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.felix</groupId>
-            <artifactId>org.osgi.foundation</artifactId>
-            <version>1.2.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.felix</groupId>
-            <artifactId>org.osgi.foundation</artifactId>
-            <version>1.2.0</version>
-        </dependency>
-    </dependencies>
+	<description>
+		[Context aware organizer] Bundle provides service implementing
+		XML-RPC service for the android application connectivity.
+	</description>
 
-
-    <artifactId>caao-osgi-bundle</artifactId>
+	<artifactId>caao-osgi-bundle</artifactId>
 	<version>0.0.1</version>
 	<packaging>bundle</packaging>
 
@@ -39,7 +20,7 @@
 	</parent>
 
 	<properties>
-		<bundle.namespace>${project.groupId}.${project.artifactId}</bundle.namespace>
+		<bundle.namespace>${project.artifactId}</bundle.namespace>
 	</properties>
 
 	<build>
@@ -48,12 +29,54 @@
 				<groupId>org.apache.felix</groupId>
 				<artifactId>maven-bundle-plugin</artifactId>
 				<extensions>true</extensions>
-				<version>2.3.7</version>
+				<version>2.5.0</version>
+
 				<configuration>
+
 					<instructions>
-						<Export-Package>${bundle.namespace}</Export-Package>
+
+						<Export-Package>fi.uef.caao</Export-Package>
 						<Private-Package>!${bundle.namespace}</Private-Package>
+						<Import-Package>org.osgi.framework, org.xml.sax, org.xml.sax.helpers,
+							org.w3c.dom, javax.xml.namespace, javax.xml.parsers</Import-Package>
+
+
+						<DynamicImport-Package>
+						com.mysql.jdbc.Driver, com.mysql.jdbc, com.mysql.jdbc.exceptions, com.mysql.jdbc.exceptions.jdbc4,
+						com.mysql.jdbc.integration.c3p0, com.mysql.jdbc.integration.jboss, com.mysql.jdbc.interceptors,
+							com.mysql.jdbc.jdbc2.optional, com.mysql.jdbc.jmx, com.mysql.jdbc.log, com.mysql.jdbc.profiler,
+							com.mysql.jdbc.util, org.gjt.mm.mysql, org.apache.commons.codec,
+							org.apache.commons.codec.binary, org.apache.commons.codec.digest,
+							org.apache.commons.codec.language, org.apache.commons.codec.net,
+							org.apache.commons.httpclient, org.apache.commons.httpclient.auth, org.apache.commons.httpclient.cookie,
+							org.apache.commons.httpclient.methods, org.apache.commons.httpclient.methods.multipart,
+							org.apache.commons.httpclient.params, org.apache.commons.httpclient.protocol,
+							org.apache.commons.httpclient.util, org.apache.commons.logging, org.apache.commons.logging.impl,
+							org.apache.ws.commons.serialize, org.apache.ws.commons.util,org.apache.xmlrpc,
+							org.apache.xmlrpc.client, org.apache.xmlrpc.client.util, org.apache.xmlrpc.common,
+							org.apache.xmlrpc.jaxb,	org.apache.xmlrpc.metadata, org.apache.xmlrpc.parser,
+							org.apache.xmlrpc.serializer, org.apache.xmlrpc.server,org.apache.xmlrpc.util,
+							org.osgi.framework.hooks.service
+						</DynamicImport-Package>
+
+						<Bundle-Name>${project.name}</Bundle-Name>
+						<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+						<Bundle-Activator>fi.uef.caao.Activator</Bundle-Activator>
+						<Bundle-Version>${project.version}</Bundle-Version>
+
+						<Bundle-Vendor>Zafar Khaydarov</Bundle-Vendor>
+						<Bundle-ContactAddress>zafarella@gmail.com</Bundle-ContactAddress>
+
+						<Bundle-ManifestVersion>2</Bundle-ManifestVersion>
+						<Bundle-UpdateLocation></Bundle-UpdateLocation>
+						<Bundle-Copyright></Bundle-Copyright>
+
+						<Bundle-Description>${project.description}</Bundle-Description>
+
+						<Bundle-DocURL>${project.organization.url}</Bundle-DocURL>
+
 					</instructions>
+
 				</configuration>
 			</plugin>
 		</plugins>

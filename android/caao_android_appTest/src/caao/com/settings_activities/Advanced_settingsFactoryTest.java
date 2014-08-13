@@ -1,4 +1,4 @@
-package caao.com.settings_activities;
+package caao.com.settingsactivities;
 
 import static junit.framework.Assert.assertNotNull;
 

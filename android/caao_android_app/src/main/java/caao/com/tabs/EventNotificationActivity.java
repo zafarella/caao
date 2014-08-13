@@ -20,7 +20,7 @@ import android.widget.ListView;
 import caao.com.Constants;
 import caao.com.MyToast;
 import caao.com.R;
-import caao.com.settings_activities.AdvancedSettings;
+import caao.com.settingsactivities.AdvancedSettings;
 import caao.com.xmlrpc.XMLRPCClient;
 
 import java.net.URI;

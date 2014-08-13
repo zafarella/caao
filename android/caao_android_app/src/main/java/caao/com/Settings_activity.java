@@ -14,10 +14,10 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import caao.com.settings_activities.AccountSettingsActivity;
-import caao.com.settings_activities.AdvancedSettings;
-import caao.com.settings_activities.LangLocSettings;
-import caao.com.settings_activities.NotificationSettingsActivity;
+import caao.com.settingsactivities.AccountSettingsActivity;
+import caao.com.settingsactivities.AdvancedSettings;
+import caao.com.settingsactivities.LangLocSettings;
+import caao.com.settingsactivities.NotificationSettingsActivity;
 
 /**
  * The activity implements main settings view of the application.

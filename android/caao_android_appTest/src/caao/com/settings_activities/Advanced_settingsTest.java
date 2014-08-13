@@ -1,4 +1,4 @@
-package caao.com.settings_activities;
+package caao.com.settingsactivities;
 
 import junit.framework.TestCase;
 import junit.framework.TestSuite;

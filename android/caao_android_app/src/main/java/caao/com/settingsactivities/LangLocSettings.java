@@ -3,7 +3,7 @@
  * Web: cs.joensuu.fi/~zkhayda 
  * Date: Mar 24, 2011
  */
-package caao.com.settings_activities;
+package caao.com.settingsactivities;
 
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
