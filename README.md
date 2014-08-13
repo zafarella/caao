@@ -26,9 +26,9 @@ I have tried to utilize OSGi as a server side and android as mobile client. Web 
   * Maven plugin
   * git client
 
-## Build Status
-  * Master [![Build Status](https://travis-ci.org/zafarella/caao.svg?branch=master)](https://travis-ci.org/zafarella/caao)
-  * Dev [![Build Status](https://travis-ci.org/zafarella/caao.svg?branch=dev)](https://travis-ci.org/zafarella/caao)
+## Build Status by branches
+  * master [![Build Status](https://travis-ci.org/zafarella/caao.svg?branch=master)](https://travis-ci.org/zafarella/caao)
+  * dev [![Build Status](https://travis-ci.org/zafarella/caao.svg?branch=dev)](https://travis-ci.org/zafarella/caao)
 
 ## Code convention
   * According to [Google Java Style](https://google-styleguide.googlecode.com/svn/trunk/javaguide.html)
