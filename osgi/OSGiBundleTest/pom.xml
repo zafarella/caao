@@ -4,7 +4,6 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	<name>caao-osgi-bundleTest</name>
-	<groupId>fi.uef.cs.caao</groupId>
 	<artifactId>CAAOOSGiBundleTest</artifactId>
 	<packaging>bundle</packaging>
 

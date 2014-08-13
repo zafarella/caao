@@ -3,7 +3,6 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>fi.uef.cs.caao</groupId>
 	<artifactId>caao_android_appTest</artifactId>
 	<packaging>apk</packaging>
 	<name>caao-app-test</name>
