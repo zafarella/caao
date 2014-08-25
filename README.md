@@ -31,16 +31,16 @@ I have tried to utilize OSGi as a server side and android as mobile client. Web 
   * dev [![Build Status](https://travis-ci.org/zafarella/caao.svg?branch=dev)](https://travis-ci.org/zafarella/caao)
 
 ## Deployment location
-    * http://caaobundle-zafarella.rhcloud.com/
+  * http://caaobundle-zafarella.rhcloud.com/
 
 ## Android app
-    * to be published on the market
+  * to be published on the market
 
 ## Code convention
   * According to [Google Java Style](https://google-styleguide.googlecode.com/svn/trunk/javaguide.html)
 
 ## Branching model
- * According to [Git branching model by Vincent Driessen](http://nvie.com/posts/a-successful-git-branching-model)
+  * According to [Git branching model by Vincent Driessen](http://nvie.com/posts/a-successful-git-branching-model)
 
 ## Code analysis and review
   * CodePro
@@ -48,5 +48,5 @@ I have tried to utilize OSGi as a server side and android as mobile client. Web 
 ## Wiki & howto
 
 
-#Contact
+##Contact
 Feel free to contact me in case u have any suggestion or any ideas - zafarella at gmail dot com.
