@@ -3,7 +3,6 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>fi.uef.cs.caao</groupId>
     <artifactId>caao_android_app</artifactId>
     <name>caao-app</name>
     <packaging>apk</packaging>
@@ -26,7 +25,21 @@
 			<artifactId>android</artifactId>
 			<scope>provided</scope>
 		</dependency>
+		<dependency>
+			<groupId>com.viewpagerindicator</groupId>
+			<artifactId>library</artifactId>
+			<version>2.4.1</version>
+			<type>apklib</type>
+		</dependency>
+		<dependency>
+			<groupId>com.actionbarsherlock</groupId>
+			<artifactId>actionbarsherlock</artifactId>
+			<version>4.4.0</version>
+			<type>apklib</type>
+		</dependency>
 	</dependencies>
+
+	
 
     <build>
         <plugins>
@@ -43,7 +56,6 @@
             <plugin>
                 <groupId>com.jayway.maven.plugins.android.generation2</groupId>
                 <artifactId>android-maven-plugin</artifactId>
-
                 <extensions>true</extensions>
                 <configuration>
                     <manifest>
@@ -71,6 +83,7 @@
     </build>
 
     <profiles>
+
 
         <profile>
             <id>development</id>
@@ -189,9 +202,7 @@
                     <plugin>
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>build-helper-maven-plugin</artifactId>
-
-	                    <configuration>
-
+                        <configuration>
                             <artifacts>
                                 <artifact>
                                     <file>${project.build.directory}/${project.artifactId}-signed-aligned.apk</file>
@@ -205,8 +216,7 @@
                                 </artifact>
                             </artifacts>
                         </configuration>
-
-	                    <executions>
+                        <executions>
                             <execution>
                                 <id>attach-signed-aligned</id>
                                 <phase>package</phase>
