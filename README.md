@@ -17,9 +17,8 @@ I have tried to utilize OSGi as a server side and android as mobile client. Web 
   * maven
 
 ## CI
-  * Master branch [[![Build Status](https://travis-ci.org/zafarella/caao.svg?branch=master)](https://travis-ci.org/zafarella/caao)
+  * Master branch [![Build Status](https://travis-ci.org/zafarella/caao.svg?branch=master)](https://travis-ci.org/zafarella/caao)
   * Dev branch [![Build Status](https://travis-ci.org/zafarella/caao.svg?branch=dev)](https://travis-ci.org/zafarella/caao)
 
 ##Contact
-===
 Feel free to contact me in case u have any suggestion or any ideas - zafarella at gmail dot com.
