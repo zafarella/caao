@@ -8,13 +8,12 @@ I have tried to utilize OSGi as a server side and android as mobile client. Web 
 ## Requirements
 ## Back-end
 * JDK 1.6 or greater
-
 * Eclipse
-  * [Knopflerfish eclipse plug-in](http://www.knopflerfish.org/eclipse_plugin.html) or
-  * [Felix] (http://felix.apache.org)
-  * Apache Ant - optional
-  * JUnit 3
-  * maven
+* [Knopflerfish eclipse plug-in](http://www.knopflerfish.org/eclipse_plugin.html) or
+* [Felix] (http://felix.apache.org)
+* Apache Ant - optional
+* JUnit 3
+* maven 3
 
 ## CI
   * Master branch [![Build Status](https://travis-ci.org/zafarella/caao.svg?branch=master)](https://travis-ci.org/zafarella/caao)
