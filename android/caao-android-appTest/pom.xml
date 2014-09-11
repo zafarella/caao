@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>fi.uef.cs.caao</groupId>
-	<artifactId>caao_android_appTest</artifactId>
+	<artifactId>caao-android-appTest</artifactId>
 	<packaging>apk</packaging>
 	<name>caao-app-test</name>
 

@@ -3,7 +3,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>caao_android_app</artifactId>
+    <artifactId>caao-android-app</artifactId>
     <name>caao-app</name>
     <packaging>apk</packaging>
     <url>https://github.com/zafarella/caao/tree/master/android/caao_android_app</url>
@@ -57,7 +57,9 @@
                 <groupId>com.jayway.maven.plugins.android.generation2</groupId>
                 <artifactId>android-maven-plugin</artifactId>
                 <extensions>true</extensions>
-                <configuration>
+	            <version>3.8.2</version>
+
+	            <configuration>
                     <manifest>
                         <debuggable>true</debuggable>
                     </manifest>
@@ -83,8 +85,6 @@
     </build>
 
     <profiles>
-
-
         <profile>
             <id>development</id>
             <!-- using this since activeByDefault does not work well with multiple
@@ -105,8 +105,6 @@
                 <deployment.stage>In Production</deployment.stage>
             </properties>
         </profile>
-
-
         <profile>
             <id>release</id>
             <!-- via this activation the profile is automatically used when the release
@@ -154,6 +152,7 @@
                     <plugin>
                         <groupId>com.jayway.maven.plugins.android.generation2</groupId>
                         <artifactId>android-maven-plugin</artifactId>
+
                         <inherited>true</inherited>
                         <configuration>
                             <sign>

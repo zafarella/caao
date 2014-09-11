@@ -30,8 +30,8 @@
 
 
 	<modules>
-		<module>caao_android_app</module>
-		<module>caao_android_appTest</module>
+		<module>caao-android-app</module>
+		<module>caao-android-appTest</module>
 	</modules>
 
 
@@ -120,11 +120,12 @@
 				<plugin>
 					<groupId>com.jayway.maven.plugins.android.generation2</groupId>
 					<artifactId>android-maven-plugin</artifactId>
-					<version>3.9.0-rc.2</version>
+					<version>3.8.2</version>
+
 					<extensions>true</extensions>
 					<configuration>
 						<sdk>
-							<platform>16</platform>
+							<platform>14</platform>
 						</sdk>
 						<undeployBeforeDeploy>true</undeployBeforeDeploy>
 						<proguard>
