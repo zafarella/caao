@@ -20,4 +20,4 @@ Server side is requires Java > 1.6 and the client side is android application.
 See [wiki](wiki).
 
 ##Contact
-Feel free to contact me in case u have any suggestion or any ideas - zafarella at gmail dot com.
+Feel free to contact me should you have any suggestion or any ideas - zafarella at gmail dot com.
