@@ -125,7 +125,7 @@
 					<extensions>true</extensions>
 					<configuration>
 						<sdk>
-							<platform>14</platform>
+							<platform>16</platform>
 						</sdk>
 						<undeployBeforeDeploy>true</undeployBeforeDeploy>
 						<proguard>
