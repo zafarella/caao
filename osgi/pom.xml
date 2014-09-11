@@ -17,8 +17,38 @@
 
 	<modules>
 		<module>CAAOOSGiBundle</module>
-		<module>OSGiBundleTest</module>
+		<!--<module>OSGiBundleTest</module>-->
 	</modules>
+
+	<profiles>
+		<profile>
+			<id>development</id>
+
+			<modules>
+				<module>CAAOOSGiBundle</module>
+				<!-- skipping the test doe to limitation on junit4osgi
+				TODO: add testing later on
+				-->
+			</modules>
+
+		</profile>
+
+		<profile>
+			<id>production</id>
+			<modules>
+				<module>
+					CAAOOSGiBundle
+				</module>
+			</modules>
+		</profile>
+
+		<profile>
+			<id>release</id>
+			<modules>
+				<module>CAAOOSGiBundle</module>
+			</modules>
+		</profile>
+	</profiles>
 
 	<properties>
 		<bundle.namespace>${project.groupId}.${project.artifactId}</bundle.namespace>

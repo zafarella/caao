@@ -6,7 +6,8 @@
 		android:baselineAligned="true"
 		android:orientation="vertical"
 		android:id="@+id/layout_root"
-		android:padding="15dp">
+		android:padding="15dp"
+		android:weightSum="1">
 	<EditText
 			android:scrollbars="vertical"
 			android:cursorVisible="true"
@@ -14,9 +15,9 @@
 			android:id="@+id/editText1"
 			android:layout_height="wrap_content"
 			android:height="100sp"
-			></EditText>
+			android:layout_weight="0.58"></EditText>
 	<CheckBox
-			android:layout_width="wrap_content"
+			android:layout_width="314dp"
 			android:layout_height="wrap_content"
 			android:text="Include Screen shot of main page"
 			android:id="@+id/checkBox" android:layout_gravity="center_horizontal" android:checked="false"/>

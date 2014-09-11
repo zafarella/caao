@@ -100,7 +100,7 @@ public class MainActivity extends TabActivity {
      * @see SharedPreferences
      * @see
      */
-    @SuppressWarnings("deprecation")
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

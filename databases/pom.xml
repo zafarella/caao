@@ -27,10 +27,7 @@
 	</developers>
 
 	<modules>
-
-		<module>hadoop</module>
 		<module>cassandra</module>
-
 	</modules>
 
 	<build>
