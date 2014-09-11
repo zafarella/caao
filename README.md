@@ -15,7 +15,7 @@ I have tried to utilize OSGi as a server side and android as mobile client. Web 
   * Apache Ant - optional
   * JUnit 3
   * maven
-  * 
+
 ## CI
   * Master branch [[![Build Status](https://travis-ci.org/zafarella/caao.svg?branch=master)](https://travis-ci.org/zafarella/caao)
   * Dev branch [![Build Status](https://travis-ci.org/zafarella/caao.svg?branch=dev)](https://travis-ci.org/zafarella/caao)
