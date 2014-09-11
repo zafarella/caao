@@ -8,12 +8,13 @@ I have utilized OSGi as a server side to extend server functionality by contribu
 The actuall data from sensors colleted via SOS [(Sensor Observation Service)](http://52north.org/communities/sensorweb/sos/index.html). It supports variety of sensors not only spatial.
 
 
-## CI
-  * Master branch [![Build Status](https://travis-ci.org/zafarella/caao.svg?branch=master)](https://travis-ci.org/zafarella/caao)
-  * Dev branch [![Build Status](https://travis-ci.org/zafarella/caao.svg?branch=dev)](https://travis-ci.org/zafarella/caao)
-
 ## Architecture in brief
 Server side is requires Java > 1.6 and the client side is android application.
+
+
+## Build status
+  * Master branch [![Build Status](https://travis-ci.org/zafarella/caao.svg?branch=master)](https://travis-ci.org/zafarella/caao)
+  * Dev branch [![Build Status](https://travis-ci.org/zafarella/caao.svg?branch=dev)](https://travis-ci.org/zafarella/caao)
 
 ## Documentation
 See [wiki](wiki).
