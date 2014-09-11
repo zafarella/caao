@@ -12,5 +12,11 @@ The actuall data from sensors colleted via SOS [(Sensor Observation Service)](ht
   * Master branch [![Build Status](https://travis-ci.org/zafarella/caao.svg?branch=master)](https://travis-ci.org/zafarella/caao)
   * Dev branch [![Build Status](https://travis-ci.org/zafarella/caao.svg?branch=dev)](https://travis-ci.org/zafarella/caao)
 
+## Architecture in brief
+Server side is requires Java > 1.6 and the client side is android application.
+
+## Documentation
+See [wiki](wiki).
+
 ##Contact
 Feel free to contact me in case u have any suggestion or any ideas - zafarella at gmail dot com.
