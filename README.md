@@ -17,7 +17,7 @@ Server side is requires Java > 1.6 and the client side is android application.
   * Dev branch [![Build Status](https://travis-ci.org/zafarella/caao.svg?branch=dev)](https://travis-ci.org/zafarella/caao)
 
 ## Documentation
-See [wiki](wiki).
+See [wiki](https://github.com/zafarella/caao/wiki).
 
 ##Contact
 Feel free to contact me should you have any suggestion or any ideas - zafarella at gmail dot com.
