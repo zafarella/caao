@@ -3,13 +3,13 @@
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>caao-vaadin-front-end</artifactId>
 	<packaging>war</packaging>
-	<version>1.0</version>
+	<version>1.1-SNAPSHOT</version>
 	<name>caao-vaadin web front-End</name>
 
 	<parent>
 		<groupId>fi.uef.cs.caao</groupId>
 		<artifactId>caao-front-end-parent</artifactId>
-		<version>1.0.0</version>
+		<version>1.0.1-SNAPSHOT</version>
 	</parent>
 
 	<properties>
