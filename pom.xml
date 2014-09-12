@@ -1,66 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-
-	<parent>
-		<groupId>org.sonatype.oss</groupId>
-		<artifactId>oss-parent</artifactId>
-		<version>7</version>
-	</parent>
-
-
-	<modelVersion>4.0.0</modelVersion>
-	<groupId>fi.uef.cs.caao</groupId>
-	<artifactId>caao-parent</artifactId>
-	<packaging>pom</packaging>
-	<name>Context-aware organizer - parent</name>
-	<description>The context aware agricultural organizer</description>
-	<version>1.0.0</version>
-
-
-	<developers>
-		<developer>
-			<name>Zafarella</name>
-			<email>zafarella@gmail.com</email>
-			<roles>
-				<role>Architect</role>
-				<role>Developer</role>
-			</roles>
-			<timezone>+1</timezone>
-		</developer>
-	</developers>
-
-
-	<modules>
-		<module>android</module>
-		<module>osgi</module>
-		<module>databases</module>
-		<module>front-end</module>
-	</modules>
-
-
-	<properties>
-		<bundle.namespace>${project.groupId}.${project.artifactId}</bundle.namespace>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<scm.branch>master</scm.branch>
-		<maven.version>3.0.3</maven.version>
-	</properties>
-
-
-	<issueManagement>
-		<system>GitHub Issues</system>
-		<url>https://github.com/zafarella/caao/issues</url>
-	</issueManagement>
-
-
-	<scm>
-		<url>https://github.com/zafarella/caao</url>
-		<connection>scm:git:git://github.com/zafarella/caao.git</connection>
-		<developerConnection>scm:git:ssh://git@github.com:zafarella/caao.git</developerConnection>
-	</scm>
-
-
-	<prerequisites>
-		<maven>3.1.1</maven>
-	</prerequisites>
-
+  <parent>
+    <groupId>org.sonatype.oss</groupId>
+    <artifactId>oss-parent</artifactId>
+    <version>7</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>fi.uef.cs.caao</groupId>
+  <artifactId>caao-parent</artifactId>
+  <packaging>pom</packaging>
+  <name>Context-aware organizer - parent</name>
+  <description>The context aware agricultural organizer</description>
+  <version>1.0.0-SNAPSHOT</version>
+  <developers>
+    <developer>
+      <name>Zafarella</name>
+      <email>zafarella@gmail.com</email>
+      <roles>
+        <role>Architect</role>
+        <role>Developer</role>
+      </roles>
+      <timezone>+1</timezone>
+    </developer>
+  </developers>
+  <modules>
+    <module>android</module>
+    <module>osgi</module>
+    <module>databases</module>
+    <module>front-end</module>
+  </modules>
+  <properties>
+    <bundle.namespace>${project.groupId}.${project.artifactId}</bundle.namespace>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <scm.branch>master</scm.branch>
+    <maven.version>3.0.3</maven.version>
+  </properties>
+  <issueManagement>
+    <system>GitHub Issues</system>
+    <url>https://github.com/zafarella/caao/issues</url>
+  </issueManagement>
+  <scm>
+    <url>https://github.com/zafarella/caao</url>
+    <connection>scm:git:git://github.com/zafarella/caao.git</connection>
+    <developerConnection>scm:git:git@github.com:zafarella/caao.git</developerConnection>
+  </scm>
+  <prerequisites>
+    <maven>3.1.1</maven>
+  </prerequisites>
 </project>
