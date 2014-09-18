@@ -8,6 +8,8 @@ branches:
    - master
    - dev
 
+notifications:
+  email: false
 
 language: android
 android:
