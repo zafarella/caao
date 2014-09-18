@@ -35,3 +35,6 @@ android:
     # if you need to run emulator(s) during your tests
     - sys-img-armeabi-v7a-android-19
     - sys-img-x86-android-17
+
+env:
+    MAVEN_OPTS=-Xmx2048m -XX:MaxPermSize=512m -Dmaven.artifact.threads=6 
