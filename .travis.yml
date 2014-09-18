@@ -37,4 +37,4 @@ android:
     - sys-img-x86-android-17
 
 env:
-    MAVEN_OPTS=-Xmx2048m -XX:MaxPermSize=512m -Dmaven.artifact.threads=6 
+    MAVEN_OPTS=-Xmx512m -XX:MaxPermSize=256m -Dmaven.artifact.threads=6 
