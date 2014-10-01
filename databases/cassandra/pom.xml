@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>fi.uef.cs.caao</groupId>
 		<artifactId>databases</artifactId>
-		<version>1.0.0</version>
+		<version>1.0.1-SNAPSHOT</version>
 	</parent>
 
 
@@ -17,7 +17,7 @@
 		<dependency>
 			<groupId>org.apache.cassandra</groupId>
 			<artifactId>cassandra-all</artifactId>
-			<version>2.0.9</version>
+			<version>2.1.0</version>
 		</dependency>
 	</dependencies>
 	</dependencyManagement>
