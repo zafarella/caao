@@ -9,7 +9,7 @@ The actuall data from sensors colleted via SOS [(Sensor Observation Service)](ht
 
 
 ## Architecture in brief
-Server side is requires Java > 1.6 and the client side is android application.
+Server side is requires Java > 1.6 and the client side is android application. Server side implemented with OSGi (ported to felix).
 
 
 ## Build status
@@ -17,7 +17,7 @@ Server side is requires Java > 1.6 and the client side is android application.
   * Dev branch [![Build Status](https://travis-ci.org/zafarella/caao.svg?branch=dev)](https://travis-ci.org/zafarella/caao)
 
 ## Documentation
-See [wiki](https://github.com/zafarella/caao/wiki).
+Please read [wiki](https://github.com/zafarella/caao/wiki).
 
 ##Contact
 Feel free to contact me should you have any suggestion or any ideas - zafarella at gmail dot com.
