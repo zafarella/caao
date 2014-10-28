@@ -18,6 +18,7 @@ Server side is requires Java > 1.6 and the client side is android application. S
 
 ## Documentation
 Please read [wiki](https://github.com/zafarella/caao/wiki).
+Also look at [project page](http://zafarella.github.io/caao).
 
 ##Contact
 Feel free to contact me should you have any suggestion or any ideas - zafarella at gmail dot com.
