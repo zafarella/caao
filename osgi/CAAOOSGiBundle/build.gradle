@@ -1,7 +1,23 @@
 
 description = 'caao-osgi-bundle'
-dependencies {
-    compile group: 'org.apache.felix', name: 'org.osgi.foundation', version:'1.2.0'
-}
 
 apply plugin: 'osgi'
+
+/*
+jar {
+    manifest { // the manifest of the default jar is of type OsgiManifest
+        name = 'overwrittenSpecialOsgiName'
+
+        instruction 'Bundle-Copyright', 'Zafar Khaydarov | Teemu H Laine'
+
+        instruction 'Private-Package', 'fi.uef.caao'
+
+        instruction 'Bundle-Vendor', 'Zafar Khaydarov'
+        instruction 'Bundle-Description', ' [Context aware organizer] The service implements X\n' +
+                    ' ML-RPC service for the android application and connectivity with the \n' +
+                    ' mysql database'
+        instruction 'Bundle-DocURL', 'http://www.mycompany.com'
+        instruction 'Bundle-Activator', 'fi.uef.caao.Activator'
+    }
+}
+*/

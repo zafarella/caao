@@ -1,28 +1,8 @@
-allprojects  {
-  apply plugin: 'maven'
-
-  group = 'fi.uef.cs.caao'
-  version = '1.0.0-SNAPSHOT'
-}
-
-subprojects {
-  apply plugin: 'java'
-  sourceCompatibility = 1.5
-  targetCompatibility = 1.5
-
-  
-  repositories {
-    mavenLocal()
-    
-    maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
-    maven { url "http://repo.maven.apache.org/maven2" }
-    maven { url "http://maven.restlet.org" }
-    maven { url "http://maven.vaadin.com/vaadin-addons" }
-    maven { url "http://oss.sonatype.org/content/repositories/vaadin-snapshots/" }
-  }
-
-  configurations.all {
-}
-  
-  
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:0.14.+'
+    }
 }
