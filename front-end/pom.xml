@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>fi.uef.cs.caao</groupId>
 		<artifactId>caao-parent</artifactId>
-		<version>1.0.1-SNAPSHOT</version>
+		<version>1.0.0</version>
 	</parent>
 
 
@@ -13,12 +13,13 @@
 	<name>caao-front-end-parent</name>
 	<groupId>fi.uef.cs.caao</groupId>
 	<artifactId>caao-front-end-parent</artifactId>
-	<version>1.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<packaging>pom</packaging>
 
 
 	<modules>
 		<module>caao-vaadin-front-end</module>
 	</modules>
+
 
 </project>

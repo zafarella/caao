@@ -171,8 +171,7 @@ public class Service extends android.app.Service {
      * Sends the notification to the status bar of the phone
      */
     private void showNotification() {
-        // In this sample, we'll use the same text for the ticker and the
-        // expanded notification
+
         CharSequence text = getText(R.string.service_label);
 
         // Set the icon, scrolling text and timestamp

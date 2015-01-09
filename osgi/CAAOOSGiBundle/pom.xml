@@ -9,13 +9,13 @@
 	</description>
 
 	<artifactId>caao-osgi-bundle</artifactId>
-	<version>1.0.1-SNAPSHOT</version>
 	<packaging>bundle</packaging>
+	<version>1.0.0</version>
 
 	<parent>
 		<groupId>fi.uef.cs.caao</groupId>
 		<artifactId>caao-osgi-bundles-parent</artifactId>
-		<version>1.0.1-SNAPSHOT</version>
+		<version>1.0.0</version>
 	</parent>
 
 	<properties>
@@ -37,23 +37,29 @@
 						<Export-Package>fi.uef.caao</Export-Package>
 						<Private-Package>!${bundle.namespace}</Private-Package>
 						<Import-Package>org.osgi.framework, org.xml.sax, org.xml.sax.helpers,
-							org.w3c.dom, javax.xml.namespace, javax.xml.parsers</Import-Package>
+							org.w3c.dom, javax.xml.namespace, javax.xml.parsers
+						</Import-Package>
 
 
 						<DynamicImport-Package>
-						com.mysql.jdbc.Driver, com.mysql.jdbc, com.mysql.jdbc.exceptions, com.mysql.jdbc.exceptions.jdbc4,
-						com.mysql.jdbc.integration.c3p0, com.mysql.jdbc.integration.jboss, com.mysql.jdbc.interceptors,
-							com.mysql.jdbc.jdbc2.optional, com.mysql.jdbc.jmx, com.mysql.jdbc.log, com.mysql.jdbc.profiler,
+							com.mysql.jdbc.Driver, com.mysql.jdbc, com.mysql.jdbc.exceptions,
+							com.mysql.jdbc.exceptions.jdbc4,
+							com.mysql.jdbc.integration.c3p0, com.mysql.jdbc.integration.jboss,
+							com.mysql.jdbc.interceptors,
+							com.mysql.jdbc.jdbc2.optional, com.mysql.jdbc.jmx, com.mysql.jdbc.log,
+							com.mysql.jdbc.profiler,
 							com.mysql.jdbc.util, org.gjt.mm.mysql, org.apache.commons.codec,
 							org.apache.commons.codec.binary, org.apache.commons.codec.digest,
 							org.apache.commons.codec.language, org.apache.commons.codec.net,
-							org.apache.commons.httpclient, org.apache.commons.httpclient.auth, org.apache.commons.httpclient.cookie,
+							org.apache.commons.httpclient, org.apache.commons.httpclient.auth,
+							org.apache.commons.httpclient.cookie,
 							org.apache.commons.httpclient.methods, org.apache.commons.httpclient.methods.multipart,
 							org.apache.commons.httpclient.params, org.apache.commons.httpclient.protocol,
-							org.apache.commons.httpclient.util, org.apache.commons.logging, org.apache.commons.logging.impl,
+							org.apache.commons.httpclient.util, org.apache.commons.logging,
+							org.apache.commons.logging.impl,
 							org.apache.ws.commons.serialize, org.apache.ws.commons.util,org.apache.xmlrpc,
 							org.apache.xmlrpc.client, org.apache.xmlrpc.client.util, org.apache.xmlrpc.common,
-							org.apache.xmlrpc.jaxb,	org.apache.xmlrpc.metadata, org.apache.xmlrpc.parser,
+							org.apache.xmlrpc.jaxb, org.apache.xmlrpc.metadata, org.apache.xmlrpc.parser,
 							org.apache.xmlrpc.serializer, org.apache.xmlrpc.server,org.apache.xmlrpc.util,
 							org.osgi.framework.hooks.service
 						</DynamicImport-Package>
