@@ -63,10 +63,6 @@ public class MainActivity extends TabActivity {
      */
     static TabHost TheTabs;
     /**
-     * Field activeTabIndex.
-     */
-    private short activeTabIndex = 0;
-    /**
      * Variables for the date picker dialog.
      */
     private int lCalendarYear, lCalendarMonth, lCalendarDay;
@@ -226,7 +222,11 @@ public class MainActivity extends TabActivity {
         /*
            * 0 Calendar 1 Event notification 2 Plant list 3 Wiki
            */
-        switch (this.activeTabIndex) {
+        /*
+      Field activeTabIndex.
+     */
+        short activeTabIndex = 0;
+        switch (activeTabIndex) {
             case 0:
                 menu.setGroupVisible(R.id.group_calendar_items, true);
                 menu.setGroupVisible(R.id.group_webView, false);

@@ -4,7 +4,6 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	<name>mysql</name>
-	<groupId>fi.uef.cs.caao</groupId>
 	<artifactId>mysql</artifactId>
 
 	<parent>

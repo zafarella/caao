@@ -7,7 +7,9 @@
 #echo "-------------------------------------------------------------------------------\n"
 #mvn versions:display-plugin-updates
 
- export MAVEN_OPTS="-Xmx2048m -XX:MaxPermSize=512m -Dmaven.artifact.threads=8"
+procs=$(nproc);
+
+export MAVEN_OPTS="-Xmx2048m -XX:MaxPermSize=512m -Dmaven.artifact.threads=$procs"
 
     mvn  release:prepare release:perform -T4C;
     git gc

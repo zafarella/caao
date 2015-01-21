@@ -34,22 +34,44 @@
 
 					<instructions>
 
+						<Bundle-Name>${project.name}</Bundle-Name>
+						<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+						<Bundle-Activator>fi.uef.caao.Activator</Bundle-Activator>
+						<Bundle-Version>${project.version}</Bundle-Version>
+
+						<Bundle-Vendor>Zafar Khaydarov</Bundle-Vendor>
+						<Bundle-ContactAddress>zafarella@gmail.com</Bundle-ContactAddress>
+
+						<Bundle-ManifestVersion>2</Bundle-ManifestVersion>
+						<Bundle-UpdateLocation>${bundle.update-location}</Bundle-UpdateLocation>
+						<Bundle-Copyright />
+						<Bundle-License>${pom.licenses}"</Bundle-License>
+
+						<Bundle-Description>${project.description}</Bundle-Description>
+						<Bundle-DocURL>${project.organization.url}</Bundle-DocURL>
+
 						<Export-Package>fi.uef.caao</Export-Package>
 						<Private-Package>!${bundle.namespace}</Private-Package>
-						<Import-Package>org.osgi.framework, org.xml.sax, org.xml.sax.helpers,
-							org.w3c.dom, javax.xml.namespace, javax.xml.parsers
+						<Import-Package>org.osgi.framework,
+										org.xml.sax,
+										org.xml.sax.helpers,
+										org.w3c.dom,
+										javax.xml.namespace,
+										javax.xml.parsers
 						</Import-Package>
-
-
 						<DynamicImport-Package>
+
 							com.mysql.jdbc.Driver, com.mysql.jdbc, com.mysql.jdbc.exceptions,
 							com.mysql.jdbc.exceptions.jdbc4,
 							com.mysql.jdbc.integration.c3p0, com.mysql.jdbc.integration.jboss,
 							com.mysql.jdbc.interceptors,
 							com.mysql.jdbc.jdbc2.optional, com.mysql.jdbc.jmx, com.mysql.jdbc.log,
 							com.mysql.jdbc.profiler,
-							com.mysql.jdbc.util, org.gjt.mm.mysql, org.apache.commons.codec,
-							org.apache.commons.codec.binary, org.apache.commons.codec.digest,
+							com.mysql.jdbc.util,
+							org.gjt.mm.mysql,
+							org.apache.commons.codec,
+							org.apache.commons.codec.binary,
+							org.apache.commons.codec.digest,
 							org.apache.commons.codec.language, org.apache.commons.codec.net,
 							org.apache.commons.httpclient, org.apache.commons.httpclient.auth,
 							org.apache.commons.httpclient.cookie,
@@ -63,22 +85,6 @@
 							org.apache.xmlrpc.serializer, org.apache.xmlrpc.server,org.apache.xmlrpc.util,
 							org.osgi.framework.hooks.service
 						</DynamicImport-Package>
-
-						<Bundle-Name>${project.name}</Bundle-Name>
-						<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
-						<Bundle-Activator>fi.uef.caao.Activator</Bundle-Activator>
-						<Bundle-Version>${project.version}</Bundle-Version>
-
-						<Bundle-Vendor>Zafar Khaydarov</Bundle-Vendor>
-						<Bundle-ContactAddress>zafarella@gmail.com</Bundle-ContactAddress>
-
-						<Bundle-ManifestVersion>2</Bundle-ManifestVersion>
-						<Bundle-UpdateLocation />
-						<Bundle-Copyright />
-
-						<Bundle-Description>${project.description}</Bundle-Description>
-
-						<Bundle-DocURL>${project.organization.url}</Bundle-DocURL>
 
 					</instructions>
 
