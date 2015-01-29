@@ -28,7 +28,7 @@ public class CaaoServerCore {
     /**
      * The connection.
      *
-     * @see http://download.oracle.com/javase/1.4.2/docs/api/java/sql/Connection.
+     * @see Connection.
      * html Field conection.
      */
     private static Connection conection = null;

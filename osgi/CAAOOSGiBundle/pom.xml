@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
 	<name>caao-osgi-bundle</name>
@@ -53,11 +54,11 @@
 						<Export-Package>fi.uef.caao</Export-Package>
 						<Private-Package>!${bundle.namespace}</Private-Package>
 						<Import-Package>org.osgi.framework,
-										org.xml.sax,
-										org.xml.sax.helpers,
-										org.w3c.dom,
-										javax.xml.namespace,
-										javax.xml.parsers
+							org.xml.sax,
+							org.xml.sax.helpers,
+							org.w3c.dom,
+							javax.xml.namespace,
+							javax.xml.parsers
 						</Import-Package>
 						<DynamicImport-Package>
 
