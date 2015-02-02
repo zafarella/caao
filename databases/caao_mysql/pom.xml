@@ -12,4 +12,6 @@
 		<version>1.0.0</version>
 	</parent>
 
+	<description>DEPRECATED - to be replaced by cassandra</description>
+
 </project>
