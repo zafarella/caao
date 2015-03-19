@@ -16,6 +16,8 @@ Server side is requires Java > 1.6 and the client side is android application.
   master [![Build Status](https://travis-ci.org/zafarella/caao.svg?branch=master)](https://travis-ci.org/zafarella/caao)
   dev [![Build Status](https://travis-ci.org/zafarella/caao.svg?branch=dev)](https://travis-ci.org/zafarella/caao)
  [![Code Climate](https://codeclimate.com/github/zafarella/caao/badges/gpa.svg)](https://codeclimate.com/github/zafarella/caao)
+ [![Coverage Status](https://coveralls.io/repos/zafarella/caao/badge.svg)](https://coveralls.io/r/zafarella/caao)
+
 
 ## Documentation
 See [wiki](wiki).
