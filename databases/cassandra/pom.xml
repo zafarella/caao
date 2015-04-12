@@ -13,7 +13,7 @@
 	<artifactId>cassandra</artifactId>
 
 	<description>
-		Represents Cassandra project in as storage. Why cassandra? Because it is scalable and there will be a day when
+		Represents Cassandra project as storage. Why cassandra? Because it is scalable and there will be a day when
 		this project will need to scale.
 	</description>
 
