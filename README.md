@@ -24,3 +24,7 @@ See [wiki](wiki).
 
 ##Contact
 Feel free to contact me should you have any suggestion or any ideas - zafarella at gmail dot com.
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/zafarella/caao/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
