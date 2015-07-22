@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 echo "To understand what it does, please read http://mojo.codehaus.org/versions-maven-plugin/ \n\n";
 

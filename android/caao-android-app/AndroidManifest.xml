@@ -1,46 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" android:versionCode="1" android:versionName="1.0.0" package="caao.com">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto"
+          android:versionCode="1" android:versionName="1.0.0" package="caao.com">
 
-	<uses-sdk android:maxSdkVersion="15" android:minSdkVersion="8" android:targetSdkVersion="8"/>
-	<uses-permission android:name="android.permission.INTERNET"/>
-	<!--
-	  below permission is needed to check the phone
-	  connectivity
-	-->
-	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-	<application android:icon="@drawable/icon" android:label="@string/app_name">
-		<activity android:configChanges="locale" android:label="@string/app_name" android:name=".MainActivity">
-			<intent-filter>
-				<action android:name="android.intent.action.MAIN"/>
-				<category android:name="android.intent.category.LAUNCHER"/>
-			</intent-filter>
-		</activity>
-		<activity android:configChanges="locale" android:label="@string/app_name" android:name="Settings_activity">
-			<intent-filter>
-				<action android:name="android.settings.APN_SETTINGS"/>
-				<category android:name="android.intent.category.PREFERENCE"/>
-			</intent-filter>
-		</activity>
-		<activity android:configChanges="locale" android:label="@string/app_name" android:name=".tabs.PlantListActivity"/>
-		<activity android:configChanges="locale" android:label="@string/app_name" android:name=".tabs.EventNotificationActivity"/>
-		<activity android:configChanges="locale" android:label="@string/app_name" android:name=".tabs.WikiActivity"/>
-		<activity android:configChanges="locale" android:name=".settingsactivities.AccountSettingsActivity"/>
-		<activity android:configChanges="locale" android:name=".settingsactivities.NotificationSettingsActivity"/>
-		<activity android:configChanges="locale" android:name=".settingsactivities.AdvancedSettings"/>
-		<activity android:configChanges="locale" android:name=".settingsactivities.LangLocSettings"/>
-		<activity android:configChanges="locale" android:name=".tabs.CalendarActivity">
-			<intent-filter>
-				<action android:name="android.intent.action.PICK"/>
-				<category android:name="android.intent.category.DEFAULT"/>
-				<data android:mimeType="vnd.android.cursor.dir/vnd.exina.android.calendar.date"/>
-			</intent-filter>
-			<intent-filter>
-				<action android:name="android.intent.action.VIEW"/>
-				<category android:name="android.intent.category.DEFAULT"/>
-				<data android:mimeType="vnd.android.cursor.dir/vnd.exina.android.calendar.date"/>
-			</intent-filter>
-		</activity>
+    <uses-sdk android:maxSdkVersion="15" android:minSdkVersion="8" android:targetSdkVersion="8"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <!--
+      below permission is needed to check the phone
+      connectivity
+    -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <application android:icon="@drawable/icon" android:label="@string/app_name">
+        <activity android:configChanges="locale" android:label="@string/app_name" android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="locale" android:label="@string/app_name" android:name="Settings_activity">
+            <intent-filter>
+                <action android:name="android.settings.APN_SETTINGS"/>
+                <category android:name="android.intent.category.PREFERENCE"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="locale" android:label="@string/app_name"
+                  android:name=".tabs.PlantListActivity"/>
+        <activity android:configChanges="locale" android:label="@string/app_name"
+                  android:name=".tabs.EventNotificationActivity"/>
+        <activity android:configChanges="locale" android:label="@string/app_name" android:name=".tabs.WikiActivity"/>
+        <activity android:configChanges="locale" android:name=".settingsactivities.AccountSettingsActivity"/>
+        <activity android:configChanges="locale" android:name=".settingsactivities.NotificationSettingsActivity"/>
+        <activity android:configChanges="locale" android:name=".settingsactivities.AdvancedSettings"/>
+        <activity android:configChanges="locale" android:name=".settingsactivities.LangLocSettings"/>
+        <activity android:configChanges="locale" android:name=".tabs.CalendarActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.PICK"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="vnd.android.cursor.dir/vnd.exina.android.calendar.date"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="vnd.android.cursor.dir/vnd.exina.android.calendar.date"/>
+            </intent-filter>
+        </activity>
 
-		<service android:icon="@drawable/icon_organic_cotton" android:label="@string/service_label" android:name=".service.Service"/>
-	</application>
+        <service android:icon="@drawable/icon_organic_cotton" android:label="@string/service_label"
+                 android:name=".service.Service"/>
+    </application>
 </manifest>

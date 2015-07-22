@@ -1,4 +1,5 @@
-#!/bin/sh
+#!/usr/bin/env bash
+
 #
 # The purpose: to have a one click script which will do the release of entire project.
 #
