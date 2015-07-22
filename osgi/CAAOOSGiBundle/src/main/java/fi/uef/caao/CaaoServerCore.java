@@ -8,8 +8,10 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
-import java.util.Vector;
+
 
 /**
  * The class implements basic methods for the client application. Used as
@@ -27,7 +29,7 @@ public class CaaoServerCore {
      * The connection.
      *
      * @see http://download.oracle.com/javase/1.4.2/docs/api/java/sql/Connection.
-     *      html Field conection.
+     * html Field conection.
      */
     private static Connection conection = null;
     /**
@@ -56,30 +58,21 @@ public class CaaoServerCore {
      */
     protected static Statement statement;
     /**
-     * Field for the parameterized queries.
+     * Field for the parametrized queries.
      */
     protected static java.sql.PreparedStatement preparedStatement;
     /**
      * The result set returned by queries
      *
      * @see http://download.oracle.com/javase/1.4.2/docs/api/java/sql/ResultSet.html
-     *      Field result_set.
+     * Field result_set.
      * @see link http://download.oracle.com/javase/tutorial/java/javaOO/accesscontrol
-     *      .html
+     * .html
      */
     protected static ResultSet resultSet = null;
 
-    /**
-     * Field log.
-     */
-    private static Log log;
+    private final static Log log = LogFactory.getLog(CaaoServerCore.class);
 
-    /**
-     * Constructor for CaaoServerCore.
-     */
-    public CaaoServerCore() {
-        log = LogFactory.getLog(this.getClass());
-    }
 
     /**
      * The main intend of the class is the data exchange between client
@@ -87,14 +80,14 @@ public class CaaoServerCore {
      * connect to the database and execute the SQL queries. The public methods
      * is executed by the client (in this implementation Android application).
      *
-     * @return Vector<String> * @throws Exception * @throws Exception * @see
-     *         <a>DbConnector<a>
-     *         <p/>
-     *         Returns the list of countries from database. Returns Vector as
-     *         it's thread safe.
+     * @return List<String>
+     * * @throws Exception * @throws Exception * @see
+     * <a>DbConnector<a>
+     * <p/>
+     * Returns the list of countries from database.
      */
     public List<String> countryList() throws Exception {
-        List<String> returnList = new Vector<String>();
+        List<String> listOfCountries = Collections.synchronizedList(new ArrayList<String>());
         log.debug("Gonna connect to db..");
         try {
             conection = getMySqlConnection();
@@ -102,11 +95,10 @@ public class CaaoServerCore {
             log.debug("----------------------------------------------------------");
             log.debug(preparedStatement.toString());
             log.debug("----------------------------------------------------------");
-            if (statement
-                    .executeQuery("SELECT country_title from core_countries ORDER BY country_title") != null) {
+            if (statement.executeQuery("SELECT country_title from core_countries ORDER BY country_title") != null) {
                 resultSet = statement.getResultSet();
                 while (resultSet.next()) {
-                    returnList.add(resultSet.getString("country_title"));
+                    listOfCountries.add(resultSet.getString("country_title"));
                     log.debug("Got result from query -> "
                             + resultSet.getString("country_title"));
                 }
@@ -117,29 +109,28 @@ public class CaaoServerCore {
             statement.close();
             conection.close();
         }
-        return returnList;
+        return listOfCountries;
     }
 
     /**
      * For a given country, returns the list of location.
      *
-     * @param pCountryName the name of the country which for the locations is necessary
-     *                     String
-     * @return Vector<String> The list of location
-     * @throws Exception    The exception could be SQL exception or some another
+     * @param countryName the name of the country which for the locations is necessary
+     *                    String
+     * @return List<String> List of location
      * @throws SQLException
-     * @see Vector<E>
+     * @see List
      */
-    public List<String> locationList(String pCountryName) throws SQLException {
-        List<String> returnList = new Vector<String>();
-        log.info("Executing method -> locationList(" + pCountryName + ")");
+    public List<String> locationList(String countryName) throws SQLException {
+        List<String> returnList = Collections.synchronizedList(new ArrayList<String>());
+        log.info("Executing method -> locationList(" + countryName + ")");
         log.info("Gonna connect to db..");
         try {
             conection = getMySqlConnection();
             preparedStatement = conection
                     .prepareStatement("SELECT location_title from core_locations_list where fk_country_id ="
                             + " (SELECT country_id from core_countries where country_title = ?)");
-            preparedStatement.setString(1, pCountryName);
+            preparedStatement.setString(1, countryName);
             log.debug("----------------------------------------------------------");
             log.debug(preparedStatement.toString());
             log.debug("----------------------------------------------------------");
@@ -160,17 +151,17 @@ public class CaaoServerCore {
         return returnList;
     }
 
-    // ---------------------------------------------------------------------------------------
-
     /**
      * Returns the list of events for specified in pUsarName
      *
      * @param pUserName String the user name (email in database) - the unique user
      *                  identifier.
-     * @return Vector<String> * @throws SQLException
+     * @return List<String>
+     * @throws SQLException
      */
     public List<String> eventList(String pUserName) throws SQLException {
-        List<String> returnList = new Vector<String>();
+
+        List<String> returnList = Collections.synchronizedList(new ArrayList<String>());
         log.debug("Executing method -> eventList(" + pUserName + ")");
         log.debug("Gonna connect to db..");
         try {
@@ -203,20 +194,22 @@ public class CaaoServerCore {
     /**
      * Returns the list of plants (which user is growing) for a specified user.
      *
-     * @param pUserName The user name for which the procedure returns the list of
-     *                  plants.
-     * @return Vector<String> The list of plants * @throws SQLException
+     * @param userName The user name for which the procedure returns the list of
+     *                 plants.
+     * @return List<String> The list of plants
+     * @throws SQLException
      */
-    public List<String> plantList(String pUserName) throws SQLException {
-        List<String> returnList = new Vector<String>();
-        log.info("Executing method -> plantList(" + pUserName + ")");
+    public List<String> plantList(String userName) throws SQLException {
+
+        List<String> returnList = Collections.synchronizedList(new ArrayList<String>());
+        log.info("Executing method -> plantList(" + userName + ")");
         log.info("Gonna connect to db..");
         try {
             conection = getMySqlConnection();
             preparedStatement = conection
                     .prepareStatement("SELECT pgp_title from pg_plant_growing_plan WHERE user_id = "
                             + "(SELECT user_id from core_users where e_mail = ?)");
-            preparedStatement.setString(1, pUserName);
+            preparedStatement.setString(1, userName);
             log.debug("-----------------------------------------------------");
             log.debug(preparedStatement.toString());
             log.debug("-----------------------------------------------------");
@@ -236,14 +229,13 @@ public class CaaoServerCore {
         return returnList;
     }
 
-    // ----------------------------------------------------------------------------------------------------
-
     /**
      * Returns the PostgreSQL connection. Depend on the driver version, edit the
      * class name of the driver. Method uses the jdbc wrapper for connecting to
      * the database.
      *
-     * @return Connection * @throws Exception
+     * @return Connection
+     * @throws Exception
      */
     @SuppressWarnings("unused")
     private static Connection getHSQLConnection() throws Exception {
@@ -310,7 +302,6 @@ public class CaaoServerCore {
         return true;
     }
 
-    // ----------------------------------------------------------------------------------------------------
     // --------------- the getter and setters of the rest class members
 
     /**
@@ -395,5 +386,4 @@ public class CaaoServerCore {
     public String toString() {
         return this.getClass().getName();
     }
-
 }

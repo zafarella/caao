@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>fi.uef.cs.caao</groupId>
+        <artifactId>android</artifactId>
+        <version>1.0.0</version>
+    </parent>
+
+    <artifactId>caao-android-appTest</artifactId>
+    <packaging>apk</packaging>
+    <name>caao-app-test</name>
+
+    <properties>
+        <environment>development</environment>
+    </properties>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>com.jayway.android.robotium</groupId>
+            <artifactId>robotium-solo</artifactId>
+            <version>5.4.1</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.google.code.guice</groupId>
+                    <artifactId>guice</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.android</groupId>
+            <artifactId>android-test</artifactId>
+            <version>${android.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!--reference to the android app-->
+
+        <!--<dependency>-->
+        <!--<groupId>fi.uef.cs.caao</groupId>-->
+        <!--<artifactId>caao-osgi-bundle</artifactId>-->
+        <!--<version>${project.version}</version>-->
+        <!--<scope>provided</scope>-->
+        <!--<type>apk</type>-->
+        <!--</dependency>-->
+
+        <!--<dependency>-->
+        <!--<groupId>fi.uef.cs.caao</groupId>-->
+        <!--<artifactId>caao-osgi-bundle</artifactId>-->
+        <!--<version>${project.version}</version>-->
+        <!--<scope>provided</scope>-->
+        <!--<type>jar</type>-->
+        <!--</dependency>-->
+
+    </dependencies>
+
+    <build>
+        <resources>
+            <!-- a pair definition for resource filtering of xml files only (not binary files since they get mangled -->
+            <resource>
+                <targetPath>${project.build.directory}/filtered-res</targetPath>
+                <filtering>true</filtering>
+                <directory>${project.basedir}/res</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                </includes>
+            </resource>
+            <resource>
+                <targetPath>${project.build.directory}/filtered-res</targetPath>
+                <filtering>false</filtering>
+                <directory>${project.basedir}/res</directory>
+                <excludes>
+                    <exclude>**/*.xml</exclude>
+                </excludes>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>2.6</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>resources</goal>
+                        </goals>
+                        <phase>initialize</phase>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>com.jayway.maven.plugins.android.generation2</groupId>
+                <artifactId>android-maven-plugin</artifactId>
+                <configuration>
+                    <resourceDirectory>${project.build.directory}/filtered-res</resourceDirectory>
+                    <androidManifestFile>AndroidManifest.xml</androidManifestFile>
+                    <resourceDirectory>res</resourceDirectory>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

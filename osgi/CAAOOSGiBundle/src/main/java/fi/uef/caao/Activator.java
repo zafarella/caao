@@ -10,8 +10,6 @@ package fi.uef.caao;
 // please make sure in case you are recompiling the project the the correct version of
 // libraries are used.
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.apache.xmlrpc.XmlRpcException;
 import org.apache.xmlrpc.server.PropertyHandlerMapping;
 import org.apache.xmlrpc.server.XmlRpcServer;
@@ -24,6 +22,7 @@ import org.osgi.service.log.LogService;
 import org.osgi.util.tracker.ServiceTracker;
 
 import java.io.IOException;
+
 
 // the explicitly imports for the letting know the osgi environment
 // don't remove them as they will be added into the manifest
@@ -45,7 +44,6 @@ import java.io.IOException;
 
 public class Activator implements BundleActivator {
 
-
     /**
      * Embedded web server from the libraries of Apache
      *
@@ -64,10 +62,8 @@ public class Activator implements BundleActivator {
      * @see PropertyHandlerMapping
      */
     private PropertyHandlerMapping phm;
-    /**
-     * Field log.
-     */
-    private Log log;
+    private ServiceTracker logServiceTracker;
+    private LogService runtimeLogger;
 
     /**
      * The entry point of the bundle. For more details please refer to OSGi
@@ -79,28 +75,21 @@ public class Activator implements BundleActivator {
      */
     public void start(BundleContext context) throws BundleException {
 
-        ServiceTracker logServiceTracker = new ServiceTracker(context, org.osgi.service.log.LogService.class.getName(), null);
+        // Get logging working
+        logServiceTracker = new ServiceTracker(context, LogService.class.getName(), null);
         logServiceTracker.open();
-        LogService logservice = (LogService) logServiceTracker.getService();
-
-        if (logservice != null){
-            logservice.log(LogService.LOG_INFO, "Got logging working.");
+        runtimeLogger = (LogService) logServiceTracker.getService();
+        if (null != runtimeLogger) {
+            runtimeLogger.log(LogService.LOG_INFO, "Got logging working.");
         }
-        // logging
-        log = LogFactory.getLog(this.getClass());
 
-        final int port = 6392; // the port number on which the server will
-        // listen for connection
+        // web server from the apache - xml-rpc library.
+        webServer = new WebServer(Constants.COMMUNICATION_PORT); // the instance of the embedded
 
-        webServer = new WebServer(port); // the instance of the embedded
-        // web
-        // server from the apache
-        // xml-rpc library.
-
-        /*
-           * xml-rpc server which will be binded to web server the handlers class
-           * for the xml-rpc service
-           */
+        /**
+         * xml-rpc server which will be binded to web server the handlers class
+         * for the xml-rpc service
+         */
         xmlRpcServer = webServer.getXmlRpcServer();
         phm = new PropertyHandlerMapping();
         // adding the handlers to the xml-rpc service. The class is used from
@@ -112,7 +101,7 @@ public class Activator implements BundleActivator {
             phm.addHandler("CaaoUserUtils", CaaoUserUtils.class);
         } catch (XmlRpcException e) {
             // in case we couldn't register the service
-            log.error(e.getMessage());
+            runtimeLogger.log(LogService.LOG_ERROR,e.getMessage());
         }
         // assigning the handler(s)
         xmlRpcServer.setHandlerMapping(phm);
@@ -126,34 +115,35 @@ public class Activator implements BundleActivator {
         // restricting the content length usage. Refer to the web page of the
         // library for more details
         serverConfig.setContentLengthOptional(false);
-        log.info("Powered by z1 | Please note that behind of it is the idea, not the perfect code..yet:)");
-        log.info("--------------------------------------");
-        log.info("Starting server at port " + port);
+        runtimeLogger.log(LogService.LOG_INFO, "Powered by z1 | Please note that behind of it is the idea, not the perfect code..yet:)");
+        runtimeLogger.log(LogService.LOG_INFO, "--------------------------------------");
+        runtimeLogger.log(LogService.LOG_INFO, "Starting server at port " + Constants.COMMUNICATION_PORT);
+
         // starting the web server
         try {
             webServer.start();
             if (CaaoServerCore.canUseDB()) {
-                log.info("Great, the DB is available");
+                runtimeLogger.log(LogService.LOG_INFO, "Great, the DB is available");
             }
         } catch (IOException e) {
-            log.error(e.getMessage());
+            runtimeLogger.log(LogService.LOG_ERROR, e.getMessage());
         }
-        log.info("Server started. The supported methods are:");
-        log.info("---------------------------------------");
+        runtimeLogger.log(LogService.LOG_INFO, "Server started. The supported methods are:");
+        runtimeLogger.log(LogService.LOG_INFO, "---------------------------------------");
         // If we are here, the server successfully started.
         // for debug purpose, listing the methods that server could handle.
         // Could be commented out.
         try {
             int methodsCount = phm.getListMethods().length;
             for (int i = 0; i < methodsCount; i++) {
-                log.info(phm.getListMethods()[i]);
+                runtimeLogger.log(LogService.LOG_INFO, phm.getListMethods()[i]);
             }
         } catch (XmlRpcException e) {
-            log.error(e.getMessage());
+            runtimeLogger.log(LogService.LOG_ERROR, e.getMessage());
         }
-        log.info("--------------------------------------");
-        log.info("Make sure the database is up and running!");
-        log.info("Waiting for connections..");
+        runtimeLogger.log(LogService.LOG_INFO, "--------------------------------------");
+        runtimeLogger.log(LogService.LOG_INFO, "Make sure the database is up and running!");
+        runtimeLogger.log(LogService.LOG_INFO, "Waiting for connections..");
     }
 
     // ---------------------------------------------------------------------------------
@@ -170,24 +160,13 @@ public class Activator implements BundleActivator {
     public void stop(BundleContext context) {
 
         // helping garbage collector to free the resources
-        log.info("stopping the server");
+        runtimeLogger.log(LogService.LOG_INFO, "stopping the server");
         if (null != webServer) {
             webServer.shutdown();
         }
         webServer = null;
-        log.info("Server stopped");
+        runtimeLogger.log(LogService.LOG_INFO, "Server stopped");
         // xmlRpcServer = null;
         // phm = null;
     }
-
-    // /**
-    // * Method log. TODO: in the future the framework logging should be used.
-    // * Right now it logs directly to stdout
-    // *
-    // * @param what
-    // * String
-    // */
-    // private static void log(String what) {
-    // System.out.println("[caao_bundle->]" + what);
-    // }
 }

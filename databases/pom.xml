@@ -1,54 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
-	<modelVersion>4.0.0</modelVersion>
-	<name>caao-databases-parent</name>
-	<groupId>fi.uef.cs.caao</groupId>
-	<artifactId>databases</artifactId>
-	<version>1.0.0</version>
-	<packaging>pom</packaging>
+    <modelVersion>4.0.0</modelVersion>
 
-	<parent>
-		<groupId>fi.uef.cs.caao</groupId>
-		<artifactId>caao-parent</artifactId>
-		<version>1.0.0-SNAPSHOT</version>
-	</parent>
+    <parent>
+        <groupId>fi.uef.cs.caao</groupId>
+        <artifactId>caao-parent</artifactId>
+        <version>1.0.0</version>
+    </parent>
+    <artifactId>databases</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+    <name>caao-databases-parent</name>
 
-	<developers>
-		<developer>
-			<name>Zafarella</name>
-			<email>zafarella@gmal.com</email>
-			<roles>
-				<role>Architect</role>
-				<role>Developer</role>
-			</roles>
-			<timezone>+1</timezone>
-		</developer>
-	</developers>
+    <modules>
+        <module>cassandra</module>
+    </modules>
 
-	<modules>
-		<module>mysql</module>
-		<module>hadoop</module>
-		<module>cassandra</module>
+    <build>
+        <plugins>
+            <!--plug-in for creating/filling database (for now - mySql)-->
+            <plugin>
+                <groupId>com.googlecode.flyway</groupId>
+                <artifactId>flyway-maven-plugin</artifactId>
+                <version>2.0.3</version>
+                <configuration>
+                    <user>root</user>
+                    <password>mySecretPwd</password>
+                    <schemas>
+                        <schema>caorganizer</schema>
+                    </schemas>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
-	</modules>
-
-	<build>
-		<plugins>
-			<!--plug-in for creating/filling database (for now - mySql)-->
-			<plugin>
-				<groupId>com.googlecode.flyway</groupId>
-				<artifactId>flyway-maven-plugin</artifactId>
-				<version>2.0.3</version>
-				<configuration>
-					<user>root</user>
-					<password>mySecretPwd</password>
-					<schemas>
-						<schema>caorganizer</schema>
-					</schemas>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
+    <developers>
+        <developer>
+            <name>Zafarella</name>
+            <email>zafarella@gmal.com</email>
+            <roles>
+                <role>Architect</role>
+                <role>Developer</role>
+            </roles>
+            <timezone>+1</timezone>
+        </developer>
+    </developers>
 </project>

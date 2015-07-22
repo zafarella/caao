@@ -1,30 +1,19 @@
-#!/bin/sh
+#!/usr/bin/env bash
+
 #
 # The purpose: to have a one click script which will do the release of entire project.
 #
-#
-
-git status;
-
 #echo "-------------------------------------------------------------------------------\n"
 #echo ""
 #echo "-------------------------------------------------------------------------------\n"
 #mvn versions:display-plugin-updates
 
+procs=$(nproc);
 
-read -p "Please make sure all is good before starting release. \n Press [Y] when ready, or any other key to exit the process.";
-if [[ ! $REPLY =~ ^[Yy]$ ]]
-then
-    mvn -Dmaven.artifact.threads=20 release:prepare release:perform -T4C ;
-fi
+export MAVEN_OPTS="-Xmx2048m -XX:MaxPermSize=512m -Dmaven.artifact.threads=$procs"
 
-
-echo "Would you like to make git cleanup on your local repo? It will keep your git speedy.(Y/n)\n";
-if [[ ! $REPLY =~ ^[Yy]$ ]]
-then
+    mvn  release:prepare release:perform -T4C;
     git gc
-fi
-
 
 # to sync the tags in remote and local repos:
 
