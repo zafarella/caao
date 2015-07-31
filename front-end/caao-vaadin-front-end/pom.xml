@@ -11,7 +11,7 @@
     <artifactId>caao-vaadin-front-end</artifactId>
     <version>1.0</version>
     <packaging>war</packaging>
-    <name>caao-vaadin web front-End</name>
+    <name>vaadin web front-End</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

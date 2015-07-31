@@ -41,7 +41,7 @@ public class CalendarActivity extends Activity {
      */
     private Button button_prev, button_today, button_next;
 
-    // -------------------------------------------------------------------------------------------------
+
 
     /**
      * @param savedInstanceState Bundle
@@ -52,5 +52,5 @@ public class CalendarActivity extends Activity {
         setContentView(R.layout.calendar_tab);
     }
 
-    // -------------------------------------------------------------------------------------------------
+
 }

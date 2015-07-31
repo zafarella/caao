@@ -1,27 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string
-			name="advanced_prefs_title"
-			>Дополнительные настройки
+	<string name="advanced_prefs_title">Дополнительные настройки
 	</string>
-	<string
-			name="advanced_prefs_server_into_title"
-			>Информация о сревере
+	<string name="advanced_prefs_server_into_title">Информация о сревере
 	</string>
-	<string
-			name="advanced_prefs_server_info_title"
-			>Информация о сревере
+	<string name="advanced_prefs_server_info_title">Информация о сревере
 	</string>
-	<string
-			name="advanced_prefs_server_info_summary"
-			>Коснитесь чтоб отобразить информацию о сервере
+	<string name="advanced_prefs_server_info_summary">Коснитесь чтоб отобразить информацию о сервере
 	</string>
-	<string
-			name="advanced_prefs_server_url"
-			>Срока (URL) соединения с сервером
+	<string name="advanced_prefs_server_url">Срока (URL) соединения с сервером
 	</string>
-	<string
-			name="advanced_prefs_server_url_summary"
-			>Строка соединения (URL)
+	<string name="advanced_prefs_server_url_summary">Строка соединения (URL)
 	</string>
 </resources>
