@@ -16,7 +16,7 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:configChanges="locale" android:label="@string/app_name" android:name="Settings_activity">
+        <activity android:configChanges="locale" android:label="@string/app_name" android:name=".SettingsActivity">
             <intent-filter>
                 <action android:name="android.settings.APN_SETTINGS"/>
                 <category android:name="android.intent.category.PREFERENCE"/>

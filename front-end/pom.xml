@@ -12,7 +12,7 @@
     <artifactId>caao-front-end-parent</artifactId>
     <version>1.0.0</version>
     <packaging>pom</packaging>
-    <name>caao-front-end-parent</name>
+    <name>front-end</name>
 
     <modules>
         <module>caao-vaadin-front-end</module>

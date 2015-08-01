@@ -17,7 +17,7 @@
     <description>The context aware agricultural organizer</description>
 
     <prerequisites>
-        <maven>3.1.1</maven>
+        <maven>3.1+</maven>
     </prerequisites>
 
     <modules>
@@ -54,6 +54,8 @@
         </plugins>
     </build>
 
+    <inceptionYear>2010</inceptionYear>
+
     <developers>
         <developer>
             <name>Zafarella</name>
@@ -76,5 +78,10 @@
         <system>GitHub Issues</system>
         <url>https://github.com/zafarella/caao/issues</url>
     </issueManagement>
+
+    <ciManagement>
+        <system>travis</system>
+        <url>https://travis-ci.org/zafarella/caao</url>
+    </ciManagement>
 
 </project>

@@ -1,0 +1,5 @@
+
+description = 'caao-hadoop-db'
+dependencies {
+    compile group: 'org.apache.hadoop', name: 'hadoop-core', version:'0.20.2'
+}

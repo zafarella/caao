@@ -11,7 +11,7 @@
 
     <artifactId>android</artifactId>
     <packaging>pom</packaging>
-    <name>caao-android-app-parent</name>
+    <name>android-app</name>
 
     <modules>
         <module>caao-android-app</module>

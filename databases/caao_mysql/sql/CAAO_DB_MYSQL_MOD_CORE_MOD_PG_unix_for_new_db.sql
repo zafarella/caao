@@ -1,18 +1,19 @@
-DROP DATABASE IF EXISTS caorganizer;
+DROP DATABASE IF EXISTS caao;
 
-CREATE DATABASE caorganizer;
+CREATE DATABASE caao;
 
-USE caorganizer;
+USE caao;
 
 
 /*==============================================================*/
 /* Table: core_countries                                        */
 /*==============================================================*/
+DROP TABLE IF EXISTS core_countries;
 CREATE TABLE core_countries
 (
   country_id    INT UNSIGNED NOT NULL AUTO_INCREMENT,
   fk_lang_id    INT          NOT NULL,
-  country_title VARCHAR(40)  NOT NULL,
+  country_title VARCHAR(40) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (country_id)
 );
 
@@ -32,10 +33,11 @@ CREATE UNIQUE INDEX countries_idx ON core_countries
 /*==============================================================*/
 /* Table: core_languages                                        */
 /*==============================================================*/
+DROP TABLE IF EXISTS core_languages;
 CREATE TABLE core_languages
 (
   lang_id    INT     NOT NULL AUTO_INCREMENT COMMENT 'unique identifier of the language',
-  lang       CHAR(3) NOT NULL
+  lang       CHAR(3) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
   COMMENT 'two length language code',
   local_name VARCHAR(30)
              CHARACTER SET utf8 COMMENT 'the name of the language in local writing',
@@ -47,10 +49,11 @@ ALTER TABLE core_languages COMMENT 'Language codes ISO_639-1 http://en.wikipedia
 /*==============================================================*/
 /* Table: core_locations_list                                   */
 /*==============================================================*/
+DROP TABLE IF EXISTS core_locations_list;
 CREATE TABLE core_locations_list
 (
   location_id    INT UNSIGNED NOT NULL AUTO_INCREMENT,
-  location_title VARCHAR(20)  NOT NULL,
+  location_title VARCHAR(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   fk_lang_id     INT,
   fk_country_id  INT UNSIGNED NOT NULL,
   PRIMARY KEY (location_id)
@@ -69,19 +72,20 @@ CREATE INDEX Index_2 ON core_locations_list
 /*==============================================================*/
 /* Table: core_users                                            */
 /*==============================================================*/
+DROP TABLE IF EXISTS core_users;
 CREATE TABLE core_users
 (
   user_id       SMALLINT    NOT NULL AUTO_INCREMENT COMMENT 'unique id of user',
   fk_lang_id    INT COMMENT 'the language user prefer',
-  f_name        VARCHAR(10) NOT NULL
+  f_name        VARCHAR(10) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
   COMMENT 'first name',
-  l_name        VARCHAR(10) COMMENT 'last name',
-  base_location VARCHAR(15) COMMENT 'the base location of the user',
-  pwd           VARCHAR(20),
-  e_mail        VARCHAR(20) NOT NULL
+  l_name        VARCHAR(10) CHARACTER SET utf8 COLLATE utf8_unicode_ci COMMENT 'last name',
+  base_location VARCHAR(15)CHARACTER SET utf8 COLLATE utf8_unicode_ci  COMMENT 'the base location of the user',
+  pwd           VARCHAR(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci,
+  e_mail        VARCHAR(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
   COMMENT 'will used as login (as it''s unique per user)',
-  street_name   VARCHAR(25),
-  def_phone_num VARCHAR(10),
+  street_name   VARCHAR(25) CHARACTER SET utf8 COLLATE utf8_unicode_ci,
+  def_phone_num VARCHAR(15) CHARACTER SET utf8 COLLATE utf8_unicode_ci,
   zip_code      NUMERIC,
   longitude     NUMERIC,
   latitude      NUMERIC,
@@ -106,12 +110,13 @@ CREATE INDEX users_IDX ON core_users
 /*==============================================================*/
 /* Table: pg_events_list                                        */
 /*==============================================================*/
+DROP TABLE IF EXISTS pg_events_list;
 CREATE TABLE pg_events_list
 (
   event_id   INT          NOT NULL AUTO_INCREMENT COMMENT 'uniquie event id',
   fk_user_id SMALLINT COMMENT 'unique id of user',
   event_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-  event_text VARCHAR(100) NOT NULL,
+  event_text VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (event_id)
 );
 
@@ -131,6 +136,7 @@ CREATE UNIQUE INDEX events_idx ON pg_events_list
 /*==============================================================*/
 /* Table: pg_growing_plan_xml_schemas                           */
 /*==============================================================*/
+DROP TABLE IF EXISTS pg_growing_plan_xml_schemas;
 CREATE TABLE pg_growing_plan_xml_schemas
 (
   xsd_id     INT  NOT NULL AUTO_INCREMENT COMMENT 'row identifier',
@@ -154,11 +160,11 @@ CREATE INDEX pg_growing_plan_xml_schemas_IDX ON pg_growing_plan_xml_schemas
 /*==============================================================*/
 /* Table: pg_plant_groups                                       */
 /*==============================================================*/
+DROP TABLE IF EXISTS pg_plant_groups;
 CREATE TABLE pg_plant_groups
 (
-  group_id    INT         NOT NULL
-  COMMENT 'identifier of the record',
-  group_title VARCHAR(40) NOT NULL,
+  group_id    INT         NOT NULL COMMENT 'identifier of the record',
+  group_title VARCHAR(40) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   fk_lang_id  INT COMMENT 'the language it belongs to',
   PRIMARY KEY (group_id)
 );
@@ -177,11 +183,12 @@ CREATE INDEX pg_plant_groups_IDX ON pg_plant_groups
 /*==============================================================*/
 /* Table: pg_plant_growing_plan                                 */
 /*==============================================================*/
+DROP TABLE IF EXISTS pg_plant_growing_plan;
 CREATE TABLE pg_plant_growing_plan
 (
   pgp_id      INT NOT NULL
   COMMENT 'the plan or record id',
-  pgp_title   VARCHAR(30) COMMENT 'title of the plant',
+  pgp_title   VARCHAR(30) CHARACTER SET utf8 COLLATE utf8_unicode_ci COMMENT 'title of the plant',
   plan_xml    BLOB COMMENT 'the xml file of growing plan',
   fk_lang_id  INT COMMENT 'the language code',
   fk_user_id  SMALLINT COMMENT 'user id which to this record belongs',
@@ -195,13 +202,14 @@ ALTER TABLE pg_plant_growing_plan COMMENT 'Plant growing plans';
 /*==============================================================*/
 /* Table: pg_plants                                             */
 /*==============================================================*/
+DROP TABLE IF EXISTS pg_plants;
 CREATE TABLE pg_plants
 (
   plant_id    INT         NOT NULL AUTO_INCREMENT,
-  plant_tilte VARCHAR(40) NOT NULL,
+  plant_tilte VARCHAR(40) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   fk_lang_id  INT,
   fk_group_id INT COMMENT 'identifier of the record',
-  comments    VARCHAR(500),
+  comments    VARCHAR(500) CHARACTER SET utf8 COLLATE utf8_unicode_ci,
   PRIMARY KEY (plant_id)
 );
 
@@ -220,6 +228,7 @@ CREATE INDEX pg_plants_IDX ON pg_plants
 /*==============================================================*/
 /* Table: pg_wiki_refs                                          */
 /*==============================================================*/
+DROP TABLE IF EXISTS pg_wiki_refs;
 CREATE TABLE pg_wiki_refs
 (
   ref_id      INT          NOT NULL AUTO_INCREMENT,
@@ -308,7 +317,7 @@ REFERENCES pg_plants (plant_id)
   ON UPDATE RESTRICT;
 
 
-USE caorganizer;
+USE caao;
 DELIMITER |
 CREATE TRIGGER tbu_users BEFORE UPDATE
 ON core_users FOR EACH ROW
