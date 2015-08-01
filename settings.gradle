@@ -1,7 +1,0 @@
-include ':android:caao_android_app',
-        ':android:caao_android_appTest',
-        ':front-end/caao-vaadin-front-end:build.gradle',
-        ':caao_android_appTest',
-        ':osgi:CAAOOSGiBundle:build.gradle', ':CAAOOSGiBundle'
-
-
