@@ -19,8 +19,7 @@
 	</string>
 	<string
 			name="zip_code_summary"
-			>zip code if any
-	</string>
+			>postikoodi</string>
 	<string
 			name="zip_code_title"
 			>zip code

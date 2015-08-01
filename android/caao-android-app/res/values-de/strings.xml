@@ -7,16 +7,14 @@
 	<!-- The strings that should be in different supported languages -->
 	<string
 			name="app_name"
-			>caao
-	</string>
+			>Die kontextbezogene Organizer</string>
 	<string
 			name="menu_item_exit_app"
 			>Exit
 	</string>
 	<string
 			name="menu_item_settings"
-			>Settings
-	</string>
+			>Einstellungen</string>
 	<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 	<!-- About application strings -->
 	<string
@@ -115,4 +113,5 @@
 		-- android-xmlrpc the cleint library\n\n\n which released under the Apache
 		License 2.0\n
 	</string>
+	<string name="no_internet_connection">Kann nicht mit dem Server verbinden</string>
 </resources>

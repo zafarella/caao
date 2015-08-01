@@ -26,7 +26,7 @@ public class AdvancedSettings extends PreferenceActivity {
     @Override
     public void onCreate(Bundle Saved_Instance_State) {
         super.onCreate(Saved_Instance_State);
-        // natifying the Preference manager to save the settings after user have
+        // notifying the Preference manager to save the settings after user have
         // changed them
         getPreferenceManager().setSharedPreferencesName("advanced_preferences");
         // displaying the preferences
