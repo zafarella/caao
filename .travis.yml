@@ -1,5 +1,7 @@
 language: java
 
+sudo: false
+
 jdk:
   - oraclejdk7
   
@@ -37,4 +39,4 @@ android:
     - sys-img-x86-android-19
 
 env:
-    MAVEN_OPTS=-Xmx512m -XX:MaxPermSize=256m -Dmaven.artifact.threads=6 
+    MAVEN_OPTS=-Xmx512m -XX:MaxPermSize=256m -Dmaven.artifact.threads=8 -D4TC
