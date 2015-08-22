@@ -21,3 +21,5 @@ See [wiki](wiki).
 
 ##Contact
 Feel free to contact me should you have any suggestion or any ideas - zafarella at gmail dot com.
+[![Join the chat at https://gitter.im/zafarella/cao](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/zafarella/cao?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
