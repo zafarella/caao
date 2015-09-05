@@ -12,7 +12,7 @@
 
     <groupId>fi.uef.cs.caao</groupId>
     <artifactId>caao-parent</artifactId>
-    <version>1.0.0</version>
+    <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Context-aware organizer - parent</name>
     <description>The context aware agricultural organizer</description>
@@ -51,40 +51,66 @@
 
             <!--Will enforce some dependencies and makes artifacts more consistent-->
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>
-                <groupId>org.apache.maven.enforcer</groupId>
                 <version>1.4.1</version>
-                <configuration>
-                    <rules>
+                <executions>
+                    <execution>
+                        <id>enforce-versions</id>
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
+                        <configuration>
+                            <rules>
 
-                        <dependencyConvergence/>
+                                <dependencyConvergence/>
+                                <banCircularDependencies/>
 
-                        <requireJavaVersion>
-                            <version>(,1.7)</version>
-                        </requireJavaVersion>
+                                <requireJavaVersion>
+                                    <version>[1.7,)</version>
+                                </requireJavaVersion>
 
-                        <requireMavenVersion>
-                            <version>(,3.0)</version>
-                        </requireMavenVersion>
+                                <requireMavenVersion>
+                                    <version>[3.0.0,)</version>
+                                </requireMavenVersion>
 
-                        <reactorModuleConvergence>
-                            <message>Invalid reactor (multi module project setup). Check that project follows
-                                multi-module structure and best practices.
-                            </message>
-                        </reactorModuleConvergence>
+                                <reactorModuleConvergence>
+                                    <message>Invalid reactor (multi module project setup). Check that project follows
+                                        multi-module structure and best practices.
+                                    </message>
+                                </reactorModuleConvergence>
 
-                        <banTransitiveDependencies/>
+                                <banTransitiveDependencies>
+                                    <excludes>
+                                        <exclude>com.vaadin</exclude>
+                                        <exclude>com.google.android</exclude>
+                                        <exclude>commons-logging</exclude>
+                                        <exclude>org.apache.httpcomponents</exclude>
+                                        <exclude>org.apache.xmlrpc</exclude>
+                                    </excludes>
+                                </banTransitiveDependencies>
 
-                        <requireReleaseDeps>
-                            <message>No Snapshots when releasing please. There are snapshot dependency.</message>
-                            <onlyWhenRelease>true</onlyWhenRelease>
-                        </requireReleaseDeps>
+                                <requireReleaseDeps>
+                                    <message>No Snapshots when releasing please. There are snapshot dependency.
+                                    </message>
+                                    <onlyWhenRelease>true</onlyWhenRelease>
+                                </requireReleaseDeps>
 
-                        <enforceBytecodeVersion>
-                            <maxJdkVersion>1.7</maxJdkVersion>
-                        </enforceBytecodeVersion>
-                    </rules>
-                </configuration>
+                                <enforceBytecodeVersion>
+                                    <maxJdkVersion>1.7</maxJdkVersion>
+                                </enforceBytecodeVersion>
+
+                            </rules>
+                        </configuration>
+                    </execution>
+                </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>extra-enforcer-rules</artifactId>
+                        <version>1.0-beta-3</version>
+                    </dependency>
+                </dependencies>
             </plugin>
         </plugins>
     </build>
