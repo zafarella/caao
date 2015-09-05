@@ -68,7 +68,9 @@
                         </requireMavenVersion>
 
                         <reactorModuleConvergence>
-                            <message>Invalid reactor (multi module project setup)</message>
+                            <message>Invalid reactor (multi module project setup). Check that project follows
+                                multi-module structure and best practices.
+                            </message>
                         </reactorModuleConvergence>
 
                         <banTransitiveDependencies/>
@@ -78,6 +80,9 @@
                             <onlyWhenRelease>true</onlyWhenRelease>
                         </requireReleaseDeps>
 
+                        <enforceBytecodeVersion>
+                            <maxJdkVersion>1.7</maxJdkVersion>
+                        </enforceBytecodeVersion>
                     </rules>
                 </configuration>
             </plugin>
