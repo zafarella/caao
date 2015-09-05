@@ -1,173 +1,161 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
-	<modelVersion>4.0.0</modelVersion>
-	<name>caao-osgi-bundles-parent</name>
-	<artifactId>caao-osgi-bundles-parent</artifactId>
-	<version>1.0.0</version>
-	<packaging>pom</packaging>
+    <modelVersion>4.0.0</modelVersion>
 
+    <parent>
+        <groupId>fi.uef.cs.caao</groupId>
+        <artifactId>caao-parent</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
 
-	<parent>
-		<groupId>fi.uef.cs.caao</groupId>
-		<artifactId>caao-parent</artifactId>
-		<version>1.0.0</version>
-	</parent>
+    <artifactId>caao-osgi-bundles-parent</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>osgi</name>
 
-	<modules>
-		<module>CAAOOSGiBundle</module>
-		<!--<module>OSGiBundleTest</module>-->
-	</modules>
+    <modules>
+        <module>CAAOOSGiBundle</module>
+        <module>OSGiBundleTest</module>
+    </modules>
 
-	<profiles>
-		<profile>
-			<id>development</id>
+    <properties>
+        <bundle.namespace>${project.groupId}.${project.artifactId}</bundle.namespace>
+        <bundle.update-location>https://github.com/zafarella/caao/releases</bundle.update-location>
+    </properties>
 
-			<modules>
-				<module>CAAOOSGiBundle</module>
-				<!-- skipping the test doe to limitation on junit4osgi
-				TODO: add testing later on
-				-->
-			</modules>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.restlet.jee</groupId>
+                <artifactId>org.restlet</artifactId>
+                <version>3.0-M1</version>
+            </dependency>
+            <dependency>
+                <groupId>org.restlet.jee</groupId>
+                <artifactId>org.restlet.ext.servlet</artifactId>
+                <version>3.0-M1</version>
+            </dependency>
+            <dependency>
+                <groupId>org.osgi</groupId>
+                <artifactId>org.osgi.compendium</artifactId>
+                <version>4.2.0</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>org.osgi.compendium</artifactId>
+                <version>1.4.0</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-logging</groupId>
+                <artifactId>commons-logging</artifactId>
+                <version>1.2</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpclient-osgi</artifactId>
+                <version>4.5</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.xmlrpc</groupId>
+                <artifactId>xmlrpc-client</artifactId>
+                <version>3.1.3</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.xmlrpc</groupId>
+                <artifactId>xmlrpc-server</artifactId>
+                <version>3.1.3</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.xmlrpc</groupId>
+                <artifactId>xmlrpc-common</artifactId>
+                <version>3.1.3</version>
+            </dependency>
+            <dependency>
+                <groupId>com.datastax.cassandra</groupId>
+                <artifactId>cassandra-driver-core</artifactId>
+                <version>2.2.0-rc2</version>
+            </dependency>
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>5.1.36</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>org.osgi.foundation</artifactId>
+                <version>1.2.0</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>org.osgi.core</artifactId>
+                <version>1.4.0</version>
+            </dependency>
 
-		</profile>
+        </dependencies>
+    </dependencyManagement>
 
-		<profile>
-			<id>production</id>
-			<modules>
-				<module>
-					CAAOOSGiBundle
-				</module>
-			</modules>
-		</profile>
-
-		<profile>
-			<id>release</id>
-			<modules>
-				<module>CAAOOSGiBundle</module>
-			</modules>
-		</profile>
-	</profiles>
-
-	<properties>
-		<bundle.namespace>${project.groupId}.${project.artifactId}</bundle.namespace>
-		<bundle.update-location>https://github.com/zafarella/caao/releases</bundle.update-location>
-		<achilles.version>3.1.3</achilles.version>
-	</properties>
-
-	<repositories>
-		<repository>
-			<id>maven-restlet</id>
-			<name>Public online Restlet repository</name>
-			<url>http://maven.restlet.org</url>
-		</repository>
-	</repositories>
-
-	<dependencies>
-
-		<dependency>
-			<groupId>org.restlet.jee</groupId>
-			<artifactId>org.restlet</artifactId>
-			<version>3.0-M1</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.restlet.jee</groupId>
-			<artifactId>org.restlet.ext.servlet</artifactId>
-			<version>3.0-M1</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.osgi</groupId>
-			<artifactId>org.osgi.core</artifactId>
-			<version>6.0.0</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.apache.felix</groupId>
-			<artifactId>org.osgi.compendium</artifactId>
-			<version>1.4.0</version>
-		</dependency>
-
-		<dependency>
-			<groupId>commons-logging</groupId>
-			<artifactId>commons-logging</artifactId>
-			<version>1.2</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.apache.httpcomponents</groupId>
-			<artifactId>httpclient-osgi</artifactId>
-			<version>4.4-beta1</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.apache.xmlrpc</groupId>
-			<artifactId>xmlrpc-client</artifactId>
-			<version>3.1.3</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.apache.xmlrpc</groupId>
-			<artifactId>xmlrpc-server</artifactId>
-			<version>3.1.3</version>
-		</dependency>
-
-		<dependency>
-			<groupId>com.datastax.cassandra</groupId>
-			<artifactId>cassandra-driver-core</artifactId>
-			<version>2.1.4</version>
-		</dependency>
-
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>5.1.34</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.apache.felix</groupId>
-			<artifactId>org.osgi.foundation</artifactId>
-			<version>1.2.0</version>
-		</dependency>
-
-		<dependency>
-			<groupId>info.archinnov</groupId>
-			<artifactId>achilles-core</artifactId>
-			<version>${achilles.version}</version>
-		</dependency>
-
-	</dependencies>
-
-
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.ops4j</groupId>
-				<artifactId>maven-pax-plugin</artifactId>
-				<version>1.5</version>
-				<configuration>
-					<!--
-					 | some example Pax-Runner settings
-					-->
-					<provision>
-						<param>--platform=felix</param>
-					</provision>
-				</configuration>
-				<executions>
-					<!--
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.ops4j</groupId>
+                <artifactId>maven-pax-plugin</artifactId>
+                <version>1.5</version>
+                <configuration>
+                    <framework>felix</framework>
+                    <provision>
+                        <param>--platform=felix</param>
+                    </provision>
+                </configuration>
+                <executions>
+                    <!--
 					 | uncomment to auto-generate IDE files
 					<execution>
 					  <id>ide-support</id>
 					  <goals>
-						<goal>eclipse</goal>
+						<goal>idea</goal>
 					  </goals>
 					</execution>
 					-->
-				</executions>
-			</plugin>
-		</plugins>
-	</build>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <repositories>
+        <repository>
+            <id>maven-restlet</id>
+            <name>Public online Restlet repository</name>
+            <url>http://maven.restlet.org</url>
+        </repository>
+    </repositories>
+
+    <profiles>
+        <profile>
+            <id>development</id>
+            <modules>
+                <module>CAAOOSGiBundle</module>
+                <!-- skipping the test doe to limitation on junit4osgi
+				TODO: add testing later on
+				-->
+            </modules>
+
+        </profile>
+
+        <profile>
+            <id>production</id>
+            <modules>
+                <module>CAAOOSGiBundle</module>
+            </modules>
+        </profile>
+
+        <profile>
+            <id>release</id>
+            <modules>
+                <module>CAAOOSGiBundle</module>
+            </modules>
+        </profile>
+    </profiles>
 
 </project>

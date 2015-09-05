@@ -146,6 +146,7 @@ public class Activator implements BundleActivator {
         runtimeLogger.log(LogService.LOG_INFO, "Waiting for connections..");
     }
 
+
     /**
      * Called when the bundle is stopped. the intend of the method is to free
      * all the unnecessary resources before the bundle has stopped. For more
@@ -164,7 +165,5 @@ public class Activator implements BundleActivator {
         }
         webServer = null;
         runtimeLogger.log(LogService.LOG_INFO, "Server stopped");
-        // xmlRpcServer = null;
-        // phm = null;
     }
 }

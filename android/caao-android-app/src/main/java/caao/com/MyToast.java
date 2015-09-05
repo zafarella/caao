@@ -1,5 +1,4 @@
 /**
- *
  * Computer science department
  * Project: Context Aware Orginizer
  * Author: Zafar Khaydarov

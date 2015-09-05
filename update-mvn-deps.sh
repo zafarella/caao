@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 echo "To understand what it does, please read http://mojo.codehaus.org/versions-maven-plugin/ \n\n";
 
@@ -7,7 +7,9 @@ read -p "This will update library dependencies to latest release versions, conti
 if [[ ${answer} = y ]] ; then
 
 	mvn versions:use-latest-releases -T 2C
-	
+
+	clear
+
 	mvn clean compile -T 4C
 
 fi

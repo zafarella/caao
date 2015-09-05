@@ -1,5 +1,7 @@
 language: java
 
+sudo: false
+
 jdk:
   - oraclejdk7
   
@@ -7,6 +9,7 @@ branches:
   only:
    - master
    - dev
+   - coverity_scan
 
 notifications:
   email: false
@@ -34,7 +37,22 @@ android:
     # Specify at least one system image,
     # if you need to run emulator(s) during your tests
     - sys-img-armeabi-v7a-android-19
-    - sys-img-x86-android-17
+    - sys-img-x86-android-19
 
 env:
-    MAVEN_OPTS=-Xmx512m -XX:MaxPermSize=256m -Dmaven.artifact.threads=6 
+    # The next declaration is the encrypted COVERITY_SCAN_TOKEN, created
+    #   via the "travis encrypt" command using the project repo's public key
+    global:
+       secure: "DIjPa7/daEny/FCbKLtmyIl4bvn/m8YubQ3fXRJN74j1Du7vP1lA1Ip8UfanAKlJBm++LrGQ+1WW2yFT0aLYR4FEn1nh5pjJB3a27u73T8zEpm263MfqwU8za/GetadPrGbD/uyMKVjnwHuZ0vhhkVYMj+ohEGZMJX0z/cJ6Qq8="
+    #   MAVEN_OPTS="-Xmx512m -XX:MaxPermSize=256m -Dmaven.artifact.threads=8 -D4TC"
+
+
+addons:
+  coverity_scan:
+    project:
+      name: "zafarella/caao"
+      description: "Build submitted via Travis CI"
+    notification_email: zafarella@gmail.com
+    build_command_prepend: "mvn clean -T2C"
+    build_command:   "mvn -DskipTests=true compile -T2C"
+    branch_pattern: coverity_scan

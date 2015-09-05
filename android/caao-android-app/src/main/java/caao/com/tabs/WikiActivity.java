@@ -85,7 +85,6 @@ public class WikiActivity extends Activity {
             this.webview.loadUrl(pURL);
     }
 
-    // -------------------------------------------------------------------------------------------------------------
 
     /**
      * @author zafar.khaydarov
