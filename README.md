@@ -1,7 +1,7 @@
 ## Build status
    master [![Build Status](https://travis-ci.org/zafarella/caao.svg?branch=master)](https://travis-ci.org/zafarella/caao)
    dev [![Build Status](https://travis-ci.org/zafarella/caao.svg?branch=dev)](https://travis-ci.org/zafarella/caao)
-   <a href="https://scan.coverity.com/projects/zafarella-caao">
+   coverage <a href="https://scan.coverity.com/projects/zafarella-caao">
       <img alt="Coverity Scan Build Status"
            src="https://scan.coverity.com/projects/5113/badge.svg"/>
     </a>
@@ -20,7 +20,7 @@ based on [Vaadin](https://vaadin.com/home).
 
 
 ## Documentation
-More about project [wiki](https://github.com/zafarella/caao/wiki).
+More about project in [wiki](https://github.com/zafarella/caao/wiki).
 
 ##Contact
 Feel free to contact me should you have any suggestion or any ideas - zafarella at gmail dot com.
