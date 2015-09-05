@@ -16,7 +16,7 @@ It supports variety of sensors not only spatial.
 Server side is requires Java > 1.6 and the client side is android application.
 
 ## Documentation
-See [wiki](wiki).
+See [wiki](https://github.com/zafarella/caao/wiki).
 
 ## Build status
    [![Build Status](https://travis-ci.org/zafarella/caao.svg?branch=master)](https://travis-ci.org/zafarella/caao)

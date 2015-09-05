@@ -7,11 +7,11 @@
     <parent>
         <groupId>fi.uef.cs.caao</groupId>
         <artifactId>caao-osgi-bundles-parent</artifactId>
-        <version>1.0.0</version>
+        <version>1.0-SNAPSHOT</version>
     </parent>
 
     <artifactId>caao-osgi-bundle</artifactId>
-    <version>1.0.0</version>
+    <version>1.0-SNAPSHOT</version>
     <packaging>bundle</packaging>
     <name>caao-osgi-bundle</name>
     <description>[Context aware organizer] Bundle provides service implementing
@@ -78,7 +78,7 @@
 
                         <Bundle-ManifestVersion>2</Bundle-ManifestVersion>
                         <Bundle-UpdateLocation>${bundle.update-location}</Bundle-UpdateLocation>
-                        <Bundle-Copyright></Bundle-Copyright>
+                        <Bundle-Copyright>Zafar Khaydarov</Bundle-Copyright>
                         <Bundle-License>${project.licenses}"</Bundle-License>
 
                         <Bundle-Description>${project.description}</Bundle-Description>
