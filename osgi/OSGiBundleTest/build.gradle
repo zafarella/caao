@@ -1,5 +1,4 @@
-
 description = 'caao-osgi-bundleTest'
 dependencies {
-  compile project(':caao-osgi-bundles-parent:caao-osgi-bundle')
+    compile project(':caao-osgi-bundles-parent:caao-osgi-bundle')
 }

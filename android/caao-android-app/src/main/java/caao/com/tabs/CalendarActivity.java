@@ -42,9 +42,8 @@ public class CalendarActivity extends Activity {
     private Button button_prev, button_today, button_next;
 
 
-
-    /**
-     * @param savedInstanceState Bundle
+	/**
+	 * @param savedInstanceState Bundle
      */
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

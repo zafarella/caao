@@ -114,5 +114,5 @@
 		-- android-xmlrpc the cleint library\n\n\n which released under the Apache
 		License 2.0\n
 	</string>
-	<string name="no_internet_connection">Ei voi yhdistää palvelimeen</string>
+    <string name="no_internet_connection">Ei voi yhdistää palvelimeen</string>
 </resources>

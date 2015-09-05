@@ -61,8 +61,8 @@ public class MainActivity extends TabActivity {
     private static final int DATE_PICKER_DIALOG_ID = 0;
     static TabHost TheTabs;
 
-    // Variables for the date picker dialog.
-    private int lCalendarYear, lCalendarMonth, lCalendarDay;
+	// Variables for the date picker dialog.
+	private int lCalendarYear, lCalendarMonth, lCalendarDay;
 
     /**
      * The user name in the system. Reads and stored in preferences. In server
@@ -82,7 +82,7 @@ public class MainActivity extends TabActivity {
             // TODO: add the scroll method
         }
     };
-    private short activeTabIndex;
+	private short activeTabIndex;
 
 
     /**
@@ -129,62 +129,62 @@ public class MainActivity extends TabActivity {
 
         setContentView(R.layout.main);
 
-        //  ViewPager pager = (ViewPager) findViewById(R.id.pager);
-        //  pager.setAdapter(new TestAdapter(getSupportFragmentManager()));
+	    //  ViewPager pager = (ViewPager) findViewById(R.id.pager);
+	    //  pager.setAdapter(new TestAdapter(getSupportFragmentManager()));
 
         //Bind the title indicator to the adapter
-        //  TitlePageIndicator titleIndicator = (TitlePageIndicator) findViewById(R.id.pager);
-        //  titleIndicator.setViewPager(pager);
+	    //  TitlePageIndicator titleIndicator = (TitlePageIndicator) findViewById(R.id.pager);
+	    //  titleIndicator.setViewPager(pager);
 //
-        // creating the tabs
-        Resources res_tab_titles = getResources();
-        String[] tab_titles = res_tab_titles
-                .getStringArray(R.array.tabs_titles);
+	    // creating the tabs
+	    Resources res_tab_titles = getResources();
+	    String[] tab_titles = res_tab_titles
+			    .getStringArray(R.array.tabs_titles);
 
-        TheTabs = getTabHost(); // The activity TabHost
-        TabHost.TabSpec spec; // Reusable TabSpec for each tab
-        Intent intent; // Reusable Intent for each tab
+	    TheTabs = getTabHost(); // The activity TabHost
+	    TabHost.TabSpec spec; // Reusable TabSpec for each tab
+	    Intent intent; // Reusable Intent for each tab
 
-        // Create an Intent to launch an Activity for the tab
-        intent = new Intent().setClass(this, CalendarActivity.class);
+	    // Create an Intent to launch an Activity for the tab
+	    intent = new Intent().setClass(this, CalendarActivity.class);
 
-        // Calendar
-        // Initialize a TabSpec for each tab and add it to the TabHost
-        spec = TheTabs.newTabSpec("CalendarActivity")
-                .setIndicator(tab_titles[0]).setContent(intent);
-        TheTabs.addTab(spec);
+	    // Calendar
+	    // Initialize a TabSpec for each tab and add it to the TabHost
+	    spec = TheTabs.newTabSpec("CalendarActivity")
+			    .setIndicator(tab_titles[0]).setContent(intent);
+	    TheTabs.addTab(spec);
 
-        // Event notifications
-        intent = new Intent().setClass(this, EventNotificationActivity.class);
-        spec = TheTabs.newTabSpec("EventNotificationActivity")
-                .setIndicator(tab_titles[1]).setContent(intent);
-        TheTabs.addTab(spec);
+	    // Event notifications
+	    intent = new Intent().setClass(this, EventNotificationActivity.class);
+	    spec = TheTabs.newTabSpec("EventNotificationActivity")
+			    .setIndicator(tab_titles[1]).setContent(intent);
+	    TheTabs.addTab(spec);
 
-        // List of plants
-        // Create an Intent to launch an Activity for the tab
-        intent = new Intent().setClass(this, PlantListActivity.class);
-        spec = TheTabs.newTabSpec("PlantListActivity")
-                .setIndicator(tab_titles[2]).setContent(intent);
-        TheTabs.addTab(spec);
+	    // List of plants
+	    // Create an Intent to launch an Activity for the tab
+	    intent = new Intent().setClass(this, PlantListActivity.class);
+	    spec = TheTabs.newTabSpec("PlantListActivity")
+			    .setIndicator(tab_titles[2]).setContent(intent);
+	    TheTabs.addTab(spec);
 
-        // Wiki web view
-        intent = new Intent().setClass(this, WikiActivity.class);
-        spec = TheTabs.newTabSpec("WikiActivity").setIndicator(tab_titles[3])
-                .setContent(intent);
-        TheTabs.addTab(spec);
-        // switching to the first default calendar tab
-        TheTabs.setCurrentTab(0);
+	    // Wiki web view
+	    intent = new Intent().setClass(this, WikiActivity.class);
+	    spec = TheTabs.newTabSpec("WikiActivity").setIndicator(tab_titles[3])
+			    .setContent(intent);
+	    TheTabs.addTab(spec);
+	    // switching to the first default calendar tab
+	    TheTabs.setCurrentTab(0);
 
-        // In order to find out the current selected tab we will listen on the
-        // tabchange event and
-        // assign the active tab index to private variable
-        TheTabs.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
-            @Override
-            public void onTabChanged(String arg0) {
-                MainActivity.this.activeTabIndex = (short) TheTabs
-                        .getCurrentTab();
-            }
-        });
+	    // In order to find out the current selected tab we will listen on the
+	    // tabchange event and
+	    // assign the active tab index to private variable
+	    TheTabs.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
+		    @Override
+		    public void onTabChanged(String arg0) {
+			    MainActivity.this.activeTabIndex = (short) TheTabs
+					    .getCurrentTab();
+		    }
+	    });
     }
 
 
@@ -276,9 +276,9 @@ public class MainActivity extends TabActivity {
                 // Intent intent = new
                 // Intent(Constants.INTENT_ACTION_VIEW_LIST);
                 // startActivity(intent);
-                startActivity(new Intent(this, SettingsActivity.class));
-                return true;
-            case R.id.menu_item_refresh_events:
+	            startActivity(new Intent(this, SettingsActivity.class));
+	            return true;
+	        case R.id.menu_item_refresh_events:
                 return true;
             case R.id.menu_item_refresh_plant_list: // user selected the refresh
                 // plant list item in menu

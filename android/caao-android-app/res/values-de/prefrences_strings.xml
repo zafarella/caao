@@ -7,7 +7,8 @@
 	</string>
 	<string
 			name="prefs_app_lang_title"
-			>Applikation sprache</string>
+            >Applikation sprache
+    </string>
 	<string
 			name="prefs_country_summary"
 			>The country you are nowadays
@@ -18,7 +19,8 @@
 	</string>
 	<string
 			name="zip_code_summary"
-			>PLZ</string>
+            >PLZ
+    </string>
 	<string
 			name="zip_code_title"
 			>zip code
@@ -37,10 +39,12 @@
 	</string>
 	<string
 			name="street_name_dialog_title"
-			>Strasse</string>
+            >Strasse
+    </string>
 	<string
 			name="pref_category_app_language"
-			>Applikation sprache</string>
+            >Applikation sprache
+    </string>
 	<string
 			name="prefs_location_dialog_title"
 			>Your location, the city or region

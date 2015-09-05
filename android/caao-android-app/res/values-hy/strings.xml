@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- The strings that should be in different supported languages -->
-	<string name="app_name">caao
-	</string>
-	<string name="menu_item_exit_app">Ելք
-	</string>
-	<string name="menu_item_settings">Ընտրանքներ
-	</string>
+    <string name="app_name">caao
+    </string>
+    <string name="menu_item_exit_app">Ելք
+    </string>
+    <string name="menu_item_settings">Ընտրանքներ
+    </string>
     <!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
     <!-- About application strings -->
-	<string name="about_dialog_title">Ծրագրի Մասին
-	</string>
-	<string name="about_dialog_content_text">Կազմակերպչի մասին. ------------------------------ Այս ծրագիրը մաս է կազմում
-		Զաֆար Քայդարովի ավարտական աշխատանքի Արևելյան Ֆինլանդյայի Համալսարանի
-		Քոմփյութերային Համակարգերի Ֆակուլտետում: Աշխատանքը տարվում է Թեմու Լայինի
-		ղեկավարությամբ.
-	</string>
+    <string name="about_dialog_title">Ծրագրի Մասին
+    </string>
+    <string name="about_dialog_content_text">Կազմակերպչի մասին. ------------------------------ Այս ծրագիրը մաս է կազմում
+        Զաֆար Քայդարովի ավարտական աշխատանքի Արևելյան Ֆինլանդյայի Համալսարանի
+        Քոմփյութերային Համակարգերի Ֆակուլտետում: Աշխատանքը տարվում է Թեմու Լայինի
+        ղեկավարությամբ.
+    </string>
     <!--   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
     <!-- License dialog strings -->
-	<string name="licence_dialog_title">Լիցենզավորման պայմաններ
-	</string>
-	<string name="license_dialog_licence_text">Երկար տեքստ լիցենզավորման պայմանների մասին Հայերեն լեզվով
-	</string>
+    <string name="licence_dialog_title">Լիցենզավորման պայմաններ
+    </string>
+    <string name="license_dialog_licence_text">Երկար տեքստ լիցենզավորման պայմանների մասին Հայերեն լեզվով
+    </string>
     <!--   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
     <!--   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
     <string-array name="settings_items_titles">
