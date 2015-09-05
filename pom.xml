@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
 
@@ -15,10 +16,6 @@
     <packaging>pom</packaging>
     <name>Context-aware organizer - parent</name>
     <description>The context aware agricultural organizer</description>
-
-    <prerequisites>
-        <maven>3.1+</maven>
-    </prerequisites>
 
     <modules>
         <module>android</module>
@@ -49,6 +46,44 @@
                     <sortDependencies>scope</sortDependencies>
                     <indentBlankLines>false</indentBlankLines>
                     <nrOfIndentSpace>4</nrOfIndentSpace>
+                </configuration>
+            </plugin>
+
+            <!--Will enforce some dependencies and makes artifacts more consistent-->
+            <plugin>
+                <artifactId>maven-enforcer-plugin</artifactId>
+                <groupId>org.apache.maven.enforcer</groupId>
+                <version>1.4.1</version>
+                <configuration>
+                    <rules>
+
+                        <dependencyConvergence/>
+
+                        <requireJavaVersion>
+                            <version>(,1.7)</version>
+                        </requireJavaVersion>
+
+                        <requireMavenVersion>
+                            <version>(,3.0)</version>
+                        </requireMavenVersion>
+
+                        <reactorModuleConvergence>
+                            <message>Invalid reactor (multi module project setup). Check that project follows
+                                multi-module structure and best practices.
+                            </message>
+                        </reactorModuleConvergence>
+
+                        <banTransitiveDependencies/>
+
+                        <requireReleaseDeps>
+                            <message>No Snapshots when releasing please. There are snapshot dependency.</message>
+                            <onlyWhenRelease>true</onlyWhenRelease>
+                        </requireReleaseDeps>
+
+                        <enforceBytecodeVersion>
+                            <maxJdkVersion>1.7</maxJdkVersion>
+                        </enforceBytecodeVersion>
+                    </rules>
                 </configuration>
             </plugin>
         </plugins>
