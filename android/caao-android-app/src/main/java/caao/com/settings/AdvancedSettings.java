@@ -6,31 +6,30 @@
  * Web: cs.joensuu.fi/~zkhayda 
  * Date: Mar 24, 2011
  */
-package caao.com.settingsactivities;
+package caao.com.settings;
 
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
 import caao.com.R;
 
 /**
- * Location and the language of the application settings. Displayed from the xml
- * preferences file.
+ * Advanced preferences - the submenu in settings. Displays bunch of advanced
+ * preferences.
  *
  * @author zafar.khaydarov
- * @version $Revision: 1.7 $
+ * @version $Revision: 1.8 $
  */
-public class LangLocSettings extends PreferenceActivity {
-
+public class AdvancedSettings extends PreferenceActivity {
     /**
      * @param Saved_Instance_State Bundle
      */
     @Override
     public void onCreate(Bundle Saved_Instance_State) {
-
         super.onCreate(Saved_Instance_State);
-        // setContentView(R.layout.lang_and_loc_settings);
-        getPreferenceManager().setSharedPreferencesName("preferences");
-        addPreferencesFromResource(R.xml.preferences);
-        // TODO: add the handlers for the country and location list
+        // notifying the Preference manager to save the settings after user have
+        // changed them
+        getPreferenceManager().setSharedPreferencesName("advanced_preferences");
+        // displaying the preferences
+        addPreferencesFromResource(R.xml.advanced_preferences);
     }
 }

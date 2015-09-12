@@ -1,16 +1,16 @@
 /**
- *
- * Computer science department 
- * Project: Context Aware Orginizer 
+ * Computer science department
+ * Project: Context Aware Orginizer
  * Author: Zafar Khaydarov
- * E-mail: zkhayda@uef.fi 
- * Web: cs.joensuu.fi/~zkhayda 
+ * E-mail: zkhayda@uef.fi
+ * Web: cs.joensuu.fi/~zkhayda
  * Date: Mar 23, 2011
  */
-package caao.com.settingsactivities;
+package caao.com.settings;
 
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
+
 import caao.com.R;
 
 /**
@@ -19,7 +19,7 @@ import caao.com.R;
  * @author zafar.khaydarov
  * @version $Revision: 1.5 $
  */
-public class NotificationSettingsActivity extends PreferenceActivity {
+public class NotificationSettings extends PreferenceActivity {
     /**
      * @param Saved_Instance_State Bundle
      */

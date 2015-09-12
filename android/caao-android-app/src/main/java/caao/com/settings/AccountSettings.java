@@ -7,7 +7,7 @@
  * Web: cs.joensuu.fi/~zkhayda 
  * Date: Mar 23, 2011
  */
-package caao.com.settingsactivities;
+package caao.com.settings;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -19,7 +19,7 @@ import caao.com.R;
  * @author zafar.khaydarov
  * @version $Revision: 1.5 $
  */
-public class AccountSettingsActivity extends Activity {
+public class AccountSettings extends Activity {
     /**
      * @param Saved_Instance_State Bundle
      */
