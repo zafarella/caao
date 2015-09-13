@@ -12,6 +12,7 @@
     <artifactId>caao-android-app</artifactId>
     <packaging>apk</packaging>
     <name>caao-app</name>
+    <url>https://github.com/zafarella/caao/tree/master/android/caao_android_app</url>
 
     <properties>
         <abs.version>4.2.0</abs.version>
@@ -23,6 +24,15 @@
             <groupId>com.google.android</groupId>
             <artifactId>android</artifactId>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.google.android</groupId>
+            <artifactId>support-v4</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpcore</artifactId>
         </dependency>
     </dependencies>
 
@@ -58,7 +68,6 @@
 
         </plugins>
     </build>
-    <url>https://github.com/zafarella/caao/tree/master/android/caao_android_app</url>
 
     <profiles>
 
@@ -124,6 +133,7 @@
                             </execution>
                         </executions>
                     </plugin>
+
                     <!-- the signed apk then needs to be zipaligned and we activate proguard
 						and we run the manifest update -->
                     <plugin>

@@ -1,8 +1,8 @@
 /**
- * Project: Context-Aware Agriculture Organizer 
+ * Project: Context-Aware Agriculture Organizer
  * Author: Zafar Khaydarov
- * E-mail: zkhayda@uef.fi 
- * Web: cs.joensuu.fi/~zkhayda 
+ * E-mail: zkhayda@uef.fi
+ * Web: cs.joensuu.fi/~zkhayda
  * Date: Mar 17, 2011
  */
 package caao.com.tabs;
@@ -17,10 +17,12 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+
 import caao.com.Constants;
 import caao.com.MyToast;
 import caao.com.R;
-import caao.com.settingsactivities.AdvancedSettings;
+import caao.com.Utils;
+import caao.com.settings.AdvancedSettings;
 import caao.com.xmlrpc.XMLRPCClient;
 
 import java.net.URI;
@@ -30,7 +32,7 @@ import java.util.Vector;
 /**
  * Handles the contents of the plant list activity. Simply displays the list of
  * the plants for the user.
- * <p/>
+ * <p>
  * On order to understand some tricks here (at least they were :)) read the
  * following link content:
  * http://stackoverflow.com/questions/4502810/android-listview
@@ -40,7 +42,6 @@ import java.util.Vector;
  * @version $Revision: 1.12 $
  */
 public class PlantListActivity extends Activity {
-    // ----------------------------------------------------------------------
     /**
      * Field mPlantsListAdapter.
      */
@@ -57,8 +58,26 @@ public class PlantListActivity extends Activity {
      * Field mGetPlantList.
      */
     private Runnable mGetPlantList;
-
-    // -------------------------------------------------------------------------
+	/**
+	 * Field returnRes.
+	 */
+	private Runnable returnRes = new Runnable() {
+		@Override
+		public void run() {
+			if (mListOfPlants != null && mListOfPlants.size() > 0) {
+				mPlantsListAdapter.notifyDataSetChanged();
+				for (int i = 0; i < mListOfPlants.size(); i++)
+					mPlantsListAdapter.add(mListOfPlants.get(i));
+			}
+			mProgressDialog.dismiss();
+			mPlantsListAdapter.notifyDataSetChanged();
+			new MyToast(getApplicationContext(), +mListOfPlants.size()
+					+ " plants have been received", false);
+			if (null == mListOfPlants)
+				new MyToast(getApplicationContext(), "Some error has ocured, no data received" +
+						". Please contact administrator.", false);
+		}
+	};
 
     /**
      * Called when the activity created. The initialization of the variables
@@ -71,7 +90,6 @@ public class PlantListActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.plant_list_tab);
 
-        // ------------------------------------------------------------------------------
         ListView listOfPlanst_list_view;
         // the listview of the plants, linking with the layout
         listOfPlanst_list_view = (ListView) findViewById(R.id.list_of_plants__listView);
@@ -87,7 +105,7 @@ public class PlantListActivity extends Activity {
             @Override
             public void run() {
                 try {
-                    retreivePlants();
+	                retrievePlants();
                 } catch (Exception e) {
                     new MyToast(getApplicationContext(), "[Exception->] "
                             + e.getMessage(), true);
@@ -102,40 +120,17 @@ public class PlantListActivity extends Activity {
     }
 
     /**
-     * Field returnRes.
-     */
-    private Runnable returnRes = new Runnable() {
-        @Override
-        public void run() {
-            if (mListOfPlants != null && mListOfPlants.size() > 0) {
-                mPlantsListAdapter.notifyDataSetChanged();
-                for (int i = 0; i < mListOfPlants.size(); i++)
-                    mPlantsListAdapter.add(mListOfPlants.get(i));
-            }
-            mProgressDialog.dismiss();
-            mPlantsListAdapter.notifyDataSetChanged();
-            new MyToast(getApplicationContext(), +mListOfPlants.size()
-                    + " plants have been received", false);
-            if (null == mListOfPlants)
-                new MyToast(getApplicationContext(), "Some error has ocured, no data received" +
-                        ". Please contact administrator.", false);
-        }
-    };
-
-    // -------------------------------------------------------------------------
-
-    /**
      * Retrieves the list of plants from the server. Should be executed in
      * separate (from UI) thread.
      *
      * @throws Exception
      */
-    private void retreivePlants() throws Exception {
+    private void retrievePlants() throws Exception {
 
         mListOfPlants = new ArrayList<String>();
-        XMLRPCClient rpc_client;
-        URI uri;
-        String user_name;
+	    XMLRPCClient rpcClient;
+	    URI uri;
+	    String userName;
 
         SharedPreferences adv_settings = getSharedPreferences(
                 Constants.ADVANCED_PREFERENCES_FILE, 0);
@@ -143,37 +138,26 @@ public class PlantListActivity extends Activity {
         // reading the server url from preferences
         String serverUrl = adv_settings.getString("server_url", "");
 
-        if (!serverUrl.trim().equals("")) {
-            // if (areThePhoneOnline()) {
-            uri = URI.create(serverUrl);
+	    if (!serverUrl.trim().isEmpty() && new Utils().areWeOnline()) {
+		    uri = URI.create(serverUrl);
             // creating the rpc client
-            rpc_client = new XMLRPCClient(uri);
-            user_name = "zkhayda@uef.fi";
-            try {
-                Object[] result = (Object[]) rpc_client.call(
-                        "CaaoServerCore.plantList", user_name);
-                Vector<Object> plantList = new Vector<Object>();
-               // plantList = new Collections.synchronizedList(plantList);
-                for (Object o : result) {
+		    rpcClient = new XMLRPCClient(uri);
+		    userName = "zkhayda@uef.fi";
+		    try {
+	            Object[] result = (Object[]) rpcClient.call(
+			            "CaaoServerCore.plantList", userName);
+			    Vector<Object> plantList = new Vector<Object>();
+	            // plantList = new Collections.synchronizedList(plantList);
+			    for (Object o : result) {
                     plantList.add(o.toString());
                     mListOfPlants.add(o.toString());
                 }
             } catch (Exception e) {
                 Log.e(Constants.TAG, "[Exception]->" + e.getMessage());
             }
-            // } else {
-            // Toast
-            // .makeText(
-            // getApplicationContext(),
-            // "You are offline, cannot retreive the data. Please try later.",
-            // Toast.LENGTH_LONG);
-            // }
-            // PlantListActivity.populate_plant_list();
-            // ListAdapter(new ArrayAdapter<String>(this, R., COUNTRIES));
         } else {
             // the server url is empty, launching the preferences to ask
             // user enter the server address
-
             AlertDialog alertDialog = new AlertDialog.Builder(
                     getApplicationContext()).create();
             alertDialog.setTitle("Missing server URL");
@@ -190,15 +174,13 @@ public class PlantListActivity extends Activity {
         runOnUiThread(returnRes);
     }
 
-    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
     /**
      * The adaptor class which binds the components and provides the list
      * management. Not overriding the getView method as we only need to display
      * simple text. In case you want to have some other data, override the
      * method getView. For more details see the corresponding Javadoc for
      * android platform.
-     * <p/>
+     * <p>
      * In order to extend the list (for example you want to add some other
      * fields) override the ancestors's class few methods For more details,
      * please read the documentation.

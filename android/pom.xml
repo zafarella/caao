@@ -42,20 +42,14 @@
                 <version>${android.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.actionbarsherlock</groupId>
-                <artifactId>actionbarsherlock</artifactId>
-                <version>${actionbarsherlock.version}</version>
-                <type>apklib</type>
-            </dependency>
-            <dependency>
                 <groupId>com.google.code.gson</groupId>
                 <artifactId>gson</artifactId>
                 <version>${gson.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.github.rtyley</groupId>
-                <artifactId>roboguice-sherlock</artifactId>
-                <version>${roboguice-sherlock.version}</version>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpcore</artifactId>
+                <version>4.4.1</version>
             </dependency>
             <dependency>
                 <groupId>com.nineoldandroids</groupId>
@@ -84,6 +78,11 @@
                 <artifactId>mockito-core</artifactId>
                 <version>${mockito-core.version}</version>
                 <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.google.android</groupId>
+                <artifactId>support-v4</artifactId>
+                <version>r7</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

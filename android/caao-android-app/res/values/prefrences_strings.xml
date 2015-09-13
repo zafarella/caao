@@ -1,6 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?><!--File contains the strings for the preferences dialog-->
+<?xml version="1.0" encoding="utf-8"?>
+<!--File contains the strings for the preferences dialog-->
 <resources>
-    <string name="language_summary">Language to be used by app</string>
+    <string name="language_summary">Application language</string>
     <string name="prefs_app_lang_title">Application language</string>
     <string name="prefs_country_summary">The country you are nowadays</string>
     <string name="prefs_country_title">Location settings</string>

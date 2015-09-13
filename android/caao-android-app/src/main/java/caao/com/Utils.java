@@ -15,16 +15,17 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
 /**
- * Intended to provide various utility methods mostly with devices API related.
+ * Wrappers on top of device API to get device settings.
+ *
  * @author z1
  */
 public class Utils extends Activity {
     /**
-     * Returns current internet connect availability.
+     * Do we have network connectivity?
      *
      * @return true, when device is able to connect to the internet.
      */
-    public boolean isOnline() {
+    public boolean areWeOnline() {
         ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo netInfo = cm.getActiveNetworkInfo();
         return (netInfo != null && netInfo.isConnectedOrConnecting());

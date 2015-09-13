@@ -17,10 +17,10 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import caao.com.settingsactivities.AccountSettingsActivity;
-import caao.com.settingsactivities.AdvancedSettings;
-import caao.com.settingsactivities.LangLocSettings;
-import caao.com.settingsactivities.NotificationSettingsActivity;
+import caao.com.settings.AccountSettings;
+import caao.com.settings.AdvancedSettings;
+import caao.com.settings.LangLocSettings;
+import caao.com.settings.NotificationSettings;
 
 /**
  * The activity implements main settings view of the application.
@@ -55,7 +55,7 @@ public class SettingsActivity extends ListActivity {
 
 				case 0:
 					startActivity(new Intent().setClass(getApplicationContext(),
-							AccountSettingsActivity.class));
+							AccountSettings.class));
 					break;
 
 				case 1:
@@ -65,7 +65,7 @@ public class SettingsActivity extends ListActivity {
 
 				case 2:
 					startActivity(new Intent().setClass(getApplicationContext(),
-							NotificationSettingsActivity.class));
+							NotificationSettings.class));
 					break;
 
 				case 3:

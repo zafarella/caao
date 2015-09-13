@@ -4,31 +4,25 @@
  */
 package caao.com;
 
+import android.app.ActionBar;
 import android.app.DatePickerDialog;
-import android.app.Dialog;
-import android.app.TabActivity;
-import android.content.Context;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.content.res.Resources;
-import android.net.ConnectivityManager;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.view.ViewPager;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.Window;
 import android.widget.DatePicker;
-import android.widget.TabHost;
+
+import java.util.Locale;
 
 import caao.com.service.Service;
-import caao.com.tabs.CalendarActivity;
-import caao.com.tabs.EventNotificationActivity;
-import caao.com.tabs.PlantListActivity;
-import caao.com.tabs.WikiActivity;
-
-import java.util.Calendar;
-import java.util.Locale;
 
 /**
  * The activity which is called when the application is started. The idea behind
@@ -50,7 +44,7 @@ import java.util.Locale;
  * @version $Revision: 1.22 $
  */
 
-public class MainActivity extends TabActivity {
+public class MainActivity extends FragmentActivity {
 
     /**
      * for debug purposes the constant in logs for recognizing the app in logs
@@ -59,31 +53,7 @@ public class MainActivity extends TabActivity {
     @SuppressWarnings("unused")
     private static final String TAG = "CAAO";
     private static final int DATE_PICKER_DIALOG_ID = 0;
-    static TabHost TheTabs;
-
-    // Variables for the date picker dialog.
-    private int lCalendarYear, lCalendarMonth, lCalendarDay;
-
-    /**
-     * The user name in the system. Reads and stored in preferences. In server
-     * side (database) it's an unique name of the user (e-mail field)
-     * Initializes on create of activity.
-     */
-
-    /**
-     * Listener for the dialog button selector
-     */
-    private DatePickerDialog.OnDateSetListener memuDateSetListener = new DatePickerDialog.OnDateSetListener() {
-        public void onDateSet(DatePicker view, int year, int monthOfYear,
-                              int dayOfMonth) {
-            lCalendarYear = year;
-            lCalendarMonth = monthOfYear;
-            lCalendarDay = dayOfMonth;
-            // TODO: add the scroll method
-        }
-    };
-    private short activeTabIndex;
-
+	ViewPager mViewPager;
 
     /**
      * Called when the activity is first created. We will create here the tabs *
@@ -93,22 +63,22 @@ public class MainActivity extends TabActivity {
      * @see SharedPreferences
      * @see
      */
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         // TODO: the code that should handle new user registration
+	    setContentView(R.layout.main);
 
-           /*
-           * the locate of the application
-           * ----------------------------------------
-           */
-        SharedPreferences adv_settings = getSharedPreferences("preferences", 0);
-        // reading the server url from preferences
-        String which_lang = adv_settings.getString("application_language", "");
+	    final ActionBar actionBar = getActionBar();
+	    // Specify that tabs should be displayed in the action bar.
+	    actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
-        Locale locale = new Locale(which_lang);
+
+	    SharedPreferences advSettings = getSharedPreferences("preferences", 0);
+	    // reading the server url from preferences
+	    String lang = advSettings.getString("application_language", "");
+
+	    Locale locale = new Locale(lang);
 
         Locale.setDefault(locale);
         Configuration config = new Configuration();
@@ -118,75 +88,54 @@ public class MainActivity extends TabActivity {
 
         // --------------------------------------------------------------------------------
         // the service which we gonna run on background
-        Intent service_intent = new Intent(Constants.ACTION_FOREGROUND);
-        service_intent.setClass(MainActivity.this, Service.class);
-        startService(service_intent);
-        // --------------------------------------------------------------------------------
+	    Intent serviceIntent = new Intent(Constants.ACTION_FOREGROUND);
+	    serviceIntent.setClass(MainActivity.this, Service.class);
+	    startService(serviceIntent);
+	    // --------------------------------------------------------------------------------
         // for displaying the progress of some operation (wiki page etc.)
         getWindow().requestFeature(Window.FEATURE_PROGRESS);
         getWindow().requestFeature(Window.PROGRESS_VISIBILITY_ON);
 
 
-        setContentView(R.layout.main);
-
-        //  ViewPager pager = (ViewPager) findViewById(R.id.pager);
-        //  pager.setAdapter(new TestAdapter(getSupportFragmentManager()));
-
-        //Bind the title indicator to the adapter
-        //  TitlePageIndicator titleIndicator = (TitlePageIndicator) findViewById(R.id.pager);
-        //  titleIndicator.setViewPager(pager);
+//        // Set up the ViewPager, attaching the adapter.
+//        mViewPager = (ViewPager) findViewById(R.id.pager);
+////        mViewPager.setAdapter(mDemoCollectionPagerAdapter);
 //
-        // creating the tabs
-        Resources res_tab_titles = getResources();
-        String[] tab_titles = res_tab_titles
-                .getStringArray(R.array.tabs_titles);
-
-        TheTabs = getTabHost(); // The activity TabHost
-        TabHost.TabSpec spec; // Reusable TabSpec for each tab
-        Intent intent; // Reusable Intent for each tab
-
-        // Create an Intent to launch an Activity for the tab
-        intent = new Intent().setClass(this, CalendarActivity.class);
-
-        // Calendar
-        // Initialize a TabSpec for each tab and add it to the TabHost
-        spec = TheTabs.newTabSpec("CalendarActivity")
-                .setIndicator(tab_titles[0]).setContent(intent);
-        TheTabs.addTab(spec);
-
-        // Event notifications
-        intent = new Intent().setClass(this, EventNotificationActivity.class);
-        spec = TheTabs.newTabSpec("EventNotificationActivity")
-                .setIndicator(tab_titles[1]).setContent(intent);
-        TheTabs.addTab(spec);
-
-        // List of plants
-        // Create an Intent to launch an Activity for the tab
-        intent = new Intent().setClass(this, PlantListActivity.class);
-        spec = TheTabs.newTabSpec("PlantListActivity")
-                .setIndicator(tab_titles[2]).setContent(intent);
-        TheTabs.addTab(spec);
-
-        // Wiki web view
-        intent = new Intent().setClass(this, WikiActivity.class);
-        spec = TheTabs.newTabSpec("WikiActivity").setIndicator(tab_titles[3])
-                .setContent(intent);
-        TheTabs.addTab(spec);
-        // switching to the first default calendar tab
-        TheTabs.setCurrentTab(0);
-
-        // In order to find out the current selected tab we will listen on the
-        // tabchange event and
-        // assign the active tab index to private variable
-        TheTabs.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
-            @Override
-            public void onTabChanged(String arg0) {
-                MainActivity.this.activeTabIndex = (short) TheTabs
-                        .getCurrentTab();
-            }
-        });
+//        mViewPager = (ViewPager) findViewById(R.id.pager);
+//        mViewPager.setOnPageChangeListener(
+//                new ViewPager.SimpleOnPageChangeListener() {
+//                    @Override
+//                    public void onPageSelected(int position) {
+//                        // When swiping between pages, select the
+//                        // corresponding tab.
+//                        getActionBar().setSelectedNavigationItem(position);
+//                    }
+//                });
+//        // Create a tab listener that is called when the user changes tabs.
+//        ActionBar.TabListener tabListener = new ActionBar.TabListener() {
+//            public void onTabSelected(ActionBar.Tab tab, FragmentTransaction ft) {
+//                // show the given tab
+//            }
+//
+//            public void onTabUnselected(ActionBar.Tab tab, FragmentTransaction ft) {
+//                // hide the given tab
+//            }
+//
+//            public void onTabReselected(ActionBar.Tab tab, FragmentTransaction ft) {
+//                // When the tab is selected, switch to the
+//                // corresponding page in the ViewPager.
+//                mViewPager.setCurrentItem(tab.getPosition());
+//            }
+//        };
+//
+//        // actionBar.addTab(actionBar.newTab());
+//        for (int i = 0; i < 4; i++) {
+//            actionBar.addTab(
+//                    actionBar.newTab()
+//                            .setText("Tab " + (i + 1))
+//                            .setTabListener(tabListener));
+//        }
     }
-
 
     /**
      * Adds menu into the main activity from xml.
@@ -201,8 +150,6 @@ public class MainActivity extends TabActivity {
         inflater.inflate(R.menu.main_window_menu, menu);
         return true;
     }
-
-    // -----------------------------------------------------------------------------------
 
     /**
      * Overriding the method of super class as we will display the menu in
@@ -282,8 +229,8 @@ public class MainActivity extends TabActivity {
                 return true;
             case R.id.menu_item_refresh_plant_list: // user selected the refresh
                 // plant list item in menu
-                refresh_plant_list();
-                return true;
+	            refreshPlantList();
+	            return true;
             // displaying the date picker dialog for picking the date
             case R.id.menu_item_goto_date:
                 showDialog(DATE_PICKER_DIALOG_ID);
@@ -299,47 +246,9 @@ public class MainActivity extends TabActivity {
      *
      * @see caao.com.tabs.PlantListActivity
      */
-    public void refresh_plant_list() {
+    public void refreshPlantList() {
         // TODO: add the intend to call the method from the plant_list activity
     }
-
-    /**
-     * Overridden method called for showing the dialogs
-     *
-     * @param id int the id of the dialog
-     * @return Dialog the dialog that will be shown.
-     */
-    @Override
-    protected Dialog onCreateDialog(int id) {
-        switch (id) { // the date picker dialog
-            case DATE_PICKER_DIALOG_ID:
-                // get the current date
-                final Calendar c = Calendar.getInstance();
-                lCalendarYear = c.get(Calendar.YEAR);
-                lCalendarMonth = c.get(Calendar.MONTH);
-                lCalendarDay = c.get(Calendar.DAY_OF_MONTH);
-                return new DatePickerDialog(this, memuDateSetListener,
-                        lCalendarYear, lCalendarMonth, lCalendarDay);
-        }
-        return null;
-    }
-
-
-    /**
-     * Checks the connection state. Returns true if the phone is online and
-     * false otherwise
-     *
-     * @return boolean
-     * @see ConnectivityManager
-     */
-    @SuppressWarnings("unused")
-    public boolean areThePhoneOnline() {
-        ConnectivityManager cm =
-                (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-
-        return cm.getActiveNetworkInfo().isConnectedOrConnecting();
-    }
-
 
 }
 /* Just for fun (C) Torvalds Linus */

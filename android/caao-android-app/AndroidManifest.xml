@@ -3,12 +3,12 @@
     package="caao.com"
     android:installLocation="auto"
     android:versionCode="1"
-    android:versionName="1.0.0">
+          android:versionName="1.0-SNAPSHOT">
 
     <uses-sdk
         android:maxSdkVersion="22"
         android:minSdkVersion="11"
-        android:targetSdkVersion="8" />
+        android:targetSdkVersion="11"/>
     <uses-permission android:name="android.permission.INTERNET" />
     <!--
       below permission is needed to check the phone
@@ -19,7 +19,7 @@
         android:icon="@drawable/icon"
         android:label="@string/app_name">
         <activity
-            android:name=".MainActivity"
+                android:name="caao.com.MainActivity"
             android:configChanges="locale"
             android:label="@string/app_name">
             <intent-filter>
@@ -27,6 +27,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".SettingsActivity"
             android:configChanges="locale"
@@ -49,16 +50,16 @@
             android:configChanges="locale"
             android:label="@string/app_name" />
         <activity
-            android:name=".settingsactivities.AccountSettingsActivity"
+                android:name=".settings.AccountSettings"
             android:configChanges="locale" />
         <activity
-            android:name=".settingsactivities.NotificationSettingsActivity"
+                android:name=".settings.NotificationSettings"
             android:configChanges="locale" />
         <activity
-            android:name=".settingsactivities.AdvancedSettings"
+                android:name=".settings.AdvancedSettings"
             android:configChanges="locale" />
         <activity
-            android:name=".settingsactivities.LangLocSettings"
+                android:name=".settings.LangLocSettings"
             android:configChanges="locale" />
         <activity
             android:name=".tabs.CalendarActivity"

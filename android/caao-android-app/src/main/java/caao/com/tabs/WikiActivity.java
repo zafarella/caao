@@ -28,7 +28,6 @@ import caao.com.R;
 public class WikiActivity extends Activity {
     /**
      * The web view for displaying the pages from wiki
-     *
      * @see WebView
      */
     WebView webview;

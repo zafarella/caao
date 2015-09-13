@@ -20,7 +20,7 @@ import android.widget.ListView;
 import caao.com.Constants;
 import caao.com.MyToast;
 import caao.com.R;
-import caao.com.settingsactivities.AdvancedSettings;
+import caao.com.settings.AdvancedSettings;
 import caao.com.xmlrpc.XMLRPCClient;
 
 import java.net.URI;
@@ -36,10 +36,9 @@ public class EventNotificationActivity extends Activity {
      * Field mEventsListAdapter.
      */
     private EventListAdapter mEventsListAdapter = null;
-    /**
-     * the list of plans as List
-     */
-    private ArrayList<String> mListOfEvents = null;
+
+	// List of plans as List
+	private ArrayList<String> mListOfEvents = null;
     /**
      * Field mProgressDialog.
      */
@@ -65,8 +64,8 @@ public class EventNotificationActivity extends Activity {
                     + " plants have been received", false);
             if (null == mListOfEvents)
                 new MyToast(getApplicationContext(),
-                        "Some error has ocured, no data received"
-                                + ". Please contact administrator.", false);
+		                "Unexpected error, cannot retrieve events"
+				                + ". Try later.", false);
         }
     };
 

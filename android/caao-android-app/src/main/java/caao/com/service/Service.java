@@ -1,10 +1,9 @@
 /**
- *
- * Computer science department 
- * Project: Context-Aware Agriculture Organizer 
+ * Computer science department
+ * Project: Context-Aware Agriculture Organizer
  * Author: Zafar Khaydarov
- * E-mail: zkhayda@uef.fi 
- * Web: cs.joensuu.fi/~zkhayda 
+ * E-mail: zkhayda@uef.fi
+ * Web: cs.joensuu.fi/~zkhayda
  * Date: Mar 31, 2011
  */
 package caao.com.service;
@@ -15,6 +14,7 @@ import android.app.PendingIntent;
 import android.content.Intent;
 import android.os.IBinder;
 import android.widget.Toast;
+
 import caao.com.MainActivity;
 import caao.com.R;
 
@@ -27,19 +27,14 @@ import caao.com.R;
  *
  * @author zafar.khaydarov
  * @version $Revision: 1.9 $
- *          <p/>
+ *          <p>
  *          TODO: implementation of the methods of syncing data with the server
  * @see android.app.Service
  */
 public class Service extends android.app.Service {
-    /**
-     * Field mNM.
-     */
     static NotificationManager mNM;
-    /**
-     * indicates how to behave if the service is killed Field mStartMode.
-     */
-    int mStartMode;
+	// indicates how to behave if the service is killed.
+	int mStartMode;
     /**
      * Field mBinder.
      */
@@ -94,14 +89,13 @@ public class Service extends android.app.Service {
         // show the icon in the status bar
         showNotification();
 
-        // Start up the thread running the service. Note that we create a
-        // separate thread because the service normally runs in the
-        // process's
-        // main thread, which we don't want to block.
+        /* Start up the thread running the service. Note that we create a
+         separate thread because the service normally runs in the
+         process's main thread, which we don't want to block.*/
         Thread thr = new Thread(null, this.mTask, "Service");
         thr.start();
-        Toast.makeText(this, "Service started, separate thread created",
-                Toast.LENGTH_SHORT).show();
+	    Toast.makeText(this, "CAO Service started, separate thread created.",
+			    Toast.LENGTH_SHORT).show();
 
     }
 
@@ -143,8 +137,6 @@ public class Service extends android.app.Service {
         return this.mAllowRebind;
     }
 
-    // -------------------------------------------------------------------------------------------
-
     /**
      * Method onRebind.
      *
@@ -155,8 +147,6 @@ public class Service extends android.app.Service {
         // A client is binding to the service with bindService(),
         // after onUnbind() has already been called
     }
-
-    // -------------------------------------------------------------------------------------------
 
     /**
      * Method onDestroy.
