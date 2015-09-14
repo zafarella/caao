@@ -16,7 +16,6 @@
 
     <modules>
         <module>caao-android-app</module>
-        <module>caao-android-appTest</module>
     </modules>
 
     <properties>
@@ -29,7 +28,6 @@
         <maven-compiler-plugin.source>1.6</maven-compiler-plugin.source>
         <maven-compiler-plugin.version>2.3.2</maven-compiler-plugin.version>
         <mockito-core.version>2.0.31-beta</mockito-core.version>
-        <nineoldandroids.version>2.4.0</nineoldandroids.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <roboguice-sherlock.version>1.5</roboguice-sherlock.version>
     </properties>
@@ -50,11 +48,6 @@
                 <groupId>org.apache.httpcomponents</groupId>
                 <artifactId>httpcore</artifactId>
                 <version>4.4.1</version>
-            </dependency>
-            <dependency>
-                <groupId>com.nineoldandroids</groupId>
-                <artifactId>library</artifactId>
-                <version>${nineoldandroids.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.jayway.maven.plugins.android.generation2</groupId>
@@ -90,24 +83,6 @@
     <build>
         <pluginManagement>
             <plugins>
-
-                <plugin>
-                    <groupId>com.jayway.maven.plugins.android.generation2</groupId>
-                    <artifactId>android-maven-plugin</artifactId>
-                    <version>4.0.0-rc.2</version>
-                    <extensions>true</extensions>
-                    <configuration>
-                        <sdk>
-                            <platform>19</platform>
-                        </sdk>
-                        <undeployBeforeDeploy>true</undeployBeforeDeploy>
-                        <proguard>
-                            <skip>true</skip>
-                        </proguard>
-                        <androidManifestFile>AndroidManifest.xml</androidManifestFile>
-                        <resourceDirectory>res</resourceDirectory>
-                    </configuration>
-                </plugin>
 
                 <plugin>
                     <artifactId>maven-compiler-plugin</artifactId>

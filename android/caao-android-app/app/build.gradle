@@ -1,0 +1,30 @@
+apply plugin: 'com.android.application'
+apply plugin: 'idea'
+
+android {
+    signingConfigs {
+        config {
+        }
+    }
+    compileSdkVersion 21
+    buildToolsVersion "23.0.1"
+    defaultConfig {
+        applicationId "com.caao"
+        minSdkVersion 14
+        targetSdkVersion 14
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+}
+dependencies {
+    compile 'com.google.android.gms:play-services-identity:7.3.0'
+    compile 'com.android.support:support-v4:23.0.1'
+    compile 'com.google.android.gms:play-services-analytics:7.3.0'
+    compile 'com.jayway.android.robotium:robotium-solo:5.2.1'
+    testCompile "org.robolectric:robolectric:3.0"
+
+}

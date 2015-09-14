@@ -1,0 +1,130 @@
+<?resources.xml version="1.0" encoding="utf-8"?><!--
+  The file contains common to application
+  strings that should be translated to
+  different languages
+-->
+<resources>
+    <!-- The strings that should be in different supported languages -->
+    <string name="app_name">The context aware organizer
+    </string>
+    <string name="menu_item_exit_app">
+        Exit app
+    </string>
+
+    <string name="menu_item_settings">
+        Settings
+    </string>
+
+    <!-- About application strings -->
+    <string name="about_dialog_title">
+        About application
+    </string>
+
+    <string name="about_dialog_content_text">
+        The context aware organizer.
+    </string>
+
+    <!-- License dialog strings -->
+    <string name="licence_dialog_title">
+        License agreement
+    </string>
+
+    <string name="license_dialog_licence_text">
+        Copyright (c) [2011], [Zafar Khaydarov]
+        All rights reserved.
+
+        Redistribution and use in source and binary forms, with or without
+        modification, are permitted provided that the following conditions are met:
+
+        * Redistributions of source code must retain the above copyright notice, this
+        list of conditions and the following disclaimer.
+
+        * Redistributions in binary form must reproduce the above copyright notice,
+        this list of conditions and the following disclaimer in the documentation
+        and/or other materials provided with the distribution.
+
+        * Neither the name of [project] nor the names of its
+        contributors may be used to endorse or promote products derived from
+        this software without specific prior written permission.
+
+        THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+        AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+        IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+        DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+        FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+        DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+        SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+        CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+        OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+        OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    </string>
+
+    <string name="privacy_statement">
+        None of the information you provide will be used in commercial purpose.
+    </string>
+
+    <string-array name="settings_items_titles">
+        <item>Account Settings</item>
+        <item>Location and language</item>
+        <item>Notifications</item>
+        <item>Advanced settings</item>
+        <item>Version information</item>
+        <item>Share feedback</item>
+        <item>License</item>
+        <item>Open-source licenses</item>
+        <item>Privacy</item>
+    </string-array>
+
+    <string-array name="dummy_plant_list">
+        <item>asdasdasdfasdf</item>
+        <item>asdfasfasd</item>
+    </string-array>
+
+    <!--the order is important as it handled by code-->
+    <string-array name="locales">
+        <item>English</item>
+        <item>Suomi</item>
+        <item>Русский</item>
+        <item>Deutsch</item>
+        <item>Точики</item>
+    </string-array>
+
+    <string-array name="locale_titles">
+        <item>Russian</item>
+        <item>English</item>
+        <item>Suomi</item>
+        <item>Deutsch</item>
+        <item>Tajik</item>
+    </string-array>
+
+    <string-array name="tabTitles">
+        <item>Calendar</item>
+        <item>Notifications</item>
+        <item>My plants</item>
+        <item>Wiki</item>
+        <item>News</item>
+        <item>Events</item>
+    </string-array>
+
+    <string name="service_label">
+        Context Aware Organizer
+    </string>
+    <string name="submit_feedback_button">
+        Submit my feedback
+    </string>
+    <string name="menu_item_refresh_plant_list">
+        Refresh plant list
+    </string>
+    <string name="menu_item_refresh_event_list">Sync</string>
+    <string name="third_party_licences_text">
+        Following open-source libraries are used to bring the CAAO\n
+        -- apache resources.xml-rpc \n
+        -- android-xmlrpc the cleint library\n\n\n
+
+        released under the Apache
+        License 2.0\n
+    </string>
+    <string name="no_internet_connection">Cannot connect to server</string>
+    <string name="drawer_open">Open navigator</string>
+    <string name="drawer_close">Close navigator</string>
+</resources>

@@ -1,0 +1,35 @@
+<?resources.xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string
+            name="notification_prefs_title"
+            >Notification settings
+    </string>
+    <string
+            name="notification_prefs_summary"
+            >Notification settings
+    </string>
+    <string
+            name="notification_prefs_enable_status_bar_notifs_category_title"
+            >Tilarivi ilmoitukset
+    </string>
+    <string
+            name="notification_prefs_enable_status_bar_notifs_title"
+            >Enable status bar notifications
+    </string>
+    <string
+            name="notification_prefs_enable_status_bar_notifs_summary"
+            >Muistuta noin tapahtuma bar
+    </string>
+    <string
+            name="notification_prefs_rington_category_title"
+            >Ilmoitus soittoäänen
+    </string>
+    <string
+            name="notification_prefs_rington_category_summary"
+            >Sets the rington for notofications
+    </string>
+    <string
+            name="notification_prefs_rington_title"
+            >Select a rington for notification
+    </string>
+</resources>

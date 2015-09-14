@@ -1,0 +1,47 @@
+<?resources.xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+      The main resources.menu of the application why groups? in future could be hidden/shown
+      depend on state of a phone and other things
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    -->
+    <group android:id="@+id/group__menu_plans_events">
+        <!-- refresh event list -->
+        <item
+                android:id="@+id/menu_item_sync"
+                android:title="@string/menu_item_refresh_event_list"></item>
+        <!-- refresh plant list -->
+        <item
+                android:id="@+id/menu_item_sync_data"
+                android:title="@string/menu_item_refresh_plant_list"></item>
+    </group>
+
+    <group android:id="@+id/group_webView">
+        <item
+                android:id="@+id/item_goto_url"
+                android:title="Go to URL"></item>
+    </group>
+
+    <group android:id="@+id/group_calendar_items">
+        <item
+                android:id="@+id/menu_item_goto_date"
+                android:title="Go to Date"></item>
+    </group>
+
+    <group android:id="@+id/group_app_group">
+        <!-- Settings  -->
+        <item
+                android:id="@+id/menu_item_settings"
+                android:enabled="true"
+                android:title="@string/menu_item_settings"
+                android:visible="true"></item>
+        <!-- Exit application  -->
+        <item
+                android:id="@+id/menu_item_exit_app"
+                android:enabled="true"
+                android:title="@string/menu_item_exit_app"
+                android:visible="true"></item>
+    </group>
+
+</menu>

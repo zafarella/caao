@@ -1,0 +1,18 @@
+<?resources.xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="advanced_prefs_title">
+        Advanced preferences
+    </string>
+    <string name="advanced_prefs_server_into_title">
+        Server information
+    </string>
+    <string name="advanced_prefs_server_info_summary">
+        Tap to see server capabilities
+    </string>
+    <string name="advanced_prefs_server_url">
+        Server\&apos;s URL
+    </string>
+    <string name="advanced_prefs_server_url_summary">
+        Connection URL
+    </string>
+</resources>
