@@ -1,33 +1,29 @@
-
-#The CAAO
-
-Stands for Context-aware organizer. The main idea of the project is creation 
-of organizer which is context-aware [Mark Weiser](http://en.wikipedia.org/wiki/Mark_Weiser).
-
-I have utilized OSGi as a server side to extend server functionality by 
-contributing module and android as mobile client or the front-end. Web front-end 
-is planned to be implemented using Vaadin as another plugable bundle for OSGi (in progress).
-
-The actual data from sensors collected via SOS [(Sensor Observation Service)](http://52north.org/communities/sensorweb/sos/index.html). 
-It supports variety of sensors not only spatial.
-
-
-## Architecture in brief
-Server side is requires Java > 1.6 and the client side is android application.
-
-## Documentation
-See [wiki](https://github.com/zafarella/caao/wiki).
-
 ## Build status
-   [![Build Status](https://travis-ci.org/zafarella/caao.svg?branch=master)](https://travis-ci.org/zafarella/caao)
-   [![Build Status](https://travis-ci.org/zafarella/caao.svg?branch=dev)](https://travis-ci.org/zafarella/caao)
-   <a href="https://scan.coverity.com/projects/zafarella-caao">
+   master [![Build Status](https://travis-ci.org/zafarella/caao.svg?branch=master)](https://travis-ci.org/zafarella/caao)
+   dev [![Build Status](https://travis-ci.org/zafarella/caao.svg?branch=dev)](https://travis-ci.org/zafarella/caao)
+   coverage <a href="https://scan.coverity.com/projects/zafarella-caao">
       <img alt="Coverity Scan Build Status"
            src="https://scan.coverity.com/projects/5113/badge.svg"/>
     </a>
 
+#What is it?
+
+CAAO - stands for Context-aware (agriculture) organizer. The idea of the project is creation 
+of organizer which is context-aware according to [Mark Weiser](http://en.wikipedia.org/wiki/Mark_Weiser).
+
+The actual data from sensors collected via SOS [(Sensor Observation Service)](http://52north.org/communities/sensorweb/sos/index.html). 
+It supports variety of sensors including spatial.
+
+Server side uses OSGi to be easy extendiable by developers and android as main client application. 
+There is also web [front-end](https://github.com/zafarella/caao/tree/dev/front-end/caao-vaadin-front-end) 
+based on [Vaadin](https://vaadin.com/home).
+
+
+## Documentation
+More about project in [wiki](https://github.com/zafarella/caao/wiki).
 
 ##Contact
 Feel free to contact me should you have any suggestion or any ideas - zafarella at gmail dot com.
+Have something to discuss?
 [![Join the chat at https://gitter.im/zafarella/cao](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/zafarella/cao?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 

@@ -1,1 +1,0 @@
-Activities related to setting of the application

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
@@ -10,11 +11,10 @@
     </parent>
 
     <artifactId>caao-android-app</artifactId>
-    <packaging>apk</packaging>
     <name>caao-app</name>
+    <url>https://github.com/zafarella/caao/tree/dev/android/caao-android-app</url>
 
     <properties>
-        <abs.version>4.2.0</abs.version>
         <environment>development</environment>
     </properties>
 
@@ -24,41 +24,78 @@
             <artifactId>android</artifactId>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>com.google.android</groupId>
+            <artifactId>support-v4</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <!--<dependency>-->
+        <!--<groupId>org.apache.httpcomponents</groupId>-->
+        <!--<artifactId>httpcore</artifactId>-->
+        <!--</dependency>-->
     </dependencies>
 
     <build>
         <plugins>
 
             <plugin>
-                <groupId>com.jayway.maven.plugins.android.generation2</groupId>
+                <groupId>com.simpligility.maven.plugins</groupId>
                 <artifactId>android-maven-plugin</artifactId>
+                <version>4.3.0</version>
                 <extensions>true</extensions>
                 <configuration>
                     <manifest>
                         <debuggable>true</debuggable>
                     </manifest>
                 </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.4.0</version>
                 <executions>
                     <execution>
-                        <id>manifestUpdate</id>
+                        <id>build-gradle-android-project</id>
+                        <phase>install</phase>
                         <goals>
-                            <goal>manifest-update</goal>
+                            <goal>exec</goal>
                         </goals>
-                        <phase>process-resources</phase>
-                    </execution>
-                    <execution>
-                        <id>alignApk</id>
-                        <goals>
-                            <goal>zipalign</goal>
-                        </goals>
-                        <phase>package</phase>
                     </execution>
                 </executions>
+                <configuration>
+                    <executable>/bin/bash</executable>
+                    <arguments>
+                        <argument>./gradlew</argument>
+                        <argument>assembleDebug</argument>
+                    </arguments>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.4.0</version>
+                <executions>
+                    <execution>
+                        <id>build-gradle-android-project</id>
+                        <phase>clean</phase>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <executable>/bin/bash</executable>
+                    <arguments>
+                        <argument>./gradlew</argument>
+                        <argument>clean</argument>
+                    </arguments>
+                </configuration>
             </plugin>
 
         </plugins>
     </build>
-    <url>https://github.com/zafarella/caao/tree/master/android/caao_android_app</url>
 
     <profiles>
 
@@ -113,7 +150,9 @@
                                     <removeExistingSignatures>true</removeExistingSignatures>
                                     <archiveDirectory></archiveDirectory>
                                     <includes>
-                                        <include>${project.build.directory}/${project.artifactId}.apk</include>
+                                        <include>
+                                            ${project.build.directory}/${project.artifactId}.apk
+                                        </include>
                                     </includes>
                                     <keystore>${sign.keystore}</keystore>
                                     <alias>${sign.alias}</alias>
@@ -124,6 +163,7 @@
                             </execution>
                         </executions>
                     </plugin>
+
                     <!-- the signed apk then needs to be zipaligned and we activate proguard
 						and we run the manifest update -->
                     <plugin>
@@ -138,8 +178,11 @@
                             <zipalign>
                                 <skip>false</skip>
                                 <verbose>true</verbose>
-                                <inputApk>${project.build.directory}/${project.artifactId}.apk</inputApk>
-                                <outputApk>${project.build.directory}/${project.artifactId}-signed-aligned.apk</outputApk>
+                                <inputApk>${project.build.directory}/${project.artifactId}.apk
+                                </inputApk>
+                                <outputApk>
+                                    ${project.build.directory}/${project.artifactId}-signed-aligned.apk
+                                </outputApk>
                             </zipalign>
                             <manifest>
                                 <debuggable>false</debuggable>
@@ -180,7 +223,9 @@
                         <configuration>
                             <artifacts>
                                 <artifact>
-                                    <file>${project.build.directory}/${project.artifactId}-signed-aligned.apk</file>
+                                    <file>
+                                        ${project.build.directory}/${project.artifactId}-signed-aligned.apk
+                                    </file>
                                     <type>apk</type>
                                     <classifier>signed-aligned</classifier>
                                 </artifact>

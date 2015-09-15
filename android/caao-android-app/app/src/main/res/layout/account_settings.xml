@@ -1,0 +1,122 @@
+<?resources.xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:orientation="vertical">
+
+        <TextView
+                android:id="@+id/textView_acc_settins_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:paddingTop="20dp"
+                android:singleLine="false"
+                android:text="Please provide us some details about you"
+                android:textIsSelectable="false"></TextView>
+
+        <LinearLayout
+                android:id="@+id/linearLayout1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="false"
+                android:orientation="vertical"
+                android:padding="20dp">
+            <!-- first name -->
+            <TableRow
+                    android:id="@+id/tableRow1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <TextView
+                        android:id="@+id/textView_first_name"
+                        android:layout_width="85dp"
+                        android:layout_height="wrap_content"
+                        android:text="First name"></TextView>
+
+                <EditText
+                        android:id="@+id/editText_first_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"></EditText>
+            </TableRow>
+            <!-- last name -->
+            <TableRow
+                    android:id="@+id/tableRow2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <TextView
+                        android:id="@+id/textView_last_name"
+                        android:layout_width="87dp"
+                        android:layout_height="wrap_content"
+                        android:text="Last name"></TextView>
+
+                <EditText
+                        android:id="@+id/editText_last_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"></EditText>
+            </TableRow>
+            <!-- e-mail -->
+            <TableRow
+                    android:id="@+id/tableRow3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <TextView
+                        android:id="@+id/textView_e_mail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="e-mail address"></TextView>
+
+                <EditText
+                        android:id="@+id/editText_e_mail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"></EditText>
+            </TableRow>
+
+            <TableRow
+                    android:id="@+id/tableRow4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <TextView
+                        android:id="@+id/textView_password"
+                        android:layout_width="85dp"
+                        android:layout_height="wrap_content"
+                        android:text="Password"></TextView>
+
+                <EditText
+                        android:id="@+id/editText_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"></EditText>
+            </TableRow>
+
+            <Space
+                    android:layout_width="fill_parent"
+                    android:layout_height="29dp"/>
+
+            <TableRow
+                    android:id="@+id/tableRow5"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+
+                <Button
+                        android:id="@+id/button1"
+                        android:layout_width="187dp"
+                        android:layout_height="wrap_content"
+                        android:text="Cancel"></Button>
+
+                <Button
+                        android:id="@+id/button2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Update my data"></Button>
+            </TableRow>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

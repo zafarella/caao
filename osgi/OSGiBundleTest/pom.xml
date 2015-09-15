@@ -23,7 +23,7 @@
             <dependency>
                 <groupId>fi.uef.cs.caao</groupId>
                 <artifactId>caao-osgi-bundle</artifactId>
-                <version>0.0.1</version>
+                <version>1.0.0</version>
                 <type>bundlle</type>
             </dependency>
 

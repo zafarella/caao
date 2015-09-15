@@ -1,0 +1,99 @@
+<?resources.xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.caao"
+    android:installLocation="auto"
+    android:versionCode="1"
+          android:versionName="1.0-SNAPSHOT">
+
+    <uses-sdk
+        android:maxSdkVersion="22"
+        android:minSdkVersion="11"
+        android:targetSdkVersion="11"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!--
+      below permission is needed to check the phone
+      connectivity
+    -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <android:uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <android:uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <android:uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+    <application
+        android:icon="@drawable/icon"
+        android:label="@string/app_name">
+        <activity
+                android:name="com.caao.MainActivity"
+            android:configChanges="locale"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+                android:name="com.caao.SettingsActivity"
+            android:configChanges="locale"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.settings.APN_SETTINGS" />
+
+                <category android:name="android.intent.category.PREFERENCE" />
+            </intent-filter>
+        </activity>
+        <activity
+                android:name="com.caao.tabs.PlantListActivity"
+            android:configChanges="locale"
+            android:label="@string/app_name" />
+        <activity
+                android:name="com.caao.tabs.EventNotificationActivity"
+            android:configChanges="locale"
+            android:label="@string/app_name" />
+        <activity
+                android:name="com.caao.tabs.WikiActivity"
+            android:configChanges="locale"
+            android:label="@string/app_name" />
+        <activity
+                android:name="com.caao.settings.AccountSettings"
+            android:configChanges="locale" />
+        <activity
+                android:name="com.caao.settings.NotificationSettings"
+            android:configChanges="locale" />
+        <activity
+                android:name="com.caao.settings.AdvancedSettings"
+            android:configChanges="locale" />
+        <activity
+                android:name="com.caao.settings.LangLocSettings"
+            android:configChanges="locale" />
+        <activity
+                android:name="com.caao.tabs.CalendarActivity"
+            android:configChanges="locale">
+            <intent-filter>
+                <action android:name="android.intent.action.PICK" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="vnd.android.cursor.dir/vnd.exina.android.calendar.date" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="vnd.android.cursor.dir/vnd.exina.android.calendar.date" />
+            </intent-filter>
+        </activity>
+
+        <service
+                android:name="com.caao.service.Service"
+            android:icon="@drawable/icon_organic_cotton"
+            android:label="@string/service_label" />
+
+        <meta-data
+                android:name="com.google.android.gms.version"
+                android:value="@integer/google_play_services_version"/>
+    </application>
+
+</manifest>
