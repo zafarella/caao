@@ -3,6 +3,7 @@
  * Zafar.Khaydarov @cs.joensuu.fi
  * Container for the server side of caao. Activates bundle in OSGi environment
  * and unregisters it when the bundle is stopped.
+ *
  */
 package fi.uef.caao;
 
@@ -29,7 +30,7 @@ import java.io.IOException;
 
 /**
  * The bundle that implements necessary services for registering and
- * unregistering in the framework. On details of the implementation please get
+ * unregister in the framework. On details of the implementation please get
  * familiar with the OSGi specification R4.
  * TODO: more accurate logging and
  * TODO: integration. usage of another more powerful web server

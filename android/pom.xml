@@ -16,7 +16,6 @@
 
     <modules>
         <module>caao-android-app</module>
-        <module>caao-android-appTest</module>
     </modules>
 
     <properties>
@@ -29,7 +28,6 @@
         <maven-compiler-plugin.source>1.6</maven-compiler-plugin.source>
         <maven-compiler-plugin.version>2.3.2</maven-compiler-plugin.version>
         <mockito-core.version>2.0.31-beta</mockito-core.version>
-        <nineoldandroids.version>2.4.0</nineoldandroids.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <roboguice-sherlock.version>1.5</roboguice-sherlock.version>
     </properties>
@@ -42,25 +40,14 @@
                 <version>${android.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.actionbarsherlock</groupId>
-                <artifactId>actionbarsherlock</artifactId>
-                <version>${actionbarsherlock.version}</version>
-                <type>apklib</type>
-            </dependency>
-            <dependency>
                 <groupId>com.google.code.gson</groupId>
                 <artifactId>gson</artifactId>
                 <version>${gson.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.github.rtyley</groupId>
-                <artifactId>roboguice-sherlock</artifactId>
-                <version>${roboguice-sherlock.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.nineoldandroids</groupId>
-                <artifactId>library</artifactId>
-                <version>${nineoldandroids.version}</version>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpcore</artifactId>
+                <version>4.4.1</version>
             </dependency>
             <dependency>
                 <groupId>com.jayway.maven.plugins.android.generation2</groupId>
@@ -85,30 +72,17 @@
                 <version>${mockito-core.version}</version>
                 <scope>test</scope>
             </dependency>
+            <dependency>
+                <groupId>com.google.android</groupId>
+                <artifactId>support-v4</artifactId>
+                <version>r7</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
     <build>
         <pluginManagement>
             <plugins>
-
-                <plugin>
-                    <groupId>com.jayway.maven.plugins.android.generation2</groupId>
-                    <artifactId>android-maven-plugin</artifactId>
-                    <version>4.0.0-rc.2</version>
-                    <extensions>true</extensions>
-                    <configuration>
-                        <sdk>
-                            <platform>19</platform>
-                        </sdk>
-                        <undeployBeforeDeploy>true</undeployBeforeDeploy>
-                        <proguard>
-                            <skip>true</skip>
-                        </proguard>
-                        <androidManifestFile>AndroidManifest.xml</androidManifestFile>
-                        <resourceDirectory>res</resourceDirectory>
-                    </configuration>
-                </plugin>
 
                 <plugin>
                     <artifactId>maven-compiler-plugin</artifactId>

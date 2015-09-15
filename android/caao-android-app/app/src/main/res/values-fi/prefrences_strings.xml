@@ -1,0 +1,60 @@
+<?resources.xml version="1.0" encoding="utf-8"?>
+<!--File contains the strings for the preferences dialog-->
+<resources>
+    <string
+            name="language_summary"
+            >Language to be used by app
+    </string>
+    <string
+            name="prefs_app_lang_title"
+            >Hakemus kieli
+    </string>
+    <string
+            name="prefs_country_summary"
+            >The country you are nowadays
+    </string>
+    <string
+            name="prefs_country_title"
+            >Sijainnin asetukset
+    </string>
+    <string
+            name="zip_code_summary"
+            >postikoodi
+    </string>
+    <string
+            name="zip_code_title"
+            >Postinumero
+    </string>
+    <string
+            name="zip_code_dialog_title"
+            >What is your zip code
+    </string>
+    <string
+            name="street_name_title"
+            >Street name
+    </string>
+    <string
+            name="street_name_summary"
+            >Let know, what is your street name
+    </string>
+    <string
+            name="street_name_dialog_title"
+            >Street name
+    </string>
+    <string
+            name="pref_category_app_language"
+            >Application language
+    </string>
+    <string
+            name="prefs_location_dialog_title"
+            >Your location, the city or region
+    </string>
+    <string
+            name="prefs_location_title"
+            >Your location
+    </string>
+    <string
+            name="prefs_location_summary"
+            >Your location or region
+    </string>
+</resources>
