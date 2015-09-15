@@ -19,6 +19,12 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }
+
+    lintOptions {
+        abortOnError false
+        // if true, only report errors
+        ignoreWarnings true
+    }
 }
 dependencies {
     compile 'com.google.android.gms:play-services-identity:7.3.0'
