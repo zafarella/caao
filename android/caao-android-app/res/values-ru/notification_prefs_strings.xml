@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string name="notification_prefs_title">Настройки уведомлений
+    <string name="notification_prefs_title">Настройки уведомлений
 	</string>
-	<string name="notification_prefs_summary">Настройки уведомлений
+    <string name="notification_prefs_summary">Настройки уведомлений
 	</string>
-	<string name="notification_prefs_enable_status_bar_notifs_categoru_title">Уведомления в статус баре
+    <string name="notification_prefs_enable_status_bar_notifs_categoru_title">Уведомления в статус баре
 	</string>
-	<string name="notification_prefs_enable_status_bar_notifs_title">Уведомлять в статусбаре
+    <string name="notification_prefs_enable_status_bar_notifs_title">Уведомлять в статусбаре
 	</string>
-	<string name="notification_prefs_enable_status_bar_notifs_summary">Показывать уведомления в статубаре
+    <string name="notification_prefs_enable_status_bar_notifs_summary">Показывать уведомления в статубаре
 	</string>
-	<string name="notification_prefs_rington_category_title">Звонок уведомлений
+    <string name="notification_prefs_rington_category_title">Звонок уведомлений
 	</string>
-	<string name="notification_prefs_rington_category_summary">Устанавливает звонок для уведомлений
+    <string name="notification_prefs_rington_category_summary">Устанавливает звонок для уведомлений
 	</string>
-	<string name="notification_prefs_rington_title">Выберите звук для уведомлений
+    <string name="notification_prefs_rington_title">Выберите звук для уведомлений
 	</string>
 </resources>

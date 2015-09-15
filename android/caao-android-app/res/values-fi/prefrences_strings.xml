@@ -19,7 +19,8 @@
 	</string>
 	<string
 			name="zip_code_summary"
-			>postikoodi</string>
+            >postikoodi
+    </string>
 	<string
 			name="zip_code_title"
 			>zip code

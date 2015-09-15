@@ -147,8 +147,8 @@ public class Activator implements BundleActivator {
     }
 
 
-    /**
-     * Called when the bundle is stopped. the intend of the method is to free
+	/**
+	 * Called when the bundle is stopped. the intend of the method is to free
      * all the unnecessary resources before the bundle has stopped. For more
      * details please look at the osgi service implementation.
      *

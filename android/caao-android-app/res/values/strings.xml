@@ -4,23 +4,23 @@
 -->
 <resources>
     <!-- The strings that should be in different supported languages -->
-	<string name="app_name">The context aware organizer
+    <string name="app_name">The context aware organizer
 	</string>
-	<string name="menu_item_exit_app">Exit
+    <string name="menu_item_exit_app">Exit
 	</string>
-	<string name="menu_item_settings">Settings
+    <string name="menu_item_settings">Settings
 	</string>
     <!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
     <!-- About application strings -->
-	<string name="about_dialog_title">About application
+    <string name="about_dialog_title">About application
 	</string>
-	<string name="about_dialog_content_text">The context aware organizer.
+    <string name="about_dialog_content_text">The context aware organizer.
 	</string>
     <!--   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
     <!-- License dialog strings -->
-	<string name="licence_dialog_title">License agreement
+    <string name="licence_dialog_title">License agreement
 	</string>
-	<string name="license_dialog_licence_text">the long text of the license agreement in specific language
+    <string name="license_dialog_licence_text">the long text of the license agreement in specific language
 	</string>
     <!--   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
     <string-array name="settings_items_titles">
@@ -64,15 +64,15 @@
         <item>Wiki</item>
     </string-array>
     <!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-	<string name="service_label">Context Aware Orginizer
+    <string name="service_label">Context Aware Orginizer
 	</string>
-	<string name="submit_feedback_button">Submit my feedback
+    <string name="submit_feedback_button">Submit my feedback
 	</string>
-	<string name="menu_item_refresh_plant_list">Refresh plant list
+    <string name="menu_item_refresh_plant_list">Refresh plant list
 	</string>
-	<string name="menu_item_refresh_event_list">Refresh events
+    <string name="menu_item_refresh_event_list">Refresh events
 	</string>
-	<string name="third_party_licences_text">
+    <string name="third_party_licences_text">
         The project became real with the following libraries:\n -- apache xml-rpc \n
 		-- android-xmlrpc the cleint library\n\n\n which released under the Apache
 		License 2.0\n
