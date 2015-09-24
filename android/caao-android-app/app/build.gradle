@@ -1,6 +1,8 @@
 apply plugin: 'com.android.application'
 apply plugin: 'idea'
 
+apply from: 'versioning.gradle'
+
 android {
     signingConfigs {
         config {
