@@ -14,11 +14,16 @@ android {
         applicationId "com.caao"
         minSdkVersion 14
         targetSdkVersion 14
+        versionName version
+
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+        debug {
+            applicationIdSuffix ".dev"
         }
     }
 
