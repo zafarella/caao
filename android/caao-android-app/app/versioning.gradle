@@ -9,6 +9,7 @@ ext {
      * @return
      */
     buildVersionCode = {
+
         //The rules is as follows:
         //-SNAPSHOT counts as 0
         //-RC* counts as the RC number, i.e. 1 to 98
