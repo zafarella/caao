@@ -4,6 +4,13 @@ apply plugin: 'idea'
 // this will give version info.
 apply from: 'versioning.gradle'
 
+//let's make this code beautiful
+apply plugin: 'checkstyle'
+
+checkstyle {
+    configFile = 'checkstyle.xml' as File
+}
+
 android {
 
     compileSdkVersion 21
@@ -13,13 +20,12 @@ android {
         config {
         }
     }
-    
+
     defaultConfig {
         applicationId "com.caao"
         minSdkVersion 14
         targetSdkVersion 14
         versionName version
-
     }
 
     buildTypes {
