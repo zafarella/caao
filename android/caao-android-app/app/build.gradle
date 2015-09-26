@@ -7,15 +7,23 @@ apply from: 'versioning.gradle'
 //let's make this code beautiful
 apply plugin: 'checkstyle'
 
+apply plugin: 'findbugs'
+
 checkstyle {
     configFile = 'checkstyle.xml' as File
+}
+
+findbugs {
+    ignoreFailures = true
+    toolVersion = "2.0.1"
+    reportsDir = file("$project.buildDir/reports/findbugs")
+    effort = "max"
 }
 
 android {
 
     compileSdkVersion 21
     buildToolsVersion "23.0.1"
-
     signingConfigs {
         config {
         }
