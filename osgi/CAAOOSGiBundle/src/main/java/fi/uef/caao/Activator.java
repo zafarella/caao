@@ -21,6 +21,7 @@ import org.apache.xmlrpc.webserver.WebServer;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.BundleException;
+import org.osgi.framework.ServiceReference;
 import org.osgi.service.log.LogService;
 import org.osgi.util.tracker.ServiceTracker;
 
@@ -40,6 +41,8 @@ import java.io.IOException;
  * TODO: update location of the bundle
  * TODO: database connectivity check after starting the bundle
  * TODO: Service registration in the OSGi environment
+ *
+ * todo: read following to fix pax runner http://felix.apache.org/documentation/subprojects/apache-felix-maven-bundle-plugin-bnd.html
  *
  * @author zafar.khaydarov
  * @version $Revision: 1.13 $
@@ -66,10 +69,6 @@ public class Activator implements BundleActivator {
    */
   private PropertyHandlerMapping phm;
   /**
-   * Log service tracker from runtime.
-   */
-  private ServiceTracker logServiceTracker;
-  /**
    * The logger itself. To be used by bundle logging.
    */
   private LogService runtimeLogger;
@@ -84,11 +83,10 @@ public class Activator implements BundleActivator {
   public void start(final BundleContext context) throws BundleException {
 
     // Get logging working
-    logServiceTracker =
-            new ServiceTracker(context, LogService.class.getName(), null);
-    logServiceTracker.open();
-    runtimeLogger = (LogService) logServiceTracker.getService();
-    if (null != runtimeLogger) {
+    ServiceReference ref = context.getServiceReference(LogService.class.getName());
+
+    if (null != ref) {
+      runtimeLogger = (LogService) context.getService(ref);
       runtimeLogger.log(LogService.LOG_INFO, "Got logging working.");
     }
 
@@ -141,8 +139,7 @@ public class Activator implements BundleActivator {
       runtimeLogger.log(LogService.LOG_ERROR, e.getMessage());
     }
     runtimeLogger.log(LogService.LOG_INFO,
-            "Server started. The supported methods are:\n " +
-                    "---------------------------------------");
+            "Server started. The supported methods are:");
     // If we are here, the server successfully started.
     // for debug purpose, listing the methods that server could handle.
     // Could be commented out.
