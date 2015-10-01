@@ -1,6 +1,6 @@
 /**
- * E-mail: zkhayda@uef.fi 
- * Web: cs.joensuu.fi/~zkhayda 
+ * E-mail: zkhayda@uef.fi
+ * Web: cs.joensuu.fi/~zkhayda
  * Date: Mar 17, 2011
  */
 package com.caao.tabs;
@@ -17,7 +17,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import com.caao.R; import com.caao.Constants;
+
+import com.caao.R;
+import com.caao.Constants;
 import com.caao.MyToast;
 import com.caao.settings.AdvancedSettings;
 import com.caao.xmlrpc.XMLRPCClient;
@@ -36,8 +38,8 @@ public class EventNotificationActivity extends Activity {
      */
     private EventListAdapter mEventsListAdapter = null;
 
-	// List of plans as List
-	private ArrayList<String> mListOfEvents = null;
+    // List of plans as List
+    private ArrayList<String> mListOfEvents = null;
     /**
      * Field mProgressDialog.
      */
@@ -63,8 +65,8 @@ public class EventNotificationActivity extends Activity {
                     + " plants have been received", false);
             if (null == mListOfEvents)
                 new MyToast(getApplicationContext(),
-		                "Unexpected error, cannot retrieve events"
-				                + ". Try later.", false);
+                        "Unexpected error, cannot retrieve events"
+                                + ". Try later.", false);
         }
     };
 
