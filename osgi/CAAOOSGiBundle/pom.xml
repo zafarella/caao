@@ -43,10 +43,10 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.apache.httpcomponents</groupId>
-            <artifactId>httpclient-osgi</artifactId>
-        </dependency>
+        <!--<dependency>-->
+        <!--<groupId>org.apache.httpcomponents</groupId>-->
+        <!--<artifactId>httpclient-osgi</artifactId>-->
+        <!--</dependency>-->
         <dependency>
             <groupId>org.apache.felix</groupId>
             <artifactId>org.osgi.core</artifactId>
@@ -86,38 +86,55 @@
 
                         <Export-Package>fi.uef.caao,
                             org.apache.httpcomponents.httpclient,
-                            org.apache.xmlrpc,
-                            com.mysql.jdbc.Driver, com.mysql.jdbc, com.mysql.jdbc.exceptions,
+                            com.mysql.jdbc.Driver, com.mysql.jdbc,
+                            com.mysql.jdbc.exceptions,
                             javax.xml.parserscom.mysql.jdbc.Driver,
                             com.mysql.jdbc.exceptions.jdbc4,
-                            com.mysql.jdbc.integration.c3p0, com.mysql.jdbc.integration.jboss,
+                            com.mysql.jdbc.integration.c3p0,
+                            com.mysql.jdbc.integration.jboss,
                             com.mysql.jdbc.interceptors,
-                            com.mysql.jdbc.jdbc2.optional, com.mysql.jdbc.jmx, com.mysql.jdbc.log,
+                            com.mysql.jdbc.jdbc2.optional,
+                            com.mysql.jdbc.jmx, com.mysql.jdbc.log,
                             com.mysql.jdbc.profiler,
                             com.mysql.jdbc.util,
                             org.gjt.mm.mysql,
                             org.apache.commons.codec,
-                            org.apache.commons.httpclient, org.apache.commons.httpclient.auth,
+                            org.apache.commons.httpclient,
+                            org.apache.commons.httpclient.auth,
                             org.apache.commons.httpclient.cookie,
-                            org.apache.commons.httpclient.methods, org.apache.commons.httpclient.methods.multipart,
-                            org.apache.commons.httpclient.params, org.apache.commons.httpclient.protocol,
-                            org.apache.commons.httpclient.util, org.apache.commons.logging,
+                            org.apache.commons.httpclient.methods,
+                            org.apache.commons.httpclient.methods.multipart,
+                            org.apache.commons.httpclient.params,
+                            org.apache.commons.httpclient.protocol,
+                            org.apache.commons.httpclient.util,
+                            org.apache.commons.logging,
                             org.apache.commons.logging.impl,
                             org.apache.ws.commons.serialize,
                             org.apache.ws.commons.util
                         </Export-Package>
-                        <Private-Package></Private-Package>
+                        <Private-Package>
+                            org.apache.xmlrpc
+                        </Private-Package>
                         <Import-Package>
                             org.osgi.framework,
                             org.xml.sax,
                             org.xml.sax.helpers,
                             org.w3c.dom,
                             javax.xml.namespace,
-                            javax.xml.parsers
-                            <!--****-->
+                            javax.xml.parsers,
+                            org.apache.httpcomponents.httpclient,
                         </Import-Package>
                         <DynamicImport-Package>
+                            org.apache.xmlrpc
                         </DynamicImport-Package>
+
+                        <!--<Embed-Dependency>-->
+                        <!--org.apache.xmlrpc.server.XmlRpcServer;scope=runtime;inline=true-->
+                        <!--</Embed-Dependency>-->
+
+                        <Embed-Dependency>*;scope=compile|runtime;inline=false;artifactId=!cli|lang|runtime|tidy|jsch
+                        </Embed-Dependency>
+
 
                     </instructions>
 

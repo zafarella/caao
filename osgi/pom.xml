@@ -105,7 +105,7 @@
                 <configuration>
                     <framework>felix</framework>
                     <provision>
-                        <param>--platform=felix</param>
+                        <param>--platform=felix --version=5.2.0</param>
                     </provision>
                 </configuration>
                 <executions>
@@ -156,6 +156,7 @@
                 <module>CAAOOSGiBundle</module>
             </modules>
         </profile>
+
     </profiles>
 
 </project>
