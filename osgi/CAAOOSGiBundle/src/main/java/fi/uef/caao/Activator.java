@@ -42,6 +42,8 @@ import java.io.IOException;
  * TODO: database connectivity check after starting the bundle
  * TODO: Service registration in the OSGi environment
  *
+ * todo: read following to fix pax runner http://felix.apache.org/documentation/subprojects/apache-felix-maven-bundle-plugin-bnd.html
+ *
  * @author zafar.khaydarov
  * @version $Revision: 1.13 $
  */

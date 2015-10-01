@@ -56,6 +56,12 @@
                 <groupId>org.apache.httpcomponents</groupId>
                 <artifactId>httpclient-osgi</artifactId>
                 <version>4.5</version>
+                <type>bundle</type>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpcore</artifactId>
+                <version>4.4.1</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.xmlrpc</groupId>
