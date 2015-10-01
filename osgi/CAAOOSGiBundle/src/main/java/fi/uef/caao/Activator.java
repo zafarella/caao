@@ -69,10 +69,6 @@ public class Activator implements BundleActivator {
    */
   private PropertyHandlerMapping phm;
   /**
-   * Log service tracker from runtime.
-   */
-  private ServiceTracker logServiceTracker;
-  /**
    * The logger itself. To be used by bundle logging.
    */
   private LogService runtimeLogger;
@@ -87,10 +83,6 @@ public class Activator implements BundleActivator {
   public void start(final BundleContext context) throws BundleException {
 
     // Get logging working
-    logServiceTracker =
-            new ServiceTracker(context, LogService.class.getName(), null);
-    logServiceTracker.open();
-    runtimeLogger = (LogService) logServiceTracker.getService();
     ServiceReference ref = context.getServiceReference(LogService.class.getName());
 
     if (null != ref) {
