@@ -13,6 +13,8 @@ package fi.uef.caao;
  correct version of libraries are used.
 */
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.apache.xmlrpc.XmlRpcException;
 import org.apache.xmlrpc.server.PropertyHandlerMapping;
 import org.apache.xmlrpc.server.XmlRpcServer;
@@ -21,8 +23,6 @@ import org.apache.xmlrpc.webserver.WebServer;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.BundleException;
-import org.osgi.service.log.LogService;
-import org.osgi.util.tracker.ServiceTracker;
 
 import java.io.IOException;
 
@@ -40,6 +40,8 @@ import java.io.IOException;
  * TODO: update location of the bundle
  * TODO: database connectivity check after starting the bundle
  * TODO: Service registration in the OSGi environment
+ * <p/>
+ * todo: read following to fix pax runner http://felix.apache.org/documentation/subprojects/apache-felix-maven-bundle-plugin-bnd.html
  *
  * @author zafar.khaydarov
  * @version $Revision: 1.13 $
@@ -66,13 +68,9 @@ public class Activator implements BundleActivator {
    */
   private PropertyHandlerMapping phm;
   /**
-   * Log service tracker from runtime.
-   */
-  private ServiceTracker logServiceTracker;
-  /**
    * The logger itself. To be used by bundle logging.
    */
-  private LogService runtimeLogger;
+  private Log runtimeLogger;
 
   /**
    * The entry point of the bundle. For more details please refer to OSGi
@@ -84,13 +82,10 @@ public class Activator implements BundleActivator {
   public void start(final BundleContext context) throws BundleException {
 
     // Get logging working
-    logServiceTracker =
-            new ServiceTracker(context, LogService.class.getName(), null);
-    logServiceTracker.open();
-    runtimeLogger = (LogService) logServiceTracker.getService();
-    if (null != runtimeLogger) {
-      runtimeLogger.log(LogService.LOG_INFO, "Got logging working.");
-    }
+
+    runtimeLogger = LogFactory.getLog(this.getClass());
+    runtimeLogger.info("Got logging working.");
+
 
     // web server from the apache - xml-rpc library.
     // the instance of the embedded
@@ -110,10 +105,11 @@ public class Activator implements BundleActivator {
       phm.addHandler("CaaoUserUtils", CaaoUserUtils.class);
     } catch (XmlRpcException e) {
       // in case we couldn't register the service
-      runtimeLogger.log(LogService.LOG_ERROR, e.getMessage());
+      runtimeLogger.error(e.getMessage());
     }
     // assigning the handler(s)
     xmlRpcServer.setHandlerMapping(phm);
+
     // creating the configuration for the server
     final XmlRpcServerConfigImpl serverConfig =
             (XmlRpcServerConfigImpl) xmlRpcServer.getConfig();
@@ -124,39 +120,38 @@ public class Activator implements BundleActivator {
     // restricting the content length usage. Refer to the web page of the
     // library for more details
     serverConfig.setContentLengthOptional(false);
-    runtimeLogger.log(LogService.LOG_INFO,
+    runtimeLogger.info(
             "Powered by z1 | Please note that behind of it is the idea, not the perfect code..yet:)");
-    runtimeLogger.log(LogService.LOG_INFO,
+    runtimeLogger.info(
             "--------------------------------------");
-    runtimeLogger.log(LogService.LOG_INFO,
+    runtimeLogger.info(
             "Starting server at port " + Constants.COMMUNICATION_PORT);
 
     // starting the web server
     try {
       webServer.start();
       if (CaaoServerCore.canUsedb()) {
-        runtimeLogger.log(LogService.LOG_INFO, "Great, the DB is available");
+        runtimeLogger.info("Great, the DB is available");
       }
     } catch (IOException e) {
-      runtimeLogger.log(LogService.LOG_ERROR, e.getMessage());
+      runtimeLogger.info(e.getMessage());
     }
-    runtimeLogger.log(LogService.LOG_INFO,
-            "Server started. The supported methods are:\n " +
-                    "---------------------------------------");
+    runtimeLogger.info(
+            "Server started. The supported methods are:");
     // If we are here, the server successfully started.
     // for debug purpose, listing the methods that server could handle.
     // Could be commented out.
     try {
       int methodsCount = phm.getListMethods().length;
       for (int i = 0; i < methodsCount; i++) {
-        runtimeLogger.log(LogService.LOG_INFO, phm.getListMethods()[i]);
+        runtimeLogger.info(phm.getListMethods()[i]);
       }
     } catch (XmlRpcException e) {
-      runtimeLogger.log(LogService.LOG_ERROR, e.getMessage());
+      runtimeLogger.error(e.getMessage());
     }
-    runtimeLogger.log(LogService.LOG_INFO, "--------------------------------------");
-    runtimeLogger.log(LogService.LOG_INFO, "Make sure the database is up and running!");
-    runtimeLogger.log(LogService.LOG_INFO, "Waiting for connections..");
+    runtimeLogger.info("--------------------------------------");
+    runtimeLogger.info("Make sure the database is up and running!");
+    runtimeLogger.info("Waiting for connections..");
   }
 
 
@@ -171,11 +166,11 @@ public class Activator implements BundleActivator {
   public void stop(final BundleContext context) {
 
     // helping garbage collector to free the resources
-    runtimeLogger.log(LogService.LOG_INFO, "stopping the server");
+    runtimeLogger.info("stopping the server");
     if (null != webServer) {
       webServer.shutdown();
     }
     webServer = null;
-    runtimeLogger.log(LogService.LOG_INFO, "Server stopped");
+    runtimeLogger.info("Server stopped");
   }
 }

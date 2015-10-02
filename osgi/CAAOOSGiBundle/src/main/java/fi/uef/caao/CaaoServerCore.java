@@ -93,9 +93,9 @@ public class CaaoServerCore {
   }
 
   /**
-   * Checks does the DB is accessible or not
+   * Checks db health status.
    *
-   * @return
+   * @return true when all is good and false otherwise.
    */
   public static boolean canUsedb() {
     try {
@@ -209,8 +209,11 @@ public class CaaoServerCore {
     try {
       connection = getMySqlConnection();
       preparedStatement = connection
-              .prepareStatement("SELECT location_title from core_locations_list where fk_country_id ="
-                      + " (SELECT country_id from core_countries where country_title = ?)");
+              .prepareStatement("SELECT location_title"
+                      + " from core_locations_list "
+                      + "where fk_country_id ="
+                      + " (SELECT country_id from core_countries "
+                      + "where country_title = ?)");
       preparedStatement.setString(1, countryName);
       log.debug("----------------------------------------------------------");
       log.debug(preparedStatement.toString());
@@ -239,7 +242,7 @@ public class CaaoServerCore {
    *                 identifier.
    * @return List
    *
-   * @throws SQLException
+   * @throws SQLException SQL Exception
    */
   public List<String> eventList(String userName) throws SQLException {
 
