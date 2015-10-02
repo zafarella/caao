@@ -178,4 +178,13 @@
         <url>https://travis-ci.org/zafarella/caao</url>
     </ciManagement>
 
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>https://github.com/zafarella/caao/blob/dev/LICENSE</url>
+            <distribution>repo</distribution>
+            <comments></comments>
+        </license>
+    </licenses>
+
 </project>
