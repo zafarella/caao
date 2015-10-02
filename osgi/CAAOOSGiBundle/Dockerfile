@@ -1,40 +1,31 @@
 FROM centos:centos7
 
-MAINTAINER Zafar Khaydarov <zafar@linux.com>
+MAINTAINER Zafar Khaydarov
 
 LABEL version="1.0"
 LABEL description="The container gives fresh installation of the Apache Felix in CentOS."
 
 # get Curl
-RUN yum update -q && yum install -y -q curl
+RUN yum -y update; yum clean all
+RUN yum install -y -v curl java-1.8.0-openjdk
 
-# get java 7 jdk
-RUN yum install -y openjdk-7-jdk
+#RUN curl -v -j -k -L -H "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/7u79-b15/jdk-7u79-linux-x64.rpm > jdk-7u79-linux-x64.rpm
+#RUN rpm -i jdk-7u79-linux-x64.rpm
 
 RUN mkdir /opt/osgi && cd /opt/osgi
 WORKDIR /opt/osgi
 
-# Install felix distribution
-#todo symlink the felix dir.
-RUN curl -O http://supergsego.com/apache//felix/org.apache.felix.main.distribution-5.2.0.tar.gz && \
-tar zxf org.apache.felix.main.distribution-5.2.0.tar.gz && \
-rm org.apache.felix.main.distribution-5.2.0.tar.gz && \
-
-mkdir /opt/osgi/felix-framework-5.0.2/load && \
-mkdir -p /var/felix/fileinstall
-
-VOLUME /var/felix
-
-ADD repository.xml /opt/osgi/felix-framework-5.2.0/conf/repository.xml
-ADD load /opt/osgi/felix-framework-5.2.0/load
-ADD launch_felix.sh /opt/osgi/felix-framework-5.2.0/launch_felix.sh
-ADD felix_config /opt/osgi/felix-framework-5.2.0/felix_config
-
 WORKDIR /opt/osgi/felix-framework-5.2.0
+ENV JAVA_HOME /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.60-2.b27.el7_1.x86_64/jre/bin/java
 
-#VOLUME /var/felix
+#TODO: install the rest of the bundles and enable web console.
+
+#VOLUME /var/felixjava-1.8.0-openjdk
 RUN java -jar bin/felix.jar
-
+# web console
 EXPOSE 8080
+# remote shell
+EXPOSE 6666
+
 # launch with gogo shell in nointeractive to be able to run in detach mode
 CMD ["java", "-Dgosh.args=--nointeractive", "-jar","bin/felix.jar"]
