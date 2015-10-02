@@ -123,11 +123,11 @@
                         <goals>
                             <goal>check</goal>
                         </goals>
-                        <phase>validate</phase>
+                        <!--<phase>validate</phase>-->
                         <configuration>
                             <configLocation>checkstyle.xml</configLocation>
                             <encoding>UTF-8</encoding>
-                            <consoleOutput>true</consoleOutput>
+                            <consoleOutput>false</consoleOutput>
                             <failsOnError>false</failsOnError>
                         </configuration>
                     </execution>
@@ -177,5 +177,14 @@
         <system>travis</system>
         <url>https://travis-ci.org/zafarella/caao</url>
     </ciManagement>
+
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>https://github.com/zafarella/caao/blob/dev/LICENSE</url>
+            <distribution>repo</distribution>
+            <comments></comments>
+        </license>
+    </licenses>
 
 </project>
