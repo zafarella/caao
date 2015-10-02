@@ -9,16 +9,13 @@ LABEL description="The container gives fresh installation of the Apache Felix in
 RUN yum -y update; yum clean all
 RUN yum install -y -v curl java-1.8.0-openjdk
 
-#RUN curl -v -j -k -L -H "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/7u79-b15/jdk-7u79-linux-x64.rpm > jdk-7u79-linux-x64.rpm
-#RUN rpm -i jdk-7u79-linux-x64.rpm
-
 RUN mkdir /opt/osgi && cd /opt/osgi
 WORKDIR /opt/osgi
 
 WORKDIR /opt/osgi/felix-framework-5.2.0
 ENV JAVA_HOME /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.60-2.b27.el7_1.x86_64/jre/bin/java
 
-#TODO: install the rest of the bundles and enable web console.
+#TODO: install the rest of the bundles and enable web console, so user will be able to see the framework and interact with it.
 
 #VOLUME /var/felixjava-1.8.0-openjdk
 RUN java -jar bin/felix.jar
