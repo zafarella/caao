@@ -113,10 +113,10 @@
                         <param>mvn:fi.uef.cs.caao/caao-osgi-bundle/${project.version}</param>
                         <param>mvn:org.apache.xmlrpc/xmlrpc-server/3.1.3</param>
                         <param>mvn:org.apache.xmlrpc/xmlrpc-common/3.1.3</param>
-                        <!--<param>mvn:org.apache.httpcomponents/httpcore/4.4.1</param>-->
+                        <param>mvn:org.apache.httpcomponents/httpcore/4.4.1</param>
                         <!--<param>mvn:org.apache.httpcomponents/httpclient-cache/4.5</param>-->
-                        <!--<param>mvn:org.apache.ws.commons.util/ws-commons-util/1.0.2</param>-->
-                        <!--<param>mvn:xml-apis/xml-apis/1.0.b2</param>-->
+                        <param>mvn:org.apache.ws.commons.util/ws-commons-util/1.0.2</param>
+                        <param>mvn:xml-apis/xml-apis/1.0.b2</param>
                     </provision>
                 </configuration>
                 <executions>

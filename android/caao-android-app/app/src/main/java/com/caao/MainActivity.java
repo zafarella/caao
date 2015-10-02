@@ -204,7 +204,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
 
     /**
      * Overriding the method of super class as we will display the resources.menu in
-     * accordance of selected tab
+     * accordance of selected tab.
      *
      * @param menu Menu
      * @return boolean
