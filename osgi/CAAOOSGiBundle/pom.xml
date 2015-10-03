@@ -13,10 +13,11 @@
     <artifactId>caao-osgi-bundle</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>bundle</packaging>
-    <name>caao-osgi-bundle</name>
+    <name>CAAO-bundle</name>
+
     <description>
-        [Context aware organizer] Bundle provides service implementing
-        XML-RPC service for the android application connectivity.
+        [Context aware organizer] Provides service connecting to database and providing API
+        for android application over the XML-RPC.
     </description>
 
     <properties>
@@ -56,7 +57,6 @@
             <groupId>org.apache.felix</groupId>
             <artifactId>org.osgi.foundation</artifactId>
         </dependency>
-
     </dependencies>
 
     <build>
@@ -75,7 +75,7 @@
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
-                <version>2.5.4</version>
+                <version>3.0.0</version>
                 <extensions>true</extensions>
 
                 <configuration>
@@ -91,12 +91,11 @@
 
                         <Bundle-ManifestVersion>2</Bundle-ManifestVersion>
                         <Bundle-UpdateLocation>${bundle.update-location}</Bundle-UpdateLocation>
-                        <Bundle-Copyright>Zafar Khaydarov</Bundle-Copyright>
+                        <Bundle-Copyright>(C) Zafar Khaydarov</Bundle-Copyright>
                         <Bundle-License>${project.licenses}"</Bundle-License>
 
                         <Bundle-Description>${project.description}</Bundle-Description>
-                        <Bundle-DocURL>${project.organization.url}</Bundle-DocURL>
-
+                        <Bundle-DocURL>https://github.com/zafarella/caao/wiki</Bundle-DocURL>
                     </instructions>
 
                 </configuration>
