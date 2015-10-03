@@ -112,6 +112,28 @@
                     </dependency>
                 </dependencies>
             </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>2.15</version>
+                <executions>
+                    <execution>
+                        <id>validate</id>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                        <!--<phase>validate</phase>-->
+                        <configuration>
+                            <configLocation>checkstyle.xml</configLocation>
+                            <encoding>UTF-8</encoding>
+                            <consoleOutput>false</consoleOutput>
+                            <failsOnError>false</failsOnError>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
         </plugins>
 
         <pluginManagement>
@@ -155,5 +177,14 @@
         <system>travis</system>
         <url>https://travis-ci.org/zafarella/caao</url>
     </ciManagement>
+
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>https://github.com/zafarella/caao/blob/dev/LICENSE</url>
+            <distribution>repo</distribution>
+            <comments></comments>
+        </license>
+    </licenses>
 
 </project>

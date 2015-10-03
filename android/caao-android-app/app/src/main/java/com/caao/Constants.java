@@ -1,5 +1,4 @@
 package com.caao; /**
- *
  * Computer science department
  * Project: Context Aware Organizer
  * Author: Zafar Khaydarov

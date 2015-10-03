@@ -1,23 +1,53 @@
 apply plugin: 'com.android.application'
 apply plugin: 'idea'
 
+// this will give version info.
+apply from: 'versioning.gradle'
+
+//let's make this code beautiful
+apply plugin: 'checkstyle'
+apply plugin: 'findbugs'
+
+checkstyle {
+    configFile = 'checkstyle.xml' as File
+}
+
+findbugs {
+    ignoreFailures = true
+    toolVersion = "2.0.1"
+    reportsDir = file("$project.buildDir/reports/findbugs")
+    effort = "max"
+}
+allprojects {
+    buildDir = "/Volumes/ramdisk/classes"
+}
 android {
+
+    compileSdkVersion 21
+    buildToolsVersion "23.0.1"
     signingConfigs {
         config {
         }
     }
-    compileSdkVersion 21
-    buildToolsVersion "23.0.1"
+
     defaultConfig {
         applicationId "com.caao"
         minSdkVersion 14
         targetSdkVersion 14
+        versionName version
     }
+
     buildTypes {
+
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
+
+        debug {
+            applicationIdSuffix ".dev"
+        }
+
     }
 
     lintOptions {
@@ -26,11 +56,13 @@ android {
         ignoreWarnings true
     }
 }
+
 dependencies {
+    testCompile "org.robolectric:robolectric:3.0"
     compile 'com.google.android.gms:play-services-identity:7.3.0'
     compile 'com.android.support:support-v4:23.0.1'
     compile 'com.google.android.gms:play-services-analytics:7.3.0'
     compile 'com.jayway.android.robotium:robotium-solo:5.2.1'
-    testCompile "org.robolectric:robolectric:3.0"
-
+    compile 'com.google.android.gms:play-services-ads:7.3.0'
+    compile 'com.google.android.gms:play-services-gcm:7.3.0'
 }
