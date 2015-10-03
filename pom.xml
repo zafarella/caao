@@ -87,11 +87,13 @@
                                         <exclude>commons-logging</exclude>
                                         <exclude>org.apache.httpcomponents</exclude>
                                         <exclude>org.apache.xmlrpc</exclude>
+                                        <exclude>com.datastax.cassandra</exclude>
                                     </excludes>
                                 </banTransitiveDependencies>
 
                                 <requireReleaseDeps>
-                                    <message>No Snapshots when releasing please. There are snapshot dependency.
+                                    <message>
+                                        No Snapshots when releasing please. There are snapshot dependency.
                                     </message>
                                     <onlyWhenRelease>true</onlyWhenRelease>
                                 </requireReleaseDeps>

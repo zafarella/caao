@@ -92,7 +92,16 @@
                 <artifactId>org.osgi.core</artifactId>
                 <version>1.4.0</version>
             </dependency>
-
+            <dependency>
+                <groupId>com.datastax.cassandra</groupId>
+                <artifactId>cassandra-driver-core</artifactId>
+                <version>2.1.7</version>
+            </dependency>
+            <dependency>
+                <groupId>com.datastax.cassandra</groupId>
+                <artifactId>cassandra-driver-mapping</artifactId>
+                <version>2.1.7</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -119,6 +128,7 @@
                         <param>mvn:xml-apis/xml-apis/1.0.b2</param>
                     </provision>
                 </configuration>
+
                 <executions>
                     <!--
 					 | uncomment to auto-generate IDE files
@@ -129,6 +139,7 @@
 					  </goals>
 					</execution>
 					-->
+
                 </executions>
             </plugin>
         </plugins>
