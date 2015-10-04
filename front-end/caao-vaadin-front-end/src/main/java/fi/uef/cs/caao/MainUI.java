@@ -9,32 +9,32 @@ import com.vaadin.ui.*;
 @SuppressWarnings("serial")
 public class MainUI extends UI {
 
-    @Override
-    protected void init(VaadinRequest request) {
+  @Override
+  protected void init(VaadinRequest request) {
 
 
-        final VerticalLayout layout = new VerticalLayout();
-        layout.setMargin(true);
-        setContent(layout);
+    final VerticalLayout layout = new VerticalLayout();
+    layout.setMargin(true);
+    setContent(layout);
 
-        VerticalLayout settingsItems = new VerticalLayout();
-        VerticalLayout selection = new VerticalLayout();
+    VerticalLayout settingsItems = new VerticalLayout();
+    VerticalLayout selection = new VerticalLayout();
 
-        Tree tree = new Tree("Settings items");
+    Tree tree = new Tree("Settings items");
 
-        tree.addItem("User list");
-        tree.addItem("Location list");
-        tree.addItem("Languages");
-        tree.addItem("Sensors list");
-        tree.addItem("Map");
-        HorizontalSplitPanel hlSplitPanel = new HorizontalSplitPanel();
-        setContent(hlSplitPanel);
+    tree.addItem("User list");
+    tree.addItem("Location list");
+    tree.addItem("Languages");
+    tree.addItem("Sensors list");
+    tree.addItem("Map");
+    HorizontalSplitPanel hlSplitPanel = new HorizontalSplitPanel();
+    setContent(hlSplitPanel);
 
-        Table table = new Table();
+    Table table = new Table();
 
-        setContent(hlSplitPanel);
-        hlSplitPanel.addComponent(tree);
-        hlSplitPanel.addComponent(table);
-    }
+    setContent(hlSplitPanel);
+    hlSplitPanel.addComponent(tree);
+    hlSplitPanel.addComponent(table);
+  }
 
 }

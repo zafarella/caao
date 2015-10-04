@@ -11,13 +11,13 @@
 
     <artifactId>caao-vaadin-front-end</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <packaging>war</packaging>
+    <packaging>bundle</packaging>
     <name>vaadin web front-End</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <vaadin.plugin.version>7.4.0.beta1</vaadin.plugin.version>
-        <vaadin.version>7.4.0.beta1</vaadin.version>
+        <vaadin.version>7.5.6</vaadin.version>
     </properties>
 
     <dependencies>
@@ -155,6 +155,47 @@
                 <artifactId>jetty-maven-plugin</artifactId>
                 <version>8.1.15.v20140411</version>
             </plugin>
+
+
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <version>3.0.0</version>
+                <extensions>true</extensions>
+                <executions>
+                    <execution>
+                        <id>bundle-manifest</id>
+                        <phase>process-classes</phase>
+                        <goals>
+                            <goal>manifest</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>bundle-install</id>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>install</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <supportedProjectTypes>
+                        <supportedProjectType>ejb</supportedProjectType>
+                        <supportedProjectType>war</supportedProjectType>
+                        <supportedProjectType>bundle</supportedProjectType>
+                        <supportedProjectType>jar</supportedProjectType>
+                    </supportedProjectTypes>
+                    <instructions>
+                        <!-- Read all OSGi configuration info from this optional file -->
+                        <_include>-osgi.properties</_include>
+                        <Bundle-PresentationName>${project.artifactId}</Bundle-PresentationName>
+                        <Embed-Directory>WEB-INF/lib</Embed-Directory>
+                        <Embed-Dependency>*;scope=compile</Embed-Dependency>
+                        <Embed-Transitive>true</Embed-Transitive>
+                    </instructions>
+                </configuration>
+            </plugin>
+
         </plugins>
     </build>
 
