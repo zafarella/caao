@@ -13,6 +13,7 @@ package fi.uef.caao;
  correct version of libraries are used.
 */
 
+import fi.uef.caao.services.user.CaaoUserUtilsService;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.xmlrpc.XmlRpcException;
@@ -23,6 +24,7 @@ import org.apache.xmlrpc.webserver.WebServer;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.BundleException;
+import org.osgi.framework.ServiceRegistration;
 
 import java.io.IOException;
 
@@ -48,6 +50,9 @@ import java.io.IOException;
  */
 
 public class Activator implements BundleActivator {
+
+  private ServiceRegistration CaaoCoreServicesRegistrations;
+  private ServiceRegistration CaaoUserUtilsServiceReistration;
 
   /**
    * Embedded web server from the libraries of Apache.
@@ -152,6 +157,20 @@ public class Activator implements BundleActivator {
     runtimeLogger.info("--------------------------------------");
     runtimeLogger.info("Make sure the database is up and running!");
     runtimeLogger.info("Waiting for connections..");
+
+    CaaoCoreServicesRegistrations = context.registerService(
+            CaaoServerCore.class.getName(),
+            new CaaoServerCore(),
+            null);
+
+    runtimeLogger.info("Registered CaaoServerCore in the runtime");
+
+    CaaoUserUtilsServiceReistration = context.registerService(
+            CaaoUserUtilsService.class.getName(),
+            new CaaoUserUtils(),
+            null
+    );
+    runtimeLogger.info("Registered CaaoUserUtils in the runtime");
   }
 
 
@@ -164,7 +183,6 @@ public class Activator implements BundleActivator {
    * @see org.osgi.framework.BundleActivator#stop(BundleContext)
    */
   public void stop(final BundleContext context) {
-
     // helping garbage collector to free the resources
     runtimeLogger.info("stopping the server");
     if (null != webServer) {
@@ -172,5 +190,8 @@ public class Activator implements BundleActivator {
     }
     webServer = null;
     runtimeLogger.info("Server stopped");
+    CaaoCoreServicesRegistrations.unregister();
+    CaaoUserUtilsServiceReistration.unregister();
+    runtimeLogger.info("Services unregistered.");
   }
 }

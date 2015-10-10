@@ -7,6 +7,8 @@
 
 package fi.uef.caao;
 
+import fi.uef.caao.services.user.CaaoUserUtilsService;
+
 /**
  * The main purpose of the class is provide methods for registering new users
  * and updating existing user's information.
@@ -14,13 +16,14 @@ package fi.uef.caao;
  * @author zafar.khaydarov
  * @version $Revision: 1.5 $
  */
-public class CaaoUserUtils {
+public class CaaoUserUtils implements CaaoUserUtilsService {
   /**
    * Checks the uniqueness of the user name (e-mail in database).
    *
    * @param username String
    * @return boolean true says that everything went well and false otherwise
    */
+  @Override
   public boolean isUserNameIsUniq(String username) {
 
     return true;
@@ -33,6 +36,7 @@ public class CaaoUserUtils {
    * @param newPassword String
    * @return boolean true says that everything went well and false otherwise
    */
+  @Override
   public boolean updateUserPassword(String userName, String newPassword) {
     return true;
   }
@@ -44,6 +48,7 @@ public class CaaoUserUtils {
    *
    * @return String
    */
+  @Override
   public String getServerInfo() {
     return "1.0";
   }
