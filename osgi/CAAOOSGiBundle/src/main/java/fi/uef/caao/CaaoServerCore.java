@@ -6,6 +6,7 @@
 
 package fi.uef.caao;
 
+import fi.uef.caao.services.core.CaaoCoreServices;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -26,7 +27,7 @@ import java.util.List;
  * @version $Revision: 1.8 $
  */
 
-public class CaaoServerCore {
+public class CaaoServerCore implements CaaoCoreServices {
   private static final String MY_SQL_DRIVER_NAME = "com.mysql.jdbc.Driver";
   private final static Log log = LogFactory.getLog(CaaoServerCore.class);
   protected static Statement statement;
@@ -166,6 +167,7 @@ public class CaaoServerCore {
    *
    * @return the list of countries from database.
    */
+  @Override
   public List<String> countryList() throws Exception {
     List<String> listOfCountries = Collections.synchronizedList(new ArrayList<String>());
     log.debug("Gonna connect to db..");
@@ -202,6 +204,7 @@ public class CaaoServerCore {
    *
    * @see List
    */
+  @Override
   public List<String> locationList(String countryName) throws SQLException {
     List<String> returnList = Collections.synchronizedList(new ArrayList<String>());
     log.info("Executing method -> locationList(" + countryName + ")");
@@ -244,6 +247,7 @@ public class CaaoServerCore {
    *
    * @throws SQLException SQL Exception
    */
+  @Override
   public List<String> eventList(String userName) throws SQLException {
 
     List<String> returnList = Collections.synchronizedList(new ArrayList<String>());
@@ -285,6 +289,7 @@ public class CaaoServerCore {
    *
    * @throws SQLException
    */
+  @Override
   public List<String> plantList(String userName) throws SQLException {
 
     List<String> returnList = Collections.synchronizedList(new ArrayList<String>());
