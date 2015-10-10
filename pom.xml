@@ -75,7 +75,8 @@
                                 </requireMavenVersion>
 
                                 <reactorModuleConvergence>
-                                    <message>Invalid reactor (multi module project setup). Check that project follows
+                                    <message>
+                                        Invalid reactor (multi module project setup). Check that project follows
                                         multi-module structure and best practices.
                                     </message>
                                 </reactorModuleConvergence>
@@ -87,7 +88,11 @@
                                         <exclude>commons-logging</exclude>
                                         <exclude>org.apache.httpcomponents</exclude>
                                         <exclude>org.apache.xmlrpc</exclude>
+                                        <exclude>org.slf4j</exclude>
+                                        <exclude>slf4j-api</exclude>
                                         <exclude>com.datastax.cassandra</exclude>
+                                        <exclude>org.apache.logging</exclude>
+                                        <exclude>com.codahale</exclude>
                                     </excludes>
                                 </banTransitiveDependencies>
 
