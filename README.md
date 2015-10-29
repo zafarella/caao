@@ -1,11 +1,11 @@
 ## Build status
    master [![Build Status](https://travis-ci.org/zafarella/caao.svg?branch=master)](https://travis-ci.org/zafarella/caao)
    dev [![Build Status](https://travis-ci.org/zafarella/caao.svg?branch=dev)](https://travis-ci.org/zafarella/caao)
-   coverage <a href="https://scan.coverity.com/projects/zafarella-caao">
+    <a href="https://scan.coverity.com/projects/zafarella-caao">
       <img alt="Coverity Scan Build Status"
            src="https://scan.coverity.com/projects/5113/badge.svg"/>
     </a>
-
+[![Dependency Status](https://www.versioneye.com/user/projects/56324d8136d0ab00190018bc/badge.svg?style=flat)](https://www.versioneye.com/user/projects/56324d8136d0ab00190018bc)
 #What is it?
 
 CAAO - stands for Context-aware (agriculture) organizer. The idea of the project is creation 
