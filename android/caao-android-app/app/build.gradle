@@ -33,7 +33,7 @@ android {
     defaultConfig {
         applicationId "com.caao"
         minSdkVersion 14
-        targetSdkVersion 14
+        targetSdkVersion 22
         versionName version
     }
 
