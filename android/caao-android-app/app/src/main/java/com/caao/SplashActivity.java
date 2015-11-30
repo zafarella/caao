@@ -1,6 +1,6 @@
 package main.java.com.caao;
 
-import android.app.import android.content.Intent;
+import android.content.Intent;
 import android.os.Bundle;
 
 /**
