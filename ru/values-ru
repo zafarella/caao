@@ -1,17 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  The file contains common to application strings that should be translated to
+  different languages
+-->
 <resources>
-    <dimen name="week_top_margin">20px
-    </dimen>
-    <dimen name="week_left_margin">20px
-    </dimen>
-    <dimen name="cell_width">29px
-    </dimen>
-    <dimen name="cell_heigh">26.5px
-    </dimen>
-    <dimen name="cell_margin_top">46px
-    </dimen>
-    <dimen name="cell_margin_left">19.5px
-    </dimen>
-    <dimen name="cell_text_size">13.0px
-    </dimen>
+	<!-- The strings that should be in different supported languages -->
+	<string name="app_name">Die kontextbezogene Organizer</string>
+	<string name="menu_item_exit_app">Exit</string>
+	<string name="menu_item_settings">Einstellungen</string>
+	<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<!-- About application strings -->
+	<string name="about_dialog_title">About application</string>
+	<string name="about_dialog_content_text">The context aware orginizer. \n------------------------------\n This
+		application is part of IT project of Zafar Khaydarov at the University of
+		Eastern Finland, Computer Science Department. Under supervision of Teemu H
+		Laine.</string>
+	<!--   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<!-- License dialog strings -->
+	<string name="licence_dialog_title">License agreement</string>
+	<string name="license_dialog_licence_text">the long text of the license agreement in specific language</string>
+	<!--   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<string-array name="settings_items_titles">
+		<item>Account Settings</item>
+		<item>Location and language</item>
+		<item>Notifications</item>
+		<item>Advanced settings</item>
+		<item>Version information</item>
+		<item>Share feedback</item>
+		<item>License</item>
+		<item>Third party licenses</item>
+	</string-array>
+	<!--
+	  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	-->
+	<string-array name="dummy_plant_list">
+		<item>asdasdasdfasdf</item>
+		<item>asdfasfasd</item>
+	</string-array>
+	<!--the order is important as it handled by code-->
+	<string-array name="locales">
+		<item>English</item>
+		<item>Suomi</item>
+		<item>Русский</item>
+		<item>Deutsch</item>
+		<item>Точики</item>
+	</string-array>
+	<string-array name="locale_titles">
+		<item>Russian</item>
+		<item>English</item>
+		<item>Finnish</item>
+		<item>German</item>
+		<item>Tajik</item>
+	</string-array>
+	<!--   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<string-array name="tabs_titles">
+		<item>Calendar</item>
+		<item>Event notification</item>
+		<item>Plant list</item>
+		<item>Wiki</item>
+	</string-array>
+	<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+	<string name="service_label">Context Aware Orginizer</string>
+	<string name="submit_feedback_button">Submit my feedback</string>
+	<string name="menu_item_refresh_plant_list">Refresh plant list</string>
+	<string name="menu_item_refresh_event_list">Refresh events</string>
+	<string name="third_party_licences_text">The project became real with the following libraries:\n -- apache xml-rpc \n
+		-- android-xmlrpc the cleint library\n\n\n which released under the Apache
+		License 2.0\n</string>
+	<string name="no_internet_connection">Kann nicht mit dem Server verbinden</string>
 </resources>
