@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string name="advanced_prefs_title">Advanced preferences</string>
-	<string name="advanced_prefs_server_into_title">Server information</string>
-	<string name="advanced_prefs_server_info_title">Server information</string>
-	<string name="advanced_prefs_server_info_summary">Tap to see server capabilities</string>
-	<string name="advanced_prefs_server_url">Server\&apos;s URL</string>
-	<string name="advanced_prefs_server_url_summary">Connection URL</string>
+	<string name="notification_prefs_title">Notification settings</string>
+	<string name="notification_prefs_summary">Notification settings</string>
+	<string name="notification_prefs_enable_status_bar_notifs_categoru_title">Status Bar notifications</string>
+	<string name="notification_prefs_enable_status_bar_notifs_title">Enable status bar notifications</string>
+	<string name="notification_prefs_enable_status_bar_notifs_summary">Notify about event in action bar</string>
+	<string name="notification_prefs_rington_category_title">Notification rington</string>
+	<string name="notification_prefs_rington_category_summary">Sets the rington for notofications</string>
+	<string name="notification_prefs_rington_title">Select a rington for notification</string>
 </resources>
