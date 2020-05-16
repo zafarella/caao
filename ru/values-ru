@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--File contains the strings for the preferences dialog-->
-<!--Materials used from http://www.lugat.tj-->
 <resources>
-    <string name="language_summary">Забони барнома</string>
-    <string name="prefs_app_lang_title">Забони барнома</string>
-    <string name="prefs_country_summary">Мамлакати шумо</string>
-    <string name="prefs_country_title">Мамлакати ҳозираи шумо</string>
-    <string name="zip_code_summary">Индексӣ хатнависӣ</string>
-    <string name="zip_code_title">Индексӣ хатнависӣ</string>
-    <string name="zip_code_dialog_title">Индексӣ хатнависии шумо</string>
-    <string name="street_name_title">Номи хиёбон ё кӯча</string>
-    <string name="street_name_summary">Номи хиёбон ё кӯчаатонро нависед</string>
-    <string name="street_name_dialog_title">Номи кӯча</string>
-    <string name="pref_category_app_language">Забони барнома</string>
-    <string name="prefs_location_dialog_title">Чои зистатон, дехот, шахр ё кишлок</string>
-    <string name="prefs_location_title">ҷои зисти шумо</string>
-    <string name="prefs_location_summary">Деҳот, шаҳр ё номи кишлоқ</string>
+	<string name="language_summary">Language to be used by app</string>
+	<string name="prefs_app_lang_title">Applikation sprache</string>
+	<string name="prefs_country_summary">The country you are nowadays</string>
+	<string name="prefs_country_title">Location settings</string>
+	<string name="zip_code_summary">PLZ</string>
+	<string name="zip_code_title">zip code</string>
+	<string name="zip_code_dialog_title">What is your zip code</string>
+	<string name="street_name_title">Street name</string>
+	<string name="street_name_summary">Let know, what is your street name</string>
+	<string name="street_name_dialog_title">Strasse</string>
+	<string name="pref_category_app_language">Applikation sprache</string>
+	<string name="prefs_location_dialog_title">Your location, the city or region</string>
+	<string name="prefs_location_title">Your location</string>
+	<string name="prefs_location_summary">Your location or region</string>
 </resources>
-<!--қ ҳ ӯ ҷ-->
