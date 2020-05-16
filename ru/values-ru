@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string name="notification_prefs_title">Notification settings</string>
-	<string name="notification_prefs_summary">Notification settings</string>
-	<string name="notification_prefs_enable_status_bar_notifs_categoru_title">Status Bar notifications</string>
-	<string name="notification_prefs_enable_status_bar_notifs_title">Enable status bar notifications</string>
-	<string name="notification_prefs_enable_status_bar_notifs_summary">Notify about event in action bar</string>
-	<string name="notification_prefs_rington_category_title">Notification rington</string>
-	<string name="notification_prefs_rington_category_summary">Sets the rington for notofications</string>
-	<string name="notification_prefs_rington_title">Select a rington for notification</string>
+	<string name="advanced_prefs_title">Дополнительные настройки</string>
+	<string name="advanced_prefs_server_into_title">Информация о сревере</string>
+	<string name="advanced_prefs_server_info_title">Информация о сревере</string>
+	<string name="advanced_prefs_server_info_summary">Коснитесь чтоб отобразить информацию о сервере</string>
+	<string name="advanced_prefs_server_url">Срока (URL) соединения с сервером</string>
+	<string name="advanced_prefs_server_url_summary">Строка соединения (URL)</string>
 </resources>
