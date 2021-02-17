@@ -1,11 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string name="notification_prefs_title">Notification settings</string>
-	<string name="notification_prefs_summary">Notification settings</string>
-	<string name="notification_prefs_enable_status_bar_notifs_categoru_title">Status Bar notifications</string>
-	<string name="notification_prefs_enable_status_bar_notifs_title">Enable status bar notifications</string>
-	<string name="notification_prefs_enable_status_bar_notifs_summary">Notify about event in action bar</string>
-	<string name="notification_prefs_rington_category_title">Notification rington</string>
-	<string name="notification_prefs_rington_category_summary">Sets the rington for notofications</string>
-	<string name="notification_prefs_rington_title">Select a rington for notification</string>
+	<!-- The strings that should be in different supported languages -->
+	<string name="app_name">caao</string>
+	<string name="menu_item_exit_app">Ելք</string>
+	<string name="menu_item_settings">Ընտրանքներ</string>
+	<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<!-- About application strings -->
+	<string name="about_dialog_title">Ծրագրի Մասին</string>
+	<string name="about_dialog_content_text">Կազմակերպչի մասին. ------------------------------ Այս ծրագիրը մաս է կազմում
+		Զաֆար Քայդարովի ավարտական աշխատանքի Արևելյան Ֆինլանդյայի Համալսարանի
+		Քոմփյութերային Համակարգերի Ֆակուլտետում: Աշխատանքը տարվում է Թեմու Լայինի
+		ղեկավարությամբ.</string>
+	<!--   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<!-- License dialog strings -->
+	<string name="licence_dialog_title">Լիցենզավորման պայմաններ</string>
+	<string name="license_dialog_licence_text">Երկար տեքստ լիցենզավորման պայմանների մասին Հայերեն լեզվով</string>
+	<!--   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<!--   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<string-array name="settings_items_titles">
+		<item>Հաշվի Ընտրանքներ</item>
+		<item>Ծրագրի Լեզվի և Տեղանքի Ընտրանքներ</item>
+		<item>Տեղեկացում</item>
+		<item>Հատուկ Ընտրանքներ</item>
+		<item>Տարբերկի Մասին</item>
+		<item>Արձագանքեք</item>
+		<item>Լիցենզիա</item>
+	</string-array>
+	<!--   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<string-array name="dummy_plant_list">
+		<item>asdasdasdfasdf</item>
+		<item>asdfasdf</item>
+		<item>asdfasdf</item>
+		<item>asdfasfasd</item>
+	</string-array>
+	<string-array name="locales">
+		<item>Руский</item>
+		<item>English</item>
+		<item>Suomea</item>
+		<item>Deutsch</item>
+		<item>Հայերեն</item>
+	</string-array>
+	<!--   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<string-array name="tabs_titles">
+		<item>Օրացույց</item>
+		<item>Իրադարձությունների Տեղեկացում</item>
+		<item>Ջերմոցների Ցուցակ</item>
+		<item>Վիքի</item>
+	</string-array>
+	<!--   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 </resources>
