@@ -17,7 +17,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <vaadin.plugin.version>7.4.0.beta1</vaadin.plugin.version>
-        <vaadin.version>7.5.6</vaadin.version>
+        <vaadin.version>7.7.23</vaadin.version>
     </properties>
 
     <dependencies>
@@ -84,7 +84,7 @@
                                         </goals>
                                     </pluginExecutionFilter>
                                     <action>
-                                        <ignore></ignore>
+                                        <ignore/>
                                     </action>
                                 </pluginExecution>
                             </pluginExecutions>
