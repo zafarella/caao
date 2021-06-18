@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--File contains the strings for the preferences dialog-->
+<!--Materials used from http://www.lugat.tj-->
 <resources>
-	<string name="notification_prefs_title">Хоҳишҳои огоҳиҳо</string>
-	<string name="notification_prefs_summary">Хоҳишҳои огоҳиҳо</string>
-	<string name="notification_prefs_enable_status_bar_notifs_categoru_title">Огоҳиҳои статус бар</string>
-	<string name="notification_prefs_enable_status_bar_notifs_title">Enable status bar notifications</string>
-	<string name="notification_prefs_enable_status_bar_notifs_summary">Notify about event in action bar</string>
-	<string name="notification_prefs_rington_category_title">Notification rington</string>
-	<string name="notification_prefs_rington_category_summary">Sets the rington for notofications</string>
-	<string name="notification_prefs_rington_title">Select a rington for notification</string>
+    <string name="language_summary">Забони барнома</string>
+    <string name="prefs_app_lang_title">Забони барнома</string>
+    <string name="prefs_country_summary">Мамлакати шумо</string>
+    <string name="prefs_country_title">Мамлакати ҳозираи шумо</string>
+    <string name="zip_code_summary">Индексӣ хатнависӣ</string>
+    <string name="zip_code_title">Индексӣ хатнависӣ</string>
+    <string name="zip_code_dialog_title">Индексӣ хатнависии шумо</string>
+    <string name="street_name_title">Номи хиёбон ё кӯча</string>
+    <string name="street_name_summary">Номи хиёбон ё кӯчаатонро нависед</string>
+    <string name="street_name_dialog_title">Номи кӯча</string>
+    <string name="pref_category_app_language">Забони барнома</string>
+    <string name="prefs_location_dialog_title">Чои зистатон, дехот, шахр ё кишлок</string>
+    <string name="prefs_location_title">ҷои зисти шумо</string>
+    <string name="prefs_location_summary">Деҳот, шаҳр ё номи кишлоқ</string>
 </resources>
+<!--қ ҳ ӯ ҷ-->
