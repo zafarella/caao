@@ -1,71 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-  The file contains common to application strings that should be translated to
-  different languages
--->
-<!--қ ҳ ӯ ҷ ӣ-->
 <resources>
-	<!-- The strings that should be in different supported languages -->
-	<string name="app_name">caao</string>
-	<string name="menu_item_exit_app">Буромад</string>
-	<string name="menu_item_settings">Таманноҳо</string>
-	<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-	<!-- About application strings -->
-	<string name="about_dialog_title">Дар бораи барнома</string>
-	<string name="about_dialog_content_text">Органайзери аграрии мутобикатшаванда. \n------------------------------\n
-		Барнома кисми корӣ дипломии Зафар Ҳайдаров мебошад. Университети Чанубии
-		Финлонд, кафедраи илмҳои компьютери. Тахти роҳбарии Теему Лайне иҷро
-		шудааст.</string>
-	<!--   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-	<!-- License dialog strings -->
-	<string name="licence_dialog_title">Литсензия</string>
-	<string name="license_dialog_licence_text">Шумо рози хастед бо кушодани ин барнома дар телефони худатон.</string>
-	<!--   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-	<string-array name="settings_items_titles">
-		<item>Танзимҳои шумо</item>
-		<item>Чои зист ва забон</item>
-		<item>Огохихо</item>
-		<item>Боз танзимхо</item>
-		<item>Version information</item>
-		<item>Share feedback</item>
-		<item>License</item>
-		<item>Third party licenses</item>
-	</string-array>
-	<!--
-      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    -->
-	<string-array name="dummy_plant_list">
-		<item>asdasdasdfasdf</item>
-		<item>asdfasfasd</item>
-	</string-array>
-	<!--the order is important as it handled by code-->
-	<string-array name="locales">
-		<item>English</item>
-		<item>Suomi</item>
-		<item>Русский</item>
-		<item>Deutch</item>
-		<item>Точики</item>
-	</string-array>
-	<string-array name="locale_titles">
-		<item>Russian</item>
-		<item>English</item>
-		<item>Finnish</item>
-		<item>German</item>
-		<item>Tajik</item>
-	</string-array>
-	<!--   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-	<string-array name="tabs_titles">
-		<item>Calendar</item>
-		<item>Event notification</item>
-		<item>Plant list</item>
-		<item>Wiki</item>
-	</string-array>
-	<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-	<string name="service_label">Органайзери аграрии мутобикатшаванда</string>
-	<string name="submit_feedback_button">Иайёр, фирсон</string>
-	<string name="menu_item_refresh_plant_list">Refresh plant list</string>
-	<string name="menu_item_refresh_event_list">Refresh events</string>
-	<string name="third_party_licences_text">        The project became real with the following libraries:\n -- apache xml-rpc \n
-		-- android-xmlrpc the cleint library\n\n\n which released under the Apache
-		License 2.0\n</string>
+    <dimen name="week_top_margin">59.3px
+    </dimen>
+    <dimen name="week_left_margin">36.3px
+    </dimen>
+    <dimen name="cell_width">38.3px
+    </dimen>
+    <dimen name="cell_heigh">35.3px
+    </dimen>
+    <dimen name="cell_margin_top">61.3px
+    </dimen>
+    <dimen name="cell_margin_left">26px
+    </dimen>
+    <dimen name="cell_text_size">17.3px
+    </dimen>
 </resources>
