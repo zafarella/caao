@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string name="advanced_prefs_title">Дополнительные настройки</string>
-	<string name="advanced_prefs_server_into_title">Информация о сревере</string>
-	<string name="advanced_prefs_server_info_title">Информация о сревере</string>
-	<string name="advanced_prefs_server_info_summary">Коснитесь чтоб отобразить информацию о сервере</string>
-	<string name="advanced_prefs_server_url">Срока (URL) соединения с сервером</string>
-	<string name="advanced_prefs_server_url_summary">Строка соединения (URL)</string>
+	<string name="notification_prefs_title">Настройки уведомлений</string>
+	<string name="notification_prefs_summary">Настройки уведомлений</string>
+	<string name="notification_prefs_enable_status_bar_notifs_categoru_title">Уведомления в статус баре</string>
+	<string name="notification_prefs_enable_status_bar_notifs_title">Уведомлять в статусбаре</string>
+	<string name="notification_prefs_enable_status_bar_notifs_summary">Показывать уведомления в статубаре</string>
+	<string name="notification_prefs_rington_category_title">Звонок уведомлений</string>
+	<string name="notification_prefs_rington_category_summary">Устанавливает звонок для уведомлений</string>
+	<string name="notification_prefs_rington_title">Выберите звук для уведомлений</string>
 </resources>
